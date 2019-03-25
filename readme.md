@@ -5,6 +5,13 @@
 [![Build Status](https://poser.pugx.org/laravel/framework/v/stable.svg)]()
 
 
+Anhanguera - 1º Semestre 2019
+
+Trabalho solicitado pelo docente Vanderlei Ienne, da disciplina de Governança de Tecnologias da Informação, para fins de avaliação, no curso de Análise e Desenvolvimento de Sistemas.
+
+Usuário já cadastrado para teste e login:
+
+
 ### Requisitos: *
 - Web server (Apache2 ou Nginx)
 - PHP >= 7.2
