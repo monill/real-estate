@@ -15,6 +15,7 @@ class CreateNewslettersTable extends Migration
     {
         Schema::create('newsletters', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->string('email');
             $table->string('ip', 70);
             $table->timestamps();

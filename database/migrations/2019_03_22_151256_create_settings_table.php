@@ -15,29 +15,30 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->tinyIncrements('id');
-
+            //Geral
             $table->string('site_title');
             $table->string('logo')->nullable();
             $table->text('meta_title')->nullable();
             $table->text('meta_keywords')->nullable();
             $table->text('meta_description')->nullable();
+            //Analytics
             $table->text('analytics')->nullable();
+            //Empresa
             $table->text('about')->nullable();
-
             $table->string('address')->nullable();
             $table->string('email')->nullable();
             $table->string('phone1')->nullable();
             $table->string('phone2')->nullable();
-
+            //Social
             $table->string('facebook')->nullable();
             $table->string('twitter')->nullable();
             $table->string('googleplus')->nullable();
             $table->string('linkedin')->nullable();
             $table->string('link')->nullable();
-
+            //Google Maps
             $table->float('latitude')->nullable();
             $table->float('longitude')->nullable();
-
+            //Termos e Privacidade
             $table->text('terms')->nullable();
             $table->text('privacy')->nullable();
 
