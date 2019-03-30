@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        if ($this->app->environment() == 'local') {
+            $this->app->register(\Reliese\Coders\CodersServiceProvider::class);
+        }
     }
 }
