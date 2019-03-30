@@ -11,21 +11,56 @@
 |
 */
 
-Route::namespace('Site')->group(function () {
-    Route::get('/', 'IndexController@index');
-
-    Route::get('propriedades', 'PropertiesController@index');
-
-    Route::get('corretores', 'AgentsController@index');
-
-    Route::get('galeria', 'GalleriesController@index');
-
-    Route::get('blog', 'BlogsController@index');
-
-    Route::get('contato', 'ContactController@index');
-    Route::post('contato', 'ContactController@store');
+//Index
+Route::middleware('visitors')->group(function () {
+    Route::namespace('Site')->group(function () {
+        Route::get('/', 'IndexController@index')->name('index');
+    });
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::namespace('Site')->group(function () {
+    //Propriedades
+    Route::get('propriedades', 'PropertiesController@index');
+    //Corretores
+    Route::get('corretores', 'AgentsController@index');
+    //Galeria
+    Route::get('galeria', 'GalleriesController@index');
+    //Blog
+    Route::get('blog', 'BlogsController@index');
+    //Contato
+    Route::get('contato', 'ContactController@index');
+    Route::post('contato', 'ContactController@store');
+});
+
+Route::namespace('Admin')->group(function () {
+    //Dashboard
+    Route::get('dashboard', 'IndexController@index');
+    //Blog
+    Route::resource('blogs', 'BlogsController');
+    //Blog Comentarios
+    Route::get('comments', 'BlogCommentsController@index');
+    //Categorias
+    Route::get('categories', 'CategoriesController@index');
+    //Configurações
+    Route::get('settings', 'SettingsController@index');
+    Route::post('settings', 'SettingsController@update');
+    //Destaques
+    Route::get('features', 'FeaturesController@index');
+    //Messages
+    Route::get('messages', 'MessagesController@index');
+    //Newsletters
+    Route::get('newsletters', 'NewslettersController@index');
+    Route::delete('newsletters/{id}', 'NewslettersController@destroy');
+    //Propriedades
+    Route::resource('properties', 'PropertiesController');
+    //Duvidas
+    Route::get('questions', 'QuestionsController@index');
+    //Tags
+    Route::resource('tags', 'TagsController');
+    //Corretores
+    Route::resource('users', 'UsersController');
+    //Visitantes
+    Route::get('visitors', 'VisitorsController@index');
+});
