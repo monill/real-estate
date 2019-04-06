@@ -43,7 +43,7 @@
             <li> <a href="{{ url('settings') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Configurações</span></a> </li>
             <li> <a href="{{ url('newsletters') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Newsletters</span></a> </li>
             <li> <a href="{{ url('visitors') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Visitantes</span></a> </li>
-
+            <li class="nav-small-cap">--- Sair</li>
             <li><a href="#" class="waves-effect"><i class="icon-logout fa-fw"></i> <span class="hide-menu">Sair</span></a></li>
 
         </ul>
