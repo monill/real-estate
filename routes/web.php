@@ -41,13 +41,15 @@ Route::namespace('Admin')->group(function () {
     Route::resource('blogs', 'BlogsController');
     //Blog Comentarios
     Route::get('comments', 'BlogCommentsController@index');
+    Route::delete('comments/{id}', 'BlogCommentsController@destroy');
+    Route::put('comments/{id}', 'BlogCommentsController@approveDisapprove');
     //Categorias
-    Route::get('categories', 'CategoriesController@index');
+    Route::resource('categories', 'CategoriesController')->except(['create', 'show', 'edit']);
     //Configurações
     Route::get('settings', 'SettingsController@index');
     Route::post('settings', 'SettingsController@update');
     //Destaques
-    Route::get('features', 'FeaturesController@index');
+    Route::resource('features', 'FeaturesController')->except(['create', 'show', 'edit']);
     //Messages
     Route::get('messages', 'MessagesController@index');
     //Newsletters
@@ -58,7 +60,7 @@ Route::namespace('Admin')->group(function () {
     //Duvidas
     Route::get('questions', 'QuestionsController@index');
     //Tags
-    Route::resource('tags', 'TagsController');
+    Route::resource('tags', 'TagsController')->except(['create', 'show', 'edit']);
     //Corretores
     Route::resource('users', 'UsersController');
     //Visitantes
