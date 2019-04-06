@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 class Blog extends Eloquent
 {
+    use Sluggable;
+
 	protected $casts = [
 		'user_id' => 'int',
 		'views' => 'int'
@@ -38,4 +41,13 @@ class Blog extends Eloquent
 	{
 		return $this->hasMany(\App\Models\Comment::class);
 	}
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
 }

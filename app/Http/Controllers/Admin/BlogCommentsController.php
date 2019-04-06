@@ -3,26 +3,27 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Comment;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class BlogCommentsController extends Controller
 {
     public function index()
     {
-        return view('admin.comments.index');
+        $comments = Comment::all();
+        return view('admin.comments.index', compact('comments'));
     }
 
     public function destroy($id)
     {
         Comment::findOrFail($id)->delete();
-        return redirect()->to('blogs/comments');
+        return redirect()->to('comments');
     }
 
-    public function approveDesapruve($id)
+    public function approveDisapprove($id)
     {
-        $blog = Comment::findOrFail($id);
-        $blog->allowed = !$blog->allowed;
-        return redirect()->to('blogs/comments');
+        $comment = Comment::findOrFail($id);
+        $comment->allowed = !$comment->allowed;
+        $comment->update();
+        return redirect()->to('comments');
     }
 }

@@ -40,7 +40,7 @@ class TagsController extends Controller
     {
         $tag = new Tag($request->except('_token'));
         $tag->save();
-        return redirect()->to('dashboard/tags');
+        return redirect()->to('tags');
     }
 
     /**
@@ -75,9 +75,10 @@ class TagsController extends Controller
     public function update(Request $request, $id)
     {
         if ($request->ajax()) {
-            DB::table('tags')
-                ->where('id', $request->get('pk'))
-                ->update([$request->input('name') => $request->input('value')]);
+            $pk = $request->get('pk');
+            $category = Tag::findOrFail($pk);
+            $category->name = $request->input('value');
+            $category->update();
 
             return response()->json(['success' => 'Tag atualizada.'], 200);
         }
@@ -93,6 +94,6 @@ class TagsController extends Controller
     public function destroy($id)
     {
         Tag::findOrFail($id)->delete();
-        return redirect()->to('dashboard/tags');
+        return redirect()->to('tags');
     }
 }

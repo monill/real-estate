@@ -75,9 +75,10 @@ class CategoriesController extends Controller
     public function update(Request $request, $id)
     {
         if ($request->ajax()) {
-            DB::table('categories')
-                ->where('id', $request->get('pk'))
-                ->update([$request->input('name') => $request->input('value')]);
+            $pk = $request->get('pk');
+            $category = Category::findOrFail($pk);
+            $category->name = $request->input('value');
+            $category->update();
 
             return response()->json(['success' => 'Categoria atualizada.'], 200);
         }
@@ -93,6 +94,6 @@ class CategoriesController extends Controller
     public function destroy($id)
     {
         Category::findOrFail($id)->delete();
-        return redirect()->to('features');
+        return redirect()->to('categories');
     }
 }

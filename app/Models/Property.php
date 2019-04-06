@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 class Property extends Eloquent
 {
+    use Sluggable;
+
 	protected $casts = [
 		'user_id' => 'int',
 		'category_id' => 'int',
@@ -71,4 +74,13 @@ class Property extends Eloquent
 	{
 		return $this->hasMany(\App\Models\Question::class);
 	}
+
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
 }
