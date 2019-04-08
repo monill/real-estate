@@ -11,7 +11,7 @@ class Newsletter extends Eloquent
 	];
 
 	protected $fillable = [
-	    'name',
+		'name',
 		'email',
 		'accept'
 	];

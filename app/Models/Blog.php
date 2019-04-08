@@ -16,7 +16,7 @@ class Blog extends Eloquent
 
 	protected $fillable = [
 		'user_id',
-		'title',
+		'name',
 		'slug',
 		'image',
 		'content',
@@ -28,7 +28,7 @@ class Blog extends Eloquent
 
 	public function user()
 	{
-		return $this->belongsTo(\App\Models\User::class);
+		return $this->belongsTo(\App\User::class);
 	}
 
 	public function tags()
