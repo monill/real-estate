@@ -187,7 +187,7 @@
                         <section id="checkbox-list-section">
                             <div class="section-content">
                                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
-                                    <h1>Home Features</h1>
+                                    <h1>Características</h1>
                                 </div>
                                 <ul class="list-checkbox">
                                     <li>Barbecue</li>

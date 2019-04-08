@@ -28,7 +28,7 @@
             <div class="white-box">
                 <h3 class="box-title">Propriedades a venda</h3>
                 <ul class="list-inline two-part">
-                    <li><i class="icon-tag text-purple"></i></li>
+                    <li><i class="icon-basket text-purple"></i></li>
                     <li class="text-right"><span class="counter">169</span></li>
                 </ul>
             </div>
@@ -37,17 +37,17 @@
             <div class="white-box">
                 <h3 class="box-title">Propriedades para alugar</h3>
                 <ul class="list-inline two-part">
-                    <li><i class="icon-basket text-danger"></i></li>
+                    <li><i class="icon-tag text-danger"></i></li>
                     <li class="text-right"><span class="counter">311</span></li>
                 </ul>
             </div>
         </div>
         <div class="col-lg-3 col-sm-6 col-xs-12">
             <div class="white-box">
-                <h3 class="box-title">Ganhos totais</h3>
+                <h3 class="box-title">Visitas ao site</h3>
                 <ul class="list-inline two-part">
-                    <li><i class="ti-wallet text-success"></i></li>
-                    <li class="text-right"><span class="counter">$8170</span></li>
+                    <li><i class="ti-user text-success"></i></li>
+                    <li class="text-right"><span class="counter">8170</span></li>
                 </ul>
             </div>
         </div>

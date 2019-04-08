@@ -33,7 +33,7 @@
             <li class="nav-small-cap">--- Imóveis</li>
             <li> <a href="{{ url('properties') }}" class="waves-effect"><i class="ti-check-box fa-fw"></i> <span class="hide-menu">Propriedades</span></a> </li>
             <li> <a href="{{ url('categories') }}" class="waves-effect"><i class="ti-support fa-fw"></i> <span class="hide-menu">Categorias</span></a> </li>
-            <li> <a href="{{ url('features') }}" class="waves-effect"><i class="ti-support fa-fw"></i> <span class="hide-menu">Destaques</span></a> </li>
+            <li> <a href="{{ url('features') }}" class="waves-effect"><i class="ti-support fa-fw"></i> <span class="hide-menu">Características</span></a> </li>
             <li> <a href="{{ url('questions') }}" class="waves-effect"><i class="ti-support fa-fw"></i> <span class="hide-menu">Dúvidas</span></a> </li>
 
             <li class="nav-small-cap">--- Usuários</li>
@@ -43,6 +43,7 @@
             <li> <a href="{{ url('settings') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Configurações</span></a> </li>
             <li> <a href="{{ url('newsletters') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Newsletters</span></a> </li>
             <li> <a href="{{ url('visitors') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Visitantes</span></a> </li>
+            <li> <a href="{{ url('logs') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Logs</span></a> </li>
             <li class="nav-small-cap">--- Sair</li>
             <li><a href="#" class="waves-effect"><i class="icon-logout fa-fw"></i> <span class="hide-menu">Sair</span></a></li>
 

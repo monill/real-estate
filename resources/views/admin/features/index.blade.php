@@ -9,12 +9,12 @@
 
     <div class="row bg-title">
         <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-            <h4 class="page-title">Destaques</h4>
+            <h4 class="page-title">Características</h4>
         </div>
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
             <ol class="breadcrumb">
                 <li><a href="{{ url('dashboard') }}">Dashboard</a></li>
-                <li class="active">Destaques</li>
+                <li class="active">Características</li>
             </ol>
         </div>
         <!-- /.col-lg-12 -->
@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="white-box">
-                <h3 class="box-title">Destaques</h3>
+                <h3 class="box-title">Características</h3>
                 <p class="text-muted">Para editar, clique em cima do nome</p>
                 <div class="form-inline padding-bottom-15">
                     <div class="row">
