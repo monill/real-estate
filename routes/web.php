@@ -41,8 +41,8 @@ Route::namespace('Admin')->group(function () {
     Route::resource('blogs', 'BlogsController');
     //Blog Comentarios
     Route::get('comments', 'BlogCommentsController@index');
-    Route::delete('comments/{id}', 'BlogCommentsController@destroy');
     Route::put('comments/{id}', 'BlogCommentsController@approveDisapprove');
+    Route::delete('comments/{id}', 'BlogCommentsController@destroy');
     //Categorias
     Route::resource('categories', 'CategoriesController')->except(['create', 'show', 'edit']);
     //Configurações
@@ -51,7 +51,7 @@ Route::namespace('Admin')->group(function () {
     //Destaques
     Route::resource('features', 'FeaturesController')->except(['create', 'show', 'edit']);
     //Messages
-    Route::get('messages', 'MessagesController@index');
+    Route::resource('messages', 'MessagesController')->only(['index', 'show', 'destroy']);
     //Newsletters
     Route::get('newsletters', 'NewslettersController@index');
     Route::delete('newsletters/{id}', 'NewslettersController@destroy');

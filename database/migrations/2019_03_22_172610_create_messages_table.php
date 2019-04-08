@@ -21,6 +21,7 @@ class CreateMessagesTable extends Migration
             $table->string('subject', 100);
             $table->text('message');
             $table->string('ip', 70);
+            $table->boolean('unread')->default(false);
             $table->timestamps();
         });
     }

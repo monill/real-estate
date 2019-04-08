@@ -17,7 +17,7 @@
     <div class="row re">
         <div class="col-lg-3 col-sm-6 col-xs-12">
             <div class="white-box">
-                <h3 class="box-title">All Properties</h3>
+                <h3 class="box-title">Todas as propriedades</h3>
                 <ul class="list-inline two-part">
                     <li><i class="ti-home text-info"></i></li>
                     <li class="text-right"><span class="counter">480</span></li>
@@ -26,7 +26,7 @@
         </div>
         <div class="col-lg-3 col-sm-6 col-xs-12">
             <div class="white-box">
-                <h3 class="box-title">Properties for Sale</h3>
+                <h3 class="box-title">Propriedades a venda</h3>
                 <ul class="list-inline two-part">
                     <li><i class="icon-tag text-purple"></i></li>
                     <li class="text-right"><span class="counter">169</span></li>
@@ -35,7 +35,7 @@
         </div>
         <div class="col-lg-3 col-sm-6 col-xs-12">
             <div class="white-box">
-                <h3 class="box-title">Properties for Rent</h3>
+                <h3 class="box-title">Propriedades para alugar</h3>
                 <ul class="list-inline two-part">
                     <li><i class="icon-basket text-danger"></i></li>
                     <li class="text-right"><span class="counter">311</span></li>
@@ -44,7 +44,7 @@
         </div>
         <div class="col-lg-3 col-sm-6 col-xs-12">
             <div class="white-box">
-                <h3 class="box-title">Total Ernings</h3>
+                <h3 class="box-title">Ganhos totais</h3>
                 <ul class="list-inline two-part">
                     <li><i class="ti-wallet text-success"></i></li>
                     <li class="text-right"><span class="counter">$8170</span></li>
@@ -60,11 +60,12 @@
                 <h3 class="box-title">Properties stats</h3>
                 <ul class="list-inline text-right">
                     <li>
-                        <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>For Sale</h5> </li>
+                        <h5><i class="fa fa-circle m-r-5" style="color: #00bfc7;"></i>À venda</h5></li>
                     <li>
-                        <h5><i class="fa fa-circle m-r-5" style="color: #fb9678;"></i>For Rent</h5> </li>
+                        <h5><i class="fa fa-circle m-r-5" style="color: #fb9678;"></i>Para alugar</h5></li>
                     <li>
-                        <h5><i class="fa fa-circle m-r-5" style="color: #9675ce;"></i>All Properties</h5> </li>
+                        <h5><i class="fa fa-circle m-r-5" style="color: #9675ce;"></i>Todas as propriedades</h5>
+                    </li>
                 </ul>
                 <div id="morris-bar-chart" style="height:372px;"></div>
             </div>
@@ -77,7 +78,7 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-6  m-t-30">
                                 <h1 class="text-info">$64057</h1>
-                                <p class="text-muted">APRIL 2017</p> <b>(150 Sales)</b> </div>
+                                <p class="text-muted">APRIL 2017</p> <b>(150 Sales)</b></div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
                                 <div id="sparkline2dash" class="text-center"></div>
                             </div>
@@ -90,7 +91,7 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-6  m-t-30">
                                 <h1 class="text-white">$30447</h1>
-                                <p class="light_op_text">APRIL 2017</p> <b class="text-white">(110 Sales)</b> </div>
+                                <p class="light_op_text">APRIL 2017</p> <b class="text-white">(110 Sales)</b></div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
                                 <div id="sales1" class="text-center"></div>
                             </div>
@@ -124,42 +125,58 @@
                         <tr>
                             <td>Steave Jobs</td>
                             <td>#85457898</td>
-                            <td> <img src="../plugins/images/property/prop1.jpeg" alt="iMac" width="80"> </td>
+                            <td><img src="../plugins/images/property/prop1.jpeg" alt="iMac" width="80"></td>
                             <td>Swanim villa</td>
                             <td>Sold</td>
                             <td>10-7-2017</td>
-                            <td> <span class="label label-success font-weight-100">Paid</span> </td>
-                            <td><a href="javascript:void(0)" class="text-inverse p-r-10" data-toggle="tooltip" title="Edit"><i class="ti-marker-alt"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="ti-trash"></i></a></td>
+                            <td><span class="label label-success font-weight-100">Paid</span></td>
+                            <td><a href="javascript:void(0)" class="text-inverse p-r-10" data-toggle="tooltip"
+                                   title="Edit"><i class="ti-marker-alt"></i></a> <a href="javascript:void(0)"
+                                                                                     class="text-inverse" title="Delete"
+                                                                                     data-toggle="tooltip"><i
+                                            class="ti-trash"></i></a></td>
                         </tr>
                         <tr>
                             <td>Varun Dhavan</td>
                             <td>#95457898</td>
-                            <td> <img src="../plugins/images/property/prop2.jpeg" alt="iPhone" width="80"> </td>
+                            <td><img src="../plugins/images/property/prop2.jpeg" alt="iPhone" width="80"></td>
                             <td>River view home</td>
                             <td>On Rent</td>
                             <td>09-7-2017</td>
-                            <td> <span class="label label-warning font-weight-100">Pending</span> </td>
-                            <td><a href="javascript:void(0)" class="text-inverse p-r-10" data-toggle="tooltip" title="Edit"><i class="ti-marker-alt"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="ti-trash"></i></a></td>
+                            <td><span class="label label-warning font-weight-100">Pending</span></td>
+                            <td><a href="javascript:void(0)" class="text-inverse p-r-10" data-toggle="tooltip"
+                                   title="Edit"><i class="ti-marker-alt"></i></a> <a href="javascript:void(0)"
+                                                                                     class="text-inverse" title="Delete"
+                                                                                     data-toggle="tooltip"><i
+                                            class="ti-trash"></i></a></td>
                         </tr>
                         <tr>
                             <td>Ritesh Desh</td>
                             <td>#68457898</td>
-                            <td> <img src="../plugins/images/property/prop3.jpeg" alt="apple_watch" width="80"> </td>
+                            <td><img src="../plugins/images/property/prop3.jpeg" alt="apple_watch" width="80"></td>
                             <td>Gray Chair</td>
                             <td>12</td>
                             <td>08-7-2017</td>
-                            <td> <span class="label label-success font-weight-100">Paid</span> </td>
-                            <td><a href="javascript:void(0)" class="text-inverse p-r-10" data-toggle="tooltip" title="Edit"><i class="ti-marker-alt"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="ti-trash"></i></a></td>
+                            <td><span class="label label-success font-weight-100">Paid</span></td>
+                            <td><a href="javascript:void(0)" class="text-inverse p-r-10" data-toggle="tooltip"
+                                   title="Edit"><i class="ti-marker-alt"></i></a> <a href="javascript:void(0)"
+                                                                                     class="text-inverse" title="Delete"
+                                                                                     data-toggle="tooltip"><i
+                                            class="ti-trash"></i></a></td>
                         </tr>
                         <tr>
                             <td>Hrithik</td>
                             <td>#45457898</td>
-                            <td> <img src="../plugins/images/property/prop3.jpeg" alt="mac_mouse" width="80"> </td>
+                            <td><img src="../plugins/images/property/prop3.jpeg" alt="mac_mouse" width="80"></td>
                             <td>Pure Wooden chair</td>
                             <td>18</td>
                             <td>02-7-2017</td>
-                            <td> <span class="label label-danger font-weight-100">Failed</span> </td>
-                            <td><a href="javascript:void(0)" class="text-inverse p-r-10" data-toggle="tooltip" title="Edit"><i class="ti-marker-alt"></i></a> <a href="javascript:void(0)" class="text-inverse" title="Delete" data-toggle="tooltip"><i class="ti-trash"></i></a></td>
+                            <td><span class="label label-danger font-weight-100">Failed</span></td>
+                            <td><a href="javascript:void(0)" class="text-inverse p-r-10" data-toggle="tooltip"
+                                   title="Edit"><i class="ti-marker-alt"></i></a> <a href="javascript:void(0)"
+                                                                                     class="text-inverse" title="Delete"
+                                                                                     data-toggle="tooltip"><i
+                                            class="ti-trash"></i></a></td>
                         </tr>
                         </tbody>
                     </table>
@@ -173,7 +190,8 @@
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 agent-info">
                 <div class="m-t-30 text-center">
-                    <a href="javascript:void(0)"><img alt="img" class="thumb-lg img-circle" src="../plugins/images/users/agent.jpg"></a>
+                    <a href="javascript:void(0)"><img alt="img" class="thumb-lg img-circle"
+                                                      src="../plugins/images/users/agent.jpg"></a>
                     <h4>Jon Doe</h4>
                     <h6>Agent of Property</h6>
                 </div>
@@ -209,7 +227,8 @@
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
-                                <button type="submit" class="btn btn-danger btn-rounded pull-right">Submit Request</button>
+                                <button type="submit" class="btn btn-danger btn-rounded pull-right">Submit Request
+                                </button>
                             </div>
                         </div>
                     </form>
@@ -222,7 +241,8 @@
                 <div class="pro-list">
                     <div class="pro-img p-r-10">
                         <a href="javascript:void(0)">
-                            <img src="../plugins/images/property/prop1.jpeg" alt="property" style="width: 100px; height: 66px;">
+                            <img src="../plugins/images/property/prop1.jpeg" alt="property"
+                                 style="width: 100px; height: 66px;">
                         </a>
                     </div>
                     <div class="pro-detail">
@@ -235,7 +255,8 @@
                 <div class="pro-list">
                     <div class="pro-img p-r-10">
                         <a href="javascript:void(0)">
-                            <img src="../plugins/images/property/prop2.jpeg" alt="property" style="width: 100px; height: 66px;">
+                            <img src="../plugins/images/property/prop2.jpeg" alt="property"
+                                 style="width: 100px; height: 66px;">
                         </a>
                     </div>
                     <div class="pro-detail">
@@ -248,7 +269,8 @@
                 <div class="pro-list">
                     <div class="pro-img p-r-10">
                         <a href="javascript:void(0)">
-                            <img src="../plugins/images/property/prop3.jpeg" alt="property" style="width: 100px; height: 66px;">
+                            <img src="../plugins/images/property/prop3.jpeg" alt="property"
+                                 style="width: 100px; height: 66px;">
                         </a>
                     </div>
                     <div class="pro-detail">
