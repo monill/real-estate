@@ -50,6 +50,8 @@ Route::namespace('Admin')->group(function () {
     Route::post('settings', 'SettingsController@update');
     //Destaques
     Route::resource('features', 'FeaturesController')->except(['create', 'show', 'edit']);
+    //Logs
+    Route::resource('logs', 'LogsController')->only(['index', 'destroy']);
     //Messages
     Route::resource('messages', 'MessagesController')->only(['index', 'show', 'destroy']);
     //Newsletters

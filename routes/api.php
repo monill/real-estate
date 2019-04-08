@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();
 //});
+
+Route::namespace('Api')->group(function () {
+    Route::get('os_usage', 'VisitorsController@os');
+    Route::get('browser', 'VisitorsController@browser');
+    Route::get('countries', 'VisitorsController@countries');
+    Route::get('months', 'VisitorsController@months');
+});
