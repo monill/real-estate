@@ -31,7 +31,7 @@
         <div class="col-sm-12">
             <div class="white-box">
                 <h3 class="box-title m-b-0">Adicionar Blog</h3>
-                {!! Form::open(['url' => 'dashboard/blogs', 'files' => true, 'class' => 'form-horizontal']) !!}
+                {!! Form::open(['url' => 'blogs', 'files' => true, 'class' => 'form-horizontal']) !!}
                     <div class="form-group">
                         {!! Form::label('title', 'Título:', ['class' => 'col-md-12']) !!}
                         <div class="col-md-12">
@@ -40,7 +40,7 @@
                     </div>
                     <div class="form-group">
                         {!! Form::label('image', 'Imagem:') !!}
-                        {!! Form::file('image', ['class' => 'dropify']) !!}
+                        {!! Form::file('image', ['class' => 'dropify', 'accept' => 'image/*']) !!}
                     </div>
                     <div class="row">
                         <div class="col-md-4">

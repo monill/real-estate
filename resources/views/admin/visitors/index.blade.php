@@ -48,7 +48,6 @@
             <div class="white-box">
                 <h3 class="box-title">Meses mais acessados</h3>
                 <p>Valores referente ao ano de {{ date('Y') }}</p>
-                <p class="box-title"><b>Total de acessos:</b> {{ $totalAccess }}</p>
                 <div id="morris-bar-chart"></div>
             </div>
         </div>

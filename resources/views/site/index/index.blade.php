@@ -36,7 +36,7 @@
     <section id="citation-section" class="section-contrast">
         <div class="bg-image bg-pattern bg-cover parallax-background">
             <div class="section-content onscroll-animate" data-animation="fadeInUp">
-                <p class="citation">“The secret to creativity is knowing how to hide your sources.”</p>
+                <p class="citation">“O segredo da criatividade é saber como esconder suas fontes.”</p>
                 <p class="citation-author">Albert EINSTEIN</p>
             </div>
         </div>

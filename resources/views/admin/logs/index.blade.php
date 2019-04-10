@@ -1,7 +1,7 @@
 @extends('admin.layout.main')
 
 @section('css')
-    <link href="{{ asset('admin/vendors/datatables/datatables.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('admin/vendor/datatables/jquery.dataTables.min.css') }}" rel="stylesheet"/>
 @endsection
 
 @section('content')
@@ -18,7 +18,7 @@
         </div>
         <!-- /.col-lg-12 -->
     </div>
-    <!-- /row -->
+    <!-- row -->
     <div class="row">
         <div class="col-sm-12">
             <div class="white-box">
@@ -27,23 +27,19 @@
                 <div class="table-responsive">
                     <table id="myTable" class="table table-striped">
                         <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Ação</th>
-                            <th>IP</th>
-                            <th>Browser</th>
-                            <th>OS</th>
-                            <th>Quando</th>
-                        </tr>
+                            <tr>
+                                <th>#</th>
+                                <th>Usuário</th>
+                                <th>Ação</th>
+                                <th>Quando</th>
+                            </tr>
                         </thead>
                         <tbody>
                         @foreach ($logs as $log)
                             <tr>
                                 <td>{{ $log->id }}</td>
+                                <td>{{ $log->user->name }}</td>
                                 <td>{{ $log->content }}</td>
-                                <td>{{ $log->ip }}</td>
-                                <td>{{ $log->browser }}</td>
-                                <td>{{ $log->system }}</td>
                                 <td>{{ $log->created_at->format('d-m-Y H:i') }}</td>
                             </tr>
                         @endforeach
@@ -58,12 +54,16 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('admin/vendor/datatables/datatables.min.js') }}"></script>
+    <script src="{{ asset('admin/vendor/datatables/jquery.dataTables.min.js') }}"></script>
     <script>
-        $(document).ready(function () {
+        $(document).ready( function () {
             $('#myTable').DataTable({
                 "displayLength": 50,
-                "order": [0, 'desc']
+                "searching": true,
+                "responsive": true,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+                }
             });
         });
     </script>
