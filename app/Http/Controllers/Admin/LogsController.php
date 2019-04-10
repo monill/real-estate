@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Log;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -14,7 +15,8 @@ class LogsController extends Controller
      */
     public function index()
     {
-        //
+        $logs = Log::orderBy('created_at', 'desc')->get();;
+        return view('admin.logs.index', compact('logs'));
     }
 
     /**
@@ -80,6 +82,7 @@ class LogsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Log::findOrFail($id)->delete();
+        return redirect()->to('logs');
     }
 }
