@@ -10,6 +10,10 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    protected $casts = [
+        'admin' => 'bool'
+    ];
+
     protected $fillable = [
         'name',
         'email',
@@ -17,6 +21,7 @@ class User extends Authenticatable
         'avatar',
         'job',
         'about',
+        'admin',
         'remember_token'
     ];
 
