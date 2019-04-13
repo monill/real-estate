@@ -11,7 +11,8 @@ class Blog extends Eloquent
 
 	protected $casts = [
 		'user_id' => 'int',
-		'views' => 'int'
+		'views' => 'int',
+        'published' => 'bool'
 	];
 
 	protected $fillable = [
@@ -23,7 +24,8 @@ class Blog extends Eloquent
 		'meta_title',
 		'meta_keywords',
 		'meta_description',
-		'views'
+		'views',
+        'published'
 	];
 
 	public function user()

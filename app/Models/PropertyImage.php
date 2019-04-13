@@ -9,12 +9,14 @@ class PropertyImage extends Eloquent
 	public $timestamps = false;
 
 	protected $casts = [
-		'property_id' => 'int'
+		'property_id' => 'int',
+        'feature' => 'bool'
 	];
 
 	protected $fillable = [
 		'property_id',
-		'image'
+		'image',
+        'feature'
 	];
 
 	public function property()

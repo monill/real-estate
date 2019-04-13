@@ -8,7 +8,7 @@ class Question extends Eloquent
 {
 	protected $casts = [
 		'property_id' => 'int',
-		'readed' => 'bool'
+		'unread' => 'bool'
 	];
 
 	protected $fillable = [
@@ -17,7 +17,7 @@ class Question extends Eloquent
 		'name',
 		'email',
 		'message',
-		'readed'
+		'unread'
 	];
 
 	public function property()
