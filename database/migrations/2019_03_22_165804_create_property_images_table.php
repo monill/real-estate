@@ -17,6 +17,7 @@ class CreatePropertyImagesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedInteger('property_id');
             $table->string('image');
+            $table->boolean('feature')->default(false);
 
             $table->index('property_id');
 

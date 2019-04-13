@@ -27,6 +27,7 @@ class CreateBlogsTable extends Migration
             $table->text('meta_description')->nullable();
 
             $table->integer('views')->default(0);
+            $table->boolean('published')->default(false);
             $table->timestamps();
 
             $table->index('user_id');

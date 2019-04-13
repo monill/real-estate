@@ -20,7 +20,7 @@ class CreateQuestionsTable extends Migration
             $table->string('name', 100);
             $table->string('email', 100);
             $table->text('message');
-            $table->boolean('readed')->default(false);
+            $table->boolean('unread')->default(false);
             $table->timestamps();
 
             $table->index('property_id');
