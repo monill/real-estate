@@ -44,6 +44,6 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
         Login::novo($user->id, $request->ip());
-        return $this->redirectTo;
+        return redirect()->to($this->redirectTo);
     }
 }

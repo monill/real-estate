@@ -7,6 +7,11 @@ use App\Http\Controllers\Controller;
 
 class BlogCommentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $comments = Comment::all();

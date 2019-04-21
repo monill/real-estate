@@ -7,6 +7,11 @@ use App\Http\Controllers\Controller;
 
 class NewslettersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $newsletters = Newsletter::orderBy('name', 'ASC')->paginate(30);

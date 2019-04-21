@@ -6,8 +6,13 @@ use App\Http\Controllers\Controller;
 
 class VisitorsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        return view('admin.visitors.index', compact('totalAccess'));
+        return view('admin.visitors.index');
     }
 }
