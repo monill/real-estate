@@ -30,6 +30,7 @@
         <div class="col-md-12 col-lg-12 col-xs-12">
             <div class="white-box">
                 <h3 class="box-title m-b-20">Configurações</h3>
+                @include('errors.errors')
                 <!-- Nav tabs -->
                 {!! Form::open(['url' => 'settings', 'class' => 'form-horizontal']) !!}
                 <section>

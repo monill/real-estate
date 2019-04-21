@@ -43,16 +43,7 @@
                         {!! Form::file('image', ['class' => 'dropify', 'accept' => 'image/*']) !!}
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                {!! Form::label('meta_title', 'Meta título:', ['class' => 'col-md-12']) !!}
-                                <div class="col-md-12">
-                                    {!! Form::textarea('meta_title', null, ['class' => 'form-control', 'placeholder' => 'Meta título', 'rows' => 3]) !!}
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 {!! Form::label('meta_keywords', 'Meta Keywords:', ['class' => 'col-md-12']) !!}
                                 <div class="col-md-12">
@@ -61,7 +52,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <div class="form-group">
                                 {!! Form::label('meta_description', 'Meta Description:', ['class' => 'col-md-12']) !!}
                                 <div class="col-md-12">

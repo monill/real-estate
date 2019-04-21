@@ -1,5 +1,21 @@
 @extends('site.layout.main')
 
+@section('seo')
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="" />
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="{{ url('/') }}" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+@endsection
+
 @section('title', 'Corretores')
 
 @section('content')

@@ -34,15 +34,16 @@
                         </div>
                     </div>
                 </div>
+                @include('errors.errors')
                 <div class="table-responsive">
                     <table class="table color-bordered-table info-bordered-table">
                         <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Nome</th>
-                            <th>Em uso</th>
-                            <th>Opções</th>
-                        </tr>
+                            <tr>
+                                <th>#</th>
+                                <th>Nome</th>
+                                <th>Em uso</th>
+                                <th>Opções</th>
+                            </tr>
                         </thead>
                         <tbody>
                         @forelse($features as $feature)

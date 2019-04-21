@@ -9,11 +9,9 @@
     <!--[if lt IE 9]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <![endif]-->
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Joao">
+    @yield('seo')
 
     <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png">
 

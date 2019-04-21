@@ -33,6 +33,7 @@
                     </div>
                 </div>
             </div>
+            @include('errors.errors')
         </div>
         @foreach($users as $user)
         <!-- /.usercard-->

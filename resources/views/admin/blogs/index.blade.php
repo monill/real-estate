@@ -28,6 +28,7 @@
                         </div>
                     </div>
                 </div>
+                @include('errors.errors')
                 <div class="table-responsive">
                     <table class="table product-overview">
                         <thead>
@@ -55,7 +56,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="5" class="text-center">Nada cadastrado no momento.</td>
+                                <td colspan="6" class="text-center">Nada cadastrado no momento.</td>
                             </tr>
                         @endforelse
                         </tbody>
