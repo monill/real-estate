@@ -36,11 +36,12 @@ class CreatePropertiesTable extends Migration
             $table->string('area');
             $table->text('description');
 
-            $table->string('main_img');
             $table->float('latitude')->nullable();
             $table->float('longitude')->nullable();
-            $table->string('video1')->nullable(); //youtube, vimeo, mp4 file
-            $table->string('video2')->nullable();
+
+            $table->string('video1')->nullable(); //youtube
+            $table->string('video2')->nullable(); //youtube
+
             $table->boolean('slider')->default(false);
             $table->boolean('featured')->default(false);
             $table->boolean('avaliable')->default(true);
