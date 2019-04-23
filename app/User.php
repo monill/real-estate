@@ -49,4 +49,15 @@ class User extends Authenticatable
     {
         return $this->hasMany(\App\Models\Property::class);
     }
+
+    public function isAdmin()
+    {
+        return $this->admin ? true : false;
+    }
+
+    public function getAvatar()
+    {
+        $avatar = $this->avatar;
+        return $avatar == null ? asset('uploads/avatar.jpg') : asset('uploads/users/' . $this->id . '/' . $avatar);
+    }
 }

@@ -86,3 +86,25 @@ if (!function_exists('validIP')) {
         return true;
     }
 }
+
+if (!function_exists('md5Gen')) {
+    function md5Gen() {
+        return md5(uniqid() . time() . microtime());
+    }
+}
+
+if (!function_exists('makeSize')) {
+    function makeSize($bytes, $decimals = 2) {
+        $size = [' B', ' kB', ' MB', ' GB', ' TB', ' PB', ' EB', ' ZB', ' YB'];
+        $floor = floor((strlen($bytes)-1)/3);
+        return sprintf("%.{$decimals}f", $bytes/pow(1024, $floor)).@$size[$floor];
+    }
+}
+
+if (!function_exists('diaMesAno')) {
+    function diaMesAno() {
+        setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
+        date_default_timezone_set('America/Sao_Paulo');
+        return strftime('%A, %d de %B de %Y', strtotime('today'));
+    }
+}
