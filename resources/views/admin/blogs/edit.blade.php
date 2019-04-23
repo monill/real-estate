@@ -32,7 +32,7 @@
             <div class="white-box">
                 <h3 class="box-title m-b-0">Editar Blog</h3>
                 <p class="text-muted m-b-30 font-13"> {{ $blog->title }} </p>
-                {!! Form::model($blog, ['url' => 'blogs/' . $blog->id, 'files' => true, 'class' => 'form-horizontal']) !!}
+                {!! Form::model($blog, ['url' => 'blogs/' . $blog->id, 'files' => true, 'method' => 'PUT', 'class' => 'form-horizontal']) !!}
                     <div class="form-group">
                         {!! Form::label('title', 'Título:', ['class' => 'col-md-12']) !!}
                         <div class="col-md-12">
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Editar</button>
-                    <button type="submit" class="btn btn-inverse waves-effect waves-light">Cancelar</button>
+                    <button type="button" class="btn btn-inverse waves-effect waves-light">Cancelar</button>
                 {!! Form::close() !!}
             </div>
         </div>

@@ -13,12 +13,14 @@
             </li>
             <li class="user-pro">
                 <a href="#" class="waves-effect">
-                    <img src="./admin/images/users/d1.jpg" alt="user-img" class="img-circle">
-                    <span class="hide-menu">Steve Gection<span class="fa arrow"></span></span>
+                    <img src="{{ auth()->user()->getAvatar() }}" alt="user-avatar" class="img-circle">
+                    <span class="hide-menu">{{ auth()->user()->name }}<span class="fa arrow"></span></span>
                 </a>
                 <ul class="nav nav-second-level">
-                    <li><a href="javascript:void(0)"><i class="ti-user"></i> Editar Perfil</a></li>
-                    <li><a href="javascript:void(0)"><i class="fa fa-power-off"></i> Sair</a></li>
+                    <li><a href="{{ route('users.edit', ['id' => auth()->user()->id]) }}"><i class="ti-user"></i> Editar Perfil</a></li>
+                    <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i> Sair</a></li>
+                    {!! Form::open(['url' => 'logout', 'id' => 'logout-form', 'style' => 'display: none']) !!}
+                    {!! Form::close() !!}
                 </ul>
             </li>
             <li class="nav-small-cap m-t-10">--- Menu</li>

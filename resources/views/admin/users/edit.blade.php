@@ -25,17 +25,17 @@
         <div class="col-sm-12">
             <div class="white-box">
                 <h3 class="box-title m-b-0">Editar Corretor(a)</h3>
-                {!! Form::model($user, ['url' => 'users/' . $user->id, 'files' => true, 'class' => 'form-horizontal']) !!}
+                {!! Form::model($user, ['url' => 'users/' . $user->id, 'files' => true, 'method' => 'PUT', 'class' => 'form-horizontal']) !!}
                     <div class="form-group">
                         {!! Form::label('name', 'Nome:', ['class' => 'col-md-12']) !!}
                         <div class="col-md-12">
-                            {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nome', 'maxlength' => 255]) !!}
+                            {!! Form::text('name', $user->name, ['class' => 'form-control', 'placeholder' => 'Nome', 'maxlength' => 255]) !!}
                         </div>
                     </div>
                     <div class="form-group">
                         {!! Form::label('email', 'E-mail:', ['class' => 'col-md-12']) !!}
                         <div class="col-md-12">
-                            {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'E-mail', 'maxlength' => 255]) !!}
+                            {!! Form::email('email', $user->email, ['class' => 'form-control', 'placeholder' => 'E-mail', 'maxlength' => 255]) !!}
                         </div>
                     </div>
                     <div class="form-group">
@@ -47,15 +47,24 @@
                     <div class="form-group">
                         {!! Form::label('job', 'Cargo:', ['class' => 'col-md-12']) !!}
                         <div class="col-md-12">
-                            {!! Form::text('job', null, ['class' => 'form-control', 'placeholder' => 'Cargo', 'maxlength' => 255]) !!}
+                            {!! Form::text('job', $user->job, ['class' => 'form-control', 'placeholder' => 'Cargo', 'maxlength' => 255]) !!}
                         </div>
                     </div>
                     <div class="form-group">
                         {!! Form::label('about', 'Sobre o(a) corretor(a):', ['class' => 'col-md-12']) !!}
                         <div class="col-md-12">
-                            {!! Form::textarea('about', null, ['class' => 'form-control', 'rows' => 5, 'maxlength' => 1500]) !!}
+                            {!! Form::textarea('about', $user->about, ['class' => 'form-control', 'rows' => 5, 'maxlength' => 1500]) !!}
                         </div>
                     </div>
+                @if(auth()->user()->isAdmin())
+                    <div class="form-check">
+                        <label class="custom-control custom-checkbox">
+                            <input type="checkbox" name="admin" value="true" @if($user->admin) checked @endif class="custom-control-input">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description"> Admin ?</span>
+                        </label>
+                    </div>
+                @endif
                     <div class="form-group">
                         {!! Form::label('avatar', 'Foto:', ['class' => 'col-md-12']) !!}
                         <div class="col-md-12">
@@ -63,7 +72,7 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Editar</button>
-                    <button type="submit" class="btn btn-inverse waves-effect waves-light">Cancelar</button>
+                    <button type="button" class="btn btn-inverse waves-effect waves-light">Cancelar</button>
                 {!! Form::close() !!}
             </div>
         </div>

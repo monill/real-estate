@@ -41,11 +41,14 @@
             <div class="white-box">
                 <div class="el-card-item">
                     <div class="el-card-avatar el-overlay-1">
-                        <img src="{{ asset('uploads/users/' . $user->id . '/' . $user->avatar) }}" />
+                        <img src="{{ asset('uploads/users/' . $user->id . '/' . $user->avatar) }}" alt="Avatar" />
                         <div class="el-overlay scrl-dwn">
                             <ul class="el-info">
                                 <li><a class="btn default btn-outline image-popup-vertical-fit" href="{{ asset('uploads/users/' . $user->id . '/' . $user->avatar) }}"><i class="icon-magnifier"></i></a></li>
                                 <li><a class="btn default btn-outline" href="{{ route('users.edit', [$user->id]) }}"><i class="fa fa-pencil"></i></a></li>
+                                <li><a href="javascript:;" onclick="document.getElementById('user-del-{{ $user->id }}').submit();" class="btn default btn-outline"><i class="fa fa-trash"></i></a></li>
+                                {!! Form::open(['url' => 'users/' . $user->id, 'method' => 'DELETE', 'id' => 'user-del-' . $user->id , 'style' => 'display: none']) !!}
+                                {!! Form::close() !!}
                             </ul>
                         </div>
                     </div>

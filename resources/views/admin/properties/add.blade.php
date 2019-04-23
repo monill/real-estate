@@ -33,14 +33,16 @@
             <div class="white-box">
                 <form class="pro-add-form">
                     <div class="form-group">
-                        <label for="pname">Property Name</label>
-                        <input type="text" class="form-control" id="pname" placeholder="Enter Name"> </div>
+                        {!! Form::label('name', 'Nome: *') !!}
+                        {!! Form::text('name', null, ['class' => 'form-control']) !!}
+                    </div>
                     <div class="form-group">
-                        <label for="plocation">Property Location</label>
-                        <input type="email" class="form-control" id="plocation" placeholder="Enter Location"> </div>
+                        {!! Form::label('address', 'Endereço: *') !!}
+                        {!! Form::text('address', null, ['class' => 'form-control']) !!}
+                    </div>
                     <div class="form-group">
-                        <label for="pdesc">Property Description</label>
-                        <textarea class="form-control" rows="5" id="pdesc" placeholder="Enter Description"></textarea>
+                        {!! Form::label('description', 'Descrição: *') !!}
+                        {!! Form::textarea('description', null, ['class' => 'form-control', 'rows' => 6]) !!}
                     </div>
                     <div class="form-group">
                         <label class="m-b-10">Property For</label>
@@ -56,7 +58,8 @@
                     </div>
                     <div class="form-group">
                         <label for="plocation">Price / Rent</label>
-                        <input type="email" class="form-control" id="plocation" placeholder="Enter Number"> </div>
+                        <input type="email" class="form-control" id="plocation" placeholder="Enter Number">
+                    </div>
                     <div class="form-group">
                         <label for="paddress">Property Address</label>
                         <textarea class="form-control" rows="3" id="paddress"></textarea>
@@ -64,35 +67,23 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-4">
-                                <label for="tch1">Bedrooms</label>
+                                {!! Form::label('bathrooms', 'Banheiros:') !!}
                                 <input id="tch1" type="text" value="" name="tch1" data-bts-button-down-class="btn btn-default btn-outline" data-bts-button-up-class="btn btn-default btn-outline">
                             </div>
                             <div class="col-sm-4">
-                                <label for="tch2">Garages</label>
-                                <input id="tch2" type="text" value="" name="tch2" data-bts-button-down-class="btn btn-default btn-outline" data-bts-button-up-class="btn btn-default btn-outline"> </div>
-                            <div class="col-sm-4">
-                                <label for="tch3">Bathrooms</label>
-                                <input id="tch3" type="text" value="" name="tch3" data-bts-button-down-class="btn btn-default btn-outline" data-bts-button-up-class="btn btn-default btn-outline"> </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <label for="tch4">Full Bath</label>
-                                <input id="tch4" type="text" value="" name="tch4" data-bts-button-down-class="btn btn-default btn-outline" data-bts-button-up-class="btn btn-default btn-outline">
+                                {!! Form::label('bedrooms', 'Quartos:') !!}
+                                <input id="tch2" type="text" value="" name="tch2" data-bts-button-down-class="btn btn-default btn-outline" data-bts-button-up-class="btn btn-default btn-outline">
                             </div>
                             <div class="col-sm-4">
-                                <label for="tch5">Half Bath</label>
-                                <input id="tch5" type="text" value="" name="tch5" data-bts-button-down-class="btn btn-default btn-outline" data-bts-button-up-class="btn btn-default btn-outline"> </div>
-                            <div class="col-sm-4">
-                                <label for="psqft">Square Ft</label>
-                                <input type="text" class="form-control" id="psqft"> </div>
+                                {!! Form::label('garage', 'Garagens:') !!}
+                                <input id="tch3" type="text" value="" name="tch3" data-bts-button-down-class="btn btn-default btn-outline" data-bts-button-up-class="btn btn-default btn-outline">
+                            </div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-4">
-                                <label for="pyear">Year Built</label>
+                                {!! Form::label('year', 'Ano:') !!}
                                 <select class="selectpicker" data-style="form-control" id="pyear">
                                     <option value="0" disabled selected>Year</option>
                                     <option value="1">2015</option>
@@ -146,50 +137,18 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Amenities</label>
+                        <label>Características</label>
                         <div class="row">
+                            @foreach($features as $feature)
                             <div class="col-sm-4">
+
                                 <div class="checkbox checkbox-info checkbox-circle">
-                                    <input id="checkbox1" type="checkbox" checked>
-                                    <label for="checkbox1"> Private Space </label>
+                                    <input id="checkbox1" type="checkbox">
+                                    <label for="checkbox1"> {{ $feature->name }} </label>
                                 </div>
-                                <div class="checkbox checkbox-info checkbox-circle">
-                                    <input id="checkbox2" type="checkbox" checked>
-                                    <label for="checkbox2"> Wifi </label>
-                                </div>
-                                <div class="checkbox checkbox-info checkbox-circle">
-                                    <input id="checkbox3" type="checkbox">
-                                    <label for="checkbox3"> Basketball Court </label>
-                                </div>
+
                             </div>
-                            <div class="col-sm-4">
-                                <div class="checkbox checkbox-info checkbox-circle">
-                                    <input id="checkbox4" type="checkbox">
-                                    <label for="checkbox4"> Fireplace </label>
-                                </div>
-                                <div class="checkbox checkbox-info checkbox-circle">
-                                    <input id="checkbox5" type="checkbox" checked>
-                                    <label for="checkbox5"> Doorman </label>
-                                </div>
-                                <div class="checkbox checkbox-info checkbox-circle">
-                                    <input id="checkbox6" type="checkbox">
-                                    <label for="checkbox6"> Swimming Pool </label>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="checkbox checkbox-info checkbox-circle">
-                                    <input id="checkbox7" type="checkbox">
-                                    <label for="checkbox7"> Gym </label>
-                                </div>
-                                <div class="checkbox checkbox-info checkbox-circle">
-                                    <input id="checkbox8" type="checkbox">
-                                    <label for="checkbox8"> Parking </label>
-                                </div>
-                                <div class="checkbox checkbox-info checkbox-circle">
-                                    <input id="checkbox9" type="checkbox" checked>
-                                    <label for="checkbox9"> laundry </label>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                     <h3 class="box-title">Dimensions</h3>

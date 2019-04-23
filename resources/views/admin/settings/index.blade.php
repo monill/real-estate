@@ -37,15 +37,12 @@
                     <div class="sttabs tabs-style-bar">
                         <nav>
                             <ul class="nav customtab2 nav-tabs" role="tablist">
-                                <li class="tab-current"><a href="#geral" class="sticon ti-home"><span>Geral</span></a>
-                                </li>
+                                <li class="tab-current"><a href="#geral" class="sticon ti-home"><span>Geral</span></a></li>
                                 <li><a href="#social" class="sticon ti-share"><span>Social</span></a></li>
                                 <li><a href="#analytics" class="sticon ti-stats-up"><span>Analytics</span></a></li>
                                 <li><a href="#empresa" class="sticon ti-archive"><span>Empresa</span></a></li>
                                 <li><a href="#gmaps" class="sticon ti-map"><span>Google Maps</span></a></li>
-                                <li><a href="#terms-privacy"
-                                       class="sticon ti-ruler"><span>Termos e Privacidade</span></a>
-                                </li>
+                                <li><a href="#terms-privacy" class="sticon ti-ruler"><span>Termos e Privacidade</span></a></li>
                             </ul>
                         </nav>
                         <section class="content-wrap">
@@ -56,14 +53,6 @@
                                         <div class="form-material">
                                             {!! Form::label('site_title', 'Site Título:') !!}
                                             {!! Form::text('site_title', $setting->site_title, ['class' => 'form-control']) !!}
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <div class="col-sm-9">
-                                        <div class="form-material">
-                                            {!! Form::label('meta_title', 'Meta Título:') !!}
-                                            {!! Form::textarea('meta_title', $setting->meta_title, ['class' => 'form-control', 'rows' => '3']) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -253,11 +242,8 @@
     <script>
         function initMap() {
             let uluru = {
-                @if($setting->latitude != null) lat: {{ $setting->latitude }},
-                @else lat: -23.082125,
-                @endif
-                        @if($setting->longitude != null) lng: {{ $setting->longitude }},
-                @else lng: -46.950334, @endif
+                @if($setting->latitude != null) lat: {{ $setting->latitude }}, @else lat: -23.082125, @endif
+                @if($setting->longitude != null) lng: {{ $setting->longitude }}, @else lng: -46.950334, @endif
             };
             let map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 14,
@@ -274,7 +260,6 @@
             });
         }
     </script>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI6yreMxqsm-wuLrBIdNvawJcbkyAOnj8&callback=initMap"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI6yreMxqsm-wuLrBIdNvawJcbkyAOnj8&callback=initMap"></script>
 
 @endsection

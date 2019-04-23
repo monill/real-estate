@@ -2,7 +2,7 @@
 
 @section('css')
     <!-- Dropify -->
-    <link rel="stylesheet" href="{{ asset('admin/vendor/dropify/dist/css/dropify.min.css') }}">
+    <link href="{{ asset('admin/vendor/dropify/dist/css/dropify.min.css') }}" rel="stylesheet" />
 @endsection
 
 @section('content')
@@ -56,6 +56,15 @@
                             {!! Form::textarea('about', null, ['class' => 'form-control', 'rows' => 5, 'maxlength' => 1500]) !!}
                         </div>
                     </div>
+                @if(auth()->user()->isAdmin())
+                    <div class="form-check">
+                        <label class="custom-control custom-checkbox">
+                            <input type="checkbox" name="admin" value="true" class="custom-control-input">
+                            <span class="custom-control-indicator"></span>
+                            <span class="custom-control-description"> Admin ?</span>
+                        </label>
+                    </div>
+                @endif
                     <div class="form-group">
                         {!! Form::label('avatar', 'Foto:', ['class' => 'col-md-12']) !!}
                         <div class="col-md-12">
@@ -63,7 +72,7 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Adicionar</button>
-                    <button type="submit" class="btn btn-inverse waves-effect waves-light">Cancelar</button>
+                    <button type="button" class="btn btn-inverse waves-effect waves-light">Cancelar</button>
                 {!! Form::close() !!}
             </div>
         </div>
@@ -73,7 +82,7 @@
 @endsection
 
 @section('scripts')
-    <!-- jQuery file upload -->
+    <!-- file upload -->
     <script src="{{ asset('admin/vendor/dropify/dist/js/dropify.min.js') }}"></script>
     <script>
         $(document).ready(function() {

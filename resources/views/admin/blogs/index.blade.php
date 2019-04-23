@@ -45,13 +45,15 @@
                         @forelse($blogs as $blog)
                             <tr>
                                 <td>{{ $blog->id }}</td>
-                                <td> <img src="{{ $blog->image }}" alt="Blog" width="80"> </td>
+                                <td> <img src="{{ asset('uploads/blogs/' . $blog->id . '/' . $blog->image) }}" alt="Blog" width="80"> </td>
                                 <td>{{ $blog->title }}</td>
                                 <td>{{ $blog->views }}</td>
                                 <td>{{ $blog->comments()->count() }}</td>
                                 <td>
-                                    <a href="javascript:void(0)" class="text-inverse p-r-10" data-toggle="tooltip" title="Editar"><i class="ti-marker-alt"></i></a>
-                                    <a href="javascript:void(0)" class="text-inverse" title="Deletar" data-toggle="tooltip"><i class="ti-trash"></i></a>
+                                    <a href="{{ url('blogs/' . $blog->id . '/edit') }}" class="text-inverse p-r-10" data-toggle="tooltip" title="Editar"><i class="ti-marker-alt"></i></a>
+                                    <a href="javascript:;" onclick="document.getElementById('blog-del-{{ $blog->id }}').submit();" class="text-inverse" title="Deletar" data-toggle="tooltip"><i class="ti-trash text-danger"></i></a>
+                                    {!! Form::open(['url' => 'blogs/' . $blog->id, 'method' => 'DELETE', 'id' => 'blog-del-' . $blog->id , 'style' => 'display: none']) !!}
+                                    {!! Form::close() !!}
                                 </td>
                             </tr>
                         @empty
