@@ -23,7 +23,14 @@ class PropertiesController extends Controller
 
     public function create()
     {
-        $features = Feature::all()->pluck('name', 'id');
+        if (Feature::count() <= 0) {
+            return redirect()->to('features')->withErrors(['Erro! Nenhuma Característica cadastrada, cadastre ao menos uma e tente novamente.']);
+        }
+        if (Category::count() <= 0) {
+            return redirect()->to('categories')->withErrors(['Erro! Nenhuma Categoria cadastrada, cadastre ao menos uma e tente novamente.']);
+        }
+
+        $features = Feature::all();//->pluck('name', 'id');
         $categories = Category::all()->pluck('name', 'id');
         return view('admin.properties.add', compact('features', 'categories'));
     }

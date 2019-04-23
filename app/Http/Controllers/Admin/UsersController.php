@@ -6,7 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class UsersController extends Controller
 {
@@ -28,16 +28,30 @@ class UsersController extends Controller
 
     public function store(Request $request)
     {
-        $user = new User();
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->password = bcrypt($request->input('senha'));
-        $user->avatar = $request->input('avatar');
-        $user->job = $request->input('job');
-        $user->about = $request->input('about');
-        $user->save();
+        if ($request->has('image') && $request->file('image')->isValid())
+        {
+            $user = new User();
+            $user->name = $request->input('name');
+            $user->email = $request->input('email');
+            $user->password = bcrypt($request->input('senha'));
 
-        return redirect()->to('users');
+            //Image
+            $img = $request->file('avatar');
+            $filename = md5Gen();
+            //End Image
+
+            $user->avatar = $filename . '.' . $img->getClientOriginalExtension();;
+            $user->job = $request->input('job');
+            $user->about = $request->input('about');
+            $user->admin = $request->input('admin') ? true : false;
+            $user->save();
+
+            $this->uploadImage($user->id, $filename, $img);
+
+            return redirect()->to('users');
+        } else {
+            return redirect()->to('users')->withErrors(['Erro no arquivo de imagem, check o arquivo e tente novamente.']);
+        }
     }
 
     public function show($id)
@@ -53,20 +67,34 @@ class UsersController extends Controller
 
     public function update(Request $request, $id)
     {
-        $avatar = $request->file('avatar');
-        $extension = $avatar->getClientOriginalExtension();
-        $randonName = md5($avatar . time());
-
-        Storage::disk('public')->put($avatar->getFilename().'.'.$extension,  File::get($avatar));
-
         $user = User::findOrFail($id);
         $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->password = bcrypt($request->input('senha'));
-        $user->avatar = $randonName.'.'.$extension();
+
+        if (auth()->user()->isAdmin()) {
+            if ($request->input('senha') != null) {
+                $user->password = bcrypt($request->input('senha'));
+            }
+        }
+
+        //Image
+        $img = $request->file('avatar');
+        if ($img != null) {
+            $this->removeImage($id, $user->avatar);
+            $filename = md5Gen() . '.' . $img->getClientOriginalExtension();
+        } else {
+            $filename = $user->avatar;
+        }
+        //End Image
+
+        $user->avatar = $filename;
         $user->job = $request->input('job');
         $user->about = $request->input('about');
+        $user->admin = $request->input('admin') ? true : false;
         $user->update();
+
+        if ($img != null) {
+            $this->uploadImage($id, $filename, $img);
+        }
 
         return redirect()->to('users');
     }
@@ -74,15 +102,37 @@ class UsersController extends Controller
     public function destroy($id)
     {
         User::findOrFail($id)->delete();
+        $this->removeDirectory($id);
         return redirect()->to('users');
     }
 
-    protected function imageUpload($userId, $file)
+    private function uploadImage($id, $filename, $img)
     {
-//        $local = public_path('uploads/users/' . $userId . '/');
-//        $arq = $ . str_random(10);
-//        $image = Image::make($img);
-//        $image->resize(600, 600)->save($local . $arq . '.' . $img->getClientOriginalExtension());
-//        $user->img_icone = $arq . '.' . $img->getClientOriginalExtension();
+        $this->pathExist($id);
+
+        $local = public_path('uploads/users/' . $id . '/');
+
+        $image = Image::make($img);
+
+        $image->save($local . $filename);
+    }
+
+    private function removeImage($id, $image)
+    {
+        return File::delete(public_path('uploads/users/' . $id . '/' . $image));
+    }
+
+    private function removeDirectory($id)
+    {
+        return File::delete(public_path('uploads/users/' . $id));
+    }
+
+    private function pathExist($id)
+    {
+        $path = public_path('uploads/users/' . $id . '/');
+
+        if (!file_exists($path) && !is_dir($path)) {
+            mkdir($path, 0777, true);
+        }
     }
 }

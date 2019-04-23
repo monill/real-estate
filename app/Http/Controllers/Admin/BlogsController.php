@@ -6,9 +6,9 @@ use App\Models\Blog;
 use App\Models\BlogTag;
 use App\Models\Tag;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Storage;
+use App\Http\Controllers\Controller;
+use Intervention\Image\ImageManagerStatic as Image;
 
 class BlogsController extends Controller
 {
@@ -25,28 +25,28 @@ class BlogsController extends Controller
 
     public function create()
     {
-        if (Tag::count() <= 0 ) {
+        if (Tag::count() <= 0) {
             return redirect()->to('blogs')->withErrors(['Erro! Nenhuma tag cadastrada, cadastre ao menos uma e tente novamente.']);
-        } else {
-            $tags = Tag::all()->pluck('name', 'id');
-            return view('admin.blogs.add', compact('tags'));
         }
+
+        $tags = Tag::all()->pluck('name', 'id');
+        return view('admin.blogs.add', compact('tags'));
     }
 
     public function store(Request $request)
     {
-        if ($request->has('image') && $request->file('image')->isValid()) {
-
-            $image = $request->file('image');
-            $extension = $image->getClientOriginalExtension();
-            $randonName = md5($image . time());
-
-            Storage::disk('public')->put($image->getFilename().'.'.$extension,  File::get($image));
-
+        if ($request->has('image') && $request->file('image')->isValid())
+        {
             $blog = new Blog();
             $blog->user_id = auth()->user()->id;
             $blog->title = $request->input('title');
-            $blog->image = $image->getFilename().'.'.$extension;
+
+            //Image
+            $img = $request->file('image');
+            $filename = md5Gen();
+            //End Image
+
+            $blog->image = $filename . '.' . $img->getClientOriginalExtension();
             $blog->content = $request->input('content');
 
             $blog->meta_title = $request->input('title');
@@ -57,6 +57,8 @@ class BlogsController extends Controller
             foreach ($request->input('tags') as $key => $tag) {
                 BlogTag::create(['blog_id' => $blog->id, 'tag_id' => $tag]);
             }
+
+            $this->uploadImage($blog->id, $filename, $img);
 
             return redirect()->to('blogs');
         } else {
@@ -81,7 +83,18 @@ class BlogsController extends Controller
         $blog = Blog::findOrFail($id);
         $blog->user_id = auth()->user()->id;
         $blog->title = $request->input('title');
-        $blog->image = $request->input('');
+
+        //Image
+        $img = $request->file('image');
+        if ($img != null) {
+            $this->removeImage($id, $blog->image);
+            $filename = md5Gen() . '.' . $img->getClientOriginalExtension();
+        } else {
+            $filename = $blog->image;
+        }
+        //End Image
+
+        $blog->image = $filename;
         $blog->content = $request->input('content');
 
         $blog->meta_title = $request->input('title');
@@ -90,12 +103,17 @@ class BlogsController extends Controller
 
         $blog->update();
 
+        if ($img != null) {
+            $this->uploadImage($id, $filename, $img);
+        }
+
         return redirect()->to('blogs');
     }
 
     public function destroy($id)
     {
         Blog::findOrFail($id)->delete();
+        $this->removeDirectory($id);
         return redirect()->to('blogs');
     }
 
@@ -106,5 +124,35 @@ class BlogsController extends Controller
         $blog->update();
 
         return redirect()->to('blogs');
+    }
+
+    private function uploadImage($id, $filename, $img)
+    {
+        $this->pathExist($id);
+
+        $local = public_path('uploads/blogs/' . $id . '/');
+
+        $image = Image::make($img);
+
+        $image->save($local . $filename);
+    }
+
+    private function removeImage($id, $image)
+    {
+        return File::delete(public_path('uploads/blogs/' . $id . '/' . $image));
+    }
+
+    private function removeDirectory($id)
+    {
+        return File::delete(public_path('uploads/blogs/' . $id));
+    }
+
+    private function pathExist($id)
+    {
+        $path = public_path('uploads/blogs/' . $id . '/');
+
+        if (!file_exists($path) && !is_dir($path)) {
+            mkdir($path, 0777, true);
+        }
     }
 }
