@@ -39,10 +39,11 @@ Route::namespace('Admin')->group(function () {
     Route::get('dashboard', 'IndexController@index');
     //Blog
     Route::resource('blogs', 'BlogsController');
+    Route::put('blog-publish/{id}', 'BlogsController@publishOnOff');
     //Blog Comentarios
-    Route::get('comments', 'BlogCommentsController@index');
-    Route::put('comments/{id}', 'BlogCommentsController@approveDisapprove');
-    Route::delete('comments/{id}', 'BlogCommentsController@destroy');
+    Route::resource('comments', 'BlogCommentsController')->only(['index', 'update', 'destroy']);
+    //Route::put('comments/{id}', 'BlogCommentsController@approveDisapprove');
+    //Route::delete('comments/{id}', 'BlogCommentsController@destroy');
     //Categorias
     Route::resource('categories', 'CategoriesController')->except(['create', 'show', 'edit']);
     //Configurações
@@ -55,16 +56,15 @@ Route::namespace('Admin')->group(function () {
     //Messages
     Route::resource('messages', 'MessagesController')->only(['index', 'show', 'destroy']);
     //Newsletters
-    Route::get('newsletters', 'NewslettersController@index');
-    Route::delete('newsletters/{id}', 'NewslettersController@destroy');
+    Route::resource('newsletters', 'NewslettersController')->only(['index', 'destroy']);
     //Propriedades
     Route::resource('properties', 'PropertiesController');
     //Duvidas
-    Route::get('questions', 'QuestionsController@index');
+    Route::resource('questions', 'QuestionsController')->except(['create', 'show', 'edit']);
     //Tags
     Route::resource('tags', 'TagsController')->except(['create', 'show', 'edit']);
     //Corretores
-    Route::resource('users', 'UsersController');
+    Route::resource('users', 'UsersController')->except(['show']);;
     //Visitantes
     Route::get('visitors', 'VisitorsController@index');
 });

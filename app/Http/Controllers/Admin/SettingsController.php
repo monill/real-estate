@@ -19,9 +19,34 @@ class SettingsController extends Controller
         return view('admin.settings.index', compact('setting'));
     }
 
+    public function create()
+    {
+        //
+    }
+
+    public function store(Request $request)
+    {
+        //
+    }
+
+    public function show($id)
+    {
+        //
+    }
+
+    public function edit($id)
+    {
+        //
+    }
+
     public function update(Request $request)
     {
         Setting::findOrFail(1)->update($request->except('_token'));
         return redirect()->to('settings');
+    }
+
+    public function destroy($id)
+    {
+        //
     }
 }

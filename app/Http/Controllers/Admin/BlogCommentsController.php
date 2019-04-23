@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Comment;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 
 class BlogCommentsController extends Controller
 {
@@ -18,17 +19,38 @@ class BlogCommentsController extends Controller
         return view('admin.comments.index', compact('comments'));
     }
 
-    public function destroy($id)
+    public function create()
     {
-        Comment::findOrFail($id)->delete();
-        return redirect()->to('comments');
+        //
     }
 
-    public function approveDisapprove($id)
+    public function store(Request $request)
+    {
+        //
+    }
+
+    public function show($id)
+    {
+        //
+    }
+
+    public function edit($id)
+    {
+        //
+    }
+
+    public function update(Request $request, $id)
     {
         $comment = Comment::findOrFail($id);
         $comment->allowed = !$comment->allowed;
         $comment->update();
         return redirect()->to('comments');
     }
+
+    public function destroy($id)
+    {
+        Comment::findOrFail($id)->delete();
+        return redirect()->to('comments');
+    }
+
 }

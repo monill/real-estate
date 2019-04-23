@@ -50,6 +50,16 @@
                                 <td>{{ $blog->views }}</td>
                                 <td>{{ $blog->comments()->count() }}</td>
                                 <td>
+                                    <a href="javascript:;" onclick="document.getElementById('blog-upd-{{ $blog->id }}').submit();">
+                                        @if($blog->published)
+                                            <span class="label label-table label-success" data-toggle="tooltip" title="Publicar">Publicar</span>
+                                        @else
+                                            <span class="label label-table label-inverse" data-toggle="tooltip" title="Rascunho">Rascunho</span>
+                                        @endif
+                                    </a>
+                                    {!! Form::open(['url' => 'blog-publish/' . $blog->id, 'method' => 'PUT', 'id' => 'blog-upd-' . $blog->id, 'style' => 'display: none']) !!}
+                                    {!! Form::close() !!}
+
                                     <a href="{{ url('blogs/' . $blog->id . '/edit') }}" class="text-inverse p-r-10" data-toggle="tooltip" title="Editar"><i class="ti-marker-alt"></i></a>
                                     <a href="javascript:;" onclick="document.getElementById('blog-del-{{ $blog->id }}').submit();" class="text-inverse" title="Deletar" data-toggle="tooltip"><i class="ti-trash text-danger"></i></a>
                                     {!! Form::open(['url' => 'blogs/' . $blog->id, 'method' => 'DELETE', 'id' => 'blog-del-' . $blog->id , 'style' => 'display: none']) !!}
