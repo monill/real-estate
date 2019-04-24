@@ -22,7 +22,7 @@ class CreatePropertiesTable extends Migration
             $table->string('slug');
 
             $table->tinyInteger('purpose'); // 1 - Rent, 2 - Sale
-            $table->tinyInteger('type'); // 1 - House, 2 - Apartamento, 3 - Terreno
+            $table->tinyInteger('type'); // 1 - House, 2 - Apartamento, 3 - Terreno, 4 - Flat
 
             $table->double('price');
             $table->string('address');

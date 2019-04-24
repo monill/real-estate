@@ -7,10 +7,12 @@
 
 Anhanguera - 1º Semestre 2019
 
-Trabalho solicitado pelo docente Vanderlei Ienne, da disciplina de Governança de Tecnologias da Informação, para fins de avaliação, no curso de Análise e Desenvolvimento de Sistemas.
+Trabalho solicitado pelo docente Vanderlei Ienne, da disciplina de Governança de Tecnologias da Informação, para fins de avaliação, do curso de Análise e Desenvolvimento de Sistemas.
 
-Usuário já cadastrado para teste e login:
-
+Usuários já cadastrado para teste e login:
+ - eduardo.silva@imob.com.br : q1q2q3
+ - guilherme.paula@imob.com.br : u1u2u3
+ - pedro.almeida@imob.com.br : g1g2g3
 
 ### Requisitos: *
 - Web server (Apache2 ou Nginx)
@@ -75,8 +77,9 @@ Fórum está atualmente estendido com os seguintes pacotes. Instruções sobre c
 | Laravel Collective | [https://laravelcollective.com/docs/master/html] |
 | Laravel Debugbar | [https://github.com/barryvdh/laravel-debugbar] |
 | Reliese Laravel | [https://github.com/reliese/laravel] |
+| Intervention Image | [https://github.com/Intervention/image] |
 
 Licença
 ----
 
-Desenvolvimento particular/proprietário, cópia ou modificação não autorizado.
+Desenvolvimento particular/proprietário, venda ou modificação não autorizado.
