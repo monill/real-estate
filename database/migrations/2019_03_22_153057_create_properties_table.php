@@ -33,7 +33,7 @@ class CreatePropertiesTable extends Migration
             $table->integer('views')->default(0);
 
             $table->string('city', 50);
-            $table->string('area');
+            $table->string('area', 50);
             $table->text('description');
 
             $table->float('latitude')->nullable();

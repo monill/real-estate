@@ -32,7 +32,7 @@
                 <h3 class="box-title m-b-20">Configurações</h3>
                 @include('errors.errors')
                 <!-- Nav tabs -->
-                {!! Form::open(['url' => 'settings', 'class' => 'form-horizontal']) !!}
+                {!! Form::model($setting, ['url' => 'settings/' . $setting->id, 'method' => 'PUT', 'files' => true, 'class' => 'form-horizontal']) !!}
                 <section>
                     <div class="sttabs tabs-style-bar">
                         <nav>
@@ -103,7 +103,7 @@
                                     <div class="col-sm-6">
                                         <div class="form-material">
                                             {!! Form::label('linkedin', 'LinkedIn:') !!}
-                                            {!! Form::text('linkedin', $setting->youtube, ['class' => 'form-control']) !!}
+                                            {!! Form::text('linkedin', $setting->linkedin, ['class' => 'form-control']) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -111,7 +111,7 @@
                                     <div class="col-sm-6">
                                         <div class="form-material">
                                             {!! Form::label('link', 'Link:') !!}
-                                            {!! Form::text('link', $setting->instagram, ['class' => 'form-control']) !!}
+                                            {!! Form::text('link', $setting->link, ['class' => 'form-control']) !!}
                                         </div>
                                     </div>
                                 </div>
@@ -173,9 +173,9 @@
                             </section>
                             <section id="gmaps">
                                 <div class="form-group">
-                                    Latitude
+                                    Latitude:
                                     {!! Form::text('latitude', null, ['autocomplete' => 'off', 'id' => 'latitude']) !!}
-                                    Longitude
+                                    Longitude:
                                     {!! Form::text('longitude', null, ['autocomplete' => 'off', 'id' => 'longitude']) !!}
                                 </div>
                                 <br>

@@ -139,4 +139,28 @@ class Property extends Eloquent
             return asset('site/assets/images/no-image-found.png');
         }
     }
+
+    public function getPurpose()
+    {
+        $purpose = $this->purpose;
+        if ($purpose == 1) {
+            return 'Locação';
+        } else {
+            return 'Venda';
+        }
+    }
+
+    public function getType()
+    {
+        $type = $this->type;
+        if ($type == 1) {
+            return 'Casa';
+        } elseif ($type == 2) {
+            return 'Apartamento';
+        } elseif ($type == 3) {
+            return 'Terreno';
+        } else {
+            return 'Flat';
+        }
+    }
 }

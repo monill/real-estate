@@ -16,13 +16,13 @@ class SettingsTableSeeder extends Seeder
             'site_title' => 'Imobiliária',
             'logo' => asset('site/assets/images/logo.png'),
             //SEO
-            'meta_title' => '',
+            'meta_title' => 'Imobiliária',
             'meta_keywords' => 'venda, loca&ccedil;&atilde;o, aluguel garantido, apartamento, casa, terreno, imovel comercial, imoveis rurais, areas, apto, lancamento de imoveis, imobiliaria online, imoveis online, sobrado, administracao de bens, adm de imoveis, compra de imovel, financiamento de imovel',
-            'meta_description' => '',
+            'meta_description' => null,
             //Analytics
             'analytics' => null,
             //Empresa
-            'about' => '',
+            'about' => null,
             'address' => 'Rua Armando Steck, 000, Centro',
             'email' => 'imobiliaria@imob.com.br',
             'phone1' => '1234-5678',
@@ -34,11 +34,11 @@ class SettingsTableSeeder extends Seeder
             'linkedin' => 'www.linkedin.com',
             'link' => null,
             //Google Maps
-            'latitude' => -23.08228291,
-            'longitude' => -46.951793121,
+            'latitude' => -23.08396277,
+            'longitude' => -46.94924361,
             //Termos e Privacidade
-            'terms' => '',
-            'privacy' => '',
+            'terms' => null,
+            'privacy' => null,
         ]);
     }
 }

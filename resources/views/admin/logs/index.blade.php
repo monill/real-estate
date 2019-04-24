@@ -27,12 +27,12 @@
                 <div class="table-responsive">
                     <table id="myTable" class="table table-striped">
                         <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Usuário</th>
-                                <th>Ação</th>
-                                <th>Quando</th>
-                            </tr>
+                        <tr>
+                            <th>#</th>
+                            <th>Usuário</th>
+                            <th>Ação</th>
+                            <th>Quando</th>
+                        </tr>
                         </thead>
                         <tbody>
                         @foreach ($logs as $log)
@@ -56,7 +56,7 @@
 @section('scripts')
     <script src="{{ asset('admin/vendor/datatables/jquery.dataTables.min.js') }}"></script>
     <script>
-        $(document).ready( function () {
+        $(document).ready(function () {
             $('#myTable').DataTable({
                 "displayLength": 50,
                 "searching": true,
