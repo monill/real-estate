@@ -23,4 +23,18 @@ class PropertyImage extends Eloquent
 	{
 		return $this->belongsTo(\App\Models\Property::class);
 	}
+
+    public function getImages(int $id)
+    {
+        return asset('uploads/properties/' . $id . '/' . $this->filename);
+	}
+
+    public function getFeature(string $size = '')
+    {
+        if ($this->feature) {
+            return '<i class="fa fa-star ' .$size . ' text-warning"></i>';
+        } else {
+            return '<i class="fa fa-star-o ' .$size . '"></i>';
+        }
+	}
 }

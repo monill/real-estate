@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Question;
 use Illuminate\Http\Request;
 
 class QuestionsController extends Controller
@@ -14,7 +15,9 @@ class QuestionsController extends Controller
 
     public function index()
     {
-        return view('admin.questions.index');
+        $questions = Question::paginate(25);
+        $unread = Question::where('unread', '=', false)->count();
+        return view('admin.questions.index', compact('questions', 'unread'));
     }
 
     public function create()
@@ -29,7 +32,12 @@ class QuestionsController extends Controller
 
     public function show($id)
     {
-        //
+        $question = Question::findOrFail($id);
+        $question->unread = true;
+        $question->update();
+
+        $unread = Question::where('unread', '=', false)->count();
+        return view('admin.questions.question', compact('question', 'unread'));
     }
 
     public function edit($id)
@@ -44,6 +52,7 @@ class QuestionsController extends Controller
 
     public function destroy($id)
     {
-        //
+        Question::findOrFail($id)->delete();
+        return redirect()->to('questions');
     }
 }

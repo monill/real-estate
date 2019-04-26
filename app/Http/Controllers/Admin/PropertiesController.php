@@ -8,6 +8,7 @@ use App\Models\Property;
 use App\Models\PropertyImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class PropertiesController extends Controller
 {
@@ -118,15 +119,19 @@ class PropertiesController extends Controller
         $city = $request->get('city');
         $slider = $request->get('slider');
         $type = $request->get('type');
+
+//        $properties = Property::
+        return view('admin.properties.index', compact('properties'));
     }
 
     public function images($id)
     {
         $property = Property::findOrFail($id);
-        return view('admin.properties.images', compact('property'));
+        $images = PropertyImage::where('property_id', '=', $id)->get();
+        return view('admin.properties.images', compact('property', 'images'));
     }
 
-    public function addImages(Request $request)
+    public function uploadImage(Request $request)
     {
         $photos = $request->file('file');
         $property_id = $request->input('pp_id');
@@ -152,33 +157,44 @@ class PropertiesController extends Controller
             $upload->save();
         }
 
-        return response()->json(['message' => 'Image saved Successfully'], 200);
+        return response()->json(['message' => 'Imagem salva com sucesso'], 200);
+//        return redirect()->route('images', $property_id);
     }
 
-    public function deleteImages($id)
+    public function deleteImage($id)
     {
-        $filename = $request->id;
-        $uploaded_image = PropertyImage::where('original_name', basename($filename))->first();
+        $uploaded_image = PropertyImage::where('id', '=', $id)->first();
 
         if (empty($uploaded_image)) {
-            return response()->json(['message' => 'Sorry file does not exist'], 400);
+            return response()->json(['message' => 'Desculpe, arquivo inexistente'], 400);
         }
 
-        $file_path = $this->photos_path . '/' . $uploaded_image->filename;
-        $resized_file = $this->photos_path . '/' . $uploaded_image->resized_name;
+        $file_path = $this->photos_path . $id . '/' . $uploaded_image->filename;
 
         if (file_exists($file_path)) {
             unlink($file_path);
-        }
-
-        if (file_exists($resized_file)) {
-            unlink($resized_file);
         }
 
         if (!empty($uploaded_image)) {
             $uploaded_image->delete();
         }
 
-        return response()->json(['message' => 'File successfully delete'], 200);
+        return redirect()->route('images', $uploaded_image->property_id);
+    }
+
+    public function mainImage(Request $request, $photo_id)
+    {
+        $property_id = $request->input('pp_id');
+
+        $images = PropertyImage::where('property_id', '=', $property_id)->get();
+
+        foreach ($images as $image) {
+            $image->feature = false;
+            $image->update();
+        }
+
+        DB::table('property_images')->where('id', '=', $photo_id)->update(['feature' => true]);
+
+        return redirect()->route('images', $property_id);
     }
 }
