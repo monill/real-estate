@@ -30,6 +30,9 @@
                     </div>
                     <div class="col-lg-10 col-md-9 col-sm-8 col-xs-12 mail_listing">
                         <div class="media m-b-30 p-t-20">
+                            <a href="javascript:;" onclick="document.getElementById('message-del-{{ $message->id }}').submit();" class="text-inverse" title="Deletar" data-toggle="tooltip"><i class="ti-trash text-danger"></i></a>
+                            {!! Form::open(['url' => 'messages/' . $message->id, 'method' => 'DELETE', 'id' => 'message-del-' . $message->id , 'style' => 'display: none']) !!}
+                            {!! Form::close() !!}
                             <h4 class="font-bold m-t-0">{{ $message->subject }}</h4>
                             <hr>
                             <div class="media-body">
@@ -45,6 +48,7 @@
                         <p><b>Telefone: </b> {{ $message->phone }}</p>
                         @endif
                     </div>
+                    <a href="{{ url('messages') }}" class="m-t-40 btn btn-inverse waves-effect waves-light">Voltar</a>
                 </div>
             </div>
         </div>

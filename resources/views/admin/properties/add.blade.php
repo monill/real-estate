@@ -150,7 +150,7 @@
                         <div id="map"></div>
                     </div>
                     <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Adicionar</button>
-                    <button type="button" class="btn btn-inverse waves-effect waves-light">Cancelar</button>
+                    <a href="{{ url('properties') }}" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
                 {!! Form::close() !!}
             </div>
         </div>

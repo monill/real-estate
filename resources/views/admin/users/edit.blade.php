@@ -72,7 +72,7 @@
                         </div>
                     </div>
                     <button type="submit" class="btn btn-success waves-effect waves-light m-r-10">Editar</button>
-                    <button type="button" class="btn btn-inverse waves-effect waves-light">Cancelar</button>
+                    <a href="{{ url('users') }}" class="btn btn-inverse waves-effect waves-light">Cancelar</a>
                 {!! Form::close() !!}
             </div>
         </div>
