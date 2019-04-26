@@ -57,11 +57,12 @@ Route::namespace('Admin')->group(function () {
     //Propriedades
     Route::resource('properties', 'PropertiesController');
     Route::post('search', 'PropertiesController@search');
-    Route::get('properties/{id}/images', 'PropertiesController@images');
-    Route::post('add-images', 'PropertiesController@addImages');
-    Route::post('delete-images', 'PropertiesController@deleteImages');
+    Route::get('properties/{id}/images', 'PropertiesController@images')->name('images');
+    Route::post('upload', 'PropertiesController@uploadImage');
+    Route::post('upload/delete/{id}', 'PropertiesController@deleteImage');
+    Route::put('main-image/{id}', 'PropertiesController@mainImage');
     //Duvidas
-    Route::resource('questions', 'QuestionsController')->except(['create', 'show', 'edit']);
+    Route::resource('questions', 'QuestionsController')->only(['index', 'show', 'destroy']);
     //Tags
     Route::resource('tags', 'TagsController')->except(['create', 'show', 'edit']);
     //Corretores
