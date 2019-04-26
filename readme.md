@@ -38,7 +38,7 @@ Usuários já cadastrado para teste e login:
 
 Usando [Laragon](https://laragon.org/download/ "Laragon"), já possúi todos os pacotes necessários, com Composer, MySQL ou MariaDB, PHP 7.2, entre outros.
 
-Windows ou Linux:
+Windows, MacOS ou Linux:
 
 Abra o Terminal na pasta do projeto e digite:
 ```sh

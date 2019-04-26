@@ -126,7 +126,7 @@
                         </a>
                         {!! Form::open(['url' => 'property-feature/' . $property->id, 'method' => 'PUT', 'id' => 'property-feature-' . $property->id, 'style' => 'display: none']) !!}
                         {!! Form::close() !!}
-
+                        <a href="{{ url('properties/' . $property->id . '/images') }}" class="text-inverse p-r-10" data-toggle="tooltip" title="Imagens"><i class="ti-image"></i></a>
                         <a href="{{ url('properties/' . $property->id . '/edit') }}" class="text-inverse p-r-10" data-toggle="tooltip" title="Editar"><i class="ti-marker-alt"></i></a>
                         <a href="javascript:;" onclick="document.getElementById('property-del-{{ $property->id }}').submit();" class="text-inverse" title="Deletar" data-toggle="tooltip"><i class="ti-trash text-danger"></i></a>
                         {!! Form::open(['url' => 'properties/' . $property->id, 'method' => 'DELETE', 'id' => 'property-del-' . $property->id , 'style' => 'display: none']) !!}

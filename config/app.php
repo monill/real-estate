@@ -170,6 +170,7 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
         Reliese\Coders\CodersServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -236,6 +237,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         'Toastr'  => Brian2694\Toastr\Facades\Toastr::class,
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

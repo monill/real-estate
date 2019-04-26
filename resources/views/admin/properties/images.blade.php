@@ -25,11 +25,12 @@
             <div class="white-box">
                 <h3 class="box-title m-b-0">Adicionar</h3>
                 <p class="text-muted m-b-30">Adicionar multiplas imagens</p>
-                <form action="#" class="dropzone">
+                {!! Form::open(['url' => 'add-images', 'files' => true, 'class' => 'dropzone']) !!}
+                {!! Form::hidden('pp_id', $property->id) !!}
                     <div class="fallback">
                         <input name="file" type="file" multiple />
                     </div>
-                </form>
+                {!! Form::close() !!}
             </div>
         </div>
     </div>
@@ -53,4 +54,5 @@
 @section('scripts')
     <!-- Dropzone Plugin JavaScript -->
     <script src="{{ asset('admin/vendor/dropzone/dist/dropzone.js') }}"></script>
+    <script src="{{ asset('admin/js/dropzone-config.js') }}"></script>
 @endsection

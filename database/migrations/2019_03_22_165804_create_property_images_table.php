@@ -16,7 +16,7 @@ class CreatePropertyImagesTable extends Migration
         Schema::create('property_images', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('property_id');
-            $table->string('image');
+            $table->string('filename');
             $table->boolean('feature')->default(false);
 
             $table->index('property_id');

@@ -57,8 +57,9 @@ Route::namespace('Admin')->group(function () {
     //Propriedades
     Route::resource('properties', 'PropertiesController');
     Route::post('search', 'PropertiesController@search');
-    Route::get('properties/{id}/images', 'PropertiesController@addImages')->name('images');
-    Route::post('properties/{id}/delimages', 'PropertiesController@deleteImages')->name('del-imgs');
+    Route::get('properties/{id}/images', 'PropertiesController@images');
+    Route::post('add-images', 'PropertiesController@addImages');
+    Route::post('delete-images', 'PropertiesController@deleteImages');
     //Duvidas
     Route::resource('questions', 'QuestionsController')->except(['create', 'show', 'edit']);
     //Tags

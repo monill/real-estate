@@ -15,7 +15,7 @@ class PropertyImage extends Eloquent
 
 	protected $fillable = [
 		'property_id',
-		'image',
+		'filename',
         'feature'
 	];
 

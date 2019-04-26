@@ -5,14 +5,18 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Category;
 use App\Models\Feature;
 use App\Models\Property;
+use App\Models\PropertyImage;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class PropertiesController extends Controller
 {
+    private $photos_path;
+
     public function __construct()
     {
         $this->middleware('auth');
+        $this->photos_path = public_path('/uploads/properties/');
     }
 
     public function index()
@@ -116,13 +120,65 @@ class PropertiesController extends Controller
         $type = $request->get('type');
     }
 
-    public function addImages($id)
+    public function images($id)
     {
-        return view('admin.properties.images');
+        $property = Property::findOrFail($id);
+        return view('admin.properties.images', compact('property'));
+    }
+
+    public function addImages(Request $request)
+    {
+        $photos = $request->file('file');
+        $property_id = $request->input('pp_id');
+
+        if (!is_array($photos)) {
+            $photos = [$photos];
+        }
+
+        if (!is_dir($this->photos_path . $property_id . '/')) {
+            mkdir($this->photos_path . $property_id . '/', 0777);
+        }
+
+        for ($i = 0; $i < count($photos); $i++) {
+            $photo = $photos[$i];
+            $name = md5Gen();
+            $save_name = $name . '.' . $photo->getClientOriginalExtension();
+
+            $photo->move($this->photos_path . $property_id . '/', $save_name);
+
+            $upload = new PropertyImage();
+            $upload->property_id = $property_id;
+            $upload->filename = $save_name;
+            $upload->save();
+        }
+
+        return response()->json(['message' => 'Image saved Successfully'], 200);
     }
 
     public function deleteImages($id)
     {
+        $filename = $request->id;
+        $uploaded_image = PropertyImage::where('original_name', basename($filename))->first();
 
+        if (empty($uploaded_image)) {
+            return response()->json(['message' => 'Sorry file does not exist'], 400);
+        }
+
+        $file_path = $this->photos_path . '/' . $uploaded_image->filename;
+        $resized_file = $this->photos_path . '/' . $uploaded_image->resized_name;
+
+        if (file_exists($file_path)) {
+            unlink($file_path);
+        }
+
+        if (file_exists($resized_file)) {
+            unlink($resized_file);
+        }
+
+        if (!empty($uploaded_image)) {
+            $uploaded_image->delete();
+        }
+
+        return response()->json(['message' => 'File successfully delete'], 200);
     }
 }

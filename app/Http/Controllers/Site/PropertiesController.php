@@ -36,4 +36,10 @@ class PropertiesController extends Controller
 
         return view('site.properties.property', compact('property'));
     }
+
+    public function pesquisar(Request $request)
+    {
+        dd($request->all());
+        exit();
+    }
 }

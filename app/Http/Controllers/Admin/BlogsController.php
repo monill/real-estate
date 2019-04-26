@@ -12,9 +12,12 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class BlogsController extends Controller
 {
+    private $photos_path;
+
     public function __construct()
     {
         $this->middleware('auth');
+        $this->photos_path = public_path('uploads/blogs/');
     }
 
     public function index()
@@ -26,7 +29,7 @@ class BlogsController extends Controller
     public function create()
     {
         if (Tag::count() <= 0) {
-            return redirect()->to('blogs')->withErrors(['Erro! Nenhuma tag cadastrada, cadastre ao menos uma e tente novamente.']);
+            return redirect()->to('tags')->withErrors(['Erro! Nenhuma tag cadastrada, cadastre ao menos uma e tente novamente.']);
         }
 
         $tags = Tag::all()->pluck('name', 'id');
@@ -130,7 +133,7 @@ class BlogsController extends Controller
     {
         $this->pathExist($id);
 
-        $local = public_path('uploads/blogs/' . $id . '/');
+        $local = $this->photos_path . $id . '/';
 
         $image = Image::make($img);
 
@@ -139,17 +142,17 @@ class BlogsController extends Controller
 
     private function removeImage($id, $image)
     {
-        return File::delete(public_path('uploads/blogs/' . $id . '/' . $image));
+        return File::delete($this->photos_path . $id . '/' . $image);
     }
 
     private function removeDirectory($id)
     {
-        return File::delete(public_path('uploads/blogs/' . $id));
+        return File::delete($this->photos_path . $id . '/' . $id);
     }
 
     private function pathExist($id)
     {
-        $path = public_path('uploads/blogs/' . $id . '/');
+        $path = $this->photos_path . $id . '/';
 
         if (!file_exists($path) && !is_dir($path)) {
             mkdir($path, 0777, true);
