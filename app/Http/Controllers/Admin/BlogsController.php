@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Blog;
-use App\Models\BlogTag;
+use App\Models\Log;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -13,11 +13,13 @@ use Intervention\Image\ImageManagerStatic as Image;
 class BlogsController extends Controller
 {
     private $photos_path;
+    protected $log;
 
     public function __construct()
     {
         $this->middleware('auth');
         $this->photos_path = public_path('uploads/blogs/');
+        $this->log = new Log();
     }
 
     public function index()
@@ -57,12 +59,11 @@ class BlogsController extends Controller
             $blog->meta_description = $request->input('meta_description');
             $blog->save();
 
-            foreach ($request->input('tags') as $key => $tag) {
-                BlogTag::create(['blog_id' => $blog->id, 'tag_id' => $tag]);
-            }
+            $blog->tags()->attach($request->input('tags'));
 
             $this->uploadImage($blog->id, $filename, $img);
 
+            $this->log->log('Usuario(a) cadastrou novo blog');
             return redirect()->to('blogs');
         } else {
             return redirect()->to('blogs')->withErrors(['Erro no arquivo de imagem, check o arquivo e tente novamente.']);
@@ -112,6 +113,7 @@ class BlogsController extends Controller
             $this->uploadImage($id, $filename, $img);
         }
 
+        $this->log->log('Usuario(a) atualizou blog');
         return redirect()->to('blogs');
     }
 
@@ -119,6 +121,7 @@ class BlogsController extends Controller
     {
         Blog::findOrFail($id)->delete();
         $this->removeDirectory($id);
+        $this->log->log('Usuario(a) deletou blog');
         return redirect()->to('blogs');
     }
 
@@ -128,6 +131,7 @@ class BlogsController extends Controller
         $blog->published = !$blog->published;
         $blog->update();
 
+        $this->log->log('Usuario(a) publicou ou colocou blog em modo rascunho');
         return redirect()->to('blogs');
     }
 

@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Log;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class SettingsController extends Controller
 {
+    protected $log;
+
     public function __construct()
     {
         $this->middleware('auth');
+        $this->log = new Log();
     }
 
     public function index()
@@ -63,6 +67,7 @@ class SettingsController extends Controller
         $setting->privacy = $request->input('privacy');
         $setting->update();
 
+        $this->log->log('Usuario(a) atualizou as configuracoes do site');
         return redirect()->to('settings');
     }
 

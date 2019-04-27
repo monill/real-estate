@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Category;
 use App\Models\Feature;
+use App\Models\Log;
 use App\Models\Property;
 use App\Models\PropertyImage;
 use Illuminate\Http\Request;
@@ -13,11 +14,13 @@ use Illuminate\Support\Facades\DB;
 class PropertiesController extends Controller
 {
     private $photos_path;
+    protected $log;
 
     public function __construct()
     {
         $this->middleware('auth');
         $this->photos_path = public_path('/uploads/properties/');
+        $this->log = new Log();
     }
 
     public function index()
@@ -64,6 +67,10 @@ class PropertiesController extends Controller
         $property->longitude = $request->input('longitude');
         $property->save();
 
+        $property->features()->attach($request->input('feature'));
+
+        $this->log->log('Usuario(a) cadastrou nova propriedade.');
+
         return redirect()->route('images', $property->id);
     }
 
@@ -77,7 +84,8 @@ class PropertiesController extends Controller
         $property = Property::findOrFail($id);
         $features = Feature::all();//->pluck('name', 'id');
         $categories = Category::all()->pluck('name', 'id');
-        return view('admin.properties.edit', compact('property', 'features', 'categories'));
+        $destaque = DB::table('property_features')->where('property_features.property_id', $id)->pluck('property_features.feature_id', 'property_features.feature_id')->all();
+        return view('admin.properties.edit', compact('property', 'features', 'categories', 'destaque'));
     }
 
     public function update(Request $request, $id)
@@ -104,12 +112,17 @@ class PropertiesController extends Controller
         $property->longitude = $request->input('longitude');
         $property->update();
 
+        $property->features()->sync($request->input('feature'));
+
+        $this->log->log('Usuario(a) atualizou uma propriedade.');
+
         return redirect()->to('properties');
     }
 
     public function destroy($id)
     {
         Property::findOrFail($id)->delete();
+        $this->log->log('Usuario(a) deletou uma propriedade.');
         return redirect()->to('properties');
     }
 
@@ -158,6 +171,7 @@ class PropertiesController extends Controller
             $upload->save();
         }
 
+        $this->log->log('Usuario(a) adicionou imagens a propriedade');
         return response()->json(['message' => 'Imagem salva com sucesso'], 200);
 //        return redirect()->route('images', $property_id);
     }
@@ -180,6 +194,7 @@ class PropertiesController extends Controller
             $uploaded_image->delete();
         }
 
+        $this->log->log('Usuario(a) deletou uma ou mais imagens');
         return redirect()->route('images', $uploaded_image->property_id);
     }
 
@@ -196,6 +211,7 @@ class PropertiesController extends Controller
 
         DB::table('property_images')->where('id', '=', $photo_id)->update(['feature' => true]);
 
+        $this->log->log('Usuario(a) definiu uma imagem principal');
         return redirect()->route('images', $property_id);
     }
 
@@ -204,6 +220,18 @@ class PropertiesController extends Controller
         $property = Property::findOrFail($id);
         $property->featured = !$property->featured;
         $property->update();
+
+        $this->log->log('Usuario(a) adicinou ou removeu propriedade em destaque');
+        return redirect()->to('properties');
+    }
+
+    public function slider($id)
+    {
+        $property = Property::findOrFail($id);
+        $property->slider = !$property->slider;
+        $property->update();
+
+        $this->log->log('Usuario(a) adicinou ou removeu propriedade da tela inicial');
         return redirect()->to('properties');
     }
 }

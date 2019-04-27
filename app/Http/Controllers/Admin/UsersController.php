@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Log;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -10,9 +11,12 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class UsersController extends Controller
 {
+    protected $log;
+
     public function __construct()
     {
         $this->middleware('auth');
+        $this->log = new Log();
     }
 
     public function index()
@@ -48,6 +52,7 @@ class UsersController extends Controller
 
             $this->uploadImage($user->id, $filename, $img);
 
+            $this->log->log('Usuario(a) adicionou nova conta de usuario');
             return redirect()->to('users');
         } else {
             return redirect()->to('users')->withErrors(['Erro no arquivo de imagem, check o arquivo e tente novamente.']);
@@ -96,6 +101,7 @@ class UsersController extends Controller
             $this->uploadImage($id, $filename, $img);
         }
 
+        $this->log->log('Usuario(a) atualizou sua conta ou de outro usuario');
         return redirect()->to('users');
     }
 
@@ -103,6 +109,7 @@ class UsersController extends Controller
     {
         User::findOrFail($id)->delete();
         $this->removeDirectory($id);
+        $this->log->log('Usuario(a) deletou uma conta');
         return redirect()->to('users');
     }
 

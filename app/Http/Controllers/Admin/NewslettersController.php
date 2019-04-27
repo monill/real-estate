@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Log;
 use App\Models\Newsletter;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class NewslettersController extends Controller
 {
+    protected $log;
+
     public function __construct()
     {
         $this->middleware('auth');
+        $this->log = new Log();
     }
 
     public function index()
@@ -47,6 +51,7 @@ class NewslettersController extends Controller
     public function destroy($id)
     {
         Newsletter::findOrFail($id)->delete();
+        $this->log->log('Usuario(a) deletou um e-mail do newsletter');
         return redirect()->to('newsletters');
     }
 }

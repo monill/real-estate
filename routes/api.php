@@ -20,7 +20,7 @@ use Illuminate\Http\Request;
 Route::namespace('Api')->group(function () {
     Route::get('os_usage', 'VisitorsController@os');
     Route::get('browser', 'VisitorsController@browser');
-    Route::get('countries', 'VisitorsController@countries');
+    Route::get('cities', 'VisitorsController@cities');
     Route::get('months', 'VisitorsController@months');
     Route::get('years', 'PropertiesController@years');
 });

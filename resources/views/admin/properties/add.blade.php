@@ -103,20 +103,16 @@
                         </div>
                     </div>
                     <hr>
-                    <div class="form-group">
-                        <label>Características:</label>
-                        <div class="row">
-                            @foreach($features as $feature)
+                    <h3 class="box-title">Características:</h3>
+                    <div class="form-group row">
+                        @foreach($features as $feature)
                             <div class="col-sm-4">
-
                                 <div class="checkbox checkbox-info checkbox-circle">
-                                    <input id="checkbox1" type="checkbox">
-                                    <label for="checkbox1"> {{ $feature->name }} </label>
+                                    <input type="checkbox" id="feature-{{ $feature->id }}" name="feature[]" value="{{ $feature->id }}">
+                                    <label for="feature-{{ $feature->id }}"> {{ $feature->name }} </label>
                                 </div>
-
                             </div>
-                            @endforeach
-                        </div>
+                        @endforeach
                     </div>
                     <hr>
                     <h3 class="box-title">Youtube Video</h3>

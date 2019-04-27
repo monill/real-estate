@@ -151,7 +151,7 @@
                         <img src="{{ $topThreeBlog->getMainImage() }}" alt="top-blog" style="width: 100px; height: 66px;">
                     </div>
                     <div class="pro-detail">
-                        <h5 class="m-t-0 m-b-5">{{ $topThreeBlog->name }}</h5>
+                        <h5 class="m-t-0 m-b-5">{{ $topThreeBlog->title }}</h5>
                         <p class="text-muted font-12">{{ $topThreeBlog->created_at->format('d-m-Y') }} | {{ $topThreeBlog->user->name }}</p>
                         <p class="text-muted font-12">Views: {{ $topThreeBlog->views }}</p>
                     </div>
@@ -169,7 +169,7 @@
                             <img src="{{ $lastThreeBlog->getMainImage() }}" alt="last-blog" style="width: 100px; height: 66px;">
                         </div>
                         <div class="pro-detail">
-                            <h5 class="m-t-0 m-b-5">{{ $lastThreeBlog->name }}</h5>
+                            <h5 class="m-t-0 m-b-5">{{ $lastThreeBlog->title }}</h5>
                             <p class="text-muted font-12">{{ $lastThreeBlog->created_at->format('d-m-Y') }} | {{ $lastThreeBlog->user->name }}</p>
                         </div>
                     </div>

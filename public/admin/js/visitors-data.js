@@ -23,14 +23,14 @@ $.getJSON('api/browser', function (browser) {
     });
 });
 
-$.getJSON('api/countries', function (countries) {
+$.getJSON('api/cities', function (cities) {
     Morris.Donut({
-        element: 'morris-countries',
-        data: countries,
+        element: 'morris-cities',
+        data: cities,
         resize: true,
         colors: ['#CCFF00', '#FFCC00', '#FF6699', '#CC3300', '#6600FF', '#6600CC', '#66CCCC', '#66FF66', '#00CCFF', '#333333', '#993366', '#663300'],
-        formatter: function (countries, data) {
-            return countries + '%';
+        formatter: function (cities, data) {
+            return cities + '%';
         }
     });
 });

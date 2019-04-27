@@ -62,6 +62,7 @@ Route::namespace('Admin')->group(function () {
     Route::post('upload/delete/{id}', 'PropertiesController@deleteImage');
     Route::put('main-image/{id}', 'PropertiesController@mainImage');
     Route::put('feature/{id}', 'PropertiesController@feature');
+    Route::put('slider/{id}', 'PropertiesController@slider');
     //Duvidas
     Route::resource('questions', 'QuestionsController')->only(['index', 'show', 'destroy']);
     //Tags
@@ -70,4 +71,6 @@ Route::namespace('Admin')->group(function () {
     Route::resource('users', 'UsersController')->except(['show']);
     //Visitantes
     Route::get('visitors', 'VisitorsController@index')->name('visitors');
+    //Limpar cache
+    Route::get('cleancache', 'IndexController@cleanCache')->name('cleancache');
 });

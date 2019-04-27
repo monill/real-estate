@@ -117,7 +117,16 @@
                 <hr class="m-0">
                 <div class="pro-agent-col-3">
                     <div class="agent-name m-l-10">
-                        <a href="javascript:;" class="text-inverse p-r-10"onclick="document.getElementById('property-feature-{{ $property->id }}').submit();">
+                        <a href="javascript:;" class="text-inverse p-r-10" onclick="document.getElementById('property-feature-{{ $property->id }}').submit();">
+                            @if($property->slider)
+                                <i class="fa fa-history" data-toggle="tooltip" title="Remover da tela inicial" data-title="Remover do inicial"></i>
+                            @else
+                                <i class="fa fa-desktop" data-toggle="tooltip" title="Colocar na tela inicial" data-title="Colocar na tela inicial"></i>
+                            @endif
+                        </a>
+                        {!! Form::open(['url' => 'slider/' . $property->id, 'method' => 'PUT', 'id' => 'property-feature-' . $property->id, 'style' => 'display: none']) !!}
+                        {!! Form::close() !!}
+                        <a href="javascript:;" class="text-inverse p-r-10" onclick="document.getElementById('property-feature-{{ $property->id }}').submit();">
                             @if($property->featured)
                                 <i class="fa fa-star text-warning" data-toggle="tooltip" title="Remover destaque" data-title="Remover destaque"></i>
                             @else
@@ -126,7 +135,7 @@
                         </a>
                         {!! Form::open(['url' => 'feature/' . $property->id, 'method' => 'PUT', 'id' => 'property-feature-' . $property->id, 'style' => 'display: none']) !!}
                         {!! Form::close() !!}
-                        <a href="{{ url('properties/' . $property->id . '/images') }}" class="text-inverse p-r-10" data-toggle="tooltip" title="Imagens"><i class="ti-image"></i></a>
+                        <a href="{{ url('properties/' . $property->id . '/images') }}" class="text-inverse p-r-10" data-toggle="tooltip" title="Imagens"><i class="fa fa-picture-o"></i></a>
                         <a href="{{ url('properties/' . $property->id . '/edit') }}" class="text-inverse p-r-10" data-toggle="tooltip" title="Editar"><i class="ti-marker-alt"></i></a>
                         <a href="javascript:;" onclick="document.getElementById('property-del-{{ $property->id }}').submit();" class="text-inverse" title="Deletar" data-toggle="tooltip"><i class="ti-trash text-danger"></i></a>
                         {!! Form::open(['url' => 'properties/' . $property->id, 'method' => 'DELETE', 'id' => 'property-del-' . $property->id , 'style' => 'display: none']) !!}

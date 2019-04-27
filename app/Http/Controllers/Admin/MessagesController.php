@@ -2,15 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Log;
 use App\Models\Message;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class MessagesController extends Controller
 {
+    protected $log;
+
     public function __construct()
     {
         $this->middleware('auth');
+        $this->log = new Log();
     }
 
     public function index()
@@ -53,6 +57,7 @@ class MessagesController extends Controller
     public function destroy($id)
     {
         Message::findOrFail($id)->delete();
+        $this->log->log('Usuario(a) deletou uma mensagem');
         return redirect()->to('messages');
     }
 }

@@ -93,5 +93,7 @@ class IndexController extends Controller
 
         //Clear Config cache
         Artisan::call('config:cache');
+
+        return redirect()->route('index');
     }
 }

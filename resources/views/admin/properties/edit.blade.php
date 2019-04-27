@@ -105,20 +105,16 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label>Características:</label>
-                        <div class="row">
-                            @foreach($features as $feature)
-                                <div class="col-sm-4">
-
-                                    <div class="checkbox checkbox-info checkbox-circle">
-                                        <input id="checkbox1" type="checkbox">
-                                        <label for="checkbox1"> {{ $feature->name }} </label>
-                                    </div>
-
+                    <h3 class="box-title">Características:</h3>
+                    <div class="form-group row">
+                        @foreach($features as $feature)
+                            <div class="col-sm-4">
+                                <div class="checkbox checkbox-info checkbox-circle">
+                                    <input type="checkbox" id="feature-{{ $feature->id }}" name="feature[]" value="{{ $feature->id }}" {{ in_array($feature->id, $destaque) ? 'checked' : '' }}>
+                                    <label for="feature-{{ $feature->id }}"> {{ $feature->name }} </label>
                                 </div>
-                            @endforeach
-                        </div>
+                            </div>
+                        @endforeach
                     </div>
                     <h3 class="box-title">Youtube Video</h3>
                     <hr>

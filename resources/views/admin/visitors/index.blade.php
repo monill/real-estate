@@ -37,8 +37,8 @@
 
         <div class="col-md-5 col-lg-4 col-sm-12 col-xs-12">
             <div class="white-box">
-                <h3 class="box-title">Países</h3>
-                <div id="morris-countries" class="ecomm-donute" style="height: 317px;"></div>
+                <h3 class="box-title">Cidades</h3>
+                <div id="morris-cities" class="ecomm-donute" style="height: 317px;"></div>
             </div>
         </div>
     </div>

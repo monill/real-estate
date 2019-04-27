@@ -4,14 +4,16 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Visitor;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
+use stdClass;
 
 class VisitorsController extends Controller
 {
     /**
      * Sistemas Operacionais Utilizados
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function os()
     {
@@ -21,7 +23,7 @@ class VisitorsController extends Controller
             $data = [];
             foreach ($os as $key => $item) {
                 $percent = (Visitor::where('system', '=', $item->system)->count() / $all) * 100;
-                $data[$key] = new \stdClass();
+                $data[$key] = new stdClass();
                 $data[$key]->label = $item->system;
                 $data[$key]->value = round($percent);
             }
@@ -34,7 +36,7 @@ class VisitorsController extends Controller
 
     /**
      * Navegadores Utilizados
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function browser()
     {
@@ -44,7 +46,7 @@ class VisitorsController extends Controller
             $data = [];
             foreach ($os as $key => $item) {
                 $percent = (Visitor::where('browser', '=', $item->browser)->count() / $all) * 100;
-                $data[$key] = new \stdClass();
+                $data[$key] = new stdClass();
                 $data[$key]->label = $item->browser;
                 $data[$key]->value = round($percent);
             }
@@ -57,30 +59,30 @@ class VisitorsController extends Controller
 
     /**
      * Paises Que Mais Acessam Ao Site
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
-    public function countries()
+    public function cities()
     {
         $all = Visitor::count();
-        if (!Cache::has('countries')) {
-            $os = DB::table('visitors')->select(DB::raw('count(*) as countries, country'))->groupBy('country')->get();
+        if (!Cache::has('cities')) {
+            $os = DB::table('visitors')->select(DB::raw('count(*) as cities, city'))->groupBy('city')->get();
             $data = [];
             foreach ($os as $key => $item) {
-                $percent = (Visitor::where('country', '=', $item->country)->count() / $all) * 100;
-                $data[$key] = new \stdClass();
-                $data[$key]->label = $item->country;
+                $percent = (Visitor::where('city', '=', $item->city)->count() / $all) * 100;
+                $data[$key] = new stdClass();
+                $data[$key]->label = $item->city;
                 $data[$key]->value = round($percent);
             }
-            Cache::put('countries', $data, 10);
+            Cache::put('cities', $data, 10);
         } else {
-            $data = Cache::get('countries');
+            $data = Cache::get('cities');
         }
         return response()->json($data, 200);
     }
 
     /**
      * Meses Mais Acessados
-     * @return \Illuminate\Http\JsonResponse
+     * @return JsonResponse
      */
     public function months()
     {
