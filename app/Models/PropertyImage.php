@@ -24,9 +24,9 @@ class PropertyImage extends Eloquent
 		return $this->belongsTo(\App\Models\Property::class);
 	}
 
-    public function getImages(int $id)
+    public function getImages()
     {
-        return asset('uploads/properties/' . $id . '/' . $this->filename);
+        return asset('uploads/properties/' . $this->id . '/' . $this->filename);
 	}
 
     public function getFeature(string $size = '')

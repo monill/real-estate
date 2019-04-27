@@ -89,7 +89,7 @@
         @foreach($properties as $property)
         <div class="col-sm-6 col-md-3 col-lg-3">
             <div class="white-box pro-box p-0">
-                <div class="pro-list-img" style="background: url('../plugins/images/property/prop5.jpg') center center / cover no-repeat;">
+                <div class="pro-list-img" style="background: url('{{ $property->getMainImage() }}') center center / cover no-repeat;">
                     @if($property->featured)
                         <span class="pro-label-img"><i class="fa fa-star"></i></span>
                     @endif

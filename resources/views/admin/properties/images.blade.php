@@ -59,7 +59,7 @@
                         <img src="{{ asset('uploads/properties/' . $image->property_id . '/' . $image->filename) }}" alt="Avatar" />
                         <div class="el-overlay scrl-dwn">
                             <ul class="el-info">
-                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="{{ asset('uploads/properties/' . $image->property_id . '/' . $image->filename) }}"><i class="icon-magnifier"></i></a></li>
+                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="{{ $image->getImages() }}"><i class="icon-magnifier"></i></a></li>
                                 <li>
                                     <a href="javascript:;" onclick="document.getElementById('main-img-{{ $image->id }}').submit();" class="btn default btn-outline">
                                         {!! $image->getFeature() !!}

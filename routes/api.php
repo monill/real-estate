@@ -22,4 +22,5 @@ Route::namespace('Api')->group(function () {
     Route::get('browser', 'VisitorsController@browser');
     Route::get('countries', 'VisitorsController@countries');
     Route::get('months', 'VisitorsController@months');
+    Route::get('years', 'PropertiesController@years');
 });

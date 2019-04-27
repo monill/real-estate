@@ -163,4 +163,10 @@ class Property extends Eloquent
             return 'Flat';
         }
     }
+
+    public function getMainImage()
+    {
+        $image = PropertyImage::where('property_id', '=', $this->id)->where('feature', '=', true)->first();
+        return asset('uploads/properties/' . $this->id . '/' . $image->filename);
+    }
 }

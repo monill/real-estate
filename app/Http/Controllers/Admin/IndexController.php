@@ -3,8 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
+use App\Models\Property;
+use App\Models\Visitor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -15,7 +19,32 @@ class IndexController extends Controller
 
     public function index()
     {
-        return view('admin.dashboard.index');
+        $totalProperties = Property::count();
+        $forRent = Property::where('purpose', '=', 1)->count();
+        $forSale = Property::where('purpose', '=', 2)->count();
+        $totalVisitors = Visitor::count();
+
+        $topFiveProperties = Property::orderBy('views')->take(5)->get();
+
+        $topThreeBlogs = Blog::orderBy('views')->take(3)->get();
+        $lastThreeBlogs = Blog::orderBy('id')->take(3)->get();
+
+
+        $totalForRent = DB::table('properties')->where('purpose', '=', 1)->avg('price');
+        $totalForSale = DB::table('properties')->where('purpose', '=', 2)->avg('price');
+
+        $compact = [
+            'totalProperties',
+            'forRent',
+            'forSale',
+            'totalVisitors',
+            'topFiveProperties',
+            'topThreeBlogs',
+            'lastThreeBlogs',
+            'totalForRent',
+            'totalForSale'
+        ];
+        return view('admin.dashboard.index', compact($compact));
     }
 
     public function create()
@@ -50,19 +79,19 @@ class IndexController extends Controller
 
     public function cleanCache()
     {
-        //Clear Cache facade value:
+        //Clear Cache facade value
         Artisan::call('cache:clear');
 
-        //Reoptimized class loader:
+        //Reoptimized class loader
         Artisan::call('optimize');
 
-        //Clear Route cache:
+        //Clear Route cache
         Artisan::call('route:cache');
 
-        //Clear View cache:
+        //Clear View cache
         Artisan::call('view:clear');
 
-        //Clear Config cache:
+        //Clear Config cache
         Artisan::call('config:cache');
     }
 }

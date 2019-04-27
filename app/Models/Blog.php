@@ -52,4 +52,9 @@ class Blog extends Eloquent
             ]
         ];
     }
+
+    public function getMainImage()
+    {
+        return asset('uploads/blogs/' . $this->id . '/' . $this->image);
+    }
 }
