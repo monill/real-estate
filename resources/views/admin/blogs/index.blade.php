@@ -50,18 +50,18 @@
                                 <td>{{ $blog->views }}</td>
                                 <td>{{ $blog->comments()->count() }}</td>
                                 <td>
-                                    <a href="javascript:;" onclick="document.getElementById('blog-upd-{{ $blog->id }}').submit();">
+                                    <a href="javascript:;" class="m-r-10" onclick="document.getElementById('blog-upd-{{ $blog->id }}').submit();">
                                         @if($blog->published)
-                                            <span class="label label-table label-success" data-toggle="tooltip" title="Publicar">Publicar</span>
+                                            <i class="fa fa-paperclip text-info" data-toggle="tooltip" title="Rascunho" data-title="Rascunho"></i>
                                         @else
-                                            <span class="label label-table label-inverse" data-toggle="tooltip" title="Rascunho">Rascunho</span>
+                                            <i class="fa fa-floppy-o text-success" data-toggle="tooltip" title="Publicar" data-title="Publicar"></i>
                                         @endif
                                     </a>
                                     {!! Form::open(['url' => 'blog-publish/' . $blog->id, 'method' => 'PUT', 'id' => 'blog-upd-' . $blog->id, 'style' => 'display: none']) !!}
                                     {!! Form::close() !!}
 
-                                    <a href="{{ url('blogs/' . $blog->id . '/edit') }}" class="text-inverse p-r-10" data-toggle="tooltip" title="Editar"><i class="ti-marker-alt"></i></a>
-                                    <a href="javascript:;" onclick="document.getElementById('blog-del-{{ $blog->id }}').submit();" class="text-inverse" title="Deletar" data-toggle="tooltip"><i class="ti-trash text-danger"></i></a>
+                                    <a href="{{ url('blogs/' . $blog->id . '/edit') }}" class="text-inverse m-r-10" data-toggle="tooltip" title="Editar" data-title="Editar"><i class="ti-marker-alt"></i></a>
+                                    <a href="javascript:;" onclick="document.getElementById('blog-del-{{ $blog->id }}').submit();" class="text-inverse" title="Deletar" data-toggle="tooltip" data-title="Deletar"><i class="ti-trash text-danger"></i></a>
                                     {!! Form::open(['url' => 'blogs/' . $blog->id, 'method' => 'DELETE', 'id' => 'blog-del-' . $blog->id , 'style' => 'display: none']) !!}
                                     {!! Form::close() !!}
                                 </td>

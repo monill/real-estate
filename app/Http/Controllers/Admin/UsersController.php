@@ -70,7 +70,7 @@ class UsersController extends Controller
         $user = User::findOrFail($id);
         $user->name = $request->input('name');
 
-        if (auth()->user()->isAdmin()) {
+        if (auth()->user()->isAdmin() || $user->id == auth()->user()->id) {
             if ($request->input('senha') != null) {
                 $user->password = bcrypt($request->input('senha'));
             }
@@ -117,9 +117,9 @@ class UsersController extends Controller
         $image->save($local . $filename);
     }
 
-    private function removeImage($id, $image)
+    private function removeImage($id, $filename)
     {
-        return File::delete(public_path('uploads/users/' . $id . '/' . $image));
+        return File::delete(public_path('uploads/users/' . $id . '/' . $filename));
     }
 
     private function removeDirectory($id)

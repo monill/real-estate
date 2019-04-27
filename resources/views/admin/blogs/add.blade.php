@@ -33,19 +33,19 @@
                 <h3 class="box-title m-b-0">Adicionar Blog</h3>
                 {!! Form::open(['url' => 'blogs', 'files' => true, 'class' => 'form-horizontal']) !!}
                     <div class="form-group">
-                        {!! Form::label('title', 'Título:', ['class' => 'col-md-12']) !!}
+                        {!! Form::label('title', 'Título: *', ['class' => 'col-md-12']) !!}
                         <div class="col-md-12">
                             {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Título']) !!}
                         </div>
                     </div>
                     <div class="form-group">
-                        {!! Form::label('image', 'Imagem:') !!}
+                        {!! Form::label('image', 'Imagem: *') !!}
                         {!! Form::file('image', ['class' => 'dropify', 'accept' => 'image/*']) !!}
                     </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::label('meta_keywords', 'Meta Keywords:', ['class' => 'col-md-12']) !!}
+                                {!! Form::label('meta_keywords', 'Palavras-chaves:', ['class' => 'col-md-12']) !!}
                                 <div class="col-md-12">
                                     {!! Form::textarea('meta_keywords', null, ['class' => 'form-control', 'placeholder' => 'Meta Keywords', 'rows' => 3]) !!}
                                 </div>
@@ -54,7 +54,7 @@
 
                         <div class="col-md-6">
                             <div class="form-group">
-                                {!! Form::label('meta_description', 'Meta Description:', ['class' => 'col-md-12']) !!}
+                                {!! Form::label('meta_description', 'Descrição:', ['class' => 'col-md-12']) !!}
                                 <div class="col-md-12">
                                     {!! Form::textarea('meta_description', null, ['class' => 'form-control', 'placeholder' => 'Meta Description', 'rows' => 3]) !!}
                                 </div>
@@ -68,7 +68,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        {!! Form::label('content', 'Conteúdo:', ['class' => 'col-md-12']) !!}
+                        {!! Form::label('content', 'Conteúdo: *', ['class' => 'col-md-12']) !!}
                         <div class="col-md-12">
                             {!! Form::textarea('content', null, ['class' => 'form-control summernote', 'placeholder' => 'Conteúdo', 'rows' => 6]) !!}
                         </div>

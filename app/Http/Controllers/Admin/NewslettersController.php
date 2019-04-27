@@ -15,7 +15,7 @@ class NewslettersController extends Controller
 
     public function index()
     {
-        $newsletters = Newsletter::orderBy('name', 'ASC')->paginate(30);
+        $newsletters = Newsletter::all();
         return view('admin.newsletters.index', compact('newsletters'));
     }
 

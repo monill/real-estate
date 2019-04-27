@@ -41,16 +41,17 @@
             <li class="nav-small-cap">--- Usuários</li>
             <li> <a href="{{ url('users') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Corretores</span></a> </li>
 
+            <li class="nav-small-cap">--- Newsletter</li>
+            <li> <a href="{{ url('newsletters') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Newsletters</span></a> </li>
+
             <li class="nav-small-cap">--- Suporte</li>
             <li> <a href="{{ url('settings') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Configurações</span></a> </li>
-            <li> <a href="{{ url('newsletters') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Newsletters</span></a> </li>
             <li> <a href="{{ url('visitors') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Visitantes</span></a> </li>
             @if(auth()->user()->isAdmin())
             <li> <a href="{{ url('logs') }}" class="waves-effect"><i data-icon="P" class="linea-icon linea-basic fa-fw"></i> <span class="hide-menu">Logs</span></a> </li>
             @endif
             <li class="nav-small-cap">--- Sair</li>
             <li><a href="{{ route('logout') }}" class="waves-effect" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="icon-logout fa-fw"></i><span class="hide-menu"> Sair</span></a></li>
-
         </ul>
     </div>
 </div>

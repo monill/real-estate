@@ -45,10 +45,12 @@
                         <div class="el-overlay scrl-dwn">
                             <ul class="el-info">
                                 <li><a class="btn default btn-outline image-popup-vertical-fit" href="{{ asset('uploads/users/' . $user->id . '/' . $user->avatar) }}"><i class="icon-magnifier"></i></a></li>
+                                @if(auth()->user()->isAdmin())
                                 <li><a class="btn default btn-outline" href="{{ route('users.edit', [$user->id]) }}"><i class="fa fa-pencil"></i></a></li>
                                 <li><a href="javascript:;" onclick="document.getElementById('user-del-{{ $user->id }}').submit();" class="btn default btn-outline"><i class="fa fa-trash"></i></a></li>
                                 {!! Form::open(['url' => 'users/' . $user->id, 'method' => 'DELETE', 'id' => 'user-del-' . $user->id , 'style' => 'display: none']) !!}
                                 {!! Form::close() !!}
+                                @endif
                             </ul>
                         </div>
                     </div>

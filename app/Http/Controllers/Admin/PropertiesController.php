@@ -115,6 +115,7 @@ class PropertiesController extends Controller
 
     public function search(Request $request)
     {
+        //TODO
         $purpose = $request->get('purpose');
         $city = $request->get('city');
         $slider = $request->get('slider');
@@ -153,7 +154,7 @@ class PropertiesController extends Controller
 
             $upload = new PropertyImage();
             $upload->property_id = $property_id;
-            $upload->filename = $save_name;
+            $upload->image = $save_name;
             $upload->save();
         }
 
@@ -169,7 +170,7 @@ class PropertiesController extends Controller
             return response()->json(['message' => 'Desculpe, arquivo inexistente'], 400);
         }
 
-        $file_path = $this->photos_path . $id . '/' . $uploaded_image->filename;
+        $file_path = $this->photos_path . $id . '/' . $uploaded_image->image;
 
         if (file_exists($file_path)) {
             unlink($file_path);
@@ -196,5 +197,13 @@ class PropertiesController extends Controller
         DB::table('property_images')->where('id', '=', $photo_id)->update(['feature' => true]);
 
         return redirect()->route('images', $property_id);
+    }
+
+    public function feature($id)
+    {
+        $property = Property::findOrFail($id);
+        $property->featured = !$property->featured;
+        $property->update();
+        return redirect()->to('properties');
     }
 }

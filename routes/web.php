@@ -61,6 +61,7 @@ Route::namespace('Admin')->group(function () {
     Route::post('upload', 'PropertiesController@uploadImage');
     Route::post('upload/delete/{id}', 'PropertiesController@deleteImage');
     Route::put('main-image/{id}', 'PropertiesController@mainImage');
+    Route::put('feature/{id}', 'PropertiesController@feature');
     //Duvidas
     Route::resource('questions', 'QuestionsController')->only(['index', 'show', 'destroy']);
     //Tags

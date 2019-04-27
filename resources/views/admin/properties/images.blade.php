@@ -56,7 +56,7 @@
             <div class="white-box">
                 <div class="el-card-item" style="padding-bottom: 0px;">
                     <div class="el-card-avatar el-overlay-1">
-                        <img src="{{ asset('uploads/properties/' . $image->property_id . '/' . $image->filename) }}" alt="Avatar" />
+                        <img src="{{ $image->getImages() }}" alt="Avatar" />
                         <div class="el-overlay scrl-dwn">
                             <ul class="el-info">
                                 <li><a class="btn default btn-outline image-popup-vertical-fit" href="{{ $image->getImages() }}"><i class="icon-magnifier"></i></a></li>

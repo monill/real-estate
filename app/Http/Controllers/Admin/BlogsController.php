@@ -104,6 +104,8 @@ class BlogsController extends Controller
         $blog->meta_keywords = $request->input('meta_keywords');
         $blog->meta_description = $request->input('meta_description');
 
+        $blog->tags()->sync($request->input('tags'));
+
         $blog->update();
 
         if ($img != null) {

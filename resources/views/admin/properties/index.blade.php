@@ -57,7 +57,7 @@
                         <div class="form-group">
                             <label for="slider"></label>
                             <select class="selectpicker show-tick" name="slider" id="slider" data-style="form-control">
-                                <option value="" disabled selected>Slider</option>
+                                <option value="" disabled selected>Tela inicial</option>
                                 <option value="0">Não</option>
                                 <option value="1">Sim</option>
                             </select>
@@ -91,7 +91,7 @@
             <div class="white-box pro-box p-0">
                 <div class="pro-list-img" style="background: url('{{ $property->getMainImage() }}') center center / cover no-repeat;">
                     @if($property->featured)
-                        <span class="pro-label-img"><i class="fa fa-star"></i></span>
+                        <span class="pro-label-img"><i class="fa fa-heart text-warning fa-2x"></i></span>
                     @endif
                 </div>
                 <div class="pro-content-3-col">
@@ -117,14 +117,14 @@
                 <hr class="m-0">
                 <div class="pro-agent-col-3">
                     <div class="agent-name m-l-10">
-                        <a href="javascript:;" onclick="document.getElementById('property-feature-{{ $property->id }}').submit();">
+                        <a href="javascript:;" class="text-inverse p-r-10"onclick="document.getElementById('property-feature-{{ $property->id }}').submit();">
                             @if($property->featured)
-                                <i class="fa fa-star fa-2x text-success"></i>
+                                <i class="fa fa-star text-warning" data-toggle="tooltip" title="Remover destaque" data-title="Remover destaque"></i>
                             @else
-                                <i class="fa fa-star-empty fa-2x text-dark"></i>
+                                <i class="fa fa-star-o" data-toggle="tooltip" title="Colocar em destaque" data-title="Colocar em destaque"></i>
                             @endif
                         </a>
-                        {!! Form::open(['url' => 'property-feature/' . $property->id, 'method' => 'PUT', 'id' => 'property-feature-' . $property->id, 'style' => 'display: none']) !!}
+                        {!! Form::open(['url' => 'feature/' . $property->id, 'method' => 'PUT', 'id' => 'property-feature-' . $property->id, 'style' => 'display: none']) !!}
                         {!! Form::close() !!}
                         <a href="{{ url('properties/' . $property->id . '/images') }}" class="text-inverse p-r-10" data-toggle="tooltip" title="Imagens"><i class="ti-image"></i></a>
                         <a href="{{ url('properties/' . $property->id . '/edit') }}" class="text-inverse p-r-10" data-toggle="tooltip" title="Editar"><i class="ti-marker-alt"></i></a>

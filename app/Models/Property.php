@@ -167,6 +167,6 @@ class Property extends Eloquent
     public function getMainImage()
     {
         $image = PropertyImage::where('property_id', '=', $this->id)->where('feature', '=', true)->first();
-        return asset('uploads/properties/' . $this->id . '/' . $image->filename);
+        return asset('uploads/properties/' . $this->id . '/' . $image->image);
     }
 }

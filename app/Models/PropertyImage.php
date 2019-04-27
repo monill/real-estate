@@ -15,7 +15,7 @@ class PropertyImage extends Eloquent
 
 	protected $fillable = [
 		'property_id',
-		'filename',
+		'image',
         'feature'
 	];
 
@@ -26,7 +26,7 @@ class PropertyImage extends Eloquent
 
     public function getImages()
     {
-        return asset('uploads/properties/' . $this->id . '/' . $this->filename);
+        return asset('uploads/properties/' . $this->property->id . '/' . $this->image);
 	}
 
     public function getFeature(string $size = '')
