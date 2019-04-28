@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Models\Property;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -9,7 +10,9 @@ class IndexController extends Controller
 {
     public function index()
     {
-        return view('site.index.index');
+        $sliders = Property::where('slider', '=', true)->get();
+        $properties = Property::orderBy('id', 'DESC')->take(6)->get();
+        return view('site.index.index', compact('sliders', 'properties'));
     }
 
     /**

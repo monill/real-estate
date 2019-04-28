@@ -37,7 +37,7 @@
 
     <title>Site - @yield('title')</title>
 
-    <script type="text/javascript" src="{{ asset('site/js/modernizr.js') }}"></script>
+    <script src="{{ asset('site/js/modernizr.js') }}"></script>
 
     <style>
         #theme-customizer {
@@ -151,7 +151,7 @@
     <div class="theme-setting theme-pattern" style="background:url('site/images/patterns/3.jpg')" data-background="url('site/images/patterns/3.jpg')"></div>
     <div class="theme-setting theme-pattern" style="background:url('site/images/patterns/4.jpg')" data-background="url('site/images/patterns/4.jpg')"></div>
     <hr>
-    <p class="customizer-info">Novas peles podem ser facilmente feitas alterando-se algumas variáveis em menos folhas de estilo, de modo que elas possam se ajustar, por exemplo, às cores do logotipo.</p>
+    <p class="customizer-info">Novas cores podem ser facilmente feitas alterando-se algumas variáveis em menos estilo, de modo que elas possam se ajustar, por exemplo, às cores do logotipo.</p>
 </div>
 
 <div id="page-loader">
@@ -224,10 +224,10 @@
                 <div class="row">
                     <div class="col-sm-6 footer-column onscroll-animate">
                         <h4><img alt="Hometastic" src="{{ asset('site/images/logo.png') }}"></h4>
-                        <p>{{ $settings->about }}</p>
+                        <p>{{str_limit($settings->about, 250) }}</p>
                     </div>
                     <div class="col-sm-6 footer-column onscroll-animate" data-delay="400">
-                        <h4>Posts Recentes</h4>
+                        <h4>Blog Recente</h4>
                         <ul class="list-links-simple">
                             <li><a href="#">Lorem Post With Video Format</a></li>
                             <li><a href="#">Example Video Image Post</a></li>

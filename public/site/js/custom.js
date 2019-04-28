@@ -35,23 +35,7 @@ $(document).ready(function(e) {
 		slideSpeed: 500
 	});
 
-	//submit search form when clicked on button
-	var form_search_el = $('#form-search');
-	$('#form-search-submit').on('click', function(e) {
-		e.preventDefault();
-        form_search_el.trigger('submit');
-    });
-	
-	
-	//top search form
-	var form_top_search = $('#form-top-search');
-	//make sure the form is inline-block and hidden
-	form_top_search.css('display', 'inline-block').hide();
-	$('#form-top-search-trigger').on('click', function(e) {
-		form_top_search.fadeToggle();
-	});
-	
-	
+
 	//menu buttons
 	var menu_btns = $('.menu-button');
 	for (var i=0; i<menu_btns.length; i++) {
@@ -324,10 +308,7 @@ if ( !("placeholder" in document.createElement("input")) ) {
 }
 
 
-
-
-
-/*	
+/*
   create ajax request from form element and his fields
   messages: set as form "data" attribut - "[field name]-not-set-msg", "all-fields-required-msg", "ajax-fail-msg", "success-msg"
   form must have attributes "method" and "action" set

@@ -220,19 +220,6 @@
         </div><!-- .section-content -->
     </section>
 
-    <section>
-        <div class="bg-buildings">
-            <div class="container-big section-content bg-logo">
-                <div class="container clearfix">
-                    <div class="big-notice onscroll-animate">
-                        <h3><span class="text-uppercase"><strong>Home</strong>tastic</span> is a beautifull Template for Real Estate businesses, includes all elements needed to start the job</h3>
-                        <div class="onscroll-animate pull-right" data-delay="700" data-animation="flipInY">
-                            <div class="button-container"><a class="button" href="#">Template</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('site.includes.quote')
 
 @endsection

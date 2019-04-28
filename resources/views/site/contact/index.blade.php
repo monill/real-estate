@@ -52,12 +52,12 @@
                 <div class="row">
                     <div class="col-md-4 onscroll-animate">
                         <div class="clearfix">
-                            <img class="img-inline logo-style3" alt="hometastic" src="images/logo3.png"> <span class="heading-small-inline">{{ $settings->site_title }}</span>
+                            <img class="img-inline logo-style3" alt="hometastic" src="{{ asset('site/images/logo3.png') }}"> <span class="heading-small-inline">{{ $settings->site_title }}</span>
                         </div>
                         <hr>
 
                         <h6 class="heading-small-inline">Sobre</h6>
-                        <p>{{ $settings->about }}</p>
+                        <p>{{ str_limit($settings->about, 250) }}</p>
 
                         <div class="margin-10"></div>
                         <div class="text-bigger">
@@ -121,20 +121,7 @@
 
     @include('site.includes.agents')
 
-    <section>
-        <div class="bg-buildings">
-            <div class="container-big section-content bg-logo">
-                <div class="container clearfix">
-                    <div class="big-notice onscroll-animate">
-                        <h3><span class="text-uppercase"><strong>Home</strong>tastic</span> is a beautifull Template for Real Estate businesses, includes all elements needed to start the job</h3>
-                        <div class="onscroll-animate pull-right" data-delay="700" data-animation="flipInY">
-                            <div class="button-container"><a class="button" href="#">Template</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    @include('site.includes.quote')
 
 @endsection
 
