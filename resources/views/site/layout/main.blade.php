@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!--[if IE 7 ]>    <html lang="{{ app()->getLocale() }}" class="isie ie7 oldie no-js"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="{{ app()->getLocale() }}" class="isie ie8 oldie no-js"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="{{ app()->getLocale() }}" class="isie ie9 no-js"> <![endif]-->
+<!--[if IE 7 ]> <html lang="{{ app()->getLocale() }}" class="isie ie7 oldie no-js"> <![endif]-->
+<!--[if IE 8 ]> <html lang="{{ app()->getLocale() }}" class="isie ie8 oldie no-js"> <![endif]-->
+<!--[if IE 9 ]> <html lang="{{ app()->getLocale() }}" class="isie ie9 no-js"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!--> <html lang="{{ app()->getLocale() }}" xml:lang="{{ app()->getLocale() }}" class="no-js"> <!--<![endif]-->
 
 <head>
@@ -11,6 +11,7 @@
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Joao">
+    <meta name="robots" content="index, follow">
     @yield('seo')
 
     <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png">
@@ -31,12 +32,12 @@
     <link rel="stylesheet" href="{{ asset('site/vendor/bootstrap/css/bootstrap.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('site/vendor/stroll/stroll.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('site/vendor/owl-carousel/owl.carousel.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('site/assets/css/animate.min.css') }}" type="text/css">
-    <link id="main-stylesheet" rel="stylesheet" href="{{ asset('site/assets/css/main.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('site/css/animate.min.css') }}" type="text/css">
+    <link id="main-stylesheet" rel="stylesheet" href="{{ asset('site/css/main.css') }}" type="text/css">
 
     <title>Site - @yield('title')</title>
 
-    <script type="text/javascript" src="{{ asset('site/assets/js/modernizr.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('site/js/modernizr.js') }}"></script>
 
     <style>
         #theme-customizer {
@@ -133,22 +134,22 @@
     <p class="customizer-heading">Personalização</p>
     <hr>
     <p>Trocar Cor</p>
-    <div class="theme-setting theme-stylesheet active" style="background-color:#51bbe5" data-stylesheet="assets/css/styles/main.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#336699" data-stylesheet="assets/css/skins/dark-blue.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#8cc739" data-stylesheet="assets/css/skins/light-green.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#ba6222" data-stylesheet="assets/css/skins/brown.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#cc0000" data-stylesheet="assets/css/skins/red.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#ff717e" data-stylesheet="assets/css/skins/pink.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#7aba7a" data-stylesheet="assets/css/skins/dark-green.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#84596b" data-stylesheet="assets/css/skins/purple.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#ff9900" data-stylesheet="assets/css/skins/orange.css"></div>
+    <div class="theme-setting theme-stylesheet active" style="background-color:#51bbe5" data-stylesheet="css/styles/main.css"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#336699" data-stylesheet="css/skins/dark-blue.css"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#8cc739" data-stylesheet="css/skins/light-green.css"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#ba6222" data-stylesheet="css/skins/brown.css"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#cc0000" data-stylesheet="css/skins/red.css"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#ff717e" data-stylesheet="css/skins/pink.css"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#7aba7a" data-stylesheet="css/skins/dark-green.css"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#84596b" data-stylesheet="css/skins/purple.css"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#ff9900" data-stylesheet="css/skins/orange.css"></div>
     <hr>
     <p>Trocar Padrão/Fundo</p>
     <div class="theme-setting theme-pattern active" style="background:#FFF" data-background="#FFF"></div>
-    <div class="theme-setting theme-pattern" style="background:url('assets/images/patterns/1.jpg')" data-background="url('assets/images/patterns/1.jpg')"></div>
-    <div class="theme-setting theme-pattern" style="background:url('assets/images/patterns/2.jpg')" data-background="url('assets/images/patterns/2.jpg')"></div>
-    <div class="theme-setting theme-pattern" style="background:url('assets/images/patterns/3.jpg')" data-background="url('assets/images/patterns/3.jpg')"></div>
-    <div class="theme-setting theme-pattern" style="background:url('assets/images/patterns/4.jpg')" data-background="url('assets/images/patterns/4.jpg')"></div>
+    <div class="theme-setting theme-pattern" style="background:url('site/images/patterns/1.jpg')" data-background="url('site/images/patterns/1.jpg')"></div>
+    <div class="theme-setting theme-pattern" style="background:url('site/images/patterns/2.jpg')" data-background="url('site/images/patterns/2.jpg')"></div>
+    <div class="theme-setting theme-pattern" style="background:url('site/images/patterns/3.jpg')" data-background="url('site/images/patterns/3.jpg')"></div>
+    <div class="theme-setting theme-pattern" style="background:url('site/images/patterns/4.jpg')" data-background="url('site/images/patterns/4.jpg')"></div>
     <hr>
     <p class="customizer-info">Novas peles podem ser facilmente feitas alterando-se algumas variáveis em menos folhas de estilo, de modo que elas possam se ajustar, por exemplo, às cores do logotipo.</p>
 </div>
@@ -156,7 +157,7 @@
 <div id="page-loader">
     <div class="centered-columns">
         <div class="centered-column">
-            <img alt="loader" src="{{ asset('site/assets/images/loader.gif') }}">
+            <img alt="loader" src="{{ asset('site/images/loader.gif') }}">
         </div>
     </div>
 </div>
@@ -165,12 +166,21 @@
     <div class="site-top">
         <div class="container clearfix">
             <div class="pull-left">
+                @if($settings->email != null)
                 <span class="site-top-item">
-                    <a href="#"><i class="fa fa-envelope"></i> info@mail.com</a>
+                    <i class="fa fa-envelope"></i> {{ $settings->email }}
                 </span>
+                @endif
+                @if($settings->phone1 != null)
                 <span class="site-top-item">
-                    <i class="fa fa-phone"></i> 0800-555-0123
+                    <i class="fa fa-phone"></i> {{ $settings->phone1 }}
                 </span>
+                @endif
+                @if($settings->phone2 != null)
+                <span class="site-top-item">
+                    <i class="fa fa-phone"></i> {{ $settings->phone2 }}
+                </span>
+                @endif
             </div>
             @if (Route::has('login'))
                 <div class="pull-right">
@@ -180,26 +190,14 @@
                         <div class="site-top-item">
                             <a href="{{ route('login') }}"><i class="fa fa-user"></i> Login</a>
                         </div>
-                        @if (Route::has('register'))
-                            <div class="site-top-item">
-                                <a href="{{ route('register') }}"><i class="fa fa-pencil"></i> Register</a>
-                            </div>
-                        @endif
                     @endauth
-                    <div class="site-top-item">
-                        <form id="form-top-search">
-                            <input type="text" name="s">
-                            <input type="submit" value="Go">
-                        </form>
-                        <a id="form-top-search-trigger" href="#"><i class="fa fa-search"></i></a>
-                    </div>
                 </div>
             @endif
         </div><!-- .container -->
     </div><!-- .site-top -->
     <div class="main-menu">
         <div class="container">
-            <img class="pull-left main-logo" alt="hometastic" src="images/logo.png">
+            <img class="pull-left main-logo" alt="hometastic" src="{{ asset('site/images/logo.png') }}">
             <div class="menu-button"><i class="fa fa-reorder"></i></div>
             <nav class="menu-container underscore-container menu-container-fade">
                 <ul>
@@ -225,9 +223,8 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-sm-6 footer-column onscroll-animate">
-                        <h4><img alt="Hometastic" src="images/logo.png"></h4>
-                        <p>Alarmed at this terrible outburst between the two principal and responsible owners of the ship, and feeling half a mind to give up all idea of sailing in a vessel so questionably owned and temporarily commanded.</p>
-                        <a href="#" class="read-more-link-alt">Read more</a>
+                        <h4><img alt="Hometastic" src="{{ asset('site/images/logo.png') }}"></h4>
+                        <p>{{ $settings->about }}</p>
                     </div>
                     <div class="col-sm-6 footer-column onscroll-animate" data-delay="400">
                         <h4>Posts Recentes</h4>
@@ -244,39 +241,48 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-sm-6 footer-column font-normal onscroll-animate" data-delay="600">
-                        <h4>Contact Info</h4>
-                        <div class="icon-opening-wrapper">
-                            <div class="icon-opening-container">
-                                <div class="icon-opening"><i class="fa fa-phone"></i></div>
-                                <div class="icon-opening-content">0 800 123 456 88</div>
+                        <h4>Informações de Contato</h4>
+                        @if($settings->phone1 != null)
+                            <div class="icon-opening-wrapper">
+                                <div class="icon-opening-container">
+                                    <div class="icon-opening"><i class="fa fa-phone"></i></div>
+                                    <div class="icon-opening-content">{{ $settings->phone1 }}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="icon-opening-wrapper">
-                            <div class="icon-opening-container">
-                                <div class="icon-opening"><i class="fa fa-envelope"></i></div>
-                                <div class="icon-opening-content">haman.gates@hometastic.com</div>
+                        @endif
+                        @if($settings->phone2 != null)
+                            <div class="icon-opening-wrapper">
+                                <div class="icon-opening-container">
+                                    <div class="icon-opening"><i class="fa fa-phone"></i></div>
+                                    <div class="icon-opening-content">{{ $settings->phone2 }}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="icon-opening-wrapper">
-                            <div class="icon-opening-container">
-                                <div class="icon-opening"><i class="fa fa-globe"></i></div>
-                                <div class="icon-opening-content">123 Park Avenue, New York, USA</div>
+                        @endif
+                        @if($settings->email != null)
+                            <div class="icon-opening-wrapper">
+                                <div class="icon-opening-container">
+                                    <div class="icon-opening"><i class="fa fa-envelope-alt"></i></div>
+                                    <div class="icon-opening-content">{{ $settings->email }}</div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="icon-opening-wrapper">
-                            <div class="icon-opening-container">
-                                <div class="icon-opening"><i class="fa fa-money"></i></div>
-                                <div class="icon-opening-content">5,600 Sales done till now</div>
+                        @endif
+                        @if($settings->address != null)
+                            <div class="icon-opening-wrapper">
+                                <div class="icon-opening-container">
+                                    <div class="icon-opening"><i class="fa fa-globe"></i></div>
+                                    <div class="icon-opening-content">{{ $settings->address }}</div>
+                                </div>
                             </div>
-                        </div>
+                        @endif
                     </div>
                     <div class="col-sm-6 footer-column onscroll-animate" data-delay="800">
                         <h4>Newsletter</h4>
-                        <p>Subscribe for out newsletter, and we will keep you inform of new offers.</p>
-                        <form class="form-subscribe" id="rss-subscribe" action="http://ignitionthemes.eu/theme/homet/save_rss.php" method="post" data-email-not-set-msg="Email must be set" data-ajax-fail-msg="Ajax could not set the request" data-success-msg="Email successfully added">
-                            <input type="text" name="email" placeholder="your email...">
+                        <p>Subscreva a nossa newsletter e iremos mantê-lo informado sobre novas ofertas.</p>
+                        <form class="form-subscribe" id="rss-subscribe" action="#" method="post" data-email-not-set-msg="E-mail deve ser definido" data-ajax-fail-msg="Ajax não pôde definir a solicitação" data-success-msg="Email adicionado com sucesso">
+                            <input type="text" name="name" placeholder="seu nome" required>
+                            <input type="text" name="email" placeholder="seu e-mail..." required>
                             <div class="text-right">
-                                <input type="submit" value="Submit">
+                                <input type="submit" value="Cadastrar-me">
                             </div>
                             <p class="return-msg"></p>
                         </form>
@@ -307,25 +313,35 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-6 onscroll-animate" data-animation="fadeInLeft">
-                    <p>{{ date('Y') }} Todos os direitos reservados. Feito com <i class="red fa fa-heart-empty"></i> por <a title="Us" data-toggle="tooltip" href="http://ignitionthemes.eu/"><em>Us</em></a></p>
+                    <p>{{ date('Y') }} Todos os direitos reservados. Feito com <i class="red fa fa-heart-empty"></i> por Nós</p>
                 </div>
                 <div class="col-xs-6 text-right onscroll-animate" data-animation="fadeInRight">
                     <div class="socials-wrapper">
+                        @if($settings->facebook != null)
                         <div class="social-round-container">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="{{ $settings->facebook }}" target="_blank"><i class="fa fa-facebook"></i></a>
                         </div>
+                        @endif
+                        @if($settings->twitter != null)
                         <div class="social-round-container">
-                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="{{ $settings->twitter }}" target="_blank"><i class="fa fa-twitter"></i></a>
                         </div>
+                        @endif
+                        @if($settings->googleplus != null)
                         <div class="social-round-container">
-                            <a href="#"><i class="fa fa-rss"></i></a>
+                            <a href="{{ $settings->googleplus }}" target="_blank"><i class="fa fa-google-plus"></i></a>
                         </div>
+                        @endif
+                        @if($settings->linkedin != null)
                         <div class="social-round-container">
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="{{ $settings->linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a>
                         </div>
+                        @endif
+                        @if($settings->link != null)
                         <div class="social-round-container">
-                            <a href="#"><i class="fa fa-tumblr"></i></a>
+                            <a href="{{ $settings->link }}" target="_blank"><i class="fa fa-globe"></i></a>
                         </div>
+                        @endif
                     </div>
                 </div>
             </div><!-- .row -->
@@ -333,15 +349,15 @@
     </div><!-- .site-info -->
 </footer>
 
-<script type="text/javascript" src="{{ asset('site/vendor/jquery/jquery-1.11.2.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('site/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('site/vendor/owl-carousel/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('site/vendor/jquery/jquery-1.11.2.min.js') }}"></script>
+<script src="{{ asset('site/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('site/vendor/owl-carousel/owl.carousel.min.js') }}"></script>
 @yield('scripts')
-<script type="text/javascript" src="{{ asset('site/vendor/stroll/stroll.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('site/assets/js/jquery.scrollTo.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('site/assets/js/jquery.stellar.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('site/assets/js/jquery.inview.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('site/assets/js/custom.js') }}"></script>
+<script src="{{ asset('site/vendor/stroll/stroll.min.js') }}"></script>
+<script src="{{ asset('site/js/jquery.scrollTo.min.js') }}"></script>
+<script src="{{ asset('site/js/jquery.stellar.min.js') }}"></script>
+<script src="{{ asset('site/js/jquery.inview.min.js') }}"></script>
+<script src="{{ asset('site/js/custom.js') }}"></script>
 
 <script type="text/javascript">
     $(document).ready(function(e) {

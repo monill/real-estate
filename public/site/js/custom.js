@@ -239,37 +239,12 @@ $(document).ready(function(e) {
 		return form_to_ajax_request($(this), ['email'], ['email']);
 	});
 	$('#contact-form').on('submit', function(e) {
-		return form_to_ajax_request($(this), ['name', 'website', 'phone', 'email', 'message'], ['email', 'name', 'message']);
+		return form_to_ajax_request($(this), ['name', 'subject', 'phone', 'email', 'message'], ['email', 'name', 'message']);
 	});
 	$('#contact-form-agent').on('submit', function(e) {
 		return form_to_ajax_request($(this), ['name', 'email', 'property', 'message'], ['name', 'email', 'property', 'message']);
 	});
 	
-	
-	googleMap();
-	
-	/* Google Map */
-	function googleMap() {
-		var map_canvas = $('#map-canvas');
-		if(map_canvas.length == 0)
-			return;
-		var map;
-		var myLatlng = new google.maps.LatLng(40.714728,-73.998672);
-		var center = new google.maps.LatLng(40.714728,-74.050672);
-		function mapInitialize() {
-			var mapOptions = {
-				scrollwheel: false,
-				zoom: 12,
-				center: center
-			};
-			map = new google.maps.Map(map_canvas.get(0), mapOptions);
-			var marker = new google.maps.Marker({
-				position: myLatlng,
-				map: map
-			});
-		}
-		google.maps.event.addDomListener(window, 'load', mapInitialize);
-	}
 });
 
 $(window).load(function(e) {

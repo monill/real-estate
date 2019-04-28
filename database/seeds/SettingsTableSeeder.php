@@ -14,7 +14,6 @@ class SettingsTableSeeder extends Seeder
     {
         DB::table('settings')->insert([
             'site_title' => 'Imobiliária',
-            'logo' => asset('site/assets/images/logo.png'),
             //SEO
             'meta_title' => 'Imobiliária',
             'meta_keywords' => 'venda, loca&ccedil;&atilde;o, aluguel garantido, apartamento, casa, terreno, imovel comercial, imoveis rurais, areas, apto, lancamento de imoveis, imobiliaria online, imoveis online, sobrado, administracao de bens, adm de imoveis, compra de imovel, financiamento de imovel',
@@ -22,7 +21,7 @@ class SettingsTableSeeder extends Seeder
             //Analytics
             'analytics' => null,
             //Empresa
-            'about' => null,
+            'about' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse semper nisi eget lorem mollis molestie. Nunc vulputate, turpis eget posuere laoreet, est enim rhoncus ligula, in elementum ante sapien id sapien. Aliquam sed congue nulla.',
             'address' => 'Rua Armando Steck, 000, Centro',
             'email' => 'imobiliaria@imob.com.br',
             'phone1' => '1234-5678',

@@ -169,4 +169,11 @@ class Property extends Eloquent
         $image = PropertyImage::where('property_id', '=', $this->id)->where('feature', '=', true)->first();
         return asset('uploads/properties/' . $this->id . '/' . $image->image);
     }
+
+    public function getValue()
+    {
+        $price = (float)$this->price;
+        return $price;
+            //number_format($price, '.', ',');
+    }
 }

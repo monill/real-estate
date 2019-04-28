@@ -23,6 +23,7 @@ Auth::routes();
 Route::namespace('Site')->group(function () {
     //Propriedades
     Route::get('propriedades', 'PropertiesController@index')->name('propriedades');
+    Route::get('propriedade/{id}.{slug}', 'PropertiesController@show')->name('propriedade');
     //Corretores
     Route::get('corretores', 'AgentsController@index')->name('corretores');
     //Galeria

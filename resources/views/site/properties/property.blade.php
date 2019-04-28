@@ -299,7 +299,7 @@
                                     </div><!-- .col-md-8 -->
                                     <div class="col-md-4 onscroll-animate" data-animation="fadeInUp">
                                         <h3 class="section-small-heading">Send Message</h3>
-                                        <form class="form-contact" id="contact-form-agent" action="http://ignitionthemes.eu/theme/homet/send_email_john_doe.php" method="post" data-all-fields-required-msg="All fields are required" data-ajax-fail-msg="Ajax could not set the request" data-success-msg="Email successfully sent.">
+                                        <form class="form-contact" id="contact-form-agent" action="#" method="post" data-all-fields-required-msg="All fields are required" data-ajax-fail-msg="Ajax could not set the request" data-success-msg="Email successfully sent.">
                                             <input type="text" name="name" placeholder="Name">
                                             <input type="text" name="email" placeholder="E-mail">
                                             <input type="hidden" name="property" value="Property 123">
@@ -632,8 +632,8 @@
                                     <h1>News Letter</h1>
                                 </div>
                                 <p>Subscribe for latest news</p>
-                                <form class="form-layout1" id="rss-subscribe-2" action="http://ignitionthemes.eu/theme/homet/save_rss.php" method="post" data-email-not-set-msg="Email must be set" data-ajax-fail-msg="Ajax could not set the request" data-success-msg="Email successfully added">
-                                    <input type="text" name="email" placeholder="your email...">
+                                <form class="form-layout1" id="rss-subscribe-2" action="#" method="post" data-email-not-set-msg="Email must be set" data-ajax-fail-msg="Ajax could not set the request" data-success-msg="Email successfully added">
+                                    <input type="email" name="email" placeholder="seu e-mail...">
                                     <a href="#" class="form-submit"><i class="fa fa-envelope-alt"></i></a>
                                     <p class="return-msg"></p>
                                 </form>

@@ -25,6 +25,6 @@ class ContactController extends Controller
         $message->save();
 
         //flash('Mensagem enviada com sucesso, aguarde nosso retorno')->success();
-        return back();
+        return redirect()->to('contato');
     }
 }

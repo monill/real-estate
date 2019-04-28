@@ -1,19 +1,19 @@
 @extends('site.layout.main')
 
 @section('seo')
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <meta name="keywords" content="{{ $settings->meta_keywords }}">
+    <meta name="description" content="{{ $settings->meta_description }}">
     <meta name="robots" content="index, follow">
 
     <meta property="og:locale" content="pt_BR" />
-    <meta property="og:site_name" content="" />
+    <meta property="og:site_name" content="{{ $settings->site_title }}" />
     <meta property="og:type" content="article" />
-    <meta property="og:image" content="" />
+    <meta property="og:image" content="{{ asset('site/images/logo.png') }}" />
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="{{ url('/') }}" />
-    <meta property="og:title" content="" />
-    <meta property="og:description" content="" />
+    <meta property="og:title" content="{{ $settings->site_title }}" />
+    <meta property="og:description" content="{{ $settings->meta_description }}" />
 @endsection
 
 @section('title', 'Contato')
@@ -47,213 +47,79 @@
             <div class="container">
                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
                     <h1>Entre em contato</h1>
-                    <h4>If you want to ask us about property do it right away, we are waitng.</h4>
+                    <h4>Se você quiser nos perguntar sobre a propriedade faça isso imediatamente, estamos esperando.</h4>
                 </div>
                 <div class="row">
                     <div class="col-md-4 onscroll-animate">
                         <div class="clearfix">
-                            <img class="img-inline logo-style3" alt="hometastic" src="images/logo3.png"> <span class="heading-small-inline">Real Estate Template</span>
+                            <img class="img-inline logo-style3" alt="hometastic" src="images/logo3.png"> <span class="heading-small-inline">{{ $settings->site_title }}</span>
                         </div>
                         <hr>
 
                         <h6 class="heading-small-inline">Sobre</h6>
-                        <p>Some hours after midnight, the Typhoon abated so much, that through the strenuous exertions of Starbuck and Stubb—one engaged forward and the other aft—the shivered remnants of the jib and fore and main-top-sails were cut adrift from the spars.</p>
+                        <p>{{ $settings->about }}</p>
 
                         <div class="margin-10"></div>
                         <div class="text-bigger">
+                            @if($settings->phone1 != null)
                             <div class="icon-opening-wrapper">
                                 <div class="icon-opening-container">
                                     <div class="icon-opening"><i class="fa fa-phone"></i></div>
-                                    <div class="icon-opening-content">0 800 123 456 88</div>
+                                    <div class="icon-opening-content">{{ $settings->phone1 }}</div>
                                 </div>
                             </div>
+                            @endif
+                            @if($settings->phone2 != null)
                             <div class="icon-opening-wrapper">
                                 <div class="icon-opening-container">
-                                    <div class="icon-opening"><i class="fa fa-mobile-phone text-big"></i></div>
-                                    <div class="icon-opening-content">0 800 777 456 88</div>
+                                    <div class="icon-opening"><i class="fa fa-phone"></i></div>
+                                    <div class="icon-opening-content">{{ $settings->phone2 }}</div>
                                 </div>
                             </div>
+                            @endif
+                            @if($settings->email != null)
                             <div class="icon-opening-wrapper">
                                 <div class="icon-opening-container">
                                     <div class="icon-opening"><i class="fa fa-envelope-alt"></i></div>
-                                    <div class="icon-opening-content">
-                                        office@hometastic.com<br>
-                                        support@hometastic.com<br>
-                                        helpdesk@hometastic.com
-                                    </div>
+                                    <div class="icon-opening-content">{{ $settings->email }}</div>
                                 </div>
                             </div>
+                            @endif
                         </div>
                         <div class="margin-40"></div>
                     </div><!-- .col-md-4 -->
                     <div class="col-md-8 onscroll-animate" data-delay="400">
-                        <form class="form-contact-full" id="contact-form" action="http://ignitionthemes.eu/theme/homet/send_email_contact.php" method="post" data-name-not-set-msg="Name is required" data-message-not-set-msg="Message is required" data-email-not-set-msg="Email is required" data-ajax-fail-msg="Ajax could not set the request" data-success-msg="Email successfully sent.">
+                        {!! Form::open(['url' => 'contato', 'class' => 'form-contact-full']) !!}
                             <div class="row">
                                 <div class="col-xs-6">
-                                    Nome *
-                                    <input type="text" name="name" placeholder="Nome">
-                                    Assunto *
-                                    <input type="text" name="website" placeholder="Assunto">
+                                    <label for="name">Nome *</label>
+                                    <input type="text" name="name" id="name" placeholder="Nome" required maxlength="100" minlength="2">
+                                    <label for="subject">Assunto *</label>
+                                    <input type="text" name="subject" id="subject" placeholder="Assunto" required maxlength="100" minlength="2">
                                 </div>
                                 <div class="col-xs-6">
-                                    E-mail *
-                                    <input type="text" name="email" placeholder="E-mail">
-                                    Telefone
-                                    <input type="text" name="phone" placeholder="Telefone para contato">
+                                    <label for="email">E-mail *</label>
+                                    <input type="email" name="email" id="email" placeholder="E-mail" required maxlength="120" minlength="5">
+                                    <label for="phone">Telefone</label>
+                                    <input type="text" name="phone" id="phone" placeholder="Telefone para contato" maxlength="100">
                                 </div>
                             </div>
-                            Mensagem
-                            <textarea name="message" placeholder="Mensagem"></textarea>
+                            <label for="message">Mensagem *</label>
+                            <textarea name="message" id="message" placeholder="Mensagem" required maxlength="1000" minlength="10"></textarea>
                             <p class="return-msg"></p>
                             <div class="text-right">
                                 <div class="form-contact-full-submit">
                                     <input type="submit" value="Enviar Mensagem">
                                 </div>
                             </div>
-                        </form>
+                        {!! Form::close() !!}
                     </div><!-- .col-md-4 -->
                 </div><!-- .row -->
             </div><!-- .container -->
         </div><!-- .section-content -->
     </section>
 
-    <section>
-        <div class="section-content no-top-padding">
-            <div class="container">
-                <div class="section-header onscroll-animate" data-animation="fadeInLeft">
-                    <h1>Contact one of our agents</h1>
-                    <h4>See our great agents and they will help you find your homes.</h4>
-                </div>
-                <div class="onscroll-animate">
-                    <div id="agents-slider">
-                        <div class="profile">
-                            <div class="profile-img">
-                                <img alt="agent" src="images/agents/1.jpg">
-                                <div class="profile-img-info">
-                                    <a href="#" class="profile-social"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-dribbble"></i></a>
-                                </div>
-                            </div>
-                            <h5 class="profile-heading">Hansom Rob</h5>
-                            <p>home expert</p>
-                            <p>
-                                <i class="fa fa-phone"></i> 0 800 50 555 123<br>
-                                <i class="fa fa-envelope"></i> <a href="#">hansom.rob@hometastic.com</a><br>
-                                <i class="fa fa-money"></i> 57 Sales done
-                            </p>
-                            <a href="agents.html" class="read-more-link-alt">See Full Profile</a>
-                        </div><!-- .profile -->
-                        <div class="profile">
-                            <div class="profile-img">
-                                <img alt="agent" src="images/agents/2.jpg">
-                                <div class="profile-img-info">
-                                    <a href="#" class="profile-social"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-dribbble"></i></a>
-                                </div>
-                            </div>
-                            <h5 class="profile-heading">Rocky Alboa</h5>
-                            <p>property expert</p>
-                            <p>
-                                <i class="fa fa-phone"></i> 0 800 50 555 123<br>
-                                <i class="fa fa-envelope"></i> <a href="#">rocky.alboa@hometastic.com</a><br>
-                                <i class="fa fa-money"></i> 11 Sales done
-                            </p>
-                            <a href="agents.html" class="read-more-link-alt">See Full Profile</a>
-                        </div><!-- .profile -->
-                        <div class="profile">
-                            <div class="profile-img">
-                                <img alt="agent" src="images/agents/3.jpg">
-                                <div class="profile-img-info">
-                                    <a href="#" class="profile-social"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-dribbble"></i></a>
-                                </div>
-                            </div>
-                            <h5 class="profile-heading">Haman Gates</h5>
-                            <p>designer</p>
-                            <p>
-                                <i class="fa fa-phone"></i> 0 800 50 555 123<br>
-                                <i class="fa fa-envelope"></i> <a href="#">haman.gates@hometastic.com</a><br>
-                                <i class="fa fa-money"></i> 25 Sales done
-                            </p>
-                            <a href="agents.html" class="read-more-link-alt">See Full Profile</a>
-                        </div><!-- .profile -->
-                        <div class="profile">
-                            <div class="profile-img">
-                                <img alt="agent" src="images/agents/4.jpg">
-                                <div class="profile-img-info">
-                                    <a href="#" class="profile-social"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-dribbble"></i></a>
-                                </div>
-                            </div>
-                            <h5 class="profile-heading">Malik Barrymore</h5>
-                            <p>accountant</p>
-                            <p>
-                                <i class="fa fa-phone"></i> 0 800 50 555 123<br>
-                                <i class="fa fa-envelope"></i> <a href="#">malik.barrymore@hometastic.com</a><br>
-                                <i class="fa fa-money"></i> 88 Sales done
-                            </p>
-                            <a href="agents.html" class="read-more-link-alt">See Full Profile</a>
-                        </div><!-- .profile -->
-                        <div class="profile">
-                            <div class="profile-img">
-                                <img alt="agent" src="images/agents/2.jpg">
-                                <div class="profile-img-info">
-                                    <a href="#" class="profile-social"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-dribbble"></i></a>
-                                </div>
-                            </div>
-                            <h5 class="profile-heading">Rocky Alboa</h5>
-                            <p>property expert</p>
-                            <p>
-                                <i class="fa fa-phone"></i> 0 800 50 555 123<br>
-                                <i class="fa fa-envelope"></i> <a href="#">rocky.alboa@hometastic.com</a><br>
-                                <i class="fa fa-money"></i> 11 Sales done
-                            </p>
-                            <a href="agents.html" class="read-more-link-alt">See Full Profile</a>
-                        </div><!-- .profile -->
-                        <div class="profile">
-                            <div class="profile-img">
-                                <img alt="agent" src="images/agents/3.jpg">
-                                <div class="profile-img-info">
-                                    <a href="#" class="profile-social"><i class="fa fa-facebook"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-twitter"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-google-plus"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-linkedin"></i></a>
-                                    <a href="#" class="profile-social"><i class="fa fa-dribbble"></i></a>
-                                </div>
-                            </div>
-                            <h5 class="profile-heading">Haman Gates</h5>
-                            <p>designer</p>
-                            <p>
-                                <i class="fa fa-phone"></i> 0 800 50 555 123<br>
-                                <i class="fa fa-envelope"></i> <a href="#">haman.gates@hometastic.com</a><br>
-                                <i class="fa fa-money"></i> 25 Sales done
-                            </p>
-                            <a href="agents.html" class="read-more-link-alt">See Full Profile</a>
-                        </div><!-- .profile -->
-                    </div><!-- #agents-slider -->
-                </div><!-- .onscroll-animate -->
-                <p class="text-center onscroll-animate" data-animation="flipInY">
-                    <a href="agents.html" class="button-void">See All Agents</a>
-                </p>
-            </div><!-- .container -->
-        </div><!-- .section-content -->
-    </section>
+    @include('site.includes.agents')
 
     <section>
         <div class="bg-buildings">
@@ -269,5 +135,52 @@
             </div>
         </div>
     </section>
+
+@endsection
+
+@section('scripts')
+
+    <script>
+        function initMap() {
+            let styles = [
+                {"featureType": "landscape", "stylers": [{"saturation": -100}, {"lightness": 65}, {"visibility": "on"}]},
+                {"featureType": "poi", "stylers": [{"saturation": -100}, {"lightness": 51}, {"visibility": "simplified"}]},
+                {"featureType": "road.highway", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]},
+                {"featureType": "road.arterial", "stylers": [{"saturation": -100}, {"lightness": 30}, {"visibility": "on"}]},
+                {"featureType": "road.local", "stylers": [{"saturation": -100}, {"lightness": 40}, {"visibility": "on"}]},
+                {"featureType": "transit", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]},
+                {"featureType": "administrative.province", "stylers": [{"visibility": "off"}]},
+                {"featureType": "water", "elementType": "labels", "stylers": [{"visibility": "on"}, {"lightness": -25}, {"saturation": -100}]},
+                {"featureType": "water", "elementType": "geometry", "stylers": [{"hue": "#ffff00"}, {"lightness": -25}, {"saturation": -97}]}
+            ];
+
+            let uluru = {
+                lat: {{ $settings->latitude }},
+                lng: {{ $settings->longitude }}
+            };
+            let map = new google.maps.Map(document.getElementById('map-canvas'), {
+                zoom: 15,
+                center: uluru,
+                zoomControl: true,
+                zoomControlOpt: {
+                    style: 'SMALL',
+                    position: 'TOP_LEFT'
+                },
+                panControl: false,
+                streetViewControl: false,
+                mapTypeControl: false,
+                overviewMapControl: false,
+                scrollwheel: false,
+                draggable: true,
+                styles: styles
+
+            });
+            let marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI6yreMxqsm-wuLrBIdNvawJcbkyAOnj8&callback=initMap"></script>
 
 @endsection

@@ -291,7 +291,7 @@
                                     <h1>News Letter</h1>
                                 </div>
                                 <p>Subscribe for latest news</p>
-                                <form class="form-layout1" id="rss-subscribe-2" action="http://ignitionthemes.eu/theme/homet/save_rss.php" method="post" data-email-not-set-msg="Email must be set" data-ajax-fail-msg="Ajax could not set the request" data-success-msg="Email successfully added">
+                                <form class="form-layout1" id="rss-subscribe-2" action="#" method="post" data-email-not-set-msg="Email must be set" data-ajax-fail-msg="Ajax could not set the request" data-success-msg="Email successfully added">
                                     <input type="text" name="email" placeholder="your email...">
                                     <a href="#" class="form-submit"><i class="fa fa-envelope-alt"></i></a>
                                     <p class="return-msg"></p>
