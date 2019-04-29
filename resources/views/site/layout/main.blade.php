@@ -27,13 +27,14 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700,500,400italic,500italic%7CMontserrat:400,700' rel='stylesheet' type='text/css'>
 
     <!-- Icon-Font -->
-    <link rel="stylesheet" href="{{ asset('site/vendor/font-awesome/css/font-awesome.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('site/vendor/font-awesome/css/font-awesome.min.css') }}" />
 
-    <link rel="stylesheet" href="{{ asset('site/vendor/bootstrap/css/bootstrap.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('site/vendor/stroll/stroll.min.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('site/vendor/owl-carousel/owl.carousel.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('site/css/animate.min.css') }}" type="text/css">
-    <link id="main-stylesheet" rel="stylesheet" href="{{ asset('site/css/main.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('site/vendor/bootstrap/css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('site/vendor/stroll/stroll.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('site/vendor/owl-carousel/owl.carousel.css') }}" />
+    @yield('css')
+    <link rel="stylesheet" href="{{ asset('site/css/animate.min.css') }}" />
+    <link id="main-stylesheet" rel="stylesheet" href="{{ asset('site/css/main.css') }}" />
 
     <title>Site - @yield('title')</title>
 
@@ -185,7 +186,9 @@
             @if (Route::has('login'))
                 <div class="pull-right">
                     @auth
-                        <a href="{{ url('/dashboard') }}">Dashboard</a>
+                        <div class="site-top-item">
+                            <a href="{{ url('/dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        </div>
                     @else
                         <div class="site-top-item">
                             <a href="{{ route('login') }}"><i class="fa fa-user"></i> Login</a>
@@ -224,16 +227,17 @@
                 <div class="row">
                     <div class="col-sm-6 footer-column onscroll-animate">
                         <h4><img alt="Hometastic" src="{{ asset('site/images/logo.png') }}"></h4>
-                        <p>{{str_limit($settings->about, 250) }}</p>
+                        <p>{{str_limit($settings->about, 250, '...') }}</p>
+                        <a href="{{ url('corretores') }}" class="read-more-link-alt">Leia mais</a>
                     </div>
                     <div class="col-sm-6 footer-column onscroll-animate" data-delay="400">
                         <h4>Blog Recente</h4>
                         <ul class="list-links-simple">
-                            <li><a href="#">Lorem Post With Video Format</a></li>
-                            <li><a href="#">Example Video Image Post</a></li>
-                            <li><a href="#">Example Post With Portfolio Post Format</a></li>
-                            <li><a href="#">Example Post With Image Post Format</a></li>
-                            <li><a href="#">Lorem Ipsum Dolor Sit Amet</a></li>
+                            @forelse(\App\Models\Blog::where('published', '==', true)->orderBy('id', 'DESC')->take(5)->get() as $blog)
+                            <li><a href="{{ route('blog.view', [$blog->id, $blog->slug]) }}">{{ $blog->title }}</a></li>
+                            @empty
+                            <li><p>Nenhum conteúdo cadastrado no momento</p></li>
+                            @endforelse
                         </ul>
                     </div>
                 </div><!-- .row -->

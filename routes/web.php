@@ -30,6 +30,7 @@ Route::namespace('Site')->group(function () {
     Route::get('galeria', 'GalleriesController@index')->name('galeria');
     //Blog
     Route::get('blog', 'BlogsController@index')->name('blog');
+    Route::get('blog/{id}.{slug}', 'BlogsController@show')->name('blog.view');
     //Contato
     Route::get('contato', 'ContactController@index')->name('contato');
     Route::post('contato', 'ContactController@store');

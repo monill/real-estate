@@ -17,7 +17,6 @@ class CreateSettingsTable extends Migration
             $table->tinyIncrements('id');
             //Geral
             $table->string('site_title');
-            $table->string('meta_title')->nullable();
             $table->text('meta_keywords')->nullable();
             $table->text('meta_description')->nullable();
             //Analytics

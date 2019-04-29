@@ -34,13 +34,13 @@
                                 Área: {{ $property->area }} <span class="delimiter-inline-alt"></span>
                             @endif
                             @if($property->bedrooms > 0)
-                                {{ $property->bedrooms }} Quartos <span class="delimiter-inline"></span>
+                                Quartos: {{ $property->bedrooms }} <span class="delimiter-inline"></span>
                             @endif
                             @if($property->bathrooms > 0)
-                                {{ $property->bathrooms }} Banheiros <span class="delimiter-inline"></span>
+                                Banheiros: {{ $property->bathrooms }} <span class="delimiter-inline"></span>
                             @endif
                             @if($property->garage > 0)
-                                {{ $property->garage }} Garagem
+                                Garagens: {{ $property->garage }}
                             @endif
                         </div>
                     </div>

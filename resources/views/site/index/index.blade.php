@@ -100,7 +100,7 @@
                                         <i class="fa fa-signal"></i>
                                     </div>
                                     <h3>Equipe qualificada</h3>
-                                    <p>colocar um tempo legal aqui.</p>
+                                    <p>colocar um texto legal aqui.</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 onscroll-animate" data-delay="400" data-animation="fadeInUp">
@@ -109,7 +109,7 @@
                                         <i class="fa fa-home"></i>
                                     </div>
                                     <h3>Casas para venda</h3>
-                                    <p>colocar um tempo legal aqui.</p>
+                                    <p>colocar um texto legal aqui.</p>
                                 </div>
                             </div>
                         </div><!-- .row -->
@@ -131,7 +131,7 @@
                                         <i class="fa fa-th"></i>
                                     </div>
                                     <h3>Terrenos</h3>
-                                    <p>colocar um tempo legal aqui.</p>
+                                    <p>colocar um texto legal aqui.</p>
                                 </div>
                             </div>
                         </div><!-- .row -->

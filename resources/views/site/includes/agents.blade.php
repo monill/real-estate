@@ -10,21 +10,31 @@
                     @foreach(\App\User::where('admin', '==', false)->get() as $agent)
                     <div class="profile">
                         <div class="profile-img">
-                            <img alt="agent" src="images/agents/1.jpg">
+                            <img alt="agent" src="{{ $agent->getAvatar() }}">
                             <div class="profile-img-info">
-                                <a href="#" class="profile-social"><i class="fa fa-facebook"></i></a>
-                                <a href="#" class="profile-social"><i class="fa fa-twitter"></i></a>
-                                <a href="#" class="profile-social"><i class="fa fa-google-plus"></i></a>
-                                <a href="#" class="profile-social"><i class="fa fa-linkedin"></i></a>
-                                <a href="#" class="profile-social"><i class="fa fa-dribbble"></i></a>
+                                @if($settings->facebook != null)
+                                    <a href="{{ $settings->facebook }}" class="profile-social" target="_blank"><i class="fa fa-facebook"></i></a>
+                                @endif
+                                @if($settings->twitter != null)
+                                    <a href="{{ $settings->twitter }}" class="profile-social" target="_blank"><i class="fa fa-twitter"></i></a>
+                                @endif
+                                @if($settings->googleplus != null)
+                                    <a href="{{ $settings->googleplus }}" class="profile-social" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                @endif
+                                @if($settings->linkedin != null)
+                                    <a href="{{ $settings->linkedin }}" class="profile-social" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                @endif
+                                @if($settings->link != null)
+                                    <a href="{{ $settings->link }}" class="profile-social" target="_blank"><i class="fa fa-globe"></i></a>
+                                @endif
                             </div>
                         </div>
-                        <h5 class="profile-heading">Hansom Rob</h5>
-                        <p>home expert</p>
+                        <h5 class="profile-heading">{{ $agent->name }}</h5>
+                        <p>{{ $agent->job }}</p>
                         <p>
-                            <i class="fa fa-phone"></i> 0 800 50 555 123<br>
-                            <i class="fa fa-envelope"></i> <a href="#">hansom.rob@hometastic.com</a><br>
-                            <i class="fa fa-money"></i> 57 Sales done
+                            <i class="fa fa-phone"></i> {{ $settings->phone1 }}<br>
+                            <i class="fa fa-phone"></i> {{ $settings->phone2 }}<br>
+                            <i class="fa fa-envelope-alt"></i> <a href="#">{{ $agent->email }}</a><br>
                         </p>
                         <a href="{{ url('corretores') }}" class="read-more-link-alt">Ver o perfil completo</a>
                     </div><!-- .profile -->

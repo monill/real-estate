@@ -18,6 +18,10 @@
 
 @section('title', 'Blog')
 
+@section('css')
+    <link href="{{ asset('site/vendor/lightbox/css/lightbox.css') }}" rel="stylesheet" />
+@endsection
+
 @section('content')
 
     <section>
@@ -35,111 +39,50 @@
             <div class="container">
                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
                     <h1>Blog</h1>
-                    <h4>Check the blog section, great layout easy to read and write.</h4>
+                    <h4>Confira a seção do blog, ótimo layout fácil de ler e comentar.</h4>
                 </div>
                 <div class="row">
                     <div class="col-md-9">
-                        <article class="onscroll-animate">
-                            <div class="post-preview blog-post-full">
-                                <section>
-                                    <div class="post-preview-img">
-                                        <div class="post-preview-slider" id="post-preview-slider-1">
-                                            <a href="assets/images/blog/big_01.jpg" data-lightbox="post1-images-group"><img alt="post img" src="assets/images/blog/big_01.jpg"></a>
-                                            <a href="assets/images/blog/big_02.jpg" data-lightbox="post1-images-group"><img alt="post img" src="assets/images/blog/big_02.jpg"></a>
-                                            <a href="assets/images/blog/big_03.jpg" data-lightbox="post1-images-group"><img alt="post img" src="assets/images/blog/big_03.jpg"></a>
-                                        </div>
-                                    </div>
-                                </section>
-                                <div class="post-preview-content">
-                                    <h2 class="post-preview-heading"><a href="blog_single.html">Interior beauty for sale</a></h2>
-                                    <p class="post-preview-info"><a href="#"><i class="fa fa-user"></i> Johny Bravo</a> <span class="delimiter-inline-alt"></span> <a href="#"><i class="fa fa-comments"></i> 33 comments</a> <span class="delimiter-inline-alt"></span> <a href="#"><i class="fa fa-calendar"></i> 12.02.2014</a></p>
-                                    <p>We do what is best for our clients, in order to get full satisfaction and perfection. Our primary goal is to make thing work and make them happy on the eve of a Nantucket voyage, I regarded those marble tablets, and by the murky light of that darkened, doleful day read the fate of the whalemen who had gone before me...</p>
-                                    <div class="post-preview-detail">
-                                        <i class="fa fa-tag"></i> <a href="#">quotes</a>, <a href="#">illustration</a>, <a href="#">design</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+                        @foreach($blogs as $blog)
                         <article class="onscroll-animate">
                             <div class="post-preview blog-post-full">
                                 <section>
                                     <div class="post-preview-img">
                                         <div class="post-preview-img-inner">
-                                            <a href="assets/images/blog/big_02.jpg" data-lightbox="assets/images/blog/big_02.jpg"><img alt="post img" src="assets/images/blog/big_02.jpg"></a>
+                                            <a href="{{ $blog->getMainImage() }}" data-lightbox="{{ $blog->getMainImage() }}">
+                                                <img alt="post img" src="{{ $blog->getMainImage() }}">
+                                            </a>
                                         </div>
                                         <div class="post-img-detail">
                                             <div class="post-img-detail-wrapper">
                                                 <div class="post-img-detail-content">
-                                                    <a href="blog_single.html" class="read-more-link-alt">View More</a>
+                                                    <a href="{{ route('blog.view', [$blog->id, $blog->slug]) }}" class="read-more-link-alt">Veja Mais</a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </section>
                                 <div class="post-preview-content">
-                                    <h2 class="post-preview-heading"><a href="blog_single.html">Great House with Flowers</a></h2>
-                                    <p class="post-preview-info"><a href="#"><i class="fa fa-user"></i> Johny Bravo</a> <span class="delimiter-inline-alt"></span> <a href="#"><i class="fa fa-comments"></i> 33 comments</a> <span class="delimiter-inline-alt"></span> <a href="#"><i class="fa fa-calendar"></i> 12.02.2014</a></p>
-                                    <p>We do what is best for our clients, in order to get full satisfaction and perfection. Our primary goal is to make thing work and make them happy on the eve of a Nantucket voyage, I regarded those marble tablets, and by the murky light of that darkened, doleful day read the fate of the whalemen who had gone before me...</p>
+                                    <h2 class="post-preview-heading"><a href="{{ route('blog.view', [$blog->id, $blog->slug]) }}">{{ $blog->title }}</a></h2>
+                                    <p class="post-preview-info">
+                                        <a href="#"><i class="fa fa-user"></i> {{ $blog->user->name }}</a> <span class="delimiter-inline-alt"></span>
+                                        <a href="#"><i class="fa fa-comments"></i> {{ $blog->comments->count() }} comentários</a> <span class="delimiter-inline-alt"></span>
+                                        <a href="#"><i class="fa fa-calendar"></i> {{ $blog->created_at->format('d.m.Y') }}</a>
+                                    </p>
+                                    {!! str_limit($blog->content, 317, '...') !!}
                                     <div class="post-preview-detail">
-                                        <i class="fa fa-tag"></i> <a href="#">quotes</a>, <a href="#">illustration</a>, <a href="#">design</a>
+                                        <i class="fa fa-tag"></i>
+                                        @foreach($blog->tags as $tag)
+                                        <a href="#">{{ $tag->name }}</a>,
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
                         </article>
-                        <article class="onscroll-animate">
-                            <div class="post-preview blog-post-full">
-                                <section>
-                                    <div class="post-preview-img">
-                                        <div class="embed-responsive embed-responsive-4by3">
-                                            <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/9d8wWcJLnFI"></iframe>
-                                        </div>
-                                    </div>
-                                </section>
-                                <div class="post-preview-content">
-                                    <h2 class="post-preview-heading"><a href="blog_single.html">Flying the City</a></h2>
-                                    <p class="post-preview-info"><a href="#"><i class="fa fa-user"></i> Johny Bravo</a> <span class="delimiter-inline-alt"></span> <a href="#"><i class="fa fa-comments"></i> 33 comments</a> <span class="delimiter-inline-alt"></span> <a href="#"><i class="fa fa-calendar"></i> 12.02.2014</a></p>
-                                    <p>We do what is best for our clients, in order to get full satisfaction and perfection. Our primary goal is to make thing work and make them happy on the eve of a Nantucket voyage, I regarded those marble tablets, and by the murky light of that darkened, doleful day read the fate of the whalemen who had gone before me...</p>
-                                    <div class="post-preview-detail">
-                                        <i class="fa fa-tag"></i> <a href="#">quotes</a>, <a href="#">illustration</a>, <a href="#">design</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="onscroll-animate">
-                            <div class="post-preview blog-post-full">
-                                <section>
-                                    <div class="post-preview-img">
-                                        <div class="post-preview-img-inner">
-                                            <a href="assets/images/blog/big_03.jpg" data-lightbox="assets/images/blog/big_03.jpg"><img alt="post img" src="assets/images/blog/big_03.jpg"></a>
-                                        </div>
-                                        <div class="post-img-detail">
-                                            <div class="post-img-detail-wrapper">
-                                                <div class="post-img-detail-content">
-                                                    <a href="blog_single.html" class="read-more-link-alt">View More</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-                                <div class="post-preview-content">
-                                    <h2 class="post-preview-heading"><a href="blog_single.html">Great Square Box</a></h2>
-                                    <p class="post-preview-info"><a href="#"><i class="fa fa-user"></i> Johny Bravo</a> <span class="delimiter-inline-alt"></span> <a href="#"><i class="fa fa-comments"></i> 33 comments</a> <span class="delimiter-inline-alt"></span> <a href="#"><i class="fa fa-calendar"></i> 12.02.2014</a></p>
-                                    <p>We do what is best for our clients, in order to get full satisfaction and perfection. Our primary goal is to make thing work and make them happy on the eve of a Nantucket voyage, I regarded those marble tablets, and by the murky light of that darkened, doleful day read the fate of the whalemen who had gone before me...</p>
-                                    <div class="post-preview-detail">
-                                        <i class="fa fa-tag"></i> <a href="#">quotes</a>, <a href="#">illustration</a>, <a href="#">design</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+                        @endforeach
                         <div class="text-center onscroll-animate">
                             <div class="pagination">
-                                <div class="pagination-item pagination-first"><a href="#">First</a></div>
-                                <div class="pagination-item"><a href="#">1</a></div>
-                                <div class="pagination-item active"><a href="#">2</a></div>
-                                <div class="pagination-item"><a href="#">3</a></div>
-                                <div class="pagination-item"><a href="#">4</a></div>
-                                <div class="pagination-item"><a href="#">5</a></div>
-                                <div class="pagination-item pagination-last"><a href="#">Last</a></div>
+                                {{ $blogs->links() }}
                             </div>
                         </div>
                     </div><!-- .col-md-9 -->
@@ -326,5 +269,5 @@
 @endsection
 
 @section('scripts')
-    <script type="text/javascript" src="{{ asset('vendor/lightbox/js/lightbox.min.js') }}"></script>
+    <script src="{{ asset('site/vendor/lightbox/js/lightbox.min.js') }}"></script>
 @endsection

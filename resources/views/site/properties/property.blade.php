@@ -18,6 +18,11 @@
 
 @section('title', 'Propriedade')
 
+@section('css')
+    <link rel="stylesheet" href="{{ asset('site/vendor/stroll/stroll.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('site/vendor/flexslider/flexslider.min.css') }}">
+@endsection
+
 @section('content')
         
     <section>
@@ -37,167 +42,56 @@
         <div class="section-content">
             <div class="container">
                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
-                    <h1>Recent Listings</h1>
-                    <h4>See our recent listings here, you will find all kinds of homes.</h4>
+                    <h1>{{ $property->name }}</h1>
+                    <h4>Veja nossas listas recentes aqui, você vai encontrar todos os tipos de casas.</h4>
                 </div>
                 <div class="row">
                     <div class="col-md-9">
                         <section id="slider-section">
                             <div id="flex-slider" class="preview-images-slider">
                                 <ul class="slides">
+                                    @foreach($images as $image)
                                     <li>
                                         <div class="preview-single">
-                                            <a href="assets/images/listings/big.jpg" data-lightbox="post1-img"><img alt="slide1" src="assets/images/listings/big.jpg"></a>
+                                            <a href="{{ $image->getImages() }}" data-lightbox="post1-img">
+                                                <img alt="slide1" src="{{ $image->getImages() }}">
+                                            </a>
                                             <div class="preview-single-labels">
                                                 <div class="clearfix">
                                                     <div class="label-black pull-left">
-                                                        <h3>568 E 1st Ave, Ney Jersey</h3>
-                                                        <p><a href="#">2500 Sq Ft</a> <span class="delimiter-inline-alt"></span> <a href="#">4 Bedrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">2 Bathrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">1 Garage</a></p>
+                                                        <h3>{{ $property->name }}</h3>
+                                                        <p>
+                                                            <a href="#">Área: {{ $property->area }}</a> <span class="delimiter-inline-alt"></span>
+                                                            <a href="#">{{ $property->bedrooms }} Quartos</a> <span class="delimiter-inline-alt"></span>
+                                                            <a href="#">{{ $property->bathrooms }} Banheiros</a> <span class="delimiter-inline-alt"></span>
+                                                            <a href="#">{{ $property->garage }} Garagem</a>
+                                                        </p>
                                                     </div>
                                                     <div class="label-white pull-right">
                                                         <div class="listing-price">
-                                                            $2.500 <span class="small">per month</span>
+                                                            R$ {{ $property->price }} <span class="small">per month</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="label-color">
-                                                    <h3 class="no-margin">FOR RENT</h3>
+                                                    <h3 class="no-margin">{{ $property->getPurpose() }}</h3>
                                                 </div>
                                             </div>
                                         </div>
                                     </li>
-                                    <li>
-                                        <div class="preview-single">
-                                            <a href="assets/images/listings/big.jpg" data-lightbox="post1-img"><img alt="slide1" src="assets/images/listings/big.jpg"></a>
-                                            <div class="preview-single-labels">
-                                                <div class="clearfix">
-                                                    <div class="label-black pull-left">
-                                                        <h3>568 E 1st Ave, Ney Jersey</h3>
-                                                        <p><a href="#">2500 Sq Ft</a> <span class="delimiter-inline-alt"></span> <a href="#">4 Bedrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">2 Bathrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">1 Garage</a></p>
-                                                    </div>
-                                                    <div class="label-white pull-right">
-                                                        <div class="listing-price">
-                                                            $2.500 <span class="small">per month</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="label-color">
-                                                    <h3 class="no-margin">FOR RENT</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="preview-single">
-                                            <a href="assets/images/listings/big.jpg" data-lightbox="post1-img"><img alt="slide1" src="assets/images/listings/big.jpg"></a>
-                                            <div class="preview-single-labels">
-                                                <div class="clearfix">
-                                                    <div class="label-black pull-left">
-                                                        <h3>568 E 1st Ave, Ney Jersey</h3>
-                                                        <p><a href="#">2500 Sq Ft</a> <span class="delimiter-inline-alt"></span> <a href="#">4 Bedrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">2 Bathrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">1 Garage</a></p>
-                                                    </div>
-                                                    <div class="label-white pull-right">
-                                                        <div class="listing-price">
-                                                            $2.500 <span class="small">per month</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="label-color">
-                                                    <h3 class="no-margin">FOR RENT</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="preview-single">
-                                            <a href="assets/images/listings/big.jpg" data-lightbox="post1-img"><img alt="slide1" src="assets/images/listings/big.jpg"></a>
-                                            <div class="preview-single-labels">
-                                                <div class="clearfix">
-                                                    <div class="label-black pull-left">
-                                                        <h3>568 E 1st Ave, Ney Jersey</h3>
-                                                        <p><a href="#">2500 Sq Ft</a> <span class="delimiter-inline-alt"></span> <a href="#">4 Bedrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">2 Bathrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">1 Garage</a></p>
-                                                    </div>
-                                                    <div class="label-white pull-right">
-                                                        <div class="listing-price">
-                                                            $2.500 <span class="small">per month</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="label-color">
-                                                    <h3 class="no-margin">FOR RENT</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="preview-single">
-                                            <a href="assets/images/listings/big.jpg" data-lightbox="post1-img"><img alt="slide1" src="assets/images/listings/big.jpg"></a>
-                                            <div class="preview-single-labels">
-                                                <div class="clearfix">
-                                                    <div class="label-black pull-left">
-                                                        <h3>568 E 1st Ave, Ney Jersey</h3>
-                                                        <p><a href="#">2500 Sq Ft</a> <span class="delimiter-inline-alt"></span> <a href="#">4 Bedrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">2 Bathrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">1 Garage</a></p>
-                                                    </div>
-                                                    <div class="label-white pull-right">
-                                                        <div class="listing-price">
-                                                            $2.500 <span class="small">per month</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="label-color">
-                                                    <h3 class="no-margin">FOR RENT</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="preview-single">
-                                            <a href="assets/images/listings/big.jpg" data-lightbox="post1-img"><img alt="slide1" src="assets/images/listings/big.jpg"></a>
-                                            <div class="preview-single-labels">
-                                                <div class="clearfix">
-                                                    <div class="label-black pull-left">
-                                                        <h3>568 E 1st Ave, Ney Jersey</h3>
-                                                        <p><a href="#">2500 Sq Ft</a> <span class="delimiter-inline-alt"></span> <a href="#">4 Bedrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">2 Bathrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">1 Garage</a></p>
-                                                    </div>
-                                                    <div class="label-white pull-right">
-                                                        <div class="listing-price">
-                                                            $2.500 <span class="small">per month</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="label-color">
-                                                    <h3 class="no-margin">FOR RENT</h3>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
+                                    @endforeach
                                 </ul>
                             </div><!-- #slider -->
                             <div class="onscroll-animate" data-animation="fadeInUp">
                                 <div id="flex-carousel" class="preview-thumnails-slider">
                                     <ul class="slides">
-                                        <li>
-                                            <img alt="slide1 thumbnail" src="assets/images/listings/thumbnails/6.jpg">
-                                        </li>
-                                        <li>
-                                            <img alt="slide2 thumbnail" src="assets/images/listings/thumbnails/1.jpg">
-                                        </li>
-                                        <li>
-                                            <img alt="slide3 thumbnail" src="assets/images/listings/thumbnails/2.jpg">
-                                        </li>
-                                        <li>
-                                            <img alt="slide4 thumbnail" src="assets/images/listings/thumbnails/3.jpg">
-                                        </li>
-                                        <li>
-                                            <img alt="slide5 thumbnail" src="assets/images/listings/thumbnails/4.jpg">
-                                        </li>
-                                        <li>
-                                            <img alt="slide6 thumbnail" src="assets/images/listings/thumbnails/5.jpg">
-                                        </li>
+                                        @foreach($images as $image)
+                                        <li><img alt="slide1 thumbnail" src="{{ $image->getImages() }}"></li>
+                                        @endforeach
                                     </ul>
                                 </div><!-- #carousel -->
                             </div><!-- .onscroll-animate -->
-                            <p class="onscroll-animate" data-animation="fadeInUp">An entertainer's paradise in the Friendly Hills community, priced to sell. Featuring 4 spacious bedrooms and 3 bathrooms (one bedroom/bath downstairs), 3170 sq ft of living space with a good size lot at approx.13414 sq ft. HUGE, spacious kitchen with views of golf course plus a fantastic backyard with the WORKS, built spa, BBQ area, fireplace etc. With views of the city lights, Catalina, golf course. Tons of upgrades including beautiful wood floors, Laminate and Travertine just to name a few. A must see! High school is around the corner and a very sought out school. La Berna High School.</p>
+                            <p class="onscroll-animate" data-animation="fadeInUp">{!! $property->description !!}</p>
                         </section>
     
                         <section id="checkbox-list-section">
@@ -206,19 +100,9 @@
                                     <h1>Características</h1>
                                 </div>
                                 <ul class="list-checkbox">
-                                    <li>Barbecue</li>
-                                    <li>Ceiling Fan</li>
-                                    <li>Deck</li>
-                                    <li>Fenced Yard</li>
-                                    <li>Fireplace</li>
-                                    <li>Flooring: Carpet</li>
-                                    <li>Garden</li>
-                                    <li>Hot Tub/Spa</li>
-                                    <li>Jetted Tub</li>
-                                    <li>Parking: Garage - Attached</li>
-                                    <li>Patio</li>
-                                    <li>Sprinkler System</li>
-                                    <li>View: City</li>
+                                    @foreach($features as $feature)
+                                        <li>{{ $feature->feature->name }}</li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </section>
@@ -226,21 +110,25 @@
                         <section id="videos-section">
                             <div class="section-content">
                                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
-                                    <h1>Live previews - video</h1>
+                                    <h1>Live preview - videos</h1>
                                 </div>
                                 <div class="row">
+                                    @if($property->video1 != null)
                                     <div class="col-md-6 onscroll-animate">
                                         <div class="embed-responsive embed-responsive-4by3">
-                                            <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/9d8wWcJLnFI"></iframe>
+                                            <iframe class="embed-responsive-item" src="{{ $property->videoOne() }}"></iframe>
                                         </div>
                                         <div class="margin-20"></div>
                                     </div>
+                                    @endif
+                                    @if($property->video2 != null)
                                     <div class="col-md-6 onscroll-animate" data-delay="500">
                                         <div class="embed-responsive embed-responsive-4by3">
-                                            <iframe class="embed-responsive-item" src="http://www.youtube.com/embed/9d8wWcJLnFI"></iframe>
+                                            <iframe class="embed-responsive-item" src="{{ $property->videoTwo() }}"></iframe>
                                         </div>
                                         <div class="margin-20"></div>
                                     </div>
+                                    @endif
                                 </div>
                             </div>
                         </section>
@@ -248,7 +136,7 @@
                         <section id="map-section">
                             <div class="section-content">
                                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
-                                    <h1>Rezidence Location</h1>
+                                    <h1>Localização</h1>
                                 </div>
                                 <!-- Google Map -->
                                 <div class="google-map-container">
@@ -263,7 +151,7 @@
                         <section id="listings-section">
                             <div class="section-content">
                                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
-                                    <h1>Contact Agent</h1>
+                                    <h1>Contate um Corretor</h1>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-8">
@@ -271,42 +159,52 @@
                                             <div class="row">
                                                 <div class="col-xs-6">
                                                     <div class="profile-img">
-                                                        <img alt="agent" src="assets/images/agents/2.jpg">
+                                                        <img alt="agente" src="{{ $property->user->getAvatar() }}">
                                                         <div class="profile-img-info">
-                                                            <a href="#" class="profile-social"><i class="fa fa-facebook"></i></a>
-                                                            <a href="#" class="profile-social"><i class="fa fa-twitter"></i></a>
-                                                            <a href="#" class="profile-social"><i class="fa fa-google-plus"></i></a>
-                                                            <a href="#" class="profile-social"><i class="fa fa-linkedin"></i></a>
-                                                            <a href="#" class="profile-social"><i class="fa fa-dribbble"></i></a>
+                                                            @if($settings->facebook != null)
+                                                                <a href="{{ $settings->facebook }}" class="profile-social" target="_blank"><i class="fa fa-facebook"></i></a>
+                                                            @endif
+                                                            @if($settings->twitter != null)
+                                                                <a href="{{ $settings->twitter }}" class="profile-social" target="_blank"><i class="fa fa-twitter"></i></a>
+                                                            @endif
+                                                            @if($settings->googleplus != null)
+                                                                <a href="{{ $settings->googleplus }}" class="profile-social" target="_blank"><i class="fa fa-google-plus"></i></a>
+                                                            @endif
+                                                            @if($settings->linkedin != null)
+                                                                <a href="{{ $settings->linkedin }}" class="profile-social" target="_blank"><i class="fa fa-linkedin"></i></a>
+                                                            @endif
+                                                            @if($settings->link != null)
+                                                                <a href="{{ $settings->link }}" class="profile-social" target="_blank"><i class="fa fa-globe"></i></a>
+                                                            @endif
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="col-xs-6 text-left onscroll-animate" data-animation="fadeInUp">
-                                                    <h5 class="profile-heading">Hansom Rob</h5>
-                                                    <p>home expert</p>
+                                                    <h5 class="profile-heading">{{ $property->user->name }}</h5>
+                                                    <p>{{ $property->user->job }}</p>
                                                     <div class="profile-cotent">
-                                                        <p>Some were thickly set with glittering teeth resembling ivory saws; others were tufted with knots of human hair, and one was sickle-shaped, with a vast handle sweeping round like the segment.</p>
+                                                        <p>{{ str_limit($property->user->about, 200) }}</p>
                                                     </div>
                                                     <p>
-                                                        <i class="fa fa-phone"></i> 0 800 50 555 123<br>
-                                                        <i class="fa fa-envelope-alt"></i> hansom.rob@hometastic.com<br>
-                                                        <i class="fa fa-money"></i> 57 Sales done
+                                                        <i class="fa fa-phone"></i> {{ $settings->phone1 }}<br>
+                                                        <i class="fa fa-phone"></i> {{ $settings->phone2 }}<br>
+                                                        <i class="fa fa-envelope-alt"></i> <a href="#">{{ $property->user->email }}</a><br>
                                                     </p>
-                                                    <a href="agents.html" class="read-more-link-alt"><span class="text-smaller">See Full Profile</span></a>
+                                                    <a href="{{ url('corretores') }}" class="read-more-link-alt"><span class="text-smaller">Ver o perfil completo</span></a>
                                                 </div>
                                             </div><!-- .row -->
                                         </div><!-- .profile -->
                                     </div><!-- .col-md-8 -->
                                     <div class="col-md-4 onscroll-animate" data-animation="fadeInUp">
-                                        <h3 class="section-small-heading">Send Message</h3>
-                                        <form class="form-contact" id="contact-form-agent" action="#" method="post" data-all-fields-required-msg="All fields are required" data-ajax-fail-msg="Ajax could not set the request" data-success-msg="Email successfully sent.">
-                                            <input type="text" name="name" placeholder="Name">
+                                        <h3 class="section-small-heading">Envie uma mensagem</h3>
+                                        {!! Form::open(['url' => '/', 'class' => 'form-contact', 'id' => 'contact-form-agent']) !!}
+                                        {!! Form::hidden('property_id', $property->id) !!}
+                                            <input type="text" name="name" placeholder="Nome">
                                             <input type="text" name="email" placeholder="E-mail">
-                                            <input type="hidden" name="property" value="Property 123">
-                                            <textarea name="message" placeholder="Message"></textarea>
-                                            <input type="submit" class="submit-alt pull-right" value="Submit">
+                                            <textarea name="message" placeholder="Mensagem"></textarea>
+                                            <input type="submit" class="submit-alt pull-right" value="Enviar">
                                             <p class="return-msg"></p>
-                                        </form>
+                                        {!! Form::close() !!}
                                     </div>
                                 </div><!-- .row -->
                             </div><!-- .section-content -->
@@ -315,23 +213,24 @@
                         <section id="recent-properties-section">
                             <div class="section-content">
                                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
-                                    <h1>Recent Properties Added</h1>
+                                    <h1>Propriedades recentes adicionadas</h1>
                                 </div>
                                 <div class="onscroll-animate" data-animation="fadeInUp">
                                     <div id="recent_prop_slider" class="pagination-alt">
+                                        @foreach(\App\Models\Property::orderBy('id', 'DESC')->take(6)->get() as $recent)
                                         <article>
                                             <div class="post-preview-alt">
-                                                <a href="#">
+                                                <a href="{{ route('propriedade', [$recent->id, $recent->slug]) }}">
                                                     <section>
                                                         <div class="post-preview-img">
                                                             <div class="post-preview-img-inner">
-                                                                <img alt="post img" src="assets/images/listings/9.jpg">
+                                                                <img alt="post img" src="{{ $recent->getMainImage() }}">
                                                             </div>
-                                                            <div class="post-preview-label2">For Sale</div>
+                                                            <div class="post-preview-label2">{{ $recent->getPurpose() }}</div>
                                                             <div class="post-img-detail">
                                                                 <div class="post-img-detail-wrapper">
                                                                     <div class="post-img-detail-content">
-                                                                        <div class="post-img-detail-box">$350.000</div>
+                                                                        <div class="post-img-detail-box">R$ {{ $recent->getValue() }}</div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -339,154 +238,27 @@
                                                     </section>
                                                 </a>
                                                 <div class="post-preview-content">
-                                                    <h2 class="post-preview-heading"><a href="#">335 W 2nd Ave, California</a></h2>
+                                                    <h2 class="post-preview-heading">
+                                                        <a href="{{ route('propriedade', [$recent->id, $recent->slug]) }}">{{ $recent->name }}</a>
+                                                    </h2>
                                                     <div class="post-preview-detail">
-                                                        <a href="#">2500 Sq Ft</a> <span class="delimiter-inline-alt"></span> <a href="#">4 Bedrooms</a><br>
-                                                        <a href="#">2 Bathrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">1 Garage</a>
+                                                        @if($recent->area != null)
+                                                            Área: {{ $recent->area }} <span class="delimiter-inline-alt"></span>
+                                                        @endif
+                                                        @if($recent->bedrooms > 0)
+                                                            Quartos: {{ $recent->bedrooms }} <span class="delimiter-inline"></span>
+                                                        @endif
+                                                        @if($recent->bathrooms > 0)
+                                                            Banheiros: {{ $recent->bathrooms }} <span class="delimiter-inline"></span>
+                                                        @endif
+                                                        @if($recent->garage > 0)
+                                                            Garagens: {{ $recent->garage }}
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
                                         </article>
-                                        <article>
-                                            <div class="post-preview-alt">
-                                                <a href="#">
-                                                    <section>
-                                                        <div class="post-preview-img">
-                                                            <div class="post-preview-img-inner">
-                                                                <img alt="post img" src="assets/images/listings/3.jpg">
-                                                            </div>
-                                                            <div class="post-preview-label2">For Sale</div>
-                                                            <div class="post-img-detail">
-                                                                <div class="post-img-detail-wrapper">
-                                                                    <div class="post-img-detail-content">
-                                                                        <div class="post-img-detail-box">$350.000</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </section>
-                                                </a>
-                                                <div class="post-preview-content">
-                                                    <h2 class="post-preview-heading"><a href="#">335 W 2nd Ave, California</a></h2>
-                                                    <div class="post-preview-detail">
-                                                        <a href="#">2500 Sq Ft</a> <span class="delimiter-inline-alt"></span> <a href="#">4 Bedrooms</a><br>
-                                                        <a href="#">2 Bathrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">1 Garage</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                        <article>
-                                            <div class="post-preview-alt">
-                                                <a href="#">
-                                                    <section>
-                                                        <div class="post-preview-img">
-                                                            <div class="post-preview-img-inner">
-                                                                <img alt="post img" src="assets/images/listings/1.jpg">
-                                                            </div>
-                                                            <div class="post-preview-label2">For Sale</div>
-                                                            <div class="post-img-detail">
-                                                                <div class="post-img-detail-wrapper">
-                                                                    <div class="post-img-detail-content">
-                                                                        <div class="post-img-detail-box">$350.000</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </section>
-                                                </a>
-                                                <div class="post-preview-content">
-                                                    <h2 class="post-preview-heading"><a href="#">335 W 2nd Ave, California</a></h2>
-                                                    <div class="post-preview-detail">
-                                                        <a href="#">2500 Sq Ft</a> <span class="delimiter-inline-alt"></span> <a href="#">4 Bedrooms</a><br>
-                                                        <a href="#">2 Bathrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">1 Garage</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                        <article>
-                                            <div class="post-preview-alt">
-                                                <a href="#">
-                                                    <section>
-                                                        <div class="post-preview-img">
-                                                            <div class="post-preview-img-inner">
-                                                                <img alt="post img" src="assets/images/listings/8.jpg">
-                                                            </div>
-                                                            <div class="post-preview-label2">For Sale</div>
-                                                            <div class="post-img-detail">
-                                                                <div class="post-img-detail-wrapper">
-                                                                    <div class="post-img-detail-content">
-                                                                        <div class="post-img-detail-box">$350.000</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </section>
-                                                </a>
-                                                <div class="post-preview-content">
-                                                    <h2 class="post-preview-heading"><a href="#">335 W 2nd Ave, California</a></h2>
-                                                    <div class="post-preview-detail">
-                                                        <a href="#">2500 Sq Ft</a> <span class="delimiter-inline-alt"></span> <a href="#">4 Bedrooms</a><br>
-                                                        <a href="#">2 Bathrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">1 Garage</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                        <article>
-                                            <div class="post-preview-alt">
-                                                <a href="#">
-                                                    <section>
-                                                        <div class="post-preview-img">
-                                                            <div class="post-preview-img-inner">
-                                                                <img alt="post img" src="assets/images/listings/7.jpg">
-                                                            </div>
-                                                            <div class="post-preview-label2">For Sale</div>
-                                                            <div class="post-img-detail">
-                                                                <div class="post-img-detail-wrapper">
-                                                                    <div class="post-img-detail-content">
-                                                                        <div class="post-img-detail-box">$350.000</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </section>
-                                                </a>
-                                                <div class="post-preview-content">
-                                                    <h2 class="post-preview-heading"><a href="#">335 W 2nd Ave, California</a></h2>
-                                                    <div class="post-preview-detail">
-                                                        <a href="#">2500 Sq Ft</a> <span class="delimiter-inline-alt"></span> <a href="#">4 Bedrooms</a><br>
-                                                        <a href="#">2 Bathrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">1 Garage</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
-                                        <article>
-                                            <div class="post-preview-alt">
-                                                <a href="#">
-                                                    <section>
-                                                        <div class="post-preview-img">
-                                                            <div class="post-preview-img-inner">
-                                                                <img alt="post img" src="assets/images/listings/2.jpg">
-                                                            </div>
-                                                            <div class="post-preview-label2">For Sale</div>
-                                                            <div class="post-img-detail">
-                                                                <div class="post-img-detail-wrapper">
-                                                                    <div class="post-img-detail-content">
-                                                                        <div class="post-img-detail-box">$350.000</div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </section>
-                                                </a>
-                                                <div class="post-preview-content">
-                                                    <h2 class="post-preview-heading"><a href="#">335 W 2nd Ave, California</a></h2>
-                                                    <div class="post-preview-detail">
-                                                        <a href="#">2500 Sq Ft</a> <span class="delimiter-inline-alt"></span> <a href="#">4 Bedrooms</a><br>
-                                                        <a href="#">2 Bathrooms</a> <span class="delimiter-inline-alt"></span> <a href="#">1 Garage</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </article>
+                                        @endforeach
                                     </div><!-- #recent_prop_slider -->
                                 </div><!-- .onscroll-animate -->
                             </div><!-- .section-content -->
@@ -498,7 +270,7 @@
                         <section>
                             <div class="section-content">
                                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
-                                    <h1>Share It</h1>
+                                    <h1>Compartilhe It</h1>
                                 </div>
                                 <div class="onscroll-animate" data-animation="fadeInUp">
                                     <div class="social-container">
@@ -625,39 +397,33 @@
                                 </div>
                             </div>
                         </section>
-    
-                        <section>
-                            <div class="section-content">
-                                <div class="section-header onscroll-animate" data-animation="fadeInLeft">
-                                    <h1>News Letter</h1>
-                                </div>
-                                <p>Subscribe for latest news</p>
-                                <form class="form-layout1" id="rss-subscribe-2" action="#" method="post" data-email-not-set-msg="Email must be set" data-ajax-fail-msg="Ajax could not set the request" data-success-msg="Email successfully added">
-                                    <input type="email" name="email" placeholder="seu e-mail...">
-                                    <a href="#" class="form-submit"><i class="fa fa-envelope-alt"></i></a>
-                                    <p class="return-msg"></p>
-                                </form>
-                            </div>
-                        </section>
+
                     </div><!-- .col-md-3 -->
                 </div><!-- .row -->
             </div><!-- .container -->
         </div><!-- .section-content -->
     </section>
-    
-    <section>
-        <div class="bg-buildings">
-            <div class="container-big section-content bg-logo">
-                <div class="container clearfix">
-                    <div class="big-notice onscroll-animate">
-                        <h3><span class="text-uppercase"><strong>Home</strong>tastic</span> is a beautifull Template for Real Estate businesses, includes all elements needed to start the job</h3>
-                        <div class="onscroll-animate pull-right" data-delay="700" data-animation="flipInY">
-                            <div class="button-container"><a class="button" href="#">Buy The Template</a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
+    @include('site.includes.quote')
+
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('site/vendor/stroll/stroll.min.js') }}"></script>
+    <script src="{{ asset('site/vendor/flexslider/jquery.flexslider-min.js') }}"></script>
+
+    <script>
+        function initMap() {
+            let uluru = {lat: {{ $property->latitude }}, lng: {{ $property->longitude }}};
+            let map = new google.maps.Map(document.getElementById('map-canvas'), {
+                zoom: 18,
+                center: uluru
+            });
+            let marker = new google.maps.Marker({
+                position: uluru,
+                map: map
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBI6yreMxqsm-wuLrBIdNvawJcbkyAOnj8&callback=initMap"> </script>
 @endsection
