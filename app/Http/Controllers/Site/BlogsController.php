@@ -11,7 +11,7 @@ class BlogsController extends Controller
 {
     public function index()
     {
-        $blogs = Blog::orderBy('created_at', 'desc')->paginate(12);
+        $blogs = Blog::orderBy('created_at', 'DESC')->paginate(4);
         return view('site.blogs.index', compact('blogs'));
     }
 
@@ -34,6 +34,8 @@ class BlogsController extends Controller
         $blog = Blog::where('id', '=', $id)->whereSlug($slug)->firstOrFail();
         $blog->increment('views');
 
-        return view('site.blogs.blog', compact('blog'));
+        $comments = Comment::where('blog_id', '=', $id)->where('allowed', '=', true)->get();
+
+        return view('site.blogs.blog', compact('blog', 'comments'));
     }
 }

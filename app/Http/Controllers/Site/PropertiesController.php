@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Site;
 
 use App\Models\Property;
+use App\Models\PropertyFeature;
+use App\Models\PropertyImage;
 use App\Models\Question;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -34,7 +36,9 @@ class PropertiesController extends Controller
         $property = Property::where('id', '=', $id)->whereSlug($slug)->firstOrFail();
         $property->increment('views');
 
-        return view('site.properties.property', compact('property'));
+        $images = PropertyImage::where('property_id', '=', $id)->get();
+        $features = PropertyFeature::where('property_id', '=', $id)->get();
+        return view('site.properties.property', compact('property', 'images', 'features'));
     }
 
     public function pesquisar(Request $request)
