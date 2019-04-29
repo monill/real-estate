@@ -8,6 +8,8 @@ class PropertyImage extends Eloquent
 {
 	public $timestamps = false;
 
+    protected $table = 'property_images';
+
 	protected $casts = [
 		'property_id' => 'int',
         'feature' => 'bool'

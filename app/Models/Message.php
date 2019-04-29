@@ -7,6 +7,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 class Message extends Eloquent
 {
+    protected $table = 'messages';
+
 	protected $casts = [
 		'unread' => 'bool'
 	];

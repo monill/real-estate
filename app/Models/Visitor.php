@@ -6,6 +6,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 class Visitor extends Eloquent
 {
+    protected $table = 'visitors';
+
 	protected $casts = [
 		'mobile' => 'bool',
 		'phone' => 'bool',

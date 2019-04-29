@@ -6,6 +6,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 class Newsletter extends Eloquent
 {
+    protected $table = 'newsletters';
+
 	protected $casts = [
 		'accept' => 'bool'
 	];

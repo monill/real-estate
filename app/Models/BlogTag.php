@@ -6,6 +6,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 class BlogTag extends Eloquent
 {
+    protected $table = 'blog_tags';
+
 	public $timestamps = false;
 
 	protected $casts = [

@@ -6,6 +6,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 class Feature extends Eloquent
 {
+    protected $table = 'features';
+
 	protected $fillable = [
 		'name'
 	];

@@ -7,6 +7,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 class Log extends Eloquent
 {
+    protected $table = 'logs';
+
 	protected $casts = [
 		'user_id' => 'int',
 		'mobile' => 'bool',

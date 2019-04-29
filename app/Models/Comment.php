@@ -6,6 +6,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 class Comment extends Eloquent
 {
+    protected $table = 'comments';
+
 	protected $casts = [
 		'blog_id' => 'int',
 		'allowed' => 'bool'

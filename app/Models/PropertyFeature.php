@@ -8,6 +8,8 @@ class PropertyFeature extends Eloquent
 {
 	public $timestamps = false;
 
+    protected $table = 'property_features';
+
 	protected $casts = [
 		'property_id' => 'int',
 		'feature_id' => 'int'

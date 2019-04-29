@@ -6,9 +6,10 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 class Setting extends Eloquent
 {
+    protected $table = 'settings';
+
 	protected $fillable = [
 		'site_title',
-		'meta_title',
 		'meta_keywords',
 		'meta_description',
 		'analytics',

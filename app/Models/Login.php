@@ -7,6 +7,8 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 
 class Login extends Eloquent
 {
+    protected $table = 'logins';
+
 	protected $casts = [
 		'user_id' => 'int',
 		'mobile' => 'bool',

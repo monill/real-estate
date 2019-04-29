@@ -9,6 +9,8 @@ class Property extends Eloquent
 {
     use Sluggable;
 
+    protected $table = 'properties';
+
     protected $casts = [
         'user_id' => 'int',
         'category_id' => 'int',
@@ -91,10 +93,7 @@ class Property extends Eloquent
             $url = $this->video1;
 
             if ($this->checkUrl($url)) {
-                $fetch = explode("v=", $url);
-                $videoId = $fetch[1];
-
-                return $this->videoImage($videoId);
+                return $url;
             }
         }
     }
@@ -105,10 +104,7 @@ class Property extends Eloquent
             $url = $this->video2;
 
             if ($this->checkUrl($url)) {
-                $fetch = explode("v=", $url);
-                $videoId = $fetch[1];
-
-                return $this->videoImage($videoId);
+                return $url;
             }
         }
     }
@@ -127,17 +123,6 @@ class Property extends Eloquent
         // Check that URL exists
         $file_headers = @get_headers($url);
         return !$file_headers || $file_headers[0] == 'HTTP/1.1 404 Not Found' ? false : true;
-    }
-
-    protected function videoImage($videoId)
-    {
-        if ($this->checkUrl('https://i.ytimg.com/vi/' . $videoId . '/maxresdefault.jpg')) {
-            return 'https://i.ytimg.com/vi/' . $videoId . '/maxresdefault.jpg';
-        } elseif ($this->checkUrl('https://img.youtube.com/vi/' . $videoId . '/maxresdefault.jpg"')) {
-            return 'https://img.youtube.com/vi/' . $videoId . '/maxresdefault.jpg"';
-        } else {
-            return asset('site/assets/images/no-image-found.png');
-        }
     }
 
     public function getPurpose()

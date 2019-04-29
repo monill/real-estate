@@ -9,6 +9,8 @@ class Tag extends Eloquent
 {
     use Sluggable;
 
+    protected $table = 'tags';
+
 	protected $casts = [
 		'views' => 'int'
 	];

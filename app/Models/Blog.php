@@ -9,6 +9,8 @@ class Blog extends Eloquent
 {
     use Sluggable;
 
+    protected $table = 'blogs';
+
 	protected $casts = [
 		'user_id' => 'int',
 		'views' => 'int',

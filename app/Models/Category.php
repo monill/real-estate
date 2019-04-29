@@ -9,6 +9,8 @@ class Category extends Eloquent
 {
     use Sluggable;
 
+    protected $table = 'categories';
+
 	protected $casts = [
 		'views' => 'int'
 	];
