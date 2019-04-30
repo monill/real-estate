@@ -317,7 +317,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-6 onscroll-animate" data-animation="fadeInLeft">
-                    <p>{{ date('Y') }} Todos os direitos reservados. Feito com <i class="red fa fa-heart-empty"></i> por Nós</p>
+                    <p>{{ date('Y') }} Todos os direitos reservados. Desenvolvido com <i class="red fa fa-heart-empty"></i> por Nós</p>
                 </div>
                 <div class="col-xs-6 text-right onscroll-animate" data-animation="fadeInRight">
                     <div class="socials-wrapper">

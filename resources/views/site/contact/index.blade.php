@@ -11,7 +11,7 @@
     <meta property="og:image" content="{{ asset('site/images/logo.png') }}" />
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="{{ url('/') }}" />
+    <meta property="og:url" content="{{ url('contato') }}" />
     <meta property="og:title" content="{{ $settings->site_title }}" />
     <meta property="og:description" content="{{ $settings->meta_description }}" />
 @endsection
@@ -129,22 +129,7 @@
 
     <script>
         function initMap() {
-            let styles = [
-                {"featureType": "landscape", "stylers": [{"saturation": -100}, {"lightness": 65}, {"visibility": "on"}]},
-                {"featureType": "poi", "stylers": [{"saturation": -100}, {"lightness": 51}, {"visibility": "simplified"}]},
-                {"featureType": "road.highway", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]},
-                {"featureType": "road.arterial", "stylers": [{"saturation": -100}, {"lightness": 30}, {"visibility": "on"}]},
-                {"featureType": "road.local", "stylers": [{"saturation": -100}, {"lightness": 40}, {"visibility": "on"}]},
-                {"featureType": "transit", "stylers": [{"saturation": -100}, {"visibility": "simplified"}]},
-                {"featureType": "administrative.province", "stylers": [{"visibility": "off"}]},
-                {"featureType": "water", "elementType": "labels", "stylers": [{"visibility": "on"}, {"lightness": -25}, {"saturation": -100}]},
-                {"featureType": "water", "elementType": "geometry", "stylers": [{"hue": "#ffff00"}, {"lightness": -25}, {"saturation": -97}]}
-            ];
-
-            let uluru = {
-                lat: {{ $settings->latitude }},
-                lng: {{ $settings->longitude }}
-            };
+            let uluru = {lat: {{ $settings->latitude }}, lng: {{ $settings->longitude }}};
             let map = new google.maps.Map(document.getElementById('map-canvas'), {
                 zoom: 15,
                 center: uluru,
@@ -159,8 +144,6 @@
                 overviewMapControl: false,
                 scrollwheel: false,
                 draggable: true,
-                styles: styles
-
             });
             let marker = new google.maps.Marker({
                 position: uluru,

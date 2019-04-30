@@ -60,7 +60,7 @@
         <div class="bg-image bg-pattern bg-cover parallax-background">
             <div class="section-content onscroll-animate" data-animation="fadeInUp">
                 <p class="citation">“O segredo da criatividade é saber como esconder suas fontes.”</p>
-                <p class="citation-author">Albert EINSTEIN</p>
+                <p class="citation-author">Albert Einstein</p>
             </div>
         </div>
     </section>

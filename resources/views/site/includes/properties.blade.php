@@ -26,8 +26,10 @@
                         <h2 class="post-preview-heading">{{ $property->name }}</h2>
                         <p>{!! str_limit($property->description, 107, '...') !!}</p>
                         <div class="post-preview-price-container">
-                            <a href="{{ route('propriedade', [$property->id, $property->slug]) }}" class="read-more-link-alt">Leia mais</a>
-                            <p class="listing-price">R$ {{ $property->getValue() }}<span class="small">per month</span></p>
+                            <a href="{{ route('propriedade', [$property->id, $property->slug]) }}"
+                               class="read-more-link-alt">Leia mais</a>
+                            <p class="listing-price">R$ {{ $property->getValue() }}<span class="small">per month</span>
+                            </p>
                         </div>
                         <div class="post-preview-detail">
                             @if($property->area != null)
@@ -48,4 +50,5 @@
             </article>
         </div><!-- .col-md-4 -->
     @endforeach
-</div><!-- .row -->
+</div>
+<!-- .row -->
