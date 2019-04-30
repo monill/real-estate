@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Log;
 use App\Models\Message;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class MessagesController extends Controller
 {
@@ -24,16 +23,6 @@ class MessagesController extends Controller
         return view('admin.messages.index', compact('messages', 'unread'));
     }
 
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
     public function show($id)
     {
         $message = Message::findOrFail($id);
@@ -42,16 +31,6 @@ class MessagesController extends Controller
 
         $unread = Message::where('unread', '=', false)->count();
         return view('admin.messages.message', compact('message', 'unread'));
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     public function destroy($id)

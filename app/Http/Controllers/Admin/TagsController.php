@@ -23,11 +23,6 @@ class TagsController extends Controller
         return view('admin.tags.index', compact('tags'));
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
         $tag = new Tag($request->except('_token'));
@@ -35,16 +30,6 @@ class TagsController extends Controller
 
         $this->log->log('Usuario(a) cadastrou nova Tag');
         return redirect()->to('tags');
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
     }
 
     public function update(Request $request, $id)

@@ -23,26 +23,6 @@ class BlogCommentsController extends Controller
         return view('admin.comments.index', compact('comments'));
     }
 
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
     public function update(Request $request, $id)
     {
         $comment = Comment::findOrFail($id);
@@ -59,5 +39,4 @@ class BlogCommentsController extends Controller
         $this->log->log('Usuario(a) deletou comentario');
         return redirect()->to('comments');
     }
-
 }

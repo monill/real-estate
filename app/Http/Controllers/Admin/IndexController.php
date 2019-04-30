@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\Property;
 use App\Models\Visitor;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 
@@ -24,14 +23,13 @@ class IndexController extends Controller
         $forSale = Property::where('purpose', '=', 2)->count();
         $totalVisitors = Visitor::count();
 
-        $topFiveProperties = Property::orderBy('views')->take(5)->get();
+        $topFiveProperties = Property::orderBy('views', 'DESC')->take(5)->get();
 
-        $topThreeBlogs = Blog::orderBy('views')->take(3)->get();
-        $lastThreeBlogs = Blog::orderBy('id')->take(3)->get();
+        $topThreeBlogs = Blog::orderBy('views', 'DESC')->take(3)->get();
+        $lastThreeBlogs = Blog::orderBy('views', 'DESC')->take(3)->get();
 
-
-        $totalForRent = DB::table('properties')->where('purpose', '=', 1)->avg('price');
-        $totalForSale = DB::table('properties')->where('purpose', '=', 2)->avg('price');
+        $totalForRent = DB::table('properties')->where('purpose', '=', 1)->sum('price');
+        $totalForSale = DB::table('properties')->where('purpose', '=', 2)->sum('price');
 
         $compact = [
             'totalProperties',
@@ -45,36 +43,6 @@ class IndexController extends Controller
             'totalForSale'
         ];
         return view('admin.dashboard.index', compact($compact));
-    }
-
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 
     public function cleanCache()

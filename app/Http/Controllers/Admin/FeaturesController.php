@@ -24,27 +24,12 @@ class FeaturesController extends Controller
         return view('admin.features.index', compact('features'));
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
         $feature = new Feature($request->except('_token'));
         $feature->save();
         $this->log->log('Usuario(a) cadastrou nova caracteristica.');
         return redirect()->to('features');
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
     }
 
     public function update(Request $request, $id)

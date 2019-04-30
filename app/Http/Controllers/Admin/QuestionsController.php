@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Log;
 use App\Models\Question;
-use Illuminate\Http\Request;
 
 class QuestionsController extends Controller
 {
@@ -24,16 +23,6 @@ class QuestionsController extends Controller
         return view('admin.questions.index', compact('questions', 'unread'));
     }
 
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
     public function show($id)
     {
         $question = Question::findOrFail($id);
@@ -42,16 +31,6 @@ class QuestionsController extends Controller
 
         $unread = Question::where('unread', '=', false)->count();
         return view('admin.questions.question', compact('question', 'unread'));
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     public function destroy($id)

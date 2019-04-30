@@ -44,7 +44,7 @@
                 <div class="row">
 
                     @foreach($images as $image)
-                    <div class="col-md-4 onscroll-animate" data-delay="400">
+                    <div class="col-md-4 onscroll-animate" data-delay="200">
                         <div class="post-preview gallery-post">
                             <div class="post-preview-img">
                                 <div class="post-preview-img-inner">

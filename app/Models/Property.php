@@ -93,9 +93,13 @@ class Property extends Eloquent
             $url = $this->video1;
 
             if ($this->checkUrl($url)) {
-                return $url;
+                $fetch = explode("v=", $url);
+                $videoId = $fetch[1];
+
+                return 'http://www.youtube.com/embed/' . $videoId;
             }
         }
+        return '';
     }
 
     public function videoTwo()
@@ -103,10 +107,14 @@ class Property extends Eloquent
         if ($this->video2 != null) {
             $url = $this->video2;
 
-            if ($this->checkUrl($url)) {
-                return $url;
+            if ($this->checkUrl($url) == true) {
+                $fetch = explode("v=", $url);
+                $videoId = $fetch[1];
+
+                return 'http://www.youtube.com/embed/' . $videoId;
             }
         }
+        return '';
     }
 
     protected function checkUrl($url)
@@ -152,7 +160,11 @@ class Property extends Eloquent
     public function getMainImage()
     {
         $image = PropertyImage::where('property_id', '=', $this->id)->where('feature', '=', true)->first();
-        return asset('uploads/properties/' . $this->id . '/' . $image->image);
+        if (!$image) {
+            return asset('uploads/404.jpg');;
+        } else {
+            return asset('uploads/properties/' . $this->id . '/' . $image->image);
+        }
     }
 
     public function formatValue()

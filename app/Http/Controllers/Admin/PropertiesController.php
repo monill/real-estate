@@ -74,11 +74,6 @@ class PropertiesController extends Controller
         return redirect()->route('images', $property->id);
     }
 
-    public function show($id)
-    {
-        //
-    }
-
     public function edit($id)
     {
         $property = Property::findOrFail($id);
@@ -173,7 +168,7 @@ class PropertiesController extends Controller
 
         $this->log->log('Usuario(a) adicionou imagens a propriedade');
         return response()->json(['message' => 'Imagem salva com sucesso'], 200);
-//        return redirect()->route('images', $property_id);
+        // return redirect()->route('images', $property_id);
     }
 
     public function deleteImage($id)

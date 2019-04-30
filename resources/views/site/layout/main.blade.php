@@ -204,12 +204,12 @@
             <div class="menu-button"><i class="fa fa-reorder"></i></div>
             <nav class="menu-container underscore-container menu-container-fade">
                 <ul>
-                    <li><a href="{{ url('/') }}">Home</a></li>
-                    <li><a href="{{ url('propriedades') }}">Propriedades</a></li>
-                    <li><a href="{{ url('corretores') }}">Corretores</a></li>
-                    <li><a href="{{ url('galeria') }}">Galeria</a></li>
-                    <li><a href="{{ url('blog') }}">Blog</a></li>
-                    <li><a href="{{ url('contato') }}">Contato</a></li>
+                    <li {{ currentPage('/') }}><a href="{{ url('/') }}">Home</a></li>
+                    <li {{ currentPage('propriedades') }}><a href="{{ url('propriedades') }}">Propriedades</a></li>
+                    <li {{ currentPage('corretores') }}><a href="{{ url('corretores') }}">Corretores</a></li>
+                    <li {{ currentPage('galeria') }}><a href="{{ url('galeria') }}">Galeria</a></li>
+                    <li {{ currentPage('blog') }}><a href="{{ url('blog') }}">Blog</a></li>
+                    <li {{ currentPage('contato') }}><a href="{{ url('contato') }}">Contato</a></li>
                 </ul>
                 <div class="underscore"><div class="underscore-inner"></div></div>
             </nav>
@@ -301,12 +301,12 @@
             <nav id="bottom-menu" class="menu-container menu-container-slide">
                 <div class="underscore-container">
                     <ul>
-                        <li><a href="{{ url('/') }}">Home</a></li>
-                        <li><a href="{{ url('propriedades') }}">Propriedades</a></li>
-                        <li><a href="{{ url('corretores') }}">Corretores</a></li>
-                        <li><a href="{{ url('galeria') }}">Galeria</a></li>
-                        <li><a href="{{ url('blog') }}">Blog</a></li>
-                        <li><a href="{{ url('contato') }}">Contato</a></li>
+                        <li {{ currentPage('/') }}><a href="{{ url('/') }}">Home</a></li>
+                        <li {{ currentPage('propriedades') }}><a href="{{ url('propriedades') }}">Propriedades</a></li>
+                        <li {{ currentPage('corretores') }}><a href="{{ url('corretores') }}">Corretores</a></li>
+                        <li {{ currentPage('galeria') }}><a href="{{ url('galeria') }}">Galeria</a></li>
+                        <li {{ currentPage('blog') }}><a href="{{ url('blog') }}">Blog</a></li>
+                        <li {{ currentPage('contato') }}><a href="{{ url('contato') }}">Contato</a></li>
                     </ul>
                     <div class="underscore"><div class="underscore-inner"></div></div>
                 </div>

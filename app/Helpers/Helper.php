@@ -108,3 +108,9 @@ if (!function_exists('diaMesAno')) {
         return strftime('%A, %d de %B de %Y', strtotime('today'));
     }
 }
+
+if (!function_exists('currentPage')) {
+    function currentPage(string $url) {
+        return request()->is($url) ? 'class=active' : '';
+    }
+}

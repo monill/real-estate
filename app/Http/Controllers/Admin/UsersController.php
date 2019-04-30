@@ -59,11 +59,6 @@ class UsersController extends Controller
         }
     }
 
-    public function show($id)
-    {
-        //
-    }
-
     public function edit($id)
     {
         $user = User::findOrFail($id);

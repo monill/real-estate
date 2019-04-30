@@ -16,12 +16,12 @@
     <meta property="og:description" content="{{ $property->meta_description }}" />
 @endsection
 
-@section('title', 'Propriedade')
-
 @section('css')
     <link rel="stylesheet" href="{{ asset('site/vendor/stroll/stroll.min.css') }}">
     <link rel="stylesheet" href="{{ asset('site/vendor/flexslider/flexslider.min.css') }}">
 @endsection
+
+@section('title', 'Propriedade')
 
 @section('content')
         

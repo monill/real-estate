@@ -17,6 +17,9 @@
             <li> <a href="{{ url('dashboard') }}" class="waves-effect"><i class="fa fa-dashboard fa-fw"></i> <span class="hide-menu"> Dashboard </span></a></li>
             <li> <a href="{{ url('messages') }}" class="waves-effect"><i class="fa fa-envelope-o fa-fw"></i> <span class="hide-menu"> Mensagens </span></a></li>
 
+            <li class="nav-small-cap m-t-10">--- Site</li>
+            <li> <a href="{{ url('/') }}" target="_blank" class="waves-effect"><i class="fa fa-television fa-fw"></i> <span class="hide-menu"> Visitar site </span></a></li>
+
             <li class="nav-small-cap">--- Blogs</li>
             <li> <a href="{{ url('blogs') }}" class="waves-effect"><i class="ti-book fa-fw"></i> <span class="hide-menu">Blogs</span></a> </li>
             <li> <a href="{{ url('tags') }}" class="waves-effect"><i class="ti-tag fa-fw"></i> <span class="hide-menu">Tags</span></a> </li>

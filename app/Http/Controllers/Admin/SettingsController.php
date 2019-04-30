@@ -23,26 +23,6 @@ class SettingsController extends Controller
         return view('admin.settings.index', compact('setting'));
     }
 
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
     public function update(Request $request, $id)
     {
         $setting = Setting::findOrFail($id);
@@ -50,10 +30,5 @@ class SettingsController extends Controller
 
         $this->log->log('Usuario(a) atualizou as configuracoes do site');
         return redirect()->to('settings');
-    }
-
-    public function destroy($id)
-    {
-        //
     }
 }

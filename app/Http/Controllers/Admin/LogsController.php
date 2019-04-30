@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Log;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class LogsController extends Controller
@@ -17,31 +16,6 @@ class LogsController extends Controller
     {
         $logs = Log::orderBy('id', 'DESC')->get();;
         return view('admin.logs.index', compact('logs'));
-    }
-
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(Request $request, $id)
-    {
-        //
     }
 
     public function destroy($id)
