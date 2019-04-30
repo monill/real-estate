@@ -52,13 +52,13 @@
                 <div class="row">
                     <div class="col-md-4 onscroll-animate">
                         <div class="clearfix">
-                            <img class="img-inline logo-style3" alt="Logo" src="{{ asset('site/images/logo3.png') }}"> <span class="heading-small-inline">{{ $settings->site_title }}</span>
+                            <img class="img-inline logo-style3" alt="Logo" src="{{ asset('site/images/logo3.png') }}">
+                            <span class="heading-small-inline">{{ $settings->site_title }}</span>
                         </div>
                         <hr>
-
                         <h6 class="heading-small-inline">Sobre</h6>
                         <p>{{ str_limit($settings->about, 250) }}</p>
-
+                        <a href="{{ url('sobre') }}" class="read-more-link-alt">Leia mais</a>
                         <div class="margin-10"></div>
                         <div class="text-bigger">
                             @if($settings->phone1 != null)

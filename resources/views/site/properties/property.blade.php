@@ -17,8 +17,8 @@
 @endsection
 
 @section('css')
-    <link rel="stylesheet" href="{{ asset('site/vendor/stroll/stroll.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('site/vendor/flexslider/flexslider.min.css') }}">
+    <link href="{{ asset('site/vendor/flexslider/flexslider.min.css') }}" rel="stylesheet" />
+    <link href="{{ asset('site/vendor/lightbox/css/lightbox.css') }}" rel="stylesheet" />
 @endsection
 
 @section('title', 'Propriedade')
@@ -53,7 +53,7 @@
                                     <li>
                                         <div class="preview-single">
                                             <a href="{{ $image->getImages() }}" data-lightbox="post1-img">
-                                                <img alt="slide1" src="{{ $image->getImages() }}">
+                                                <img alt="slide-1" src="{{ $image->getImages() }}" style="width: 100%">
                                             </a>
                                             <div class="preview-single-labels">
                                                 <div class="clearfix">
@@ -86,7 +86,7 @@
                                 <div id="flex-carousel" class="preview-thumnails-slider">
                                     <ul class="slides">
                                         @foreach($images as $image)
-                                        <li><img alt="slide1 thumbnail" src="{{ $image->getImages() }}"></li>
+                                        <li><img alt="slide-1 thumbnail" src="{{ $image->getImages() }}" style="width: 70%"></li>
                                         @endforeach
                                     </ul>
                                 </div><!-- #carousel -->
@@ -285,8 +285,8 @@
 @endsection
 
 @section('scripts')
-    <script src="{{ asset('site/vendor/stroll/stroll.min.js') }}"></script>
     <script src="{{ asset('site/vendor/flexslider/jquery.flexslider-min.js') }}"></script>
+    <script src="{{ asset('site/vendor/lightbox/js/lightbox.min.js') }}"></script>
 
     @if($property->latitude != null || $property->longitude != null)
     <script>

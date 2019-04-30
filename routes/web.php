@@ -25,6 +25,8 @@ Route::namespace('Site')->group(function () {
     Route::post('pesquisar', 'PropertiesController@pesquisar');
     //Newsletter
     Route::post('newsletter', 'IndexController@store');
+    //Sobre
+    Route::get('sobre', 'AboutController@index')->name('sobre');
     //Propriedades
     Route::get('propriedades', 'PropertiesController@index')->name('propriedades');
     Route::get('propriedade/{id}.{slug}', 'PropertiesController@show')->name('propriedade');

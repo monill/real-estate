@@ -15,6 +15,7 @@
         <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
             <ol class="breadcrumb">
                 <li class="active">Dashboard</li>
+                <li><a href="{{ url('/') }}" target="_blank">Visitar site</a></li>
             </ol>
         </div>
         <!-- /.col-lg-12 -->

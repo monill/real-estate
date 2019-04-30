@@ -205,6 +205,7 @@
             <nav class="menu-container underscore-container menu-container-fade">
                 <ul>
                     <li {{ currentPage('/') }}><a href="{{ url('/') }}">Home</a></li>
+                    <li {{ currentPage('sobre') }}><a href="{{ url('sobre') }}">Sobre</a></li>
                     <li {{ currentPage('propriedades') }}><a href="{{ url('propriedades') }}">Propriedades</a></li>
                     <li {{ currentPage('corretores') }}><a href="{{ url('corretores') }}">Corretores</a></li>
                     <li {{ currentPage('galeria') }}><a href="{{ url('galeria') }}">Galeria</a></li>
@@ -228,7 +229,7 @@
                     <div class="col-sm-6 footer-column onscroll-animate">
                         <h4><img alt="Logo" src="{{ asset('site/images/logo.png') }}"></h4>
                         <p>{{str_limit($settings->about, 250, '...') }}</p>
-                        <a href="{{ url('corretores') }}" class="read-more-link-alt">Leia mais</a>
+                        <a href="{{ url('sobre') }}" class="read-more-link-alt">Leia mais</a>
                     </div>
                     <div class="col-sm-6 footer-column onscroll-animate" data-delay="400">
                         <h4>Blog Recente</h4>
@@ -302,6 +303,7 @@
                 <div class="underscore-container">
                     <ul>
                         <li {{ currentPage('/') }}><a href="{{ url('/') }}">Home</a></li>
+                        <li {{ currentPage('sobre') }}><a href="{{ url('sobre') }}">Sobre</a></li>
                         <li {{ currentPage('propriedades') }}><a href="{{ url('propriedades') }}">Propriedades</a></li>
                         <li {{ currentPage('corretores') }}><a href="{{ url('corretores') }}">Corretores</a></li>
                         <li {{ currentPage('galeria') }}><a href="{{ url('galeria') }}">Galeria</a></li>
