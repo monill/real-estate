@@ -21,9 +21,14 @@
 Auth::routes();
 
 Route::namespace('Site')->group(function () {
+    //Pesquisar
+    Route::post('pesquisar', 'PropertiesController@pesquisar');
+    //Newsletter
+    Route::post('newsletter', 'IndexController@store');
     //Propriedades
     Route::get('propriedades', 'PropertiesController@index')->name('propriedades');
     Route::get('propriedade/{id}.{slug}', 'PropertiesController@show')->name('propriedade');
+    Route::post('question', 'PropertiesController@store');
     //Corretores
     Route::get('corretores', 'AgentsController@index')->name('corretores');
     //Galeria
@@ -31,6 +36,7 @@ Route::namespace('Site')->group(function () {
     //Blog
     Route::get('blog', 'BlogsController@index')->name('blog');
     Route::get('blog/{id}.{slug}', 'BlogsController@show')->name('blog.view');
+    Route::post('comment', 'BlogsController@store');
     //Contato
     Route::get('contato', 'ContactController@index')->name('contato');
     Route::post('contato', 'ContactController@store');

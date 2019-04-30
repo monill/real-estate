@@ -11,7 +11,7 @@
     <meta property="og:image" content="{{ $blog->getMainImage() }}" />
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="{{ url('/') }}" />
+    <meta property="og:url" content="{{ route('blog.view', [$blog->id, $blog->slug]) }}" />
     <meta property="og:title" content="{{ $blog->title }}" />
     <meta property="og:description" content="{{ $blog->meta_description }}" />
 @endsection
@@ -117,7 +117,7 @@
                             <div class="section-header-smaller onscroll-animate" data-animation="fadeInLeft">
                                 <h1>Deixe um comentário</h1>
                             </div>
-                            {!! Form::open(['url' => '/', 'class' => 'form-contact-full']) !!}
+                            {!! Form::open(['url' => 'comment', 'class' => 'form-contact-full']) !!}
                             {!! Form::hidden('blog_id', $blog->id) !!}
                                 <div class="row">
                                     <div class="col-md-6">

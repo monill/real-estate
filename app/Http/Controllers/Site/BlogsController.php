@@ -22,7 +22,7 @@ class BlogsController extends Controller
         $comment->name = $request->input('name');
         $comment->email = $request->input('email');
         $comment->message = $request->input('message');
-        $comment->ip = $request->ip();
+        $comment->ip = getIP();
         $comment->save();
 
         //flash('Comentario enviado com sucesso, aguarde aprovação')->success();

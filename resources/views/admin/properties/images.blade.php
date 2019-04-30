@@ -27,8 +27,8 @@
             <div class="white-box">
                 <h3 class="box-title m-b-0">Adicionar</h3>
                 <p class="text-muted m-b-0">Adicionar multiplas imagens</p>
-                <p class="text-muted m-b-0">Tamanho máximo permitido da imagem é de 3 MB</p>
-                <p class="m-b-30 text-center"><b>Atualize a página assim que terminar o upload de todas a imagens.</b></p>
+                <p class="text-muted m-b-0">Tamanho máximo permitido da imagem 3 MB</p>
+                <p class="m-b-30 text-center text-danger"><b>Atualize a página assim que terminar o upload de todas a imagens. E defina uma imagem principal</b></p>
 
                 {!! Form::open(['url' => 'upload', 'files' => true, 'class' => 'dropzone']) !!}
                 {!! Form::hidden('pp_id', $property->id) !!}

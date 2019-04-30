@@ -213,22 +213,6 @@ $(document).ready(function(e) {
 		underscore_el.css({'width':target_el.width(), 'left':(target_el.offset().left - container_el.offset().left)});
 	}
 
-
-	//forms - rss subscribe and contact form
-	$('.form-submit').on('click', function(e) {
-		e.preventDefault();
-		$(this).parent('form').trigger('submit');
-	});
-	$('#rss-subscribe, #rss-subscribe-2').on('submit', function(e) {
-		return form_to_ajax_request($(this), ['email'], ['email']);
-	});
-	$('#contact-form').on('submit', function(e) {
-		return form_to_ajax_request($(this), ['name', 'subject', 'phone', 'email', 'message'], ['email', 'name', 'message']);
-	});
-	$('#contact-form-agent').on('submit', function(e) {
-		return form_to_ajax_request($(this), ['name', 'email', 'property', 'message'], ['name', 'email', 'property', 'message']);
-	});
-	
 });
 
 $(window).load(function(e) {

@@ -16,11 +16,11 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('property_id');
-            $table->string('ip', 70);
             $table->string('name', 100);
             $table->string('email', 100);
             $table->text('message');
             $table->boolean('unread')->default(false);
+            $table->string('ip', 70);
             $table->timestamps();
 
             $table->index('property_id');

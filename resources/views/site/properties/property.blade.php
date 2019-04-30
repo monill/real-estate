@@ -11,7 +11,7 @@
     <meta property="og:image" content="" />
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="{{ url('/') }}" />
+    <meta property="og:url" content="{{ route('propriedade', [$property->id, $property->slug]) }}" />
     <meta property="og:title" content="{{ $property->name }}" />
     <meta property="og:description" content="{{ $property->meta_description }}" />
 @endsection
@@ -29,8 +29,7 @@
         <div class="page-title-container bg-image bg-cover bg-pattern">
             <div class="page-title">
                 <div class="container">
-                    <h1>Property Listings</h1>
-                    <h4>featuers / property listings</h4>
+                    <h1>{{ $property->name }}</h1>
                 </div>
             </div>
         </div>
@@ -62,14 +61,15 @@
                                                         <h3>{{ $property->name }}</h3>
                                                         <p>
                                                             <a href="#">Área: {{ $property->area }}</a> <span class="delimiter-inline-alt"></span>
-                                                            <a href="#">{{ $property->bedrooms }} Quartos</a> <span class="delimiter-inline-alt"></span>
-                                                            <a href="#">{{ $property->bathrooms }} Banheiros</a> <span class="delimiter-inline-alt"></span>
-                                                            <a href="#">{{ $property->garage }} Garagem</a>
+                                                            <a href="#">Quartos: {{ $property->bedrooms }}</a> <span class="delimiter-inline-alt"></span>
+                                                            <a href="#">Banheiros: {{ $property->bathrooms }}</a> <span class="delimiter-inline-alt"></span>
+                                                            <a href="#">Garagens: {{ $property->garage }}</a>
                                                         </p>
                                                     </div>
                                                     <div class="label-white pull-right">
                                                         <div class="listing-price">
-                                                            R$ {{ $property->price }} <span class="small">per month</span>
+                                                            R$ {{ $property->price }}
+                                                            {!! $property->purposeFormat() !!}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -91,7 +91,9 @@
                                     </ul>
                                 </div><!-- #carousel -->
                             </div><!-- .onscroll-animate -->
-                            <p class="onscroll-animate" data-animation="fadeInUp">{!! $property->description !!}</p>
+                            <p class="onscroll-animate" data-animation="fadeInUp">
+                                {!! $property->description !!}
+                            </p>
                         </section>
     
                         <section id="checkbox-list-section">
@@ -135,7 +137,7 @@
                         </section>
                         @endif
 
-                        @if($property->latitude != null || $property->longitude != null)
+                        @if($property->latitude != null AND $property->longitude != null)
                         <section id="map-section">
                             <div class="section-content">
                                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
@@ -192,16 +194,18 @@
                                                     <p>
                                                         <i class="fa fa-phone"></i> {{ $settings->phone1 }}<br>
                                                         <i class="fa fa-phone"></i> {{ $settings->phone2 }}<br>
-                                                        <i class="fa fa-envelope-alt"></i> <a href="#">{{ $property->user->email }}</a><br>
+                                                        <i class="fa fa-envelope-alt"></i> {{ $property->user->email }}<br>
                                                     </p>
-                                                    <a href="{{ url('corretores') }}" class="read-more-link-alt"><span class="text-smaller">Ver o perfil completo</span></a>
+                                                    <a href="{{ url('corretores') }}" class="read-more-link-alt">
+                                                        <span class="text-smaller">Ver o perfil completo</span>
+                                                    </a>
                                                 </div>
                                             </div><!-- .row -->
                                         </div><!-- .profile -->
                                     </div><!-- .col-md-8 -->
                                     <div class="col-md-4 onscroll-animate" data-animation="fadeInUp">
                                         <h3 class="section-small-heading">Envie uma mensagem</h3>
-                                        {!! Form::open(['url' => '/', 'class' => 'form-contact', 'id' => 'contact-form-agent']) !!}
+                                        {!! Form::open(['url' => 'question', 'class' => 'form-contact', 'id' => 'contact-form-agent']) !!}
                                         {!! Form::hidden('property_id', $property->id) !!}
                                             <input type="text" name="name" placeholder="Nome">
                                             <input type="text" name="email" placeholder="E-mail">
@@ -230,11 +234,11 @@
                                                             <div class="post-preview-img-inner">
                                                                 <img alt="post img" src="{{ $recent->getMainImage() }}">
                                                             </div>
-                                                            <div class="post-preview-label2">{{ $recent->getPurpose() }}</div>
+                                                            <div class="post-preview-label{{ $recent->getPurposeColor() }}">{{ $recent->getPurpose() }}</div>
                                                             <div class="post-img-detail">
                                                                 <div class="post-img-detail-wrapper">
                                                                     <div class="post-img-detail-content">
-                                                                        <div class="post-img-detail-box">R$ {{ $recent->getValue() }}</div>
+                                                                        <div class="post-img-detail-box">R$ {{ $recent->formatValue() }}</div>
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -28,7 +28,7 @@ class PropertiesController extends Controller
         $question->save();
 
         //flash('Mensagem enviada com sucesso, aguarde nosso retorno')->success();
-        return back();
+        return redirect()->back();
     }
 
     public function show($id, $slug)
@@ -43,7 +43,14 @@ class PropertiesController extends Controller
 
     public function pesquisar(Request $request)
     {
-        dd($request->all());
-        exit();
+        $id = $request->input('id');
+        $city = $request->input('city');
+        $purpose = $request->input('purpose');
+        $type = $request->input('type');
+        $bedrooms = $request->input('bedrooms');
+        $bathrooms = $request->input('bathrooms');
+        $min_price = $request->input('min_price');
+        $max_price = $request->input('max_price');
+
     }
 }

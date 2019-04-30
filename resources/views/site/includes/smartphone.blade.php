@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-md-8 onscroll-animate" data-animation="fadeInUp">
                         <div class="section-header-alt">
-                            <h1><img alt="Hometastic" src="{{ asset('site/images/logo2.png') }}"> Acessível também para o seu smartphone</h1>
+                            <h1><img alt="Logo" src="{{ asset('site/images/logo2.png') }}"> Acessível também para o seu smartphone</h1>
                         </div>
                         <p>{{ $settings->about }}</p>
                         <p class="text-right">

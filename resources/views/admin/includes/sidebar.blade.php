@@ -1,9 +1,6 @@
 <div class="navbar-default sidebar" role="navigation">
     <div class="sidebar-nav navbar-collapse slimscrollsidebar">
         <ul class="nav" id="side-menu">
-{{--            <li class="sidebar-search hidden-sm hidden-md hidden-lg">--}}
-{{--                --}}
-{{--            </li>--}}
             <li class="user-pro">
                 <a href="#" class="waves-effect">
                     <img src="{{ auth()->user()->getAvatar() }}" alt="user-avatar" class="img-circle">

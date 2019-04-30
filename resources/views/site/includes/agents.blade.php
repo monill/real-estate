@@ -7,7 +7,7 @@
             </div>
             <div class="onscroll-animate">
                 <div id="agents-slider">
-                    @foreach(\App\User::where('admin', '==', false)->get() as $agent)
+                    @foreach(\App\User::where('admin', '==', false)->inRandomOrder()->get() as $agent)
                     <div class="profile">
                         <div class="profile-img">
                             <img alt="agent" src="{{ $agent->getAvatar() }}">

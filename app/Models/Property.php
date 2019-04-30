@@ -155,10 +155,20 @@ class Property extends Eloquent
         return asset('uploads/properties/' . $this->id . '/' . $image->image);
     }
 
-    public function getValue()
+    public function formatValue()
     {
         $price = (float)$this->price;
         return $price;
             //number_format($price, '.', ',');
+    }
+
+    public function purposeFormat()
+    {
+        return $this->purpose == 1 ? '<span class="small">por mês</span>' : '';
+    }
+
+    public function getPurposeColor()
+    {
+        return $this->purpose == 1 ? '2' : '';
     }
 }

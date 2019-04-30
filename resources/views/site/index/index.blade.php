@@ -29,16 +29,16 @@
                         <div class="col-sm-6 pull-right">
                             <div class="slide-box arrow-left">
                                 <h2>{{ $slider->name }}</h2>
-                                <p>{!! str_limit($slider->description, 230) !!}</p>
+                                {!! str_limit($slider->description, 230) !!}
                                 <hr>
                                 @if($slider->bedrooms > 0)
-                                {{ $slider->bedrooms }} Quartos <span class="delimiter-inline"></span>
+                                    Quartos: {{ $slider->bedrooms }} <span class="delimiter-inline"></span>
                                 @endif
                                 @if($slider->bathrooms > 0)
-                                {{ $slider->bathrooms }} Banheiros <span class="delimiter-inline"></span>
+                                    Banheiros: {{ $slider->bathrooms }} <span class="delimiter-inline"></span>
                                 @endif
                                 @if($slider->garage > 0)
-                                {{ $slider->garage }} Garagem
+                                    Garagens: {{ $slider->garage }}
                                 @endif
                                 <hr>
                                 <div class="slide-price-container">
@@ -99,7 +99,7 @@
                                     <div class="icon-box-icon">
                                         <i class="fa fa-signal"></i>
                                     </div>
-                                    <h3>Equipe qualificada</h3>
+                                    <h3>texto legal aqui</h3>
                                     <p>colocar um texto legal aqui.</p>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
                                     <div class="icon-box-icon">
                                         <i class="fa fa-home"></i>
                                     </div>
-                                    <h3>Casas para venda</h3>
+                                    <h3>texto legal aqui</h3>
                                     <p>colocar um texto legal aqui.</p>
                                 </div>
                             </div>
@@ -121,8 +121,8 @@
                                     <div class="icon-box-icon">
                                         <i class="fa fa-building"></i>
                                     </div>
-                                    <h3>Vistoria</h3>
-                                    <p>A vistoria tem como objetivo registrar as condições de conservação do imóvel no início do contrato.</p>
+                                    <h3>texto legal aqui</h3>
+                                    <p>texto legal aqui.</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 onscroll-animate" data-delay="800" data-animation="fadeInUp">
@@ -130,7 +130,7 @@
                                     <div class="icon-box-icon">
                                         <i class="fa fa-th"></i>
                                     </div>
-                                    <h3>Terrenos</h3>
+                                    <h3>texto legal aqui</h3>
                                     <p>colocar um texto legal aqui.</p>
                                 </div>
                             </div>

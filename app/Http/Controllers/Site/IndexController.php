@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Http\Requests\NewsletterRequest;
+use App\Models\Newsletter;
 use App\Models\Property;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
+    /**
+     * Página inicial do site
+     *
+     * retorna sliders das propriedades
+     * retorna 6 ultimas propriedades cadastradas em ordem decrescente
+     */
     public function index()
     {
         $sliders = Property::where('slider', '=', true)->get();
@@ -16,29 +24,24 @@ class IndexController extends Controller
     }
 
     /**
-     * salva newsletter
+     * Newsletter
+     *
+     * salva nome, email e o IP de quem se registrou no site para receber a newsletter
      */
-    public function store(Request $request)
+    public function store(NewsletterRequest $request)
     {
         if (Request::METHOD_POST) {
 
-            $validate = Validator::make($request->all(), [
-                'email' => 'required|email|unique:newsletters,email'
+            Newsletter::create([
+                'name' => $request->input('name'),
+                'email' => $request->input('email'),
+                'ip' => getIP()
             ]);
 
-            if ($validate->fails()) {
-                flash('Endereço de e-mail já cadastrado!')->warning();
-                return back();
-            } else {
-                Newsletter::create([
-                    'email' => $request->get('email')
-                ]);
-
-                //flash('E-mail cadastrado com sucesso!')->success();
-                return back();
-            }
+            //flash('E-mail cadastrado com sucesso!')->success();
+            return redirect()->back();
         } else {
-            return back();
+            return redirect()->back();
         }
     }
 }

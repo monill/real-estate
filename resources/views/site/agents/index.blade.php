@@ -58,8 +58,7 @@
                                                 <div class="col-md-6">
                                                     <i class="fa fa-phone"></i> {{ $settings->phone1 }}<br>
                                                     <i class="fa fa-phone"></i> {{ $settings->phone2 }}<br>
-                                                    <i class="fa fa-envelope-alt"></i> <a
-                                                            href="#">{{ $agent->email }}</a><br>
+                                                    <i class="fa fa-envelope-alt"></i> {{ $agent->email }}<br>
                                                 </div>
                                                 <div class="col-md-6 text-right">
                                                     <div class="profile-socials-container">
@@ -113,15 +112,15 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <img class="logo-img" alt="partner 1"
+                                    <img class="logo-img" alt="parceiro 1"
                                          src="{{ asset('site/images/partners/partner1.png') }}">
                                 </div>
                                 <div class="col-sm-4">
-                                    <img class="logo-img" alt="partner 2"
+                                    <img class="logo-img" alt="parceiro 2"
                                          src="{{ asset('site/images/partners/partner2.png') }}">
                                 </div>
                                 <div class="col-sm-4">
-                                    <img class="logo-img" alt="partner 3"
+                                    <img class="logo-img" alt="parceiro 3"
                                          src="{{ asset('site/images/partners/partner3.png') }}">
                                 </div>
                             </div>
@@ -129,15 +128,15 @@
                         <div class="col-md-6">
                             <div class="row">
                                 <div class="col-sm-4">
-                                    <img class="logo-img" alt="partner 4"
+                                    <img class="logo-img" alt="parceiro 4"
                                          src="{{ asset('site/images/partners/partner4.png') }}">
                                 </div>
                                 <div class="col-sm-4">
-                                    <img class="logo-img" alt="partner 5"
+                                    <img class="logo-img" alt="parceiro 5"
                                          src="{{ asset('site/images/partners/partner5.png') }}">
                                 </div>
                                 <div class="col-sm-4">
-                                    <img class="logo-img" alt="partner 6"
+                                    <img class="logo-img" alt="parceiro 6"
                                          src="{{ asset('site/images/partners/partner2.png') }}">
                                 </div>
                             </div>

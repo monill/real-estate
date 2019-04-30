@@ -37,7 +37,7 @@ class Log extends Eloquent
     {
         $agent = new Agent();
 
-        return Login::create([
+        return self::create([
             'user_id' => auth()->user()->id,
             'content' => $content,
             'ip' => getIP(),

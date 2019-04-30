@@ -11,7 +11,6 @@
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Joao">
-    <meta name="robots" content="index, follow">
     @yield('seo')
 
     <link rel="icon" href="{{ asset('favicon.png') }}" type="image/png">
@@ -36,7 +35,7 @@
     <link rel="stylesheet" href="{{ asset('site/css/animate.min.css') }}" />
     <link id="main-stylesheet" rel="stylesheet" href="{{ asset('site/css/main.css') }}" />
 
-    <title>Site - @yield('title')</title>
+    <title>{{ $settings->site_title }} - @yield('title')</title>
 
     <script src="{{ asset('site/js/modernizr.js') }}"></script>
 
@@ -135,24 +134,25 @@
     <p class="customizer-heading">Personalização</p>
     <hr>
     <p>Trocar Cor</p>
-    <div class="theme-setting theme-stylesheet active" style="background-color:#51bbe5" data-stylesheet="css/styles/main.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#336699" data-stylesheet="css/skins/dark-blue.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#8cc739" data-stylesheet="css/skins/light-green.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#ba6222" data-stylesheet="css/skins/brown.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#cc0000" data-stylesheet="css/skins/red.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#ff717e" data-stylesheet="css/skins/pink.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#7aba7a" data-stylesheet="css/skins/dark-green.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#84596b" data-stylesheet="css/skins/purple.css"></div>
-    <div class="theme-setting theme-stylesheet" style="background-color:#ff9900" data-stylesheet="css/skins/orange.css"></div>
+    <div class="theme-setting theme-stylesheet active" style="background-color:#51bbe5" data-stylesheet="{{ asset('site/css/styles/main.css') }}"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#336699" data-stylesheet="{{ asset('site/css/skins/dark-blue.css') }}"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#8cc739" data-stylesheet="{{ asset('site/css/skins/light-green.css') }}"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#ba6222" data-stylesheet="{{ asset('site/css/skins/brown.css') }}"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#cc0000" data-stylesheet="{{ asset('site/css/skins/red.css') }}"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#ff717e" data-stylesheet="{{ asset('site/css/skins/pink.css') }}"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#7aba7a" data-stylesheet="{{ asset('site/css/skins/dark-green.css') }}"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#84596b" data-stylesheet="{{ asset('site/css/skins/purple.css') }}"></div>
+    <div class="theme-setting theme-stylesheet" style="background-color:#ff9900" data-stylesheet="{{ asset('site/css/skins/orange.css') }}"></div>
     <hr>
     <p>Trocar Padrão/Fundo</p>
     <div class="theme-setting theme-pattern active" style="background:#FFF" data-background="#FFF"></div>
-    <div class="theme-setting theme-pattern" style="background:url('site/images/patterns/1.jpg')" data-background="url('site/images/patterns/1.jpg')"></div>
-    <div class="theme-setting theme-pattern" style="background:url('site/images/patterns/2.jpg')" data-background="url('site/images/patterns/2.jpg')"></div>
-    <div class="theme-setting theme-pattern" style="background:url('site/images/patterns/3.jpg')" data-background="url('site/images/patterns/3.jpg')"></div>
-    <div class="theme-setting theme-pattern" style="background:url('site/images/patterns/4.jpg')" data-background="url('site/images/patterns/4.jpg')"></div>
+    <div class="theme-setting theme-pattern" style="background:url('{{ asset('site/images/patterns/1.jpg') }}')" data-background="url('{{ asset('site/images/patterns/1.jpg') }}')"></div>
+    <div class="theme-setting theme-pattern" style="background:url('{{ asset('site/images/patterns/2.jpg') }}')" data-background="url('{{ asset('site/images/patterns/2.jpg') }}')"></div>
+    <div class="theme-setting theme-pattern" style="background:url('{{ asset('site/images/patterns/3.jpg') }}')" data-background="url('{{ asset('site/images/patterns/3.jpg') }}')"></div>
+    <div class="theme-setting theme-pattern" style="background:url('{{ asset('site/images/patterns/4.jpg') }}')" data-background="url('{{ asset('site/images/patterns/4.jpg') }}')"></div>
     <hr>
-    <p class="customizer-info">Novas cores podem ser facilmente feitas alterando-se algumas variáveis em menos estilo, de modo que elas possam se ajustar, por exemplo, às cores do logotipo.</p>
+    <p class="customizer-info">Novas cores podem ser facilmente feitas alterando-se algumas variáveis em menos estilo,
+        de modo que elas possam se ajustar, por exemplo, às cores do logotipo.</p>
 </div>
 
 <div id="page-loader">
@@ -187,7 +187,7 @@
                 <div class="pull-right">
                     @auth
                         <div class="site-top-item">
-                            <a href="{{ url('/dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
+                            <a href="{{ url('dashboard') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
                         </div>
                     @else
                         <div class="site-top-item">
@@ -200,11 +200,11 @@
     </div><!-- .site-top -->
     <div class="main-menu">
         <div class="container">
-            <img class="pull-left main-logo" alt="hometastic" src="{{ asset('site/images/logo.png') }}">
+            <img class="pull-left main-logo" alt="logo" src="{{ asset('site/images/logo.png') }}">
             <div class="menu-button"><i class="fa fa-reorder"></i></div>
             <nav class="menu-container underscore-container menu-container-fade">
                 <ul>
-                    <li class="active"><a href="{{ url('/') }}">Home</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
                     <li><a href="{{ url('propriedades') }}">Propriedades</a></li>
                     <li><a href="{{ url('corretores') }}">Corretores</a></li>
                     <li><a href="{{ url('galeria') }}">Galeria</a></li>
@@ -226,7 +226,7 @@
             <div class="col-md-6">
                 <div class="row">
                     <div class="col-sm-6 footer-column onscroll-animate">
-                        <h4><img alt="Hometastic" src="{{ asset('site/images/logo.png') }}"></h4>
+                        <h4><img alt="Logo" src="{{ asset('site/images/logo.png') }}"></h4>
                         <p>{{str_limit($settings->about, 250, '...') }}</p>
                         <a href="{{ url('corretores') }}" class="read-more-link-alt">Leia mais</a>
                     </div>
@@ -234,7 +234,7 @@
                         <h4>Blog Recente</h4>
                         <ul class="list-links-simple">
                             @forelse(\App\Models\Blog::where('published', '==', true)->orderBy('id', 'DESC')->take(5)->get() as $blog)
-                            <li><a href="{{ route('blog.view', [$blog->id, $blog->slug]) }}">{{ $blog->title }}</a></li>
+                            <li><a href="{{ route('blog.view', [$blog->id, $blog->slug]) }}">{{ str_limit($blog->title, 40) }}</a></li>
                             @empty
                             <li><p>Nenhum conteúdo cadastrado no momento</p></li>
                             @endforelse
@@ -282,14 +282,14 @@
                     <div class="col-sm-6 footer-column onscroll-animate" data-delay="800">
                         <h4>Newsletter</h4>
                         <p>Subscreva a nossa newsletter e iremos mantê-lo informado sobre novas ofertas.</p>
-                        <form class="form-subscribe" id="rss-subscribe" action="#" method="post" data-email-not-set-msg="E-mail deve ser definido" data-ajax-fail-msg="Ajax não pôde definir a solicitação" data-success-msg="Email adicionado com sucesso">
+                        {!! Form::open(['url' => 'newsletter', 'class' => 'form-subscribe']) !!}
                             <input type="text" name="name" placeholder="seu nome" required>
                             <input type="text" name="email" placeholder="seu e-mail..." required>
                             <div class="text-right">
                                 <input type="submit" value="Cadastrar-me">
                             </div>
                             <p class="return-msg"></p>
-                        </form>
+                        {!! Form::close() !!}
                     </div>
                 </div><!-- .row -->
             </div><!-- .col-md-6 -->
@@ -301,7 +301,7 @@
             <nav id="bottom-menu" class="menu-container menu-container-slide">
                 <div class="underscore-container">
                     <ul>
-                        <li class="active"><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ url('/') }}">Home</a></li>
                         <li><a href="{{ url('propriedades') }}">Propriedades</a></li>
                         <li><a href="{{ url('corretores') }}">Corretores</a></li>
                         <li><a href="{{ url('galeria') }}">Galeria</a></li>
