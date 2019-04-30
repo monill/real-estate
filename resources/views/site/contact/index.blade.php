@@ -59,7 +59,7 @@
                         <h6 class="heading-small-inline">Sobre</h6>
                         <p>{{ str_limit($settings->about, 250) }}</p>
                         <a href="{{ url('sobre') }}" class="read-more-link-alt">Leia mais</a>
-                        <div class="margin-10"></div>
+                        <div class="margin-20"></div>
                         <div class="text-bigger">
                             @if($settings->phone1 != null)
                             <div class="icon-opening-wrapper">

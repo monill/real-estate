@@ -99,7 +99,7 @@
                                     <div class="icon-box-icon">
                                         <i class="fa fa-signal"></i>
                                     </div>
-                                    <h3>texto legal aqui</h3>
+                                    <h3>serviço 1</h3>
                                     <p>colocar um texto legal aqui.</p>
                                 </div>
                             </div>
@@ -108,7 +108,7 @@
                                     <div class="icon-box-icon">
                                         <i class="fa fa-home"></i>
                                     </div>
-                                    <h3>texto legal aqui</h3>
+                                    <h3>serviço 2</h3>
                                     <p>colocar um texto legal aqui.</p>
                                 </div>
                             </div>
@@ -121,7 +121,7 @@
                                     <div class="icon-box-icon">
                                         <i class="fa fa-building"></i>
                                     </div>
-                                    <h3>texto legal aqui</h3>
+                                    <h3>serviço 3</h3>
                                     <p>texto legal aqui.</p>
                                 </div>
                             </div>
@@ -130,7 +130,7 @@
                                     <div class="icon-box-icon">
                                         <i class="fa fa-th"></i>
                                     </div>
-                                    <h3>texto legal aqui</h3>
+                                    <h3>serviço 4</h3>
                                     <p>colocar um texto legal aqui.</p>
                                 </div>
                             </div>
