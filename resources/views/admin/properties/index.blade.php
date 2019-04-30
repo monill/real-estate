@@ -30,7 +30,9 @@
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <a href="{{ url('properties/create') }}" class="btn btn-outline btn-info btn-sm m-b-20"><i class="icon wb-plus" aria-hidden="true"></i>Adicionar Propriedade</a>
+                                <a href="{{ url('properties/create') }}" class="btn btn-outline btn-info btn-sm m-b-20">
+                                    <i class="icon wb-plus" aria-hidden="true"></i>Adicionar Propriedade
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -104,13 +106,19 @@
                 <div class="pro-list-info-3-col">
                     <ul class="pro-info text-muted m-b-0">
                         @if($property->bathrooms > 0)
-                        <li><span><img src="{{ asset('admin/images/property/pro-bath.png') }}" alt="bath"></span> <span>Banheiros</span><span class="label label-default pull-right text-inverse">{{ $property->bathrooms }}</span></li>
+                        <li><span><img src="{{ asset('admin/images/property/pro-bath.png') }}" alt="bath"></span>
+                            <span>Banheiros</span><span class="label label-default pull-right text-inverse">{{ $property->bathrooms }}</span>
+                        </li>
                         @endif
                         @if($property->bedrooms > 0)
-                        <li><span><img src="{{ asset('admin/images/property/pro-bed.png') }}" alt="bed"></span> <span>Quartos</span><span class="label label-default pull-right text-inverse">{{ $property->bedrooms }}</span></li>
+                        <li><span><img src="{{ asset('admin/images/property/pro-bed.png') }}" alt="bed"></span>
+                            <span>Quartos</span><span class="label label-default pull-right text-inverse">{{ $property->bedrooms }}</span>
+                        </li>
                         @endif
                         @if($property->garage > 0)
-                        <li><span><img src="{{ asset('admin/images/property/pro-garage.png') }}" alt="garage"></span> <span>Garagem</span><span class="label label-default pull-right text-inverse">{{ $property->garage }}</span></li>
+                        <li><span><img src="{{ asset('admin/images/property/pro-garage.png') }}" alt="garage"></span>
+                            <span>Garagem</span><span class="label label-default pull-right text-inverse">{{ $property->garage }}</span>
+                        </li>
                         @endif
                     </ul>
                 </div>

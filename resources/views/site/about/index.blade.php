@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="col-md-12 onscroll-animate">
 
-                        <p>{{ str_limit($settings->about, 250) }}</p>
+                        <p>{{ $settings->about }}</p>
 
                     </div><!-- .col-md-4 -->
 
@@ -60,20 +60,11 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 onscroll-animate">
-                        <h3 class="text-center">Serviço 1</h3>
-                        <p>{{ str_limit($settings->about, 250) }}</p>
-                        <div class="margin-10"></div>
-
-                        <h3 class="text-center">Serviço 2</h3>
-                        <p>{{ str_limit($settings->about, 250) }}</p>
-                        <div class="margin-10"></div>
-
-                        <h3 class="text-center">Serviço 3</h3>
-                        <p>{{ str_limit($settings->about, 250) }}</p>
-                        <div class="margin-10"></div>
-
-                        <h3 class="text-center">Serviço 4</h3>
-                        <p>{{ str_limit($settings->about, 250) }}</p>
+                        @foreach($services as $service)
+                            <h3 class="text-center">{{ $service->title }}</h3>
+                            <p>{!! $service->content !!}</p>
+                            <div class="margin-10"></div>
+                        @endforeach
                         <div class="margin-40"></div>
                     </div><!-- .col-md-4 -->
                 </div><!-- .row -->

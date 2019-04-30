@@ -31,6 +31,9 @@
             <li class="nav-small-cap">--- Usuários</li>
             <li> <a href="{{ url('users') }}" class="waves-effect"><i class="ti-user fa-fw"></i> <span class="hide-menu">Corretores</span></a> </li>
 
+            <li class="nav-small-cap">--- Serviços</li>
+            <li> <a href="{{ url('services') }}" class="waves-effect"><i class="ti-direction-alt fa-fw"></i> <span class="hide-menu">Serviços</span></a> </li>
+
             <li class="nav-small-cap">--- Newsletter</li>
             <li> <a href="{{ url('newsletters') }}" class="waves-effect"><i class="ti-cloud fa-fw"></i> <span class="hide-menu">Newsletters</span></a> </li>
 

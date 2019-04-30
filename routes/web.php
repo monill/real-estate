@@ -75,6 +75,8 @@ Route::namespace('Admin')->group(function () {
     Route::put('slider/{id}', 'PropertiesController@slider');
     //Duvidas
     Route::resource('questions', 'QuestionsController')->only(['index', 'show', 'destroy']);
+    //Servicos
+    Route::resource('services', 'ServicesController')->except(['show']);
     //Tags
     Route::resource('tags', 'TagsController')->except(['create', 'show', 'edit']);
     //Corretores
