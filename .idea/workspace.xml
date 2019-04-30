@@ -1,39 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="01876e5d-2599-4239-b504-33b629a74b6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BlogsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BlogsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LogsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LogsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PropertiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PropertiesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/AgentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/AgentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/BlogsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/BlogsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/GalleriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/GalleriesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/PropertiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/PropertiesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Log.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Log.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Property.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Property.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_22_173346_create_questions_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_22_173346_create_questions_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/site/js/custom.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/site/js/custom.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/includes/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/includes/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/logs/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/logs/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/properties/images.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/properties/images.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/agents/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/agents/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/blogs/blog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/blogs/blog.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/contact/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/contact/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/galleries/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/galleries/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/agents.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/agents.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/blog_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/blog_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/properties.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/properties.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/property_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/property_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/quote.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/quote.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/smartphone.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/smartphone.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/index/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/layout/main.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/layout/main.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/properties/property.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/properties/property.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="01876e5d-2599-4239-b504-33b629a74b6c" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +12,17 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="714">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -329,20 +307,14 @@
             <path>
               <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
               <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
               <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
@@ -352,79 +324,7 @@
             <path>
               <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
               <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="agents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="blogs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="contact" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="galleries" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="includes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="index" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="layout" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
-              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="site" type="462c0819:PsiDirectoryNode" />
-              <item name="properties" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -519,12 +419,12 @@
       <workItem from="1556587057602" duration="706000" />
       <workItem from="1556621916862" duration="637000" />
       <workItem from="1556622671290" duration="1332000" />
-      <workItem from="1556630250603" duration="17464000" />
+      <workItem from="1556630250603" duration="18112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="359311000" />
+    <option name="totallyTimeSpent" value="359959000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -537,6 +437,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18869936" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -759,13 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="30" column="25" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Site/GalleriesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -910,6 +804,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Site/ContactController.php">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">
