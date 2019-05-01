@@ -2,8 +2,8 @@
     <div class="section-content">
         <div class="container">
             <div class="section-header onscroll-animate" data-animation="fadeInLeft">
-                <h1>NOSSOS GRANDES AGENTES</h1>
-                <h4>Veja nossos grandes agentes e eles ajudarão você a encontrar suas casas.</h4>
+                <h1>Nossos grandes corretores</h1>
+                <h4>Veja nossos grandes Corretores e eles ajudarão você a encontrar suas casas.</h4>
             </div>
             <div class="onscroll-animate">
                 <div id="agents-slider">

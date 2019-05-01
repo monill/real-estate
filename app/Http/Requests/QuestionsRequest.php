@@ -24,9 +24,9 @@ class QuestionsRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => '',
-            'email' => '',
-            'message' => ''
+            'name' => 'required|string|max:100',
+            'email' => 'required|email|max:100',
+            'message' => 'required|string|max:65530'
         ];
     }
 }

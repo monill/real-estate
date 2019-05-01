@@ -24,29 +24,29 @@ class SettingsRequest extends FormRequest
     public function rules()
     {
         return [
-            'site_title' => '',
-            'meta_keywords' => '',
-            'meta_description' => '',
+            'site_title' => 'required|string|max:200',
+            'meta_keywords' => 'string|max:65530',
+            'meta_description' => 'string|max:65530',
             //Analytics
-            'analytics' => '',
+            'analytics' => 'string|max:65530',
             //Empresa
-            'about' => '',
-            'address' => '',
-            'email' => '',
-            'phone1' => '',
-            'phone2' => '',
+            'about' => 'string|max:65530',
+            'address' => 'string|max:250',
+            'email' => 'email|max:250',
+            'phone1' => 'string|max:250',
+            'phone2' => 'string|max:250',
             //Social
-            'facebook' => '',
-            'twitter' => '',
-            'googleplus' => '',
-            'linkedin' => '',
-            'link' => '',
+            'facebook' => 'url|string|max:250',
+            'twitter' => 'url|string|max:250',
+            'googleplus' => 'url|string|max:250',
+            'linkedin' => 'url|string|max:250',
+            'link' => 'url|string|max:250',
             //Google Maps
-            'latitude' => '',
-            'longitude' => '',
+            'latitude' => 'regex:^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?)$',
+            'longitude' => 'regex:^[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\.(\d+))|180(\.0+)?)$',
             //Termos e Privacidade
-            'terms' => '',
-            'privacy' => ''
+            'terms' => 'string|max:65530',
+            'privacy' => 'string|max:65530'
         ];
     }
 }

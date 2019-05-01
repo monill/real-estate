@@ -24,13 +24,13 @@ class UsersRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => '',
-            'email' => '',
-            'password' => '',
-            'avatar' => '',
-            'job' => '',
-            'about' => '',
-            'admin' => ''
+            'name' => 'required|string|max:200',
+            'email' => 'required|string|email|max:70|unique:users',
+            'password' => 'required|string|between:6,16',
+            'avatar' => 'image|mimes:jpeg,png,jpg|max:3072',
+            'job' => 'string|max:200',
+            'about' => 'string|max:65530',
+            'admin' => 'boolean'
         ];
     }
 }
