@@ -2,44 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01876e5d-2599-4239-b504-33b629a74b6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BlogCommentsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BlogCommentsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/BlogsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/BlogsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoriesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoriesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/FeaturesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FeaturesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PropertiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PropertiesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ServicesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ServicesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SettingsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TagsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TagsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/BlogsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/BlogsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/PropertiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/PropertiesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/BlogsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/BlogsRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ImagesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ImagesRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/PesquisasRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/PesquisasRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/PropertiesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/PropertiesRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SearchesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SearchesRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SettingsRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SettingsRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Property.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Property.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_03_22_153057_create_properties_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_03_22_153057_create_properties_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/blogs/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/blogs/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/blogs/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/blogs/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/blogs/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/blogs/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/comments/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/comments/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/features/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/features/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/properties/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/properties/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/properties/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/properties/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/properties/images.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/properties/images.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/properties/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/properties/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/services/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/services/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/services/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/services/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/services/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/services/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/tags/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tags/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/add.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/add.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/about/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/about/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/agents/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/agents/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/blogs/blog.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/blogs/blog.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/blogs/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/blogs/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/contact/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/contact/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/galleries/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/galleries/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/index/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/properties/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/properties/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/properties/property.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/properties/property.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,8 +35,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>partner</find>
-      <find>&quot;</find>
       <find>&quot;active&quot;</find>
       <find>../admin/images/eliteadmin-log</find>
       <find>? 'class=active' : ''</find>
@@ -94,9 +63,10 @@
       <find>sli</find>
       <find>ava</find>
       <find>number</find>
+      <find>site/images/logo.png</find>
+      <find>630</find>
     </findStrings>
     <replaceStrings>
-      <replace>city</replace>
       <replace>property_features</replace>
       <replace>slider</replace>
       <replace>site</replace>
@@ -124,8 +94,9 @@
       <replace>Editar</replace>
       <replace>return true;</replace>
       <replace>=&gt; '',</replace>
-      <replace>=&gt; '',</replace>
       <replace>numeric</replace>
+      <replace>imobiliaria.jpg</replace>
+      <replace>761</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\laragon\www\imobiliaria\app\Models</dir>
@@ -133,10 +104,10 @@
       <dir>C:\laragon\www\imobiliaria\database</dir>
       <dir>C:\laragon\www\imobiliaria\resources</dir>
       <dir>C:\laragon\www\imobiliaria\app\Http\Controllers\Admin</dir>
-      <dir>C:\laragon\www\imobiliaria\resources\views</dir>
       <dir>C:\laragon\www\imobiliaria\resources\views\site</dir>
       <dir>C:\laragon\www\imobiliaria\resources\views\admin</dir>
       <dir>C:\laragon\www\imobiliaria\app\Http\Requests</dir>
+      <dir>C:\laragon\www\imobiliaria\resources\views</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -303,7 +274,7 @@
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -316,6 +287,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -323,11 +295,21 @@
               <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
               <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
+              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
+              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -419,11 +401,12 @@
       <workItem from="1556630250603" duration="33186000" />
       <workItem from="1556669516982" duration="2278000" />
       <workItem from="1556712173459" duration="8703000" />
+      <workItem from="1556730064057" duration="857000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="386014000" />
+    <option name="totallyTimeSpent" value="386871000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -435,9 +418,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20575693" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20788912" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />

@@ -10,7 +10,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:image" content="{{ $blog->getMainImage() }}" />
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:height" content="761">
     <meta property="og:url" content="{{ route('blog.view', [$blog->id, $blog->slug]) }}" />
     <meta property="og:title" content="{{ $blog->title }}" />
     <meta property="og:description" content="{{ $blog->meta_description }}" />

@@ -10,7 +10,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:image" content="" />
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:height" content="761">
     <meta property="og:url" content="{{ route('propriedade', [$property->id, $property->slug]) }}" />
     <meta property="og:title" content="{{ $property->name }}" />
     <meta property="og:description" content="{{ $property->meta_description }}" />
