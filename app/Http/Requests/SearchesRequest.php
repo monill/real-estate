@@ -24,7 +24,10 @@ class SearchesRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'purpose' => '',
+            'city' => '',
+            'slider' => '',
+            'type' => '',
         ];
     }
 }

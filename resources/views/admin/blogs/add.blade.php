@@ -31,6 +31,7 @@
         <div class="col-sm-12">
             <div class="white-box">
                 <h3 class="box-title m-b-0">Adicionar Blog</h3>
+                @include('errors.errors')
                 {!! Form::open(['url' => 'blogs', 'files' => true, 'class' => 'form-horizontal']) !!}
                     <div class="form-group">
                         {!! Form::label('title', 'Título: *', ['class' => 'col-md-12']) !!}

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\FeaturesRequest;
 use App\Models\Feature;
 use App\Models\Log;
 use Illuminate\Http\Request;
@@ -24,7 +25,7 @@ class FeaturesController extends Controller
         return view('admin.features.index', compact('features'));
     }
 
-    public function store(Request $request)
+    public function store(FeaturesRequest $request)
     {
         $feature = new Feature($request->except('_token'));
         $feature->save();

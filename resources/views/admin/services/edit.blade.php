@@ -20,6 +20,7 @@
         <div class="col-sm-12">
             <div class="white-box">
                 <h3 class="box-title m-b-0">Editar Serviço</h3>
+                @include('errors.errors')
                 {!! Form::model($service, ['url' => 'services/' . $service->id, 'method' => 'PUT', 'class' => 'form-horizontal']) !!}
                 @include('admin.services.form', ['submitButton' => 'Editar'])
                 {!! Form::close() !!}

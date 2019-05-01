@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\CategoriesRequest;
 use App\Models\Category;
 use App\Models\Log;
 use Illuminate\Http\Request;
@@ -23,7 +24,7 @@ class CategoriesController extends Controller
         return view('admin.categories.index', compact('categories'));
     }
 
-    public function store(Request $request)
+    public function store(CategoriesRequest $request)
     {
         $feature = new Category($request->except('_token'));
         $feature->save();

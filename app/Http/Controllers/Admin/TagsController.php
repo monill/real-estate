@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\TagsRequest;
 use App\Models\Log;
 use App\Models\Tag;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class TagsController extends Controller
@@ -23,7 +23,7 @@ class TagsController extends Controller
         return view('admin.tags.index', compact('tags'));
     }
 
-    public function store(Request $request)
+    public function store(TagsRequest $request)
     {
         $tag = new Tag($request->except('_token'));
         $tag->save();
@@ -32,7 +32,7 @@ class TagsController extends Controller
         return redirect()->to('tags');
     }
 
-    public function update(Request $request, $id)
+    public function update(TagsRequest $request, $id)
     {
         if ($request->ajax()) {
             $pk = $request->get('pk');

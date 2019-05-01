@@ -20,6 +20,7 @@
             <div class="white-box">
                 <h3 class="box-title">Serviços</h3>
                 <p class="text-muted">Serviços ofertados pela empresa, são exibidos na página SOBRE</p>
+                @include('errors.errors')
                 <div class="form-inline padding-bottom-15">
                     <div class="row">
                         <div class="col-sm-6">

@@ -26,6 +26,7 @@
         <div class="col-sm-12">
             <div class="white-box">
                 <h3 class="box-title">Pesquisar</h3>
+                @include('errors.errors')
                 <div class="form-inline padding-bottom-15">
                     <div class="row">
                         <div class="col-sm-6">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\BlogsRequest;
 use App\Models\Blog;
 use App\Models\Log;
 use App\Models\Tag;
@@ -38,7 +39,7 @@ class BlogsController extends Controller
         return view('admin.blogs.add', compact('tags'));
     }
 
-    public function store(Request $request)
+    public function store(BlogsRequest $request)
     {
         if ($request->has('image') && $request->file('image')->isValid())
         {
@@ -77,7 +78,7 @@ class BlogsController extends Controller
         return view('admin.blogs.edit', compact('blog', 'tags'));
     }
 
-    public function update(Request $request, $id)
+    public function update(BlogsRequest $request, $id)
     {
         $blog = Blog::findOrFail($id);
         $blog->user_id = auth()->user()->id;

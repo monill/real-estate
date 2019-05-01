@@ -27,6 +27,7 @@
             <div class="white-box">
                 <h3 class="box-title m-b-0">Blog Comentários</h3>
                 <p class="text-muted m-b-20">Para aprovar ou desaprovar o comentário, clique no botão em Status</p>
+                @include('errors.errors')
                 <table id="demo-foo-row-toggler" class="table toggle-circle table-hover">
                     <thead>
                         <tr>

@@ -32,6 +32,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="white-box">
+                @include('errors.errors')
                 {!! Form::model($property, ['url' => 'properties/' . $property->id, 'method' => 'PUT', 'files' => false, 'class' => 'pro-add-form']) !!}
                     <div class="form-group">
                         {!! Form::label('name', 'Nome: *') !!}
@@ -78,10 +79,6 @@
                             <div class="col-sm-4">
                                 {!! Form::label('year', 'Ano Construção:') !!}
                                 {!! Form::number('year', $property->year, ['class' => 'form-control']) !!}
-                            </div>
-                            <div class="col-sm-4">
-                                {!! Form::label('avaliable', 'Disponível: *') !!}
-                                {!! Form::select('avaliable', [0 => 'Não', 1 => 'Sim'], $property->avaiable, ['class' => 'selectpicker', 'data-style' => 'form-control']) !!}
                             </div>
                             <div class="col-sm-4">
                                 {!! Form::label('category_id', 'Categoria:') !!}

@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Http\Requests\CommentsRequest;
 use App\Models\Blog;
 use App\Models\Comment;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class BlogsController extends Controller
@@ -15,7 +15,7 @@ class BlogsController extends Controller
         return view('site.blogs.index', compact('blogs'));
     }
 
-    public function store(Request $request)
+    public function store(CommentsRequest $request)
     {
         $comment = new Comment();
         $comment->blog_id = $request->input('blog_id');

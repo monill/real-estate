@@ -24,8 +24,7 @@ class Property extends Eloquent
         'latitude' => 'float',
         'longitude' => 'float',
         'slider' => 'bool',
-        'featured' => 'bool',
-        'avaliable' => 'bool'
+        'featured' => 'bool'
     ];
 
     protected $fillable = [
@@ -48,8 +47,7 @@ class Property extends Eloquent
         'video1',
         'video2',
         'slider',
-        'featured',
-        'avaliable'
+        'featured'
     ];
 
     public function category()

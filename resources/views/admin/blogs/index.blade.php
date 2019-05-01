@@ -19,6 +19,7 @@
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
             <div class="white-box">
                 <h3 class="box-title">Blogs</h3>
+                @include('errors.errors')
                 <div class="form-inline padding-bottom-15">
                     <div class="row">
                         <div class="col-sm-6">
@@ -28,7 +29,6 @@
                         </div>
                     </div>
                 </div>
-                @include('errors.errors')
                 <div class="table-responsive">
                     <table class="table product-overview">
                         <thead>

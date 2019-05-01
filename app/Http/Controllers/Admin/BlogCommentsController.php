@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Comment;
 use App\Http\Controllers\Controller;
 use App\Models\Log;
-use Illuminate\Http\Request;
 
 class BlogCommentsController extends Controller
 {
@@ -23,7 +22,7 @@ class BlogCommentsController extends Controller
         return view('admin.comments.index', compact('comments'));
     }
 
-    public function update(Request $request, $id)
+    public function update($id)
     {
         $comment = Comment::findOrFail($id);
         $comment->allowed = !$comment->allowed;

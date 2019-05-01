@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\ServicesRequest;
 use App\Models\Log;
 use App\Models\Service;
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class ServicesController extends Controller
         return view('admin.services.add');
     }
 
-    public function store(Request $request)
+    public function store(ServicesRequest $request)
     {
         $service = new Service($request->except('_token'));
         $service->save();
@@ -43,7 +44,7 @@ class ServicesController extends Controller
         return view('admin.services.edit', compact('service'));
     }
 
-    public function update(Request $request, $id)
+    public function update(ServicesRequest $request, $id)
     {
         $service = Service::findOrFail($id);
         $service->update($request->except('_token'));

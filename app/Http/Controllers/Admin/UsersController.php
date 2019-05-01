@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\UsersRequest;
 use App\Models\Log;
 use App\User;
 use Illuminate\Http\Request;
@@ -30,7 +31,7 @@ class UsersController extends Controller
         return view('admin.users.add');
     }
 
-    public function store(Request $request)
+    public function store(UsersRequest $request)
     {
         if ($request->has('image') && $request->file('image')->isValid())
         {
@@ -65,7 +66,7 @@ class UsersController extends Controller
         return view('admin.users.edit', compact('user'));
     }
 
-    public function update(Request $request, $id)
+    public function update(UsersRequest $request, $id)
     {
         $user = User::findOrFail($id);
         $user->name = $request->input('name');

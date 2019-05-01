@@ -41,9 +41,6 @@ class SettingsRequest extends FormRequest
             'googleplus' => 'url|string|max:250',
             'linkedin' => 'url|string|max:250',
             'link' => 'url|string|max:250',
-            //Google Maps
-            'latitude' => 'regex:^[-]?(([0-8]?[0-9])\.(\d+))|(90(\.0+)?)$',
-            'longitude' => 'regex:^[-]?((((1[0-7][0-9])|([0-9]?[0-9]))\.(\d+))|180(\.0+)?)$',
             //Termos e Privacidade
             'terms' => 'string|max:65530',
             'privacy' => 'string|max:65530'

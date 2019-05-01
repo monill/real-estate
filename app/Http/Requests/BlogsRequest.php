@@ -25,7 +25,7 @@ class BlogsRequest extends FormRequest
     {
         return [
             'title' => 'required|string|max:255',
-            'image' => 'required|image|mimes:jpeg,png,jpg|max:3072',
+            'image' => 'image|mimes:jpeg,png,jpg|max:3072',
             'content' => 'required|string|max:65530',
             'meta_keywords' => 'string|max:65530',
             'meta_description' => 'string|max:65530',

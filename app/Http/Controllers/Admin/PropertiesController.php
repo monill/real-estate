@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\ImagesRequest;
+use App\Http\Requests\PropertiesRequest;
+use App\Http\Requests\SearchesRequest;
 use App\Models\Category;
 use App\Models\Feature;
 use App\Models\Log;
@@ -43,7 +46,7 @@ class PropertiesController extends Controller
         return view('admin.properties.add', compact('features', 'categories'));
     }
 
-    public function store(Request $request)
+    public function store(PropertiesRequest $request)
     {
         $property = new Property();
         $property->user_id = auth()->user()->id;
@@ -83,7 +86,7 @@ class PropertiesController extends Controller
         return view('admin.properties.edit', compact('property', 'features', 'categories', 'destaque'));
     }
 
-    public function update(Request $request, $id)
+    public function update(PropertiesRequest $request, $id)
     {
         $property = Property::findOrFail($id);
         $property->user_id = auth()->user()->id;
@@ -121,7 +124,7 @@ class PropertiesController extends Controller
         return redirect()->to('properties');
     }
 
-    public function search(Request $request)
+    public function search(SearchesRequest $request)
     {
         //TODO
         $purpose = $request->get('purpose');
@@ -140,7 +143,7 @@ class PropertiesController extends Controller
         return view('admin.properties.images', compact('property', 'images'));
     }
 
-    public function uploadImage(Request $request)
+    public function uploadImage(ImagesRequest $request)
     {
         $photos = $request->file('file');
         $property_id = $request->input('pp_id');

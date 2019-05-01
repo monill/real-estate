@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Requests\SettingsRequest;
 use App\Models\Log;
 use App\Models\Setting;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class SettingsController extends Controller
@@ -23,7 +23,7 @@ class SettingsController extends Controller
         return view('admin.settings.index', compact('setting'));
     }
 
-    public function update(Request $request, $id)
+    public function update(SettingsRequest $request, $id)
     {
         $setting = Setting::findOrFail($id);
         $setting->update($request->except('_token'));

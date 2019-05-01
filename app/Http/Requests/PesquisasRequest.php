@@ -24,7 +24,14 @@ class PesquisasRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id' => '',
+            'city' => '',
+            'purpose' => '',
+            'type' => '',
+            'bedrooms' => '',
+            'bathrooms' => '',
+            'min_price' => '',
+            'max_price' => '',
         ];
     }
 }

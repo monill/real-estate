@@ -26,6 +26,7 @@
             <div class="white-box">
                 <h3 class="box-title">Categorias</h3>
                 <p class="text-muted">Para editar, clique em cima do nome</p>
+                @include('errors.errors')
                 <div class="form-inline padding-bottom-15">
                     <div class="row">
                         <div class="col-sm-6">

@@ -44,7 +44,6 @@ class CreatePropertiesTable extends Migration
 
             $table->boolean('slider')->default(false);
             $table->boolean('featured')->default(false);
-            $table->boolean('avaliable')->default(true);
             $table->timestamps();
 
             $table->index('user_id');

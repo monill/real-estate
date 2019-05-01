@@ -25,6 +25,7 @@
         <div class="col-sm-12">
             <div class="white-box">
                 <h3 class="box-title m-b-0">Adicionar Corretor(a)</h3>
+                @include('errors.errors')
                 {!! Form::open(['url' => 'users', 'files' => true, 'class' => 'form-horizontal']) !!}
                     <div class="form-group">
                         {!! Form::label('name', 'Nome:', ['class' => 'col-md-12']) !!}

@@ -36,33 +36,35 @@
             @include('errors.errors')
         </div>
         @foreach($users as $user)
-        <!-- /.usercard-->
-        <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-            <div class="white-box">
-                <div class="el-card-item">
-                    <div class="el-card-avatar el-overlay-1">
-                        <img src="{{ $user->getAvatar() }}" alt="Avatar" />
-                        <div class="el-overlay scrl-dwn">
-                            <ul class="el-info">
-                                <li><a class="btn default btn-outline image-popup-vertical-fit" href="{{ $user->getAvatar() }}"><i class="icon-magnifier"></i></a></li>
-                                @if(auth()->user()->isAdmin())
-                                <li><a class="btn default btn-outline" href="{{ route('users.edit', [$user->id]) }}"><i class="fa fa-pencil"></i></a></li>
-                                <li><a href="javascript:;" onclick="document.getElementById('user-del-{{ $user->id }}').submit();" class="btn default btn-outline"><i class="fa fa-trash"></i></a></li>
-                                {!! Form::open(['url' => 'users/' . $user->id, 'method' => 'DELETE', 'id' => 'user-del-' . $user->id , 'style' => 'display: none']) !!}
-                                {!! Form::close() !!}
-                                @endif
-                            </ul>
+            @if($user->admin != true)
+            <!-- /.usercard-->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="white-box">
+                    <div class="el-card-item">
+                        <div class="el-card-avatar el-overlay-1">
+                            <img src="{{ $user->getAvatar() }}" alt="Avatar" />
+                            <div class="el-overlay scrl-dwn">
+                                <ul class="el-info">
+                                    <li><a class="btn default btn-outline image-popup-vertical-fit" href="{{ $user->getAvatar() }}"><i class="icon-magnifier"></i></a></li>
+                                    @if(auth()->user()->isAdmin())
+                                    <li><a class="btn default btn-outline" href="{{ route('users.edit', [$user->id]) }}"><i class="fa fa-pencil"></i></a></li>
+                                    <li><a href="javascript:;" onclick="document.getElementById('user-del-{{ $user->id }}').submit();" class="btn default btn-outline"><i class="fa fa-trash"></i></a></li>
+                                    {!! Form::open(['url' => 'users/' . $user->id, 'method' => 'DELETE', 'id' => 'user-del-' . $user->id , 'style' => 'display: none']) !!}
+                                    {!! Form::close() !!}
+                                    @endif
+                                </ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="el-card-content">
-                        <h3 class="box-title">{{ $user->name }}</h3>
-                        <small>{{ $user->job }}</small>
-                        <br/>
+                        <div class="el-card-content">
+                            <h3 class="box-title">{{ $user->name }}</h3>
+                            <small>{{ $user->job }}</small>
+                            <br/>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!-- /.usercard-->
+            <!-- /.usercard-->
+            @endif
         @endforeach
     </div>
     <!-- /.row -->

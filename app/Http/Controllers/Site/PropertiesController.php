@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Http\Requests\PesquisasRequest;
+use App\Http\Requests\QuestionsRequest;
 use App\Models\Property;
 use App\Models\PropertyFeature;
 use App\Models\PropertyImage;
 use App\Models\Question;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class PropertiesController extends Controller
@@ -17,7 +18,7 @@ class PropertiesController extends Controller
         return view('site.properties.index', compact('properties'));
     }
 
-    public function store(Request $request)
+    public function store(QuestionsRequest $request)
     {
         $question = new Question();
         $question->property_id = $request->input('property_id');
@@ -41,7 +42,7 @@ class PropertiesController extends Controller
         return view('site.properties.property', compact('property', 'images', 'features'));
     }
 
-    public function pesquisar(Request $request)
+    public function pesquisar(PesquisasRequest $request)
     {
         $id = $request->input('id');
         $city = $request->input('city');

@@ -33,6 +33,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="white-box">
+                @include('errors.errors')
                 {!! Form::open(['url' => 'properties', 'files' => false, 'class' => 'pro-add-form']) !!}
                     <div class="form-group">
                         {!! Form::label('name', 'Nome: *') !!}

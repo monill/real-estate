@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Http\Requests\MessagesRequest;
 use App\Models\Message;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 class ContactController extends Controller
@@ -13,7 +13,7 @@ class ContactController extends Controller
         return view('site.contact.index');
     }
 
-    public function store(Request $request)
+    public function store(MessagesRequest $request)
     {
         $message = new Message();
         $message->name = $request->get('name');

@@ -20,6 +20,7 @@
         <div class="col-sm-12">
             <div class="white-box">
                 <h3 class="box-title m-b-0">Adicionar Serviço</h3>
+                @include('errors.errors')
                 {!! Form::open(['url' => 'services', 'class' => 'form-horizontal']) !!}
                 @include('admin.services.form', ['submitButton' => 'Adicionar'])
                 {!! Form::close() !!}
