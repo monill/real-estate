@@ -64,7 +64,7 @@
     <div class="row">
         <div class="col-md-8 col-sm-6 col-xs-12">
             <div class="white-box">
-                <h3 class="box-title">Properties stats</h3>
+                <h3 class="box-title">Estatísticas</h3>
                 <ul class="list-inline text-right">
                     <li>
                         <h5><i class="fa fa-circle m-r-5" style="color: #b8edf0;"></i>Venda</h5></li>
