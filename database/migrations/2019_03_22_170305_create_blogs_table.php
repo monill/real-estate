@@ -22,7 +22,6 @@ class CreateBlogsTable extends Migration
             $table->string('image');
             $table->text('content');
 
-            $table->text('meta_title')->nullable();
             $table->text('meta_keywords')->nullable();
             $table->text('meta_description')->nullable();
 
