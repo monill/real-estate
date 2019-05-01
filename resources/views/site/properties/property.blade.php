@@ -68,7 +68,7 @@
                                                     </div>
                                                     <div class="label-white pull-right">
                                                         <div class="listing-price">
-                                                            R$ {{ $property->price }}
+                                                            R$ {{ priceFormat($property->price) }}
                                                             {!! $property->purposeFormat() !!}
                                                         </div>
                                                     </div>
@@ -238,7 +238,7 @@
                                                             <div class="post-img-detail">
                                                                 <div class="post-img-detail-wrapper">
                                                                     <div class="post-img-detail-content">
-                                                                        <div class="post-img-detail-box">R$ {{ $recent->formatValue() }}</div>
+                                                                        <div class="post-img-detail-box">R$ {{ priceFormat($recent->price) }}</div>
                                                                     </div>
                                                                 </div>
                                                             </div>

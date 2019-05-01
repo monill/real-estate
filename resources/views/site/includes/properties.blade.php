@@ -29,7 +29,7 @@
                             <a href="{{ route('propriedade', [$property->id, $property->slug]) }}"
                                class="read-more-link-alt">Leia mais</a>
                             <p class="listing-price">
-                                R$ {{ $property->formatValue() }}
+                                R$ {{ priceFormat($property->price) }}
                                 {!! $property->purposeFormat() !!}
                             </p>
                         </div>

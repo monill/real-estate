@@ -24,10 +24,10 @@ class SearchesRequest extends FormRequest
     public function rules()
     {
         return [
-            'purpose' => '',
-            'city' => '',
-            'slider' => '',
-            'type' => '',
+            'purpose' => 'numeric|in:1,2',
+            'city' => 'nullable|string|max:50',
+            'slider' => 'boolean',
+            'type' => 'numeric|in:1,2,3,4',
         ];
     }
 }

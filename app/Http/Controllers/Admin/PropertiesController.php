@@ -126,14 +126,42 @@ class PropertiesController extends Controller
 
     public function search(SearchesRequest $request)
     {
-        //TODO
-        $purpose = $request->get('purpose');
-        $city = $request->get('city');
-        $slider = $request->get('slider');
-        $type = $request->get('type');
+        if ($request->isMethod('POST'))
+        {
+            $purpose = $request->get('purpose');
+            $city = $request->get('city');
+            $slider = $request->get('slider');
+            $type = $request->get('type');
 
-//        $properties = Property::
-        return view('admin.properties.index', compact('properties'));
+            $properties = DB::table('properties');
+
+            if ($request->has('purpose') && $request->input('purpose') != null) {
+                $properties->where(function ($query) use ($purpose) {
+                    $query->where('properties.purpose', '=', $purpose);
+                });
+            }
+            if ($request->has('city') && $request->input('city') != null) {
+                $properties->where(function ($query) use ($city) {
+                    $query->where('properties.city', 'like', '%'.$city.'%');
+                });
+            }
+            if ($request->has('slider') && $request->input('slider') != null) {
+                $properties->where(function ($query) use ($slider) {
+                    $query->where('properties.slider', '=', $slider);
+                });
+            }
+            if ($request->has('type') && $request->input('type') != null) {
+                $properties->where(function ($query) use ($type) {
+                    $query->where('properties.type', '=', $type);
+                });
+            }
+
+            $properties = $properties->paginate(8);
+
+            return view('admin.properties.search', compact('properties'));
+        } else {
+            return redirect()->to('properties');
+        }
     }
 
     public function images($id)

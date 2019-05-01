@@ -3,9 +3,18 @@
         <div class="container">
             <div class="section-header onscroll-animate" data-animation="fadeInLeft">
                 <h1>Encontre o seu lar ideal</h1>
-                <h4>Procurando um bom imóvel, experimente nosso mecanismo de busca, nós garantimos que você encontrará o
-                    que precisa.</h4>
+                <h4>Procurando um bom imóvel, experimente nosso mecanismo de busca, nós garantimos que você encontrará o que precisa.</h4>
             </div>
+            @if (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             {!! Form::open(['url' => 'pesquisar', 'id' => 'form-search']) !!}
             <div class="row">
                 <div class="col-md-6">
@@ -27,7 +36,7 @@
                             <div class="custom-select">
                                 <div class="custom-select-val"></div>
                                 <ul class="custom-select-list">
-                                    <li class="custom-select-default" data-val="0">
+                                    <li class="custom-select-default" data-val="">
                                         <div class="custom-select-item-content">Qualquer...</div>
                                     </li>
                                     <li data-val="1">
@@ -76,7 +85,7 @@
                             <div class="custom-select">
                                 <div class="custom-select-val"></div>
                                 <ul class="custom-select-list stroll-list cards">
-                                    <li class="custom-select-default" data-val="0">
+                                    <li class="custom-select-default" data-val="">
                                         <div class="custom-select-item-content">Qualquer...</div>
                                     </li>
                                     <li data-val="1">
@@ -124,7 +133,7 @@
                             <div class="custom-select">
                                 <div class="custom-select-val"></div>
                                 <ul class="custom-select-list stroll-list cards">
-                                    <li class="custom-select-default" data-val="0">
+                                    <li class="custom-select-default" data-val="">
                                         <div class="custom-select-item-content">Qualquer...</div>
                                     </li>
                                     <li data-val="1">
@@ -189,7 +198,6 @@
                 </button>
             </p>
             {!! Form::close() !!}
-
 
         </div><!-- .container -->
     </div><!-- .section-content -->

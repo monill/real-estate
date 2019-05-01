@@ -43,7 +43,7 @@
                                 <hr>
                                 <div class="slide-price-container">
                                     <a href="{{ route('propriedade', [$slider->id, $slider->slug]) }}" class="read-more-link-alt">Saiba mais</a>
-                                    <p class="listing-price">R$ {{ $slider->price }}</p>
+                                    <p class="listing-price">R$ {{ priceFormat($slider->price) }}</p>
                                 </div>
                             </div>
                         </div>

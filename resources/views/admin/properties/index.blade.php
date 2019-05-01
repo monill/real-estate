@@ -38,7 +38,6 @@
                         </div>
                     </div>
                 </div>
-                @include('errors.errors')
                 {!! Form::open(['url' => 'search', 'role' => 'form', 'class' => 'row']) !!}
                     <div class="col-sm-6 col-md-3">
                         <div class="form-group">
@@ -70,7 +69,7 @@
                         <div class="form-group">
                             <label for="type"></label>
                             <select class="selectpicker show-tick" name="type" id="type" data-style="form-control">
-                                <option value="0" disabled selected>Tipo</option>
+                                <option value="" disabled selected>Tipo</option>
                                 <option value="1">Casa</option>
                                 <option value="2">Apartamento</option>
                                 <option value="3">Terreno</option>

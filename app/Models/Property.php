@@ -133,12 +133,7 @@ class Property extends Eloquent
 
     public function getPurpose()
     {
-        $purpose = $this->purpose;
-        if ($purpose == 1) {
-            return 'Locação';
-        } else {
-            return 'Venda';
-        }
+        return $this->purpose == 1 ? 'Locação' : 'Venda';
     }
 
     public function getType()
@@ -163,13 +158,6 @@ class Property extends Eloquent
         } else {
             return asset('uploads/properties/' . $this->id . '/' . $image->image);
         }
-    }
-
-    public function formatValue()
-    {
-        $price = (float)$this->price;
-        return $price;
-            //number_format($price, '.', ',');
     }
 
     public function purposeFormat()

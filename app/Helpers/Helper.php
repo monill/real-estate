@@ -1,13 +1,10 @@
 <?php
 
-if (!function_exists('setting')) {
-    function setting($key) {
-        return \App\Models\Setting::select($key)->where('id', 1)->pluck($key)->first();
-    }
-}
+use App\Models\PropertyImage;
 
 if (!function_exists('getIP')) {
-    function getIP() {
+    function getIP()
+    {
         // check for shared internet/ISP IP
         if (!empty($_SERVER['HTTP_CLIENT_IP']) && validIP($_SERVER['HTTP_CLIENT_IP'])) {
             return $_SERVER['HTTP_CLIENT_IP'];
@@ -46,7 +43,8 @@ if (!function_exists('getIP')) {
 }
 
 if (!function_exists('validIP')) {
-    function validIP($ip) {
+    function validIP($ip)
+    {
         if (strtolower($ip) === "ip_unknown") {
             return false;
         }
@@ -88,21 +86,24 @@ if (!function_exists('validIP')) {
 }
 
 if (!function_exists('md5Gen')) {
-    function md5Gen() {
+    function md5Gen()
+    {
         return md5(uniqid() . time() . microtime());
     }
 }
 
 if (!function_exists('makeSize')) {
-    function makeSize($bytes, $decimals = 2) {
+    function makeSize($bytes, $decimals = 2)
+    {
         $size = [' B', ' kB', ' MB', ' GB', ' TB', ' PB', ' EB', ' ZB', ' YB'];
-        $floor = floor((strlen($bytes)-1)/3);
-        return sprintf("%.{$decimals}f", $bytes/pow(1024, $floor)).@$size[$floor];
+        $floor = floor((strlen($bytes) - 1) / 3);
+        return sprintf("%.{$decimals}f", $bytes / pow(1024, $floor)) . @$size[$floor];
     }
 }
 
 if (!function_exists('diaMesAno')) {
-    function diaMesAno() {
+    function diaMesAno()
+    {
         setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
         date_default_timezone_set('America/Sao_Paulo');
         return strftime('%A, %d de %B de %Y', strtotime('today'));
@@ -110,7 +111,27 @@ if (!function_exists('diaMesAno')) {
 }
 
 if (!function_exists('currentPage')) {
-    function currentPage(string $url) {
+    function currentPage(string $url)
+    {
         return request()->is($url) ? 'class=active' : '';
+    }
+}
+
+if (!function_exists('priceFormat')) {
+    function priceFormat(int $price)
+    {
+        return number_format($price, 2, ',', '.');
+    }
+}
+
+if (!function_exists('proprtyMainImage')) {
+    function propertyMainImage($id)
+    {
+        $image = PropertyImage::where('property_id', '=', $id)->where('feature', '=', true)->first();
+        if (!$image) {
+            return asset('uploads/404.jpg');;
+        } else {
+            return asset('uploads/properties/' . $id . '/' . $image->image);
+        }
     }
 }
