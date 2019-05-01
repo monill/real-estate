@@ -13,6 +13,7 @@ Usuários já cadastrado para teste e login:
  - eduardo.silva@imob.com.br : q1q2q3
  - guilherme.paula@imob.com.br : u1u2u3
  - pedro.almeida@imob.com.br : g1g2g3
+ - roberto.santos@imob.com.br : m1m2m3
 
 ### Requisitos: *
 - Web server (Apache2 ou Nginx)
