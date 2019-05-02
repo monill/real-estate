@@ -40,7 +40,7 @@
                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
                     <h1>Blog</h1>
                     <h4>Confira a seção do blog, ótimo layout fácil de ler e comentar.</h4>
-                    @include('errors.errors')
+                    @include('site.includes.errors')
                 </div>
                 <div class="row">
                     <div class="col-md-9">
@@ -74,7 +74,7 @@
                                     <div class="author-box-avatar">
                                         <div class="centered-columns">
                                             <div class="centered-column">
-                                                <img alt="avatar" src="{{ $blog->user->getAvatar() }}">
+                                                <img alt="avatar" src="{{ $blog->user->getAvatar() }}" style="width: 60%;">
                                             </div>
                                             <div class="centered-column">
                                                 <span class="author-name">Postado por <strong>{{ $blog->user->name }}</strong></span><br>
@@ -98,7 +98,7 @@
                                 <div class="comments-container">
                                     <div class="comment onscroll-animate" data-animation="fadeInRight">
                                         <div class="comment-img">
-                                            <img alt="avatar" src="{{ asset('uploads/avatar.jpg') }}">
+                                            <img alt="avatar" src="{{ asset('uploads/avatar.jpg') }}" style="width: 71%;">
                                         </div>
                                         <div class="comment-content">
                                             <div class="comment-author">
@@ -122,13 +122,13 @@
                             {!! Form::hidden('blog_id', $blog->id) !!}
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <input type="text" name="name" id="name" placeholder="Nome">
+                                        <input type="text" name="name" id="name" placeholder="Nome" required minlength="2" maxlength="90">
                                     </div>
                                     <div class="col-md-6">
-                                        <input type="text" name="email" id="email" placeholder="E-mail">
+                                        <input type="text" name="email" id="email" placeholder="E-mail" required minlength="5" maxlength="90">
                                     </div>
                                 </div>
-                                <textarea name="message" id="message" placeholder="Mensagem"></textarea>
+                                <textarea name="message" id="message" placeholder="Mensagem" required minlength="2" maxlength="500"></textarea>
                                 <div class="text-right">
                                     <div class="form-contact-full-submit">
                                         <input type="submit" value="Enviar Comentário">

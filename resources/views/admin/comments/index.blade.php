@@ -49,9 +49,9 @@
                             <td>
                                 <a href="javascript:;" onclick="document.getElementById('comment-upd-{{ $comment->id }}').submit();">
                                     @if($comment->allowed)
-                                        <span class="label label-table label-success" data-toggle="tooltip" title="Aprovado">Aprovado</span>
+                                        <span class="label label-table label-success" data-toggle="tooltip" title="Desaprovar">Aprovado</span>
                                     @else
-                                        <span class="label label-table label-inverse" data-toggle="tooltip" title="Não Aprovado">Não Aprovado</span>
+                                        <span class="label label-table label-inverse" data-toggle="tooltip" title="Aprovar">Não Aprovado</span>
                                     @endif
                                 </a>
                                 {!! Form::open(['url' => 'comments/' . $comment->id, 'method' => 'PUT', 'id' => 'comment-upd-' . $comment->id, 'style' => 'display: none']) !!}

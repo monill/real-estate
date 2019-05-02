@@ -5,16 +5,7 @@
                 <h1>Encontre o seu lar ideal</h1>
                 <h4>Procurando um bom imóvel, experimente nosso mecanismo de busca, nós garantimos que você encontrará o que precisa.</h4>
             </div>
-            @if (count($errors) > 0)
-                <div class="alert alert-danger">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+            @include('site.includes.errors')
             {!! Form::open(['url' => 'pesquisar', 'id' => 'form-search']) !!}
             <div class="row">
                 <div class="col-md-6">

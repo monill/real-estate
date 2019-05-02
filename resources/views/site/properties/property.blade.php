@@ -43,6 +43,7 @@
                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
                     <h1>{{ $property->name }}</h1>
                     <h4>Veja nossas listas recentes aqui, você vai encontrar todos os tipos de casas.</h4>
+
                 </div>
                 <div class="row">
                     <div class="col-md-9">
@@ -159,6 +160,7 @@
                                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
                                     <h1>Contate um Corretor</h1>
                                 </div>
+                                @include('site.includes.errors')
                                 <div class="row">
                                     <div class="col-md-8">
                                         <div class="profile">
