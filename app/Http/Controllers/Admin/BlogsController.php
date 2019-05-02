@@ -6,21 +6,22 @@ use App\Http\Requests\BlogsRequest;
 use App\Models\Blog;
 use App\Models\Log;
 use App\Models\Tag;
+use App\Traits\ImageFile;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\File;
 use App\Http\Controllers\Controller;
-use Intervention\Image\ImageManagerStatic as Image;
 
 class BlogsController extends Controller
 {
-    protected $photos_path;
+    protected $photosPath;
     protected $log;
+    protected $imageFile;
 
     public function __construct()
     {
         $this->middleware('auth');
-        $this->photos_path = public_path('uploads/blogs/');
+        $this->photosPath = public_path('uploads/blogs/');
         $this->log = new Log();
+        $this->imageFile = new ImageFile();
     }
 
     public function index()
@@ -61,7 +62,7 @@ class BlogsController extends Controller
 
             $blog->tags()->attach($request->input('tags'));
 
-            $this->uploadImage($blog->id, $filename, $img);
+            $this->imageFile->uploadImage($this->photosPath, $blog->id, $filename, $img);
 
             $this->log->log('Usuario(a) cadastrou novo blog');
             return redirect()->to('blogs');
@@ -77,7 +78,7 @@ class BlogsController extends Controller
         return view('admin.blogs.edit', compact('blog', 'tags'));
     }
 
-    public function update(BlogsRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $blog = Blog::findOrFail($id);
         $blog->user_id = auth()->user()->id;
@@ -86,7 +87,7 @@ class BlogsController extends Controller
         //Image
         $img = $request->file('image');
         if ($img != null) {
-            $this->removeImage($id, $blog->image);
+            $this->imageFile->removeImage($this->photosPath, $id, $blog->image);
             $filename = md5Gen() . '.' . $img->getClientOriginalExtension();
         } else {
             $filename = $blog->image;
@@ -105,7 +106,7 @@ class BlogsController extends Controller
         $blog->update();
 
         if ($img != null) {
-            $this->uploadImage($id, $filename, $img);
+            $this->imageFile->uploadImage($this->photosPath, $id, $filename, $img);
         }
 
         $this->log->log('Usuario(a) atualizou blog');
@@ -115,7 +116,7 @@ class BlogsController extends Controller
     public function destroy($id)
     {
         Blog::findOrFail($id)->delete();
-        $this->removeDirectory($id);
+        $this->imageFile->removeDirectory($this->photosPath, $id);
         $this->log->log('Usuario(a) deletou blog');
         return redirect()->to('blogs');
     }
@@ -128,35 +129,5 @@ class BlogsController extends Controller
 
         $this->log->log('Usuario(a) publicou ou colocou blog em modo rascunho');
         return redirect()->to('blogs');
-    }
-
-    private function uploadImage($id, $filename, $img)
-    {
-        $this->pathExist($id);
-
-        $local = $this->photos_path . $id . '/';
-
-        $image = Image::make($img);
-
-        $image->save($local . $filename);
-    }
-
-    private function removeImage($id, $image)
-    {
-        return File::delete($this->photos_path . $id . '/' . $image);
-    }
-
-    private function removeDirectory($id)
-    {
-        return File::delete($this->photos_path . $id . '/' . $id);
-    }
-
-    private function pathExist($id)
-    {
-        $path = $this->photos_path . $id . '/';
-
-        if (!file_exists($path) && !is_dir($path)) {
-            mkdir($path, 0777, true);
-        }
     }
 }

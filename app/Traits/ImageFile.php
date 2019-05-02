@@ -20,12 +20,18 @@ class ImageFile
 
     public function removeImage($path, $id, $filename)
     {
-        return File::delete($path . $id . '/' . $filename);
+        if (File::exists($path . $id . '/' . $filename)) {
+            //File::deleteDirectory($path . $id . '/' . $filename);
+            unlink($path . $id . '/' . $filename);
+        }
     }
 
     public function removeDirectory($path, $id)
     {
-        return File::delete($path . $id);
+        if (File::exists($path . $id)) {
+            File::deleteDirectory($path . $id);
+            //unlink($path . $id);
+        }
     }
 
     public function pathExist($path, $id)

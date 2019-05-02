@@ -4,20 +4,23 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\UsersRequest;
 use App\Models\Log;
+use App\Traits\ImageFile;
 use App\User;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\File;
-use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+    protected $photosPath;
     protected $log;
+    protected $imageFile;
 
     public function __construct()
     {
         $this->middleware('auth');
+        $this->photosPath = public_path('uploads/users/');
         $this->log = new Log();
+        $this->imageFile = new ImageFile();
     }
 
     public function index()
@@ -50,7 +53,7 @@ class UsersController extends Controller
             $user->admin = $request->input('admin') ? true : false;
             $user->save();
 
-            $this->uploadImage($user->id, $filename, $img);
+            $this->imageFile->uploadImage($this->photosPath, $user->id, $filename, $img);
 
             $this->log->log('Usuario(a) adicionou nova conta de usuario');
             return redirect()->to('users');
@@ -65,7 +68,7 @@ class UsersController extends Controller
         return view('admin.users.edit', compact('user'));
     }
 
-    public function update(UsersRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
         $user->name = $request->input('name');
@@ -79,7 +82,7 @@ class UsersController extends Controller
         //Image
         $img = $request->file('avatar');
         if ($img != null) {
-            $this->removeImage($id, $user->avatar);
+            $this->imageFile->removeImage($this->photosPath, $id, $user->avatar);
             $filename = md5Gen() . '.' . $img->getClientOriginalExtension();
         } else {
             $filename = $user->avatar;
@@ -93,7 +96,7 @@ class UsersController extends Controller
         $user->update();
 
         if ($img != null) {
-            $this->uploadImage($id, $filename, $img);
+            $this->imageFile->uploadImage($this->photosPath, $id, $filename, $img);
         }
 
         $this->log->log('Usuario(a) atualizou sua conta ou de outro usuario');
@@ -103,38 +106,8 @@ class UsersController extends Controller
     public function destroy($id)
     {
         User::findOrFail($id)->delete();
-        $this->removeDirectory($id);
+        $this->imageFile->removeDirectory($this->photosPath, $id);
         $this->log->log('Usuario(a) deletou uma conta');
         return redirect()->to('users');
-    }
-
-    private function uploadImage($id, $filename, $img)
-    {
-        $this->pathExist($id);
-
-        $local = public_path('uploads/users/' . $id . '/');
-
-        $image = Image::make($img);
-
-        $image->save($local . $filename);
-    }
-
-    private function removeImage($id, $filename)
-    {
-        return File::delete(public_path('uploads/users/' . $id . '/' . $filename));
-    }
-
-    private function removeDirectory($id)
-    {
-        return File::delete(public_path('uploads/users/' . $id));
-    }
-
-    private function pathExist($id)
-    {
-        $path = public_path('uploads/users/' . $id . '/');
-
-        if (!file_exists($path) && !is_dir($path)) {
-            mkdir($path, 0777, true);
-        }
     }
 }

@@ -10,20 +10,23 @@ use App\Models\Feature;
 use App\Models\Log;
 use App\Models\Property;
 use App\Models\PropertyImage;
+use App\Traits\ImageFile;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 
 class PropertiesController extends Controller
 {
-    private $photos_path;
+    private $photosPath;
     protected $log;
+    protected $imageFile;
 
     public function __construct()
     {
         $this->middleware('auth');
-        $this->photos_path = public_path('/uploads/properties/');
+        $this->photosPath = public_path('/uploads/properties/');
         $this->log = new Log();
+        $this->imageFile = new ImageFile();
     }
 
     public function index()
@@ -86,7 +89,7 @@ class PropertiesController extends Controller
         return view('admin.properties.edit', compact('property', 'features', 'categories', 'destaque'));
     }
 
-    public function update(PropertiesRequest $request, $id)
+    public function update(Request $request, $id)
     {
         $property = Property::findOrFail($id);
         $property->user_id = auth()->user()->id;
@@ -120,6 +123,7 @@ class PropertiesController extends Controller
     public function destroy($id)
     {
         Property::findOrFail($id)->delete();
+        $this->imageFile->removeDirectory($this->photosPath, $id);
         $this->log->log('Usuario(a) deletou uma propriedade.');
         return redirect()->to('properties');
     }
@@ -179,21 +183,16 @@ class PropertiesController extends Controller
             $photos = [$photos];
         }
 
-        if (!is_dir($this->photos_path . $property_id . '/')) {
-            mkdir($this->photos_path . $property_id . '/', 0777);
-        }
-
         for ($i = 0; $i < count($photos); $i++) {
             $photo = $photos[$i];
-            $name = md5Gen();
-            $save_name = $name . '.' . $photo->getClientOriginalExtension();
-
-            $photo->move($this->photos_path . $property_id . '/', $save_name);
+            $filename = md5Gen() . '.' . $photo->getClientOriginalExtension();
 
             $upload = new PropertyImage();
             $upload->property_id = $property_id;
-            $upload->image = $save_name;
+            $upload->image = $filename;
             $upload->save();
+
+            $this->imageFile->uploadImage($this->photosPath, $property_id, $filename, $photo);
         }
 
         $this->log->log('Usuario(a) adicionou imagens a propriedade');
@@ -205,15 +204,11 @@ class PropertiesController extends Controller
     {
         $uploaded_image = PropertyImage::where('id', '=', $id)->first();
 
-        if (empty($uploaded_image)) {
+        if (!$uploaded_image) {
             return response()->json(['message' => 'Desculpe, arquivo inexistente'], 400);
         }
 
-        $file_path = $this->photos_path . $id . '/' . $uploaded_image->image;
-
-        if (file_exists($file_path)) {
-            unlink($file_path);
-        }
+        $this->imageFile->removeImage($this->photosPath, $uploaded_image->property_id, $uploaded_image->image);
 
         if (!empty($uploaded_image)) {
             $uploaded_image->delete();

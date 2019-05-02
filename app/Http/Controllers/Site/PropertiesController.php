@@ -94,7 +94,7 @@ class PropertiesController extends Controller
                 });
             }
 
-            $properties = $properties->paginate(8);
+            $properties = $properties->paginate(12);
 
             return view('site.properties.pesquisa', compact('properties'));
         } else {
