@@ -135,3 +135,12 @@ if (!function_exists('proprtyMainImage')) {
         }
     }
 }
+
+if (!function_exists('formatPrice')) {
+    function formatPrice($price)
+    {
+        $step1 = str_replace('.', '', $price);
+        $step2 = str_replace(',', '.', $step1);
+        return $step2;
+    }
+}

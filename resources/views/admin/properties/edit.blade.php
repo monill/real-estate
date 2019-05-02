@@ -156,6 +156,8 @@
 @endsection
 
 @section('scripts')
+    <!-- mask -->
+    <script src="{{ asset('admin/vendor/mask/src/jquery.mask.js') }}"></script>
     <!-- bootstrap-select -->
     <script src="{{ asset('admin/vendor/bootstrap-select/bootstrap-select.min.js') }}"></script>
     <!-- custom-select -->
@@ -180,6 +182,8 @@
             $("input[name='bathrooms']").TouchSpin();
             $("input[name='bedrooms']").TouchSpin();
             $("input[name='garage']").TouchSpin();
+
+            $('#price').mask('000.000.000.000.000,00', {reverse: true});
         });
     </script>
     <script>

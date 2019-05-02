@@ -59,7 +59,7 @@ class PropertiesController extends Controller
         $property->type = $request->input('type');
         $property->address = $request->input('address');
         $property->description = $request->input('description');
-        $property->price = $request->input('price');
+        $property->price = formatPrice($request->input('price'));
         $property->bathrooms = $request->input('bathrooms');
         $property->bedrooms = $request->input('bedrooms');
         $property->garage = $request->input('garage');
@@ -89,7 +89,7 @@ class PropertiesController extends Controller
         return view('admin.properties.edit', compact('property', 'features', 'categories', 'destaque'));
     }
 
-    public function update(Request $request, $id)
+    public function update(PropertiesRequest $request, $id)
     {
         $property = Property::findOrFail($id);
         $property->user_id = auth()->user()->id;
@@ -99,7 +99,7 @@ class PropertiesController extends Controller
         $property->type = $request->input('type');
         $property->address = $request->input('address');
         $property->description = $request->input('description');
-        $property->price = $request->input('price');
+        $property->price = formatPrice($request->input('price'));
         $property->bathrooms = $request->input('bathrooms');
         $property->bedrooms = $request->input('bedrooms');
         $property->garage = $request->input('garage');
