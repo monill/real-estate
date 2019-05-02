@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01876e5d-2599-4239-b504-33b629a74b6c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/properties/search.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/site/properties/pesquisa.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/Helper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/Helper.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PropertiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PropertiesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Site/PropertiesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Site/PropertiesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/PesquisasRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/PesquisasRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/SearchesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/SearchesRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Property.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Property.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/PropertiesRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/PropertiesRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/properties/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/properties/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/properties/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/properties/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/includes/blog_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/blog_sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/includes/properties.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/properties.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/site/includes/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/includes/search.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/index/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/index/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/site/properties/pesquisa.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/properties/pesquisa.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/site/properties/property.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/site/properties/property.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,10 +35,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bg_citation</find>
-      <find>texto legal aqui</find>
-      <find>Características</find>
-      <find>$feature</find>
       <find>feature</find>
       <find>'corretores'</find>
       <find>dashboard/</find>
@@ -71,18 +61,18 @@
       <find>itemunits</find>
       <find>()</find>
       <find>formatValue</find>
+      <find>R$</find>
+      <find>999</find>
+      <find>var</find>
+      <find>\</find>
     </findStrings>
     <replaceStrings>
-      <replace>slider</replace>
-      <replace>site</replace>
       <replace>colocar um tempo legal aqui</replace>
       <replace>$property</replace>
       <replace>Quartos</replace>
       <replace>Qualquer</replace>
       <replace>texto</replace>
-      <replace>let</replace>
       <replace>{{ $blog-&gt;getMainImage() }}</replace>
-      <replace>/</replace>
       <replace>formatValue()</replace>
       <replace>Oito</replace>
       <replace>Logo</replace>
@@ -103,6 +93,10 @@
       <replace>imobiliaria.jpg</replace>
       <replace>761</replace>
       <replace>property_images</replace>
+      <replace>R&amp;#36;</replace>
+      <replace>000</replace>
+      <replace>let</replace>
+      <replace>/</replace>
     </replaceStrings>
     <dirStrings>
       <dir>C:\laragon\www\imobiliaria\app\Models</dir>
@@ -110,10 +104,10 @@
       <dir>C:\laragon\www\imobiliaria\database</dir>
       <dir>C:\laragon\www\imobiliaria\resources</dir>
       <dir>C:\laragon\www\imobiliaria\app\Http\Controllers\Admin</dir>
-      <dir>C:\laragon\www\imobiliaria\resources\views\site</dir>
       <dir>C:\laragon\www\imobiliaria\resources\views\admin</dir>
       <dir>C:\laragon\www\imobiliaria\app\Http\Requests</dir>
       <dir>C:\laragon\www\imobiliaria\resources\views</dir>
+      <dir>C:\laragon\www\imobiliaria\resources\views\site</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -144,7 +138,6 @@
         <option value="$PROJECT_DIR$/resources/views/admin/categories/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/comments/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/features/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/properties/add.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/properties/images.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/services/add.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/services/edit.blade.php" />
@@ -154,25 +147,26 @@
         <option value="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_03_22_153057_create_properties_table.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/properties/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/SettingsRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/PropertiesRequest.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/properties/search.blade.php" />
         <option value="$PROJECT_DIR$/app/Models/Property.php" />
         <option value="$PROJECT_DIR$/resources/views/site/index/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/site/includes/properties.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/PropertiesController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/properties/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/SearchesRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/site/includes/blog_sidebar.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/site/properties/property.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/PesquisasRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/site/includes/search.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/site/properties/pesquisa.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Site/PropertiesController.php" />
         <option value="$PROJECT_DIR$/app/Helpers/Helper.php" />
         <option value="$PROJECT_DIR$/resources/views/site/layout/main.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/properties/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/site/properties/property.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Requests/PropertiesRequest.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/PropertiesController.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/properties/add.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/properties/edit.blade.php" />
       </list>
     </option>
   </component>
@@ -293,7 +287,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -301,10 +294,47 @@
               <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
               <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
+              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
+              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Http" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
+              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
+              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
+              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="imobiliaria" type="b2602c69:ProjectViewProjectNode" />
+              <item name="imobiliaria" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -397,11 +427,12 @@
       <workItem from="1556669516982" duration="2278000" />
       <workItem from="1556712173459" duration="8703000" />
       <workItem from="1556730064057" duration="15335000" />
+      <workItem from="1556749829461" duration="5300000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="401349000" />
+    <option name="totallyTimeSpent" value="406649000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -415,7 +446,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17857143" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18017058" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -525,20 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/properties/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="82" selection-start-line="82" selection-end-line="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/properties/add.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="148" column="68" selection-start-line="148" selection-start-column="68" selection-end-line="148" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/QuestionsRequest.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -618,13 +635,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Requests/PropertiesRequest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="457">
-          <caret line="27" column="53" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/site/includes/properties.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="693">
@@ -646,37 +656,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PropertiesController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="128" column="38" selection-start-line="128" selection-start-column="38" selection-end-line="128" selection-end-column="38" />
-          <folding>
-            <element signature="e#46#82#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/properties/index.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="71" column="47" selection-start-line="71" selection-start-column="47" selection-end-line="71" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Requests/SearchesRequest.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="609">
           <caret line="29" column="43" lean-forward="true" selection-start-line="26" selection-start-column="12" selection-end-line="29" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/site/properties/property.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
-          <caret line="54" column="106" lean-forward="true" selection-start-line="54" selection-start-column="106" selection-end-line="54" selection-end-column="106" />
-          <folding>
-            <element signature="e#2436#2455#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -757,6 +740,51 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="21">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/site/properties/property.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="392">
+          <caret line="290" column="38" selection-start-line="290" selection-start-column="38" selection-end-line="290" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/properties/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="120" column="29" lean-forward="true" selection-start-line="120" selection-start-column="29" selection-end-line="120" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Requests/PropertiesRequest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-70">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/PropertiesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="48" column="33" selection-start-line="48" selection-start-column="33" selection-end-line="48" selection-end-column="33" />
+          <folding>
+            <element signature="e#46#82#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/properties/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-315">
+          <caret line="158" selection-start-line="158" selection-end-line="158" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/properties/add.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3339">
+          <caret line="159" selection-start-line="159" selection-end-line="159" />
         </state>
       </provider>
     </entry>

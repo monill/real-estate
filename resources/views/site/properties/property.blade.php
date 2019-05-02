@@ -68,7 +68,7 @@
                                                     </div>
                                                     <div class="label-white pull-right">
                                                         <div class="listing-price">
-                                                            R$ {{ priceFormat($property->price) }}
+                                                            R&#36; {{ priceFormat($property->price) }}
                                                             {!! $property->purposeFormat() !!}
                                                         </div>
                                                     </div>
@@ -238,7 +238,7 @@
                                                             <div class="post-img-detail">
                                                                 <div class="post-img-detail-wrapper">
                                                                     <div class="post-img-detail-content">
-                                                                        <div class="post-img-detail-box">R$ {{ priceFormat($recent->price) }}</div>
+                                                                        <div class="post-img-detail-box">R&#36; {{ priceFormat($recent->price) }}</div>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -288,7 +288,7 @@
     <script src="{{ asset('site/vendor/flexslider/jquery.flexslider-min.js') }}"></script>
     <script src="{{ asset('site/vendor/lightbox/js/lightbox.min.js') }}"></script>
 
-    @if($property->latitude != null || $property->longitude != null)
+    @if($property->latitude != null && $property->longitude != null)
     <script>
         function initMap() {
             let uluru = {lat: {{ $property->latitude }}, lng: {{ $property->longitude }}};

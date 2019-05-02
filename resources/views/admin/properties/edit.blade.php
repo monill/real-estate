@@ -185,8 +185,8 @@
     <script>
         function initMap() {
             let uluru = {
-                @if(isset($property->latitude)) lat: {{ $property->latitude }}, @else lat: -23.082125, @endif
-                @if(isset($property->longitude)) lng: {{ $property->longitude }}, @else lng: -46.950334 @endif
+                @if($property->latitude != null) lat: {{ $property->latitude }}, @else lat: -23.082125, @endif
+                @if($property->longitude != null) lng: {{ $property->longitude }}, @else lng: -46.950334 @endif
             };
             let map = new google.maps.Map(document.getElementById('map'), {
                 zoom: 14,

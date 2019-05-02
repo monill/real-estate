@@ -72,7 +72,7 @@
                             <img alt="post img" src="{{ $feature->getMainImage() }}">
                             <div class="post-preview-label-big">
                                 {{ $feature->name }}<br>
-                                <strong>R$ {{ priceFormat($feature->price) }}</strong>
+                                <strong>R&#36; {{ priceFormat($feature->price) }}</strong>
                             </div>
                         </div>
                     </section>

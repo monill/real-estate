@@ -99,7 +99,7 @@
                 <div class="pro-content-3-col">
                     <div class="pro-list-details">
                         <h4><a class="text-dark" href="javascript:void(0)">{{ $property->name }}</a></h4>
-                        <h4 class="text-danger"><small>R&#36;</small> {{ number_format($property->price) }}</h4>
+                        <h4 class="text-danger"><small>R&#36;</small> {{ priceFormat($property->price) }}</h4>
                     </div>
                 </div>
                 <hr class="m-0"> <span class="label pro-col-label label-white text-dark">{{ $property->getPurpose() }}</span>

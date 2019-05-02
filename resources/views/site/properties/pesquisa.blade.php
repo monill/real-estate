@@ -51,7 +51,7 @@
                                             <a href="{{ route('propriedade', [$property->id, $property->slug]) }}"
                                                class="read-more-link-alt">Leia mais</a>
                                             <p class="listing-price">
-                                                R$ {{ priceFormat($property->price) }}
+                                                R&#36; {{ priceFormat($property->price) }}
                                                 {!! $property->purpose == 1 ? '<span class="small">por mês</span>' : '' !!}
                                             </p>
                                         </div>
