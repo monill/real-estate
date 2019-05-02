@@ -57,7 +57,7 @@
                             {!! Form::textarea('about', null, ['class' => 'form-control', 'rows' => 5, 'maxlength' => 1500]) !!}
                         </div>
                     </div>
-                @if(auth()->user()->isAdmin())
+                    @if(auth()->user()->isAdmin())
                     <div class="form-check">
                         <label class="custom-control custom-checkbox">
                             <input type="checkbox" name="admin" value="true" class="custom-control-input">
@@ -65,7 +65,7 @@
                             <span class="custom-control-description"> Admin ?</span>
                         </label>
                     </div>
-                @endif
+                    @endif
                     <div class="form-group">
                         {!! Form::label('avatar', 'Foto:', ['class' => 'col-md-12']) !!}
                         <div class="col-md-12">

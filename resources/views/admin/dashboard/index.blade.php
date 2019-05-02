@@ -1,6 +1,5 @@
 @extends('admin.layout.main')
 
-
 @section('css')
     <!-- morris CSS -->
     <link href="{{ asset('admin/vendor/morrisjs/morris.css') }}" rel="stylesheet">
@@ -84,7 +83,7 @@
                         <h3 class="box-title">Valor total para venda</h3>
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-6  m-t-30">
-                                <h1 class="text-info">R$ {{ $totalForSale }}</h1>
+                                <h1 class="text-info">R&#36; {{ $totalForSale }}</h1>
                             </div>
                         </div>
                     </div>
@@ -94,7 +93,7 @@
                         <h3 class="text-white box-title">Valor total para locação</h3>
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-6  m-t-30">
-                                <h1 class="text-white">R$ {{ $totalForRent }}</h1>
+                                <h1 class="text-white">R&#36; {{ $totalForRent }}</h1>
                             </div>
                         </div>
                     </div>
@@ -114,7 +113,7 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Poto</th>
+                                <th>Foto</th>
                                 <th>Propriedade</th>
                                 <th>Tipo</th>
                                 <th>Data</th>
@@ -130,7 +129,7 @@
                                 <td>{{ $topFiveProperty->name }}</td>
                                 <td>{{ $topFiveProperty->getType() }}</td>
                                 <td>{{ $topFiveProperty->created_at->format('d-m-Y') }}</td>
-                                <td>R$ {{ number_format($topFiveProperty->price) }}</td>
+                                <td>R&#36; {{ priceFormat($topFiveProperty->price) }}</td>
                                 <td>{{ $topFiveProperty->views }}</td>
                             </tr>
                         @endforeach
@@ -145,7 +144,7 @@
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
             <div class="white-box">
-                <h4 class="box-title">Top 3 Blogs</h4>
+                <h4 class="box-title">Top 3 Blogs visualizados</h4>
                 @foreach($topThreeBlogs as $topThreeBlog)
                 <div class="pro-list">
                     <div class="pro-img p-r-10">

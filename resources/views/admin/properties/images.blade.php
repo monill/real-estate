@@ -48,8 +48,6 @@
         <div class="col-md-12 m-b-30">
             <h4><strong>Remover</strong></h4>
             <p>Remover Imagens</p>
-
-            @include('errors.errors')
         </div>
         @foreach($images as $image)
         <!-- /.usercard-->

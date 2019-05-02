@@ -33,7 +33,6 @@
                                 <span class="media-meta pull-right">{{ $question->created_at->format('d/m/Y H:i') }}</span>
                                 <h4 class="text-danger m-0">{{ $question->name }}</h4>
                                 <small class="text-muted">Por: {{ $question->email }}</small>
-
                             </div>
                         </div>
                         <p><b>Dúvida:</b></p>

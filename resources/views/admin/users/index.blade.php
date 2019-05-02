@@ -33,7 +33,6 @@
                     </div>
                 </div>
             </div>
-            @include('errors.errors')
         </div>
         @foreach($users as $user)
             @if($user->admin != true)

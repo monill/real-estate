@@ -45,8 +45,7 @@ class PropertiesController extends Controller
 
     public function pesquisar(PesquisasRequest $request)
     {
-        if ($request->isMethod('POST'))
-        {
+        if ($request->isMethod('POST')) {
             $id = $request->input('id');
             $city = $request->input('city');
             $purpose = $request->input('purpose');
@@ -65,7 +64,7 @@ class PropertiesController extends Controller
             }
             if ($request->has('city') && $request->input('city') != null) {
                 $properties->where(function ($query) use ($city) {
-                    $query->where('properties.city', 'like', '%'.$city.'%');
+                    $query->where('properties.city', 'like', '%' . $city . '%');
                 });
             }
             if ($request->has('purpose') && $request->input('purpose') != null) {

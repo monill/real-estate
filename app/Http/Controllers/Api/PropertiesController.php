@@ -12,8 +12,12 @@ class PropertiesController extends Controller
         $year = date('Y');
 
         $totalProperties = DB::table('properties')->whereYear('created_at', '=', $year)->count();
-        $forRent = DB::table('properties')->whereYear('created_at', '=', $year)->where('purpose', '=', 1)->count();
-        $forSale = DB::table('properties')->whereYear('created_at', '=', $year)->where('purpose', '=', 2)->count();
+
+        $forRent = DB::table('properties')->whereYear('created_at', '=', $year)
+            ->where('purpose', '=', 1)->count();
+
+        $forSale = DB::table('properties')->whereYear('created_at', '=', $year)
+            ->where('purpose', '=', 2)->count();
 
         $data = [
             ['ano' => 2012, 'Venda' => 100, 'Locacao' => 90, 'all' => 190],

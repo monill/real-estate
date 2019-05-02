@@ -216,7 +216,7 @@
 
 @section('scripts')
 
-<!-- summernote -->
+    <!-- summernote -->
     <script src="{{ asset('admin/vendor/summernote/dist/summernote.min.js') }}"></script>
     <script src="{{ asset('admin/vendor/summernote/lang/summernote-pt-BR.js') }}"></script>
     <!-- Custom Theme JavaScript -->

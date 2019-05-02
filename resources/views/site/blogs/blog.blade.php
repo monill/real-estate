@@ -40,6 +40,7 @@
                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
                     <h1>Blog</h1>
                     <h4>Confira a seção do blog, ótimo layout fácil de ler e comentar.</h4>
+                    @include('errors.errors')
                 </div>
                 <div class="row">
                     <div class="col-md-9">

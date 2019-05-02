@@ -48,6 +48,7 @@
                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
                     <h1>Entre em contato</h1>
                     <h4>Se você quiser nos perguntar sobre a propriedade faça isso imediatamente, estamos esperando.</h4>
+                    @include('errors.errors')
                 </div>
                 <div class="row">
                     <div class="col-md-4 onscroll-animate">

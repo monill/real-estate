@@ -126,8 +126,7 @@ class PropertiesController extends Controller
 
     public function search(SearchesRequest $request)
     {
-        if ($request->isMethod('POST'))
-        {
+        if ($request->isMethod('POST')) {
             $purpose = $request->get('purpose');
             $city = $request->get('city');
             $slider = $request->get('slider');
@@ -142,7 +141,7 @@ class PropertiesController extends Controller
             }
             if ($request->has('city') && $request->input('city') != null) {
                 $properties->where(function ($query) use ($city) {
-                    $query->where('properties.city', 'like', '%'.$city.'%');
+                    $query->where('properties.city', 'like', '%' . $city . '%');
                 });
             }
             if ($request->has('slider') && $request->input('slider') != null) {

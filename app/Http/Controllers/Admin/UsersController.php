@@ -33,8 +33,7 @@ class UsersController extends Controller
 
     public function store(UsersRequest $request)
     {
-        if ($request->has('image') && $request->file('image')->isValid())
-        {
+        if ($request->has('image') && $request->file('image')->isValid()) {
             $user = new User();
             $user->name = $request->input('name');
             $user->email = $request->input('email');

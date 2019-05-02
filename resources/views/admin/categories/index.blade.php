@@ -36,7 +36,6 @@
                         </div>
                     </div>
                 </div>
-                @include('errors.errors')
                 <div class="table-responsive">
                     <table class="table color-bordered-table info-bordered-table">
                         <thead>

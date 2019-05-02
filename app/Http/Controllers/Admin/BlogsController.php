@@ -13,7 +13,7 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class BlogsController extends Controller
 {
-    private $photos_path;
+    protected $photos_path;
     protected $log;
 
     public function __construct()
@@ -41,8 +41,7 @@ class BlogsController extends Controller
 
     public function store(BlogsRequest $request)
     {
-        if ($request->has('image') && $request->file('image')->isValid())
-        {
+        if ($request->has('image') && $request->file('image')->isValid()) {
             $blog = new Blog();
             $blog->user_id = auth()->user()->id;
             $blog->title = $request->input('title');
