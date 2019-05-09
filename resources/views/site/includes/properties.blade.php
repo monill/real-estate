@@ -13,11 +13,13 @@
                                 <div class="post-preview-img-inner">
                                     <img alt="post img" src="{{ $property->getMainImage() }}">
                                 </div>
-                                <div class="post-preview-label{{ $property->getPurposeColor() }}">{{ $property->getPurpose() }}</div>
+                                <div class="post-preview-label{{ $property->getPurposeColor() }}">
+                                    {{ $property->getPurpose() }}
+                                </div>
                                 @if($property->featured)
-                                    <div class="post-preview-label-alt-wrapper">
-                                        <div class="post-preview-label-alt">Destaque <i class="fa fa-star"></i></div>
-                                    </div>
+                                <div class="post-preview-label-alt-wrapper">
+                                    <div class="post-preview-label-alt">Destaque <i class="fa fa-star"></i></div>
+                                </div>
                                 @endif
                             </div>
                         </section>
@@ -26,8 +28,7 @@
                         <h2 class="post-preview-heading">{{ $property->name }}</h2>
                         <p>{!! str_limit($property->description, 107, '...') !!}</p>
                         <div class="post-preview-price-container">
-                            <a href="{{ route('propriedade', [$property->id, $property->slug]) }}"
-                               class="read-more-link-alt">Leia mais</a>
+                            <a href="{{ route('propriedade', [$property->id, $property->slug]) }}" class="read-more-link-alt">Leia mais</a>
                             <p class="listing-price">
                                 R&#36; {{ priceFormat($property->price) }}
                                 {!! $property->purposeFormat() !!}

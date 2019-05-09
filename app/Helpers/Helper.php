@@ -93,7 +93,7 @@ if (!function_exists('md5Gen')) {
 }
 
 if (!function_exists('makeSize')) {
-    function makeSize($bytes, $decimals = 2)
+    function makeSize(int $bytes, int $decimals = 2)
     {
         $size = [' B', ' kB', ' MB', ' GB', ' TB', ' PB', ' EB', ' ZB', ' YB'];
         $floor = floor((strlen($bytes) - 1) / 3);
@@ -111,21 +111,21 @@ if (!function_exists('diaMesAno')) {
 }
 
 if (!function_exists('currentPage')) {
-    function currentPage(string $url)
+    function ativePage(string $url)
     {
         return request()->is($url) ? 'class=active' : '';
     }
 }
 
 if (!function_exists('priceFormat')) {
-    function priceFormat(int $price)
+    function priceFormat(float $price)
     {
         return number_format($price, 2, ',', '.');
     }
 }
 
 if (!function_exists('proprtyMainImage')) {
-    function propertyMainImage($id)
+    function propertyMainImage(int $id)
     {
         $image = PropertyImage::where('property_id', '=', $id)->where('feature', '=', true)->first();
         if (!$image) {
@@ -137,7 +137,7 @@ if (!function_exists('proprtyMainImage')) {
 }
 
 if (!function_exists('formatPrice')) {
-    function formatPrice($price)
+    function formatPrice(float $price)
     {
         $step1 = str_replace('.', '', $price);
         $step2 = str_replace(',', '.', $step1);

@@ -20,7 +20,12 @@
         <!-- /.col-lg-12 -->
     </div>
     <!--.row -->
+
     <div class="row re">
+        <!-- /.usercard -->
+        <div class="col-md-12 m-b-20">
+            <h4>Hoje é {{ diaMesAno() }}</h4>
+        </div>
         <div class="col-lg-3 col-sm-6 col-xs-12">
             <div class="white-box">
                 <h3 class="box-title">Todas as propriedades</h3>
@@ -83,7 +88,7 @@
                         <h3 class="box-title">Valor total para venda</h3>
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-6  m-t-30">
-                                <h1 class="text-info">R&#36; {{ $totalForSale }}</h1>
+                                <h1 class="text-info">R&#36; {{ priceFormat($totalForSale) }}</h1>
                             </div>
                         </div>
                     </div>
@@ -93,7 +98,7 @@
                         <h3 class="text-white box-title">Valor total para locação</h3>
                         <div class="row">
                             <div class="col-md-6 col-sm-6 col-xs-6  m-t-30">
-                                <h1 class="text-white">R&#36; {{ $totalForRent }}</h1>
+                                <h1 class="text-white">R&#36; {{ priceFormat($totalForRent) }}</h1>
                             </div>
                         </div>
                     </div>
