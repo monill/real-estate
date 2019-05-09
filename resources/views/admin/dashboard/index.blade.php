@@ -28,7 +28,7 @@
         </div>
         <div class="col-lg-3 col-sm-6 col-xs-12">
             <div class="white-box">
-                <h3 class="box-title">Todas as propriedades</h3>
+                <h3 class="box-title">Total cadastrado</h3>
                 <ul class="list-inline two-part">
                     <li><i class="ti-home text-info"></i></li>
                     <li class="text-right"><span class="counter">{{ $totalProperties }}</span></li>
@@ -37,7 +37,7 @@
         </div>
         <div class="col-lg-3 col-sm-6 col-xs-12">
             <div class="white-box">
-                <h3 class="box-title">Propriedades a venda</h3>
+                <h3 class="box-title">Para venda</h3>
                 <ul class="list-inline two-part">
                     <li><i class="icon-basket text-purple"></i></li>
                     <li class="text-right"><span class="counter">{{ $forSale }}</span></li>
@@ -46,7 +46,7 @@
         </div>
         <div class="col-lg-3 col-sm-6 col-xs-12">
             <div class="white-box">
-                <h3 class="box-title">Propriedades para locação</h3>
+                <h3 class="box-title">Para locação</h3>
                 <ul class="list-inline two-part">
                     <li><i class="icon-tag text-danger"></i></li>
                     <li class="text-right"><span class="counter">{{ $forRent }}</span></li>
@@ -133,7 +133,7 @@
                                 <td><img src="{{ $topFiveProperty->getMainImage() }}" alt="Property" width="80"></td>
                                 <td>{{ $topFiveProperty->name }}</td>
                                 <td>{{ $topFiveProperty->getType() }}</td>
-                                <td>{{ $topFiveProperty->created_at->format('d-m-Y') }}</td>
+                                <td>{{ $topFiveProperty->created_at->format('d/m/Y') }}</td>
                                 <td>R&#36; {{ priceFormat($topFiveProperty->price) }}</td>
                                 <td>{{ $topFiveProperty->views }}</td>
                             </tr>
@@ -157,7 +157,7 @@
                     </div>
                     <div class="pro-detail">
                         <h5 class="m-t-0 m-b-5">{{ $topThreeBlog->title }}</h5>
-                        <p class="text-muted font-12">{{ $topThreeBlog->created_at->format('d-m-Y') }} | {{ $topThreeBlog->user->name }}</p>
+                        <p class="text-muted font-12">{{ $topThreeBlog->created_at->format('d/m/Y') }} | {{ $topThreeBlog->user->name }}</p>
                         <p class="text-muted font-12">Views: {{ $topThreeBlog->views }}</p>
                     </div>
                 </div>
@@ -175,7 +175,7 @@
                         </div>
                         <div class="pro-detail">
                             <h5 class="m-t-0 m-b-5">{{ $lastThreeBlog->title }}</h5>
-                            <p class="text-muted font-12">{{ $lastThreeBlog->created_at->format('d-m-Y') }} | {{ $lastThreeBlog->user->name }}</p>
+                            <p class="text-muted font-12">{{ $lastThreeBlog->created_at->format('d/m/Y') }} | {{ $lastThreeBlog->user->name }}</p>
                         </div>
                     </div>
                 @endforeach
