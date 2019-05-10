@@ -47,7 +47,6 @@
                                     {!! Form::close() !!}
                                 </td>
                             </tr>
-
                         @empty
                             <tr>
                                 <td colspan="5" class="text-center">Nenhuma mensagem até o momento.</td>
