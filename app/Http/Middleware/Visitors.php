@@ -38,7 +38,7 @@ class Visitors
                 $visit->tablet = $agent->isTablet();
                 $visit->desktop = $agent->isDesktop();
                 $visit->bot = $agent->isRobot();
-                $visit->referrer = $_SERVER['HTTP_REFERER'] != '' ? $_SERVER['HTTP_REFERER'] : NULL;
+                $visit->referrer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : NULL;
                 $visit->loadtime = round((microtime(true) - LARAVEL_START), 8);
                 $visit->save();
             } else {
