@@ -43,9 +43,9 @@ Windows, MacOS ou Linux:
 
 Abra o Terminal na pasta do projeto e digite:
 ```sh
-$ composer install
-$ cp .env.example .env
-$ php artisan key:generate
+$ composer install "para instalar os pacotes do composer utlizados nesse projeto"
+$ cp .env.example .env "crie uma cópia do arquivo .env.example para .env"
+$ php artisan key:generate "crie a chave de segurança"
 ```
 
 Edite o arquivo .env

@@ -27,8 +27,8 @@ class BlogsRequest extends FormRequest
             'title' => 'required|string|max:255',
             'image' => 'image|mimes:jpeg,png,jpg|max:3072',
             'content' => 'required|string|max:65530',
-            'meta_keywords' => 'string|max:65530',
-            'meta_description' => 'string|max:65530',
+            'meta_keywords' => 'nullable|string|max:65530',
+            'meta_description' => 'nullable|string|max:65530',
             'published' => 'boolean'
         ];
     }

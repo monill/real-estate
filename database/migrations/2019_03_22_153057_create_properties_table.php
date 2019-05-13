@@ -24,7 +24,7 @@ class CreatePropertiesTable extends Migration
             $table->tinyInteger('purpose'); // 1 - Rent, 2 - Sale
             $table->tinyInteger('type'); // 1 - House, 2 - Apartamento, 3 - Terreno, 4 - Flat
 
-            $table->decimal('price');
+            $table->decimal('price', 18,2);
             $table->string('address');
             $table->integer('bathrooms')->nullable();
             $table->integer('bedrooms')->nullable();

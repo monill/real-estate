@@ -72,13 +72,12 @@ class BlogsController extends Controller
 
             //Image
             $img = $request->file('image');
-            $filename = md5Gen(); //nomes aleatórios para imagem
+            $filename = md5Gen() . '.' . $img->getClientOriginalExtension(); //recebe nome aleatório e a extensão do arquivo
             //End Image
 
-            $blog->image = $filename . '.' . $img->getClientOriginalExtension(); //recebe nome aleatório e a extensão do arquivo
+            $blog->image = $filename;
             $blog->content = $request->input('content');
 
-            $blog->meta_title = $request->input('title');
             $blog->meta_keywords = $request->input('meta_keywords');
             $blog->meta_description = $request->input('meta_description');
             $blog->save();
@@ -126,7 +125,6 @@ class BlogsController extends Controller
         $blog->image = $filename;
         $blog->content = $request->input('content');
 
-        $blog->meta_title = $request->input('title');
         $blog->meta_keywords = $request->input('meta_keywords');
         $blog->meta_description = $request->input('meta_description');
 

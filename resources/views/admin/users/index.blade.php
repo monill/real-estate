@@ -35,7 +35,7 @@
             </div>
         </div>
         @foreach($users as $user)
-            @if($user->admin != true)
+
             <!-- /.usercard-->
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
                 <div class="white-box">
@@ -45,8 +45,10 @@
                             <div class="el-overlay scrl-dwn">
                                 <ul class="el-info">
                                     <li><a class="btn default btn-outline image-popup-vertical-fit" href="{{ $user->getAvatar() }}"><i class="icon-magnifier"></i></a></li>
-                                    @if(auth()->user()->isAdmin())
+                                    @if(auth()->user()->isAdmin() || auth()->user()->id == $user->id)
                                     <li><a class="btn default btn-outline" href="{{ route('users.edit', [$user->id]) }}"><i class="fa fa-pencil"></i></a></li>
+                                    @endif
+                                    @if(auth()->user()->isAdmin())
                                     <li><a href="javascript:;" onclick="document.getElementById('user-del-{{ $user->id }}').submit();" class="btn default btn-outline"><i class="fa fa-trash"></i></a></li>
                                     {!! Form::open(['url' => 'users/' . $user->id, 'method' => 'DELETE', 'id' => 'user-del-' . $user->id , 'style' => 'display: none']) !!}
                                     {!! Form::close() !!}
@@ -63,7 +65,7 @@
                 </div>
             </div>
             <!-- /.usercard-->
-            @endif
+
         @endforeach
     </div>
     <!-- /.row -->

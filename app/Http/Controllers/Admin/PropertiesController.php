@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\DB;
 
 class PropertiesController extends Controller
 {
-    private $photosPath;
+    protected $photosPath;
     protected $log;
     protected $imageFile;
 

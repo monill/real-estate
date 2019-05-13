@@ -169,7 +169,7 @@ if (!function_exists('proprtyMainImage')) {
  * Removendo os pontos e virgulas salvando no banco como INTEIRO
  */
 if (!function_exists('formatPrice')) {
-    function formatPrice(float $price)
+    function formatPrice($price)
     {
         $step1 = str_replace('.', '', $price);
         $step2 = str_replace(',', '.', $step1);
