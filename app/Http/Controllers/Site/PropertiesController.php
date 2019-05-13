@@ -9,12 +9,13 @@ use App\Models\PropertyFeature;
 use App\Models\PropertyImage;
 use App\Models\Question;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class PropertiesController extends Controller
 {
     /**
-     *
+     * Página PROPRIEDADES do site
      */
     public function index()
     {
@@ -23,7 +24,9 @@ class PropertiesController extends Controller
     }
 
     /**
-     *
+     * Salva no banco os dados passado por formulário na página da propriedade
+     * Valida os campos com QuestionsRequest, se tiver tudo OK salva no banco,
+     * caso contrário retorna uma mensagem com erro
      */
     public function store(QuestionsRequest $request)
     {
@@ -40,7 +43,11 @@ class PropertiesController extends Controller
     }
 
     /**
-     *
+     * Página da propriedade selecionado
+     * Caso propriedade não exista, retorna 404
+     * Incrementa o VIEWS na banco cada vez que visualiza o propriedade
+     * Retorna as imagens cadastradas
+     * Retorna os destaques cadastrados
      */
     public function show($id, $slug)
     {
@@ -53,11 +60,15 @@ class PropertiesController extends Controller
     }
 
     /**
-     *
+     * Pesquisa no banco pela propriedade
+     * Valida os campos com PesquisasRequest
+     * Se o campo passado no formulário estiver vazio, pesquisa somente o que foi recebido
+     * Retorna o que foi encontrado, paginando com 12 por página
      */
     public function pesquisar(PesquisasRequest $request)
     {
-        if ($request->isMethod('POST')) {
+        if (Request::METHOD_POST) {
+
             $id = $request->input('id');
             $city = $request->input('city');
             $purpose = $request->input('purpose');

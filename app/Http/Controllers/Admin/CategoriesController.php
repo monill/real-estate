@@ -24,7 +24,7 @@ class CategoriesController extends Controller
     }
 
     /**
-     *
+     * Página das categorias
      */
     public function index()
     {
@@ -33,7 +33,7 @@ class CategoriesController extends Controller
     }
 
     /**
-     *
+     * Salva no banco
      */
     public function store(CategoriesRequest $request)
     {
@@ -44,7 +44,7 @@ class CategoriesController extends Controller
     }
 
     /**
-     *
+     * Atualiza no banco
      */
     public function update(Request $request, $id)
     {
@@ -61,7 +61,7 @@ class CategoriesController extends Controller
     }
 
     /**
-     *
+     * Deleta do banco
      */
     public function destroy($id)
     {

@@ -5,10 +5,17 @@ namespace App\Traits;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\ImageManagerStatic as Image;
 
+/**
+* Upload da imagem
+* Criação/Exclusão de diretório
+**/
 class ImageFile
 {
     /**
-     *
+     * Upload da imagem
+     * Recebe como parametro o diretório, ID, nome do arquivo em MD5 e o arquivo de imagem
+     * Checa com a função pathExist
+     * Salva a imagem no local passado por parametro
      */
     public function uploadImage($path, $id, $filename, $image)
     {
@@ -22,7 +29,8 @@ class ImageFile
     }
 
     /**
-     *
+     * Deleta somente uma imagem
+     * Recebe o diretório e nome do arquivo como parametro
      */
     public function removeImage($path, $id, $filename)
     {
@@ -33,7 +41,7 @@ class ImageFile
     }
 
     /**
-     *
+     * Delete o diretório e todo conteudo dentro
      */
     public function removeDirectory($path, $id)
     {
@@ -44,7 +52,7 @@ class ImageFile
     }
 
     /**
-     *
+     * Checa se o diretório existe, caso contrário o cria com nome do ID
      */
     public function pathExist($path, $id)
     {

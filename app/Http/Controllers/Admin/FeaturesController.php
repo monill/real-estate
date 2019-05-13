@@ -25,7 +25,7 @@ class FeaturesController extends Controller
     }
 
     /**
-     *
+     * Página dos Destaques
      */
     public function index()
     {
@@ -34,7 +34,7 @@ class FeaturesController extends Controller
     }
 
     /**
-     *
+     * Salva no banco
      */
     public function store(FeaturesRequest $request)
     {
@@ -45,7 +45,7 @@ class FeaturesController extends Controller
     }
 
     /**
-     *
+     * Atualiza no banco
      */
     public function update(Request $request, $id)
     {
@@ -61,7 +61,7 @@ class FeaturesController extends Controller
     }
 
     /**
-     *
+     * Deleta do banco
      */
     public function destroy($id)
     {

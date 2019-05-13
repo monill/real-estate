@@ -16,7 +16,7 @@ class VisitorsController extends Controller
     }
 
     /**
-     *
+     * Página inicial Visitantes
      */
     public function index()
     {

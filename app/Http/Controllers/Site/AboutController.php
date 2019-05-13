@@ -8,7 +8,7 @@ use App\Models\Service;
 class AboutController extends Controller
 {
     /**
-     *
+     * Página SOBRE do site
      */
     public function index()
     {

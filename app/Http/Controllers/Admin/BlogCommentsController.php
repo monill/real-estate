@@ -22,7 +22,7 @@ class BlogCommentsController extends Controller
     }
 
     /**
-     * Retorna tela dos comentários feitos nos blogs
+     * Página dos comentários feitos nos blogs
      */
     public function index()
     {
@@ -44,7 +44,7 @@ class BlogCommentsController extends Controller
     }
 
     /**
-     *
+     * Deleta o comentário do banco
      */
     public function destroy($id)
     {

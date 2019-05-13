@@ -22,17 +22,20 @@ class QuestionsController extends Controller
     }
 
     /**
-     *
+     * Página inicial Dúvidas sobre as propriedades
+     * Retorna em ordem decrescente, paginando 25 por página
+     * Conta total de mensagens não lidas
      */
     public function index()
     {
-        $questions = Question::paginate(25);
+        $questions = Question::orderBy('id', 'DESC')->paginate(25);
         $unread = Question::where('unread', '=', false)->count();
         return view('admin.questions.index', compact('questions', 'unread'));
     }
 
     /**
-     *
+     * Exibe dúvida seleciona
+     * Marca dúvida como lida
      */
     public function show($id)
     {
@@ -45,7 +48,7 @@ class QuestionsController extends Controller
     }
 
     /**
-     *
+     * Deleta Dúvida do banco
      */
     public function destroy($id)
     {

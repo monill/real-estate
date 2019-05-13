@@ -21,22 +21,22 @@ class IndexController extends Controller
     }
 
     /**
-     *
+     * Página do Dashboard
      */
     public function index()
     {
-        $totalProperties = Property::count();
-        $forRent = Property::where('purpose', '=', 1)->count();
-        $forSale = Property::where('purpose', '=', 2)->count();
-        $totalVisitors = Visitor::count();
+        $totalProperties = Property::count(); //conta total propriedades estão cadastrada no banco
+        $forRent = Property::where('purpose', '=', 1)->count(); //conta quantas propriedades são para Locação
+        $forSale = Property::where('purpose', '=', 2)->count(); //conta quantas propriedades são para Venda
+        $totalVisitors = Visitor::count(); //conta total de visitantes
 
-        $topFiveProperties = Property::orderBy('views', 'DESC')->take(5)->get();
+        $topFiveProperties = Property::orderBy('views', 'DESC')->take(5)->get(); //Top 5 propriedades mais visualizadas
 
-        $topThreeBlogs = Blog::orderBy('views', 'DESC')->take(3)->get();
-        $lastThreeBlogs = Blog::orderBy('views', 'DESC')->take(3)->get();
+        $topThreeBlogs = Blog::orderBy('views', 'DESC')->take(3)->get(); //Top 3 blogs mais visualizadas
+        $lastThreeBlogs = Blog::orderBy('id', 'DESC')->take(3)->get(); //Ultimos 3 blogs cadastrados
 
-        $totalForRent = DB::table('properties')->where('purpose', '=', 1)->sum('price');
-        $totalForSale = DB::table('properties')->where('purpose', '=', 2)->sum('price');
+        $totalForRent = DB::table('properties')->where('purpose', '=', 1)->sum('price'); //Soma o preço de todas as propriedades para Locação
+        $totalForSale = DB::table('properties')->where('purpose', '=', 2)->sum('price'); //soma o preço de todas as propriedades para Venda
 
         $compact = [
             'totalProperties',
@@ -53,7 +53,7 @@ class IndexController extends Controller
     }
 
     /**
-     *
+     * Limpa o cache, desloga o usuário e no final redireciona para a página Inicial
      */
     public function cleanCache()
     {

@@ -23,7 +23,7 @@ class TagsController extends Controller
     }
 
     /**
-     *
+     * Página inicial Tags
      */
     public function index()
     {
@@ -32,7 +32,7 @@ class TagsController extends Controller
     }
 
     /**
-     *
+     * Salva no banco
      */
     public function store(TagsRequest $request)
     {
@@ -44,7 +44,7 @@ class TagsController extends Controller
     }
 
     /**
-     *
+     * Atualiza no banco
      */
     public function update(TagsRequest $request, $id)
     {
@@ -62,7 +62,7 @@ class TagsController extends Controller
     }
 
     /**
-     *
+     * Delete no banco
      */
     public function destroy($id)
     {

@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class ContactController extends Controller
 {
     /**
-     *
+     * Página CONTATO do site
      */
     public function index()
     {
@@ -17,7 +17,9 @@ class ContactController extends Controller
     }
 
     /**
-     *
+     * Salva no banco os dados passado por formulário na página de CONTATO
+     * Valida os campos com MessagesRequest, se tiver tudo OK salva no banco,
+     * caso contrário retorna uma mensagem com erro
      */
     public function store(MessagesRequest $request)
     {

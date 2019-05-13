@@ -22,7 +22,8 @@ class MessagesController extends Controller
     }
 
     /**
-     *
+     * Página das mensagens
+     * mensagens recebidas pelo formulário da página Contato
      */
     public function index()
     {
@@ -32,7 +33,8 @@ class MessagesController extends Controller
     }
 
     /**
-     *
+     * Exibe a mensagem seleciona
+     * Marca mensagem como lida
      */
     public function show($id)
     {
@@ -45,7 +47,7 @@ class MessagesController extends Controller
     }
 
     /**
-     *
+     * Deleta mensagem do banco
      */
     public function destroy($id)
     {

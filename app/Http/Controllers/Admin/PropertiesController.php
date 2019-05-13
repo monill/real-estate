@@ -25,6 +25,8 @@ class PropertiesController extends Controller
      * BlogCommentsController constructor.
      * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
      * Class LOG, salva em banco o que foi pelos corretores/admins
+     * photosPath define o diretório onde a imagem vai ser armazenada
+     * imageFile inicializa a classe que vai criar o diretório e efetua o upload da imagem
      */
     public function __construct()
     {
@@ -35,7 +37,8 @@ class PropertiesController extends Controller
     }
 
     /**
-     *
+     * Página inicial das PROPRIEDADES
+     * Ordena por ID em ordem decrescente, paginando 8 por página
      */
     public function index()
     {
@@ -44,7 +47,11 @@ class PropertiesController extends Controller
     }
 
     /**
+     * Checa se existe ao menos uma Categoria e Destaque cadastrada, caso contrário redireciona
+     * para Página de Categoria e Destaque onde deve ser efetuado o cadastrado
      *
+     * Se existir ao menos 1 Categoria e Destaque, redireciona para página de cadastro
+     * passando as Categorias e Destaques utilizando um form select
      */
     public function create()
     {
@@ -61,7 +68,7 @@ class PropertiesController extends Controller
     }
 
     /**
-     *
+     * Salva no banco
      */
     public function store(PropertiesRequest $request)
     {
@@ -73,7 +80,7 @@ class PropertiesController extends Controller
         $property->type = $request->input('type');
         $property->address = $request->input('address');
         $property->description = $request->input('description');
-        $property->price = formatPrice($request->input('price'));
+        $property->price = formatPrice($request->input('price')); //formata os preço recebido para Inteiro
         $property->bathrooms = $request->input('bathrooms');
         $property->bedrooms = $request->input('bedrooms');
         $property->garage = $request->input('garage');
@@ -87,7 +94,7 @@ class PropertiesController extends Controller
         $property->longitude = $request->input('longitude');
         $property->save();
 
-        $property->features()->attach($request->input('feature'));
+        $property->features()->attach($request->input('feature')); //salva os Destaques selecionadas no formulário na tabela property_features
 
         $this->log->log('Usuario(a) cadastrou nova propriedade.');
 
@@ -95,7 +102,7 @@ class PropertiesController extends Controller
     }
 
     /**
-     *
+     * Edita a propriedade cadastrada
      */
     public function edit($id)
     {
@@ -107,7 +114,7 @@ class PropertiesController extends Controller
     }
 
     /**
-     *
+     * Atualiza a propriedade cadastrada
      */
     public function update(PropertiesRequest $request, $id)
     {
@@ -133,7 +140,7 @@ class PropertiesController extends Controller
         $property->longitude = $request->input('longitude');
         $property->update();
 
-        $property->features()->sync($request->input('feature'));
+        $property->features()->sync($request->input('feature')); //atualiza os Destaques selecionadas no formulário na tabela property_features
 
         $this->log->log('Usuario(a) atualizou uma propriedade.');
 
@@ -141,7 +148,7 @@ class PropertiesController extends Controller
     }
 
     /**
-     *
+     * Deleta a propriedade cadastrada
      */
     public function destroy($id)
     {
@@ -152,7 +159,10 @@ class PropertiesController extends Controller
     }
 
     /**
-     *
+     * Pesquisa no banco pela propriedade
+     * Valida os campos com SearchesRequest
+     * Se o campo passado no formulário estiver vazio, pesquisa somente o que foi recebido
+     * Retorna o que foi encontrado, paginando com 8 por página
      */
     public function search(SearchesRequest $request)
     {
@@ -194,7 +204,7 @@ class PropertiesController extends Controller
     }
 
     /**
-     *
+     * Adiciona ou remove imagem da propriedade
      */
     public function images($id)
     {
@@ -204,7 +214,7 @@ class PropertiesController extends Controller
     }
 
     /**
-     *
+     * Upload das imagens
      */
     public function uploadImage(ImagesRequest $request)
     {
@@ -217,14 +227,15 @@ class PropertiesController extends Controller
 
         for ($i = 0; $i < count($photos); $i++) {
             $photo = $photos[$i];
-            $filename = md5Gen() . '.' . $photo->getClientOriginalExtension();
+            $filename = md5Gen() . '.' . $photo->getClientOriginalExtension(); //recebe nome aleatório e a extensão do arquivo
 
+            //salva na tabela property_images, a propriedade e o nome da imagem
             $upload = new PropertyImage();
             $upload->property_id = $property_id;
             $upload->image = $filename;
             $upload->save();
 
-            $this->imageFile->uploadImage($this->photosPath, $property_id, $filename, $photo);
+            $this->imageFile->uploadImage($this->photosPath, $property_id, $filename, $photo); //upload da imagem
         }
 
         $this->log->log('Usuario(a) adicionou imagens a propriedade');
@@ -233,18 +244,21 @@ class PropertiesController extends Controller
     }
 
     /**
-     *
+     * Deleta imagem selecionada
      */
     public function deleteImage($id)
     {
         $uploaded_image = PropertyImage::where('id', '=', $id)->first();
 
+        //caso o ID recebido nao exista, retorna mensagem
         if (!$uploaded_image) {
             return response()->json(['message' => 'Desculpe, arquivo inexistente'], 400);
         }
 
+        //Remove imagem
         $this->imageFile->removeImage($this->photosPath, $uploaded_image->property_id, $uploaded_image->image);
 
+        //caso o ID recebido exista, deleta do banco
         if (!empty($uploaded_image)) {
             $uploaded_image->delete();
         }
@@ -254,19 +268,21 @@ class PropertiesController extends Controller
     }
 
     /**
-     *
+     * Seta imagem escolhida como Principal
      */
     public function mainImage(Request $request, $photo_id)
     {
-        $property_id = $request->input('pp_id');
+        $property_id = $request->input('pp_id'); //recebe o ID da propriedade
 
-        $images = PropertyImage::where('property_id', '=', $property_id)->get();
+        $images = PropertyImage::where('property_id', '=', $property_id)->get(); //seleciona todas as imagens da propriedade
 
+        //seta todas as imagens para destaque = falso;
         foreach ($images as $image) {
             $image->feature = false;
             $image->update();
         }
 
+        //seta a imagem para destaque = true;
         DB::table('property_images')->where('id', '=', $photo_id)->update(['feature' => true]);
 
         $this->log->log('Usuario(a) definiu uma imagem principal');
@@ -274,7 +290,7 @@ class PropertiesController extends Controller
     }
 
     /**
-     *
+     * Alterar valor true ou false para o campo featured
      */
     public function feature($id)
     {
@@ -287,7 +303,7 @@ class PropertiesController extends Controller
     }
 
     /**
-     *
+     * Adiciona ou remove como Slider na página Inicial
      */
     public function slider($id)
     {

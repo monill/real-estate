@@ -29,7 +29,7 @@ class UsersController extends Controller
     }
 
     /**
-     *
+     * Página inicial Corretores
      */
     public function index()
     {
@@ -38,7 +38,7 @@ class UsersController extends Controller
     }
 
     /**
-     *
+     * Página para adicionar corretores
      */
     public function create()
     {
@@ -46,10 +46,11 @@ class UsersController extends Controller
     }
 
     /**
-     *
+     * Salva no banco
      */
     public function store(UsersRequest $request)
     {
+        //checa se existe uma imagem e ela é válida
         if ($request->has('image') && $request->file('image')->isValid()) {
             $user = new User();
             $user->name = $request->input('name');
@@ -61,13 +62,13 @@ class UsersController extends Controller
             $filename = md5Gen();
             //End Image
 
-            $user->avatar = $filename . '.' . $img->getClientOriginalExtension();;
+            $user->avatar = $filename . '.' . $img->getClientOriginalExtension(); //recebe nome aleatório e a extensão do arquivo
             $user->job = $request->input('job');
             $user->about = $request->input('about');
             $user->admin = $request->input('admin') ? true : false;
             $user->save();
 
-            $this->imageFile->uploadImage($this->photosPath, $user->id, $filename, $img);
+            $this->imageFile->uploadImage($this->photosPath, $user->id, $filename, $img); //upload da imagem
 
             $this->log->log('Usuario(a) adicionou nova conta de usuario');
             return redirect()->to('users');
@@ -77,7 +78,7 @@ class UsersController extends Controller
     }
 
     /**
-     *
+     * Página para editar corretor(a)
      */
     public function edit($id)
     {
@@ -86,13 +87,14 @@ class UsersController extends Controller
     }
 
     /**
-     *
+     * Atualiza os dados no banco
      */
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
         $user->name = $request->input('name');
 
+        //somente quem for Admin ou mesmo usuário da conta pode alterar a senha
         if (auth()->user()->isAdmin() || $user->id == auth()->user()->id) {
             if ($request->input('senha') != null) {
                 $user->password = bcrypt($request->input('senha'));
@@ -102,10 +104,10 @@ class UsersController extends Controller
         //Image
         $img = $request->file('avatar');
         if ($img != null) {
-            $this->imageFile->removeImage($this->photosPath, $id, $user->avatar);
-            $filename = md5Gen() . '.' . $img->getClientOriginalExtension();
+            $this->imageFile->removeImage($this->photosPath, $id, $user->avatar); //remove a imagem antiga
+            $filename = md5Gen() . '.' . $img->getClientOriginalExtension(); //recebe nome aleatório e a extensão do arquivo
         } else {
-            $filename = $user->avatar;
+            $filename = $user->avatar; //se o usuario nao atualizar a imagem o nome e extensão continua igual
         }
         //End Image
 
@@ -116,7 +118,7 @@ class UsersController extends Controller
         $user->update();
 
         if ($img != null) {
-            $this->imageFile->uploadImage($this->photosPath, $id, $filename, $img);
+            $this->imageFile->uploadImage($this->photosPath, $id, $filename, $img); //upload da imagem
         }
 
         $this->log->log('Usuario(a) atualizou sua conta ou de outro usuario');
@@ -124,7 +126,8 @@ class UsersController extends Controller
     }
 
     /**
-     *
+     * Delete a conta cadastrada
+     * Remove o diretório junto com a imagem
      */
     public function destroy($id)
     {

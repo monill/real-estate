@@ -24,7 +24,7 @@ class ServicesController extends Controller
     }
 
     /**
-     *
+     * Página inicial Serviço
      */
     public function index()
     {
@@ -33,7 +33,7 @@ class ServicesController extends Controller
     }
 
     /**
-     *
+     * Adiciona serviço
      */
     public function create()
     {
@@ -41,7 +41,7 @@ class ServicesController extends Controller
     }
 
     /**
-     *
+     * Salva informações passada no formulário no banco
      */
     public function store(ServicesRequest $request)
     {
@@ -53,7 +53,7 @@ class ServicesController extends Controller
     }
 
     /**
-     *
+     * Edita serviço
      */
     public function edit($id)
     {
@@ -62,7 +62,7 @@ class ServicesController extends Controller
     }
 
     /**
-     *
+     * Atualiza serviço no banco
      */
     public function update(ServicesRequest $request, $id)
     {
@@ -73,7 +73,7 @@ class ServicesController extends Controller
     }
 
     /**
-     *
+     * Deleta serviço do banco
      */
     public function destroy($id)
     {

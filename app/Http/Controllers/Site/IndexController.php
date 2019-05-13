@@ -11,7 +11,7 @@ use App\Http\Controllers\Controller;
 class IndexController extends Controller
 {
     /**
-     * Página inicial do site
+     * Página INICIAL do site
      *
      * retorna sliders das propriedades
      * retorna 6 ultimas propriedades cadastradas em ordem decrescente

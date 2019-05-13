@@ -17,7 +17,8 @@ class LogsController extends Controller
     }
 
     /**
-     *
+     * Página dos Logs
+     * Exibe em ordem decrescente
      */
     public function index()
     {
@@ -26,7 +27,7 @@ class LogsController extends Controller
     }
 
     /**
-     *
+     * Deleta o log do banco
      */
     public function destroy($id)
     {

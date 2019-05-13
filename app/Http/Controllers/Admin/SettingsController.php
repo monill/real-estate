@@ -23,7 +23,7 @@ class SettingsController extends Controller
     }
 
     /**
-     *
+     * Página inicial Configurações
      */
     public function index()
     {
@@ -32,7 +32,7 @@ class SettingsController extends Controller
     }
 
     /**
-     *
+     * Atualiza configurações no banco
      */
     public function update(SettingsRequest $request, $id)
     {

@@ -10,7 +10,7 @@ use App\Http\Controllers\Controller;
 class BlogsController extends Controller
 {
     /**
-     *
+     * Página BLOG do site
      */
     public function index()
     {
@@ -19,7 +19,7 @@ class BlogsController extends Controller
     }
 
     /**
-     *
+     * Adiciona o comentário do Blog no banco
      */
     public function store(CommentsRequest $request)
     {
@@ -36,7 +36,10 @@ class BlogsController extends Controller
     }
 
     /**
-     *
+     * Página do Blog selecionado
+     * Caso blog não exista, retorna 404
+     * Incrementa o VIEWS na banco cada vez que visualiza o Blog
+     * Retorna os comenários do Blog selecionado
      */
     public function show($id, $slug)
     {

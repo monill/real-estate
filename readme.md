@@ -5,7 +5,7 @@
 [![Build Status](https://poser.pugx.org/laravel/framework/v/stable.svg)]()
 
 
-Anhanguera - 1º Semestre 2019
+Anhanguera - 1º Semestre de 2019
 
 Trabalho solicitado pelo docente Vanderlei Ienne, da disciplina de Governança de Tecnologias da Informação, para fins de avaliação, do curso de Análise e Desenvolvimento de Sistemas.
 

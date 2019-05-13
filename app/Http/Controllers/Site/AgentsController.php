@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 class AgentsController extends Controller
 {
     /**
-     *
+     * Página CORRETORES do site
      */
     public function index()
     {

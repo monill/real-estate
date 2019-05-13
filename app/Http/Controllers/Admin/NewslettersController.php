@@ -22,7 +22,7 @@ class NewslettersController extends Controller
     }
 
     /**
-     *
+     * Página do NEWSLETTERS
      */
     public function index()
     {
@@ -31,7 +31,7 @@ class NewslettersController extends Controller
     }
 
     /**
-     *
+     * Deleta newsletter do banco
      */
     public function destroy($id)
     {

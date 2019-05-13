@@ -20,6 +20,8 @@ class BlogsController extends Controller
      * BlogCommentsController constructor.
      * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
      * Class LOG, salva em banco o que foi pelos corretores/admins
+     * photosPath define o diretório onde a imagem vai ser armazenada
+     * imageFile inicializa a classe que vai criar o diretório e efetua o upload da imagem
      */
     public function __construct()
     {
@@ -30,7 +32,7 @@ class BlogsController extends Controller
     }
 
     /**
-     *
+     * Página dos blogs
      */
     public function index()
     {
@@ -39,7 +41,11 @@ class BlogsController extends Controller
     }
 
     /**
+     * Checa se existe ao menos uma Tag cadastrada, caso contrário redireciona
+     * para Página de Tags onde deve ser efetuado o cadastrado
      *
+     * Se existir ao menos 1 tag, redireciona para página de cadastro
+     * passando as tags utilizando um form select
      */
     public function create()
     {
@@ -52,21 +58,24 @@ class BlogsController extends Controller
     }
 
     /**
+     * Salva no banco
+     *
      *
      */
     public function store(BlogsRequest $request)
     {
+        //checa se existe uma imagem e ela é válida
         if ($request->has('image') && $request->file('image')->isValid()) {
             $blog = new Blog();
-            $blog->user_id = auth()->user()->id;
+            $blog->user_id = auth()->user()->id; //pega o ID do usuário logado
             $blog->title = $request->input('title');
 
             //Image
             $img = $request->file('image');
-            $filename = md5Gen();
+            $filename = md5Gen(); //nomes aleatórios para imagem
             //End Image
 
-            $blog->image = $filename . '.' . $img->getClientOriginalExtension();
+            $blog->image = $filename . '.' . $img->getClientOriginalExtension(); //recebe nome aleatório e a extensão do arquivo
             $blog->content = $request->input('content');
 
             $blog->meta_title = $request->input('title');
@@ -74,9 +83,9 @@ class BlogsController extends Controller
             $blog->meta_description = $request->input('meta_description');
             $blog->save();
 
-            $blog->tags()->attach($request->input('tags'));
+            $blog->tags()->attach($request->input('tags')); //salva as Tags selecionadas no formulário na tabela blog_tags
 
-            $this->imageFile->uploadImage($this->photosPath, $blog->id, $filename, $img);
+            $this->imageFile->uploadImage($this->photosPath, $blog->id, $filename, $img); //upload da imagem
 
             $this->log->log('Usuario(a) cadastrou novo blog');
             return redirect()->to('blogs');
@@ -86,7 +95,7 @@ class BlogsController extends Controller
     }
 
     /**
-     *
+     * Edita o Blog
      */
     public function edit($id)
     {
@@ -96,21 +105,21 @@ class BlogsController extends Controller
     }
 
     /**
-     *
+     * Atualiza no banco
      */
     public function update(Request $request, $id)
     {
         $blog = Blog::findOrFail($id);
-        $blog->user_id = auth()->user()->id;
+        $blog->user_id = auth()->user()->id; //pega o ID do usuário logado
         $blog->title = $request->input('title');
 
         //Image
         $img = $request->file('image');
         if ($img != null) {
-            $this->imageFile->removeImage($this->photosPath, $id, $blog->image);
-            $filename = md5Gen() . '.' . $img->getClientOriginalExtension();
+            $this->imageFile->removeImage($this->photosPath, $id, $blog->image); //remove a imagem antiga
+            $filename = md5Gen() . '.' . $img->getClientOriginalExtension(); //recebe nome aleatório e a extensão do arquivo
         } else {
-            $filename = $blog->image;
+            $filename = $blog->image; //se o usuario nao atualizar a imagem o nome e extensão continua igual
         }
         //End Image
 
@@ -121,12 +130,12 @@ class BlogsController extends Controller
         $blog->meta_keywords = $request->input('meta_keywords');
         $blog->meta_description = $request->input('meta_description');
 
-        $blog->tags()->sync($request->input('tags'));
+        $blog->tags()->sync($request->input('tags')); //atualiza as Tags selecionadas no formulário na tabela blog_tags
 
         $blog->update();
 
         if ($img != null) {
-            $this->imageFile->uploadImage($this->photosPath, $id, $filename, $img);
+            $this->imageFile->uploadImage($this->photosPath, $id, $filename, $img); //upload da imagem
         }
 
         $this->log->log('Usuario(a) atualizou blog');
@@ -134,7 +143,8 @@ class BlogsController extends Controller
     }
 
     /**
-     *
+     * Deleta o Blog
+     * Deleta o diretório da imagem do blog
      */
     public function destroy($id)
     {
@@ -145,7 +155,7 @@ class BlogsController extends Controller
     }
 
     /**
-     *
+     * Publica ou coloca blog em modo rascunho
      */
     public function publishOnOff($id)
     {
