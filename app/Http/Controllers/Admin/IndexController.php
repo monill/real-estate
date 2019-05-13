@@ -11,11 +11,18 @@ use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
+    /**
+     * BlogCommentsController constructor.
+     * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
+     */
     public function __construct()
     {
         $this->middleware('auth');
     }
 
+    /**
+     *
+     */
     public function index()
     {
         $totalProperties = Property::count();
@@ -45,6 +52,9 @@ class IndexController extends Controller
         return view('admin.dashboard.index', compact($compact));
     }
 
+    /**
+     *
+     */
     public function cleanCache()
     {
         //Clear Cache facade value

@@ -21,6 +21,11 @@ class PropertiesController extends Controller
     protected $log;
     protected $imageFile;
 
+    /**
+     * BlogCommentsController constructor.
+     * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
+     * Class LOG, salva em banco o que foi pelos corretores/admins
+     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -29,12 +34,18 @@ class PropertiesController extends Controller
         $this->imageFile = new ImageFile();
     }
 
+    /**
+     *
+     */
     public function index()
     {
         $properties = Property::orderBy('id', 'DESC')->paginate(8);
         return view('admin.properties.index', compact('properties'));
     }
 
+    /**
+     *
+     */
     public function create()
     {
         if (Feature::count() <= 0) {
@@ -49,6 +60,9 @@ class PropertiesController extends Controller
         return view('admin.properties.add', compact('features', 'categories'));
     }
 
+    /**
+     *
+     */
     public function store(PropertiesRequest $request)
     {
         $property = new Property();
@@ -80,6 +94,9 @@ class PropertiesController extends Controller
         return redirect()->route('images', $property->id);
     }
 
+    /**
+     *
+     */
     public function edit($id)
     {
         $property = Property::findOrFail($id);
@@ -89,6 +106,9 @@ class PropertiesController extends Controller
         return view('admin.properties.edit', compact('property', 'features', 'categories', 'destaque'));
     }
 
+    /**
+     *
+     */
     public function update(PropertiesRequest $request, $id)
     {
         $property = Property::findOrFail($id);
@@ -120,6 +140,9 @@ class PropertiesController extends Controller
         return redirect()->to('properties');
     }
 
+    /**
+     *
+     */
     public function destroy($id)
     {
         Property::findOrFail($id)->delete();
@@ -128,6 +151,9 @@ class PropertiesController extends Controller
         return redirect()->to('properties');
     }
 
+    /**
+     *
+     */
     public function search(SearchesRequest $request)
     {
         if ($request->isMethod('POST')) {
@@ -167,6 +193,9 @@ class PropertiesController extends Controller
         }
     }
 
+    /**
+     *
+     */
     public function images($id)
     {
         $property = Property::findOrFail($id);
@@ -174,6 +203,9 @@ class PropertiesController extends Controller
         return view('admin.properties.images', compact('property', 'images'));
     }
 
+    /**
+     *
+     */
     public function uploadImage(ImagesRequest $request)
     {
         $photos = $request->file('file');
@@ -200,6 +232,9 @@ class PropertiesController extends Controller
         // return redirect()->route('images', $property_id);
     }
 
+    /**
+     *
+     */
     public function deleteImage($id)
     {
         $uploaded_image = PropertyImage::where('id', '=', $id)->first();
@@ -218,6 +253,9 @@ class PropertiesController extends Controller
         return redirect()->route('images', $uploaded_image->property_id);
     }
 
+    /**
+     *
+     */
     public function mainImage(Request $request, $photo_id)
     {
         $property_id = $request->input('pp_id');
@@ -235,6 +273,9 @@ class PropertiesController extends Controller
         return redirect()->route('images', $property_id);
     }
 
+    /**
+     *
+     */
     public function feature($id)
     {
         $property = Property::findOrFail($id);
@@ -245,6 +286,9 @@ class PropertiesController extends Controller
         return redirect()->to('properties');
     }
 
+    /**
+     *
+     */
     public function slider($id)
     {
         $property = Property::findOrFail($id);

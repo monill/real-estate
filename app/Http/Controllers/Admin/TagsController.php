@@ -11,18 +11,29 @@ class TagsController extends Controller
 {
     protected $log;
 
+    /**
+     * BlogCommentsController constructor.
+     * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
+     * Class LOG, salva em banco o que foi pelos corretores/admins
+     */
     public function __construct()
     {
         $this->middleware('auth');
         $this->log = new Log();
     }
 
+    /**
+     *
+     */
     public function index()
     {
         $tags = Tag::orderBy('name', 'ASC')->get();
         return view('admin.tags.index', compact('tags'));
     }
 
+    /**
+     *
+     */
     public function store(TagsRequest $request)
     {
         $tag = new Tag($request->except('_token'));
@@ -32,6 +43,9 @@ class TagsController extends Controller
         return redirect()->to('tags');
     }
 
+    /**
+     *
+     */
     public function update(TagsRequest $request, $id)
     {
         if ($request->ajax()) {
@@ -47,6 +61,9 @@ class TagsController extends Controller
         return response()->json(['error' => 400, 'message' => 'Parametros insuficientes.'], 400);
     }
 
+    /**
+     *
+     */
     public function destroy($id)
     {
         Tag::findOrFail($id)->delete();

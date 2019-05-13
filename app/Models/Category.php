@@ -21,11 +21,6 @@ class Category extends Eloquent
 		'views'
 	];
 
-	public function properties()
-	{
-		return $this->hasMany(\App\Models\Property::class);
-	}
-
     public function sluggable()
     {
         return [
@@ -34,4 +29,9 @@ class Category extends Eloquent
             ]
         ];
     }
+
+	public function properties()
+	{
+		return $this->hasMany(\App\Models\Property::class);
+	}
 }

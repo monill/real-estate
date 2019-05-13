@@ -31,6 +31,11 @@ class PropertyImage extends Eloquent
         return asset('uploads/properties/' . $this->property->id . '/' . $this->image);
 	}
 
+    /**
+     * Retorna String
+     *
+     * Altera a cor da estrela da imagem principal de cinza para amarelo
+     */
     public function getFeature(string $size = '')
     {
         if ($this->feature) {

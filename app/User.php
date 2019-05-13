@@ -50,11 +50,20 @@ class User extends Authenticatable
         return $this->hasMany(\App\Models\Property::class);
     }
 
+    /**
+     * Retorna boolean
+     * Checa se o usuario logado é Admin
+     */
     public function isAdmin()
     {
         return $this->admin ? true : false;
     }
 
+    /**
+     * Retorna String
+     * Checa se o usuario possui uma foto cadastrada
+     * se não retorna uma imagem definada em public/uploads/avatar.jpg
+     */
     public function getAvatar()
     {
         $avatar = $this->avatar;

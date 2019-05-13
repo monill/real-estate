@@ -7,6 +7,9 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class ImageFile
 {
+    /**
+     *
+     */
     public function uploadImage($path, $id, $filename, $image)
     {
         $this->pathExist($path, $id);
@@ -18,6 +21,9 @@ class ImageFile
         $imageMake->save($local . $filename);
     }
 
+    /**
+     *
+     */
     public function removeImage($path, $id, $filename)
     {
         if (File::exists($path . $id . '/' . $filename)) {
@@ -26,6 +32,9 @@ class ImageFile
         }
     }
 
+    /**
+     *
+     */
     public function removeDirectory($path, $id)
     {
         if (File::exists($path . $id)) {
@@ -34,6 +43,9 @@ class ImageFile
         }
     }
 
+    /**
+     *
+     */
     public function pathExist($path, $id)
     {
         $path = $path . $id . '/';

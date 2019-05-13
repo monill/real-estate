@@ -2,6 +2,9 @@
 
 use App\Models\PropertyImage;
 
+/**
+ * Retorna o endereço IP de quem está acessando o site
+ */
 if (!function_exists('getIP')) {
     function getIP()
     {
@@ -42,6 +45,9 @@ if (!function_exists('getIP')) {
     }
 }
 
+/**
+ * Valida o endereço IP de quem está acessando o site
+ */
 if (!function_exists('validIP')) {
     function validIP($ip)
     {
@@ -85,6 +91,9 @@ if (!function_exists('validIP')) {
     }
 }
 
+/**
+ * Gera caracteres aleatórios utilizando valores MD5
+ */
 if (!function_exists('md5Gen')) {
     function md5Gen()
     {
@@ -92,6 +101,10 @@ if (!function_exists('md5Gen')) {
     }
 }
 
+/**
+ * Função não utilizada
+ * Futuramente checar o tamanho de capa pasta/arquivo individualmente/total
+ */
 if (!function_exists('makeSize')) {
     function makeSize(int $bytes, int $decimals = 2)
     {
@@ -101,6 +114,10 @@ if (!function_exists('makeSize')) {
     }
 }
 
+/**
+ * Retorna no formato Brasil e traduzido a data
+ * Dia do Mês do Ano
+ */
 if (!function_exists('diaMesAno')) {
     function diaMesAno()
     {
@@ -110,6 +127,10 @@ if (!function_exists('diaMesAno')) {
     }
 }
 
+/**
+ * Checa o URL que o usuário está navegando
+ * Seta classe como active para página atual
+ */
 if (!function_exists('currentPage')) {
     function ativePage(string $url)
     {
@@ -117,6 +138,9 @@ if (!function_exists('currentPage')) {
     }
 }
 
+/**
+ * Formata o valor da propriedade para o formatado Brasileiro
+ */
 if (!function_exists('priceFormat')) {
     function priceFormat(float $price)
     {
@@ -124,6 +148,10 @@ if (!function_exists('priceFormat')) {
     }
 }
 
+/**
+ * Retorna a imagem principal setada pelos corretores/admins
+ * Caso imagem não for setada, retorna uma imagem 404 não encontrada
+ */
 if (!function_exists('proprtyMainImage')) {
     function propertyMainImage(int $id)
     {
@@ -136,6 +164,10 @@ if (!function_exists('proprtyMainImage')) {
     }
 }
 
+/**
+ * Formata o valor da propriedade passada em formulário = FLOAT
+ * Removendo os pontos e virgulas salvando no banco como INTEIRO
+ */
 if (!function_exists('formatPrice')) {
     function formatPrice(float $price)
     {

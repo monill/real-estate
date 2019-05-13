@@ -10,12 +10,20 @@ class MessagesController extends Controller
 {
     protected $log;
 
+    /**
+     * BlogCommentsController constructor.
+     * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
+     * Class LOG, salva em banco o que foi pelos corretores/admins
+     */
     public function __construct()
     {
         $this->middleware('auth');
         $this->log = new Log();
     }
 
+    /**
+     *
+     */
     public function index()
     {
         $messages = Message::paginate(25);
@@ -23,6 +31,9 @@ class MessagesController extends Controller
         return view('admin.messages.index', compact('messages', 'unread'));
     }
 
+    /**
+     *
+     */
     public function show($id)
     {
         $message = Message::findOrFail($id);
@@ -33,6 +44,9 @@ class MessagesController extends Controller
         return view('admin.messages.message', compact('message', 'unread'));
     }
 
+    /**
+     *
+     */
     public function destroy($id)
     {
         Message::findOrFail($id)->delete();

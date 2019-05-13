@@ -50,6 +50,15 @@ class Property extends Eloquent
         'featured'
     ];
 
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
+
     public function category()
     {
         return $this->belongsTo(\App\Models\Category::class);
@@ -76,15 +85,11 @@ class Property extends Eloquent
         return $this->hasMany(\App\Models\Question::class);
     }
 
-    public function sluggable()
-    {
-        return [
-            'slug' => [
-                'source' => 'name'
-            ]
-        ];
-    }
-
+    /**
+     * Retorna String
+     *
+     * Primeiro vídeo de exibição do youtube da propriedade cadastrada
+     */
     public function videoOne()
     {
         if ($this->video1 != null) {
@@ -100,12 +105,17 @@ class Property extends Eloquent
         return '';
     }
 
+    /**
+     * Retorna String
+     *
+     * Segundo vídeo de exibição do youtube da propriedade cadastrada
+     */
     public function videoTwo()
     {
         if ($this->video2 != null) {
             $url = $this->video2;
 
-            if ($this->checkUrl($url) == true) {
+            if ($this->checkUrl($url)) {
                 $fetch = explode("v=", $url);
                 $videoId = $fetch[1];
 
@@ -115,6 +125,11 @@ class Property extends Eloquent
         return '';
     }
 
+    /**
+     * Retorna boolean
+     *
+     * checa se a URL passada no vídeos de exibição são válidas
+     */
     protected function checkUrl($url)
     {
         // Remove all illegal characters from a url
@@ -131,11 +146,27 @@ class Property extends Eloquent
         return !$file_headers || $file_headers[0] == 'HTTP/1.1 404 Not Found' ? false : true;
     }
 
+    /**
+     * Retorna String
+     *
+     * formata o valor INTEIRO do banco para texto
+     * 1 = Locação
+     * 2 = Venda
+     */
     public function getPurpose()
     {
         return $this->purpose == 1 ? 'Locação' : 'Venda';
     }
 
+    /**
+     * Retorna String
+     *
+     * formata o valor INTEIRO do banco para texto
+     * 1 = Casa
+     * 2 = Apartamento
+     * 3 = Terreno
+     * 4 = Flat
+     */
     public function getType()
     {
         $type = $this->type;
@@ -150,6 +181,12 @@ class Property extends Eloquent
         }
     }
 
+    /**
+     * Retorna String
+     *
+     * Retorna a imagem principal setada pelos corretores/admins
+     * Caso imagem não for setada, retorna uma imagem 404 não encontrada
+     */
     public function getMainImage()
     {
         $image = PropertyImage::where('property_id', '=', $this->id)->where('feature', '=', true)->first();
@@ -160,11 +197,23 @@ class Property extends Eloquent
         }
     }
 
+    /**
+     * Retorna String
+     *
+     * formata o valor INTEIRO do banco para texto
+     * Caso propriedade seja para Locação, exibe mensagem "Por mês"
+     */
     public function purposeFormat()
     {
         return $this->purpose == 1 ? '<span class="small">por mês</span>' : '';
     }
 
+    /**
+     * Retorna String
+     *
+     * formata o valor INTEIRO do banco para texto
+     * Caso propriedade seja para Locação, altera a cor da descrição de azul para laranja
+     */
     public function getPurposeColor()
     {
         return $this->purpose == 1 ? '2' : '';

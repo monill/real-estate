@@ -13,12 +13,18 @@ use Illuminate\Support\Facades\DB;
 
 class PropertiesController extends Controller
 {
+    /**
+     *
+     */
     public function index()
     {
         $properties = Property::orderBy('id', 'DESC')->paginate(12);
         return view('site.properties.index', compact('properties'));
     }
 
+    /**
+     *
+     */
     public function store(QuestionsRequest $request)
     {
         $question = new Question();
@@ -33,6 +39,9 @@ class PropertiesController extends Controller
         return redirect()->back();
     }
 
+    /**
+     *
+     */
     public function show($id, $slug)
     {
         $property = Property::where('id', '=', $id)->whereSlug($slug)->firstOrFail();
@@ -43,6 +52,9 @@ class PropertiesController extends Controller
         return view('site.properties.property', compact('property', 'images', 'features'));
     }
 
+    /**
+     *
+     */
     public function pesquisar(PesquisasRequest $request)
     {
         if ($request->isMethod('POST')) {

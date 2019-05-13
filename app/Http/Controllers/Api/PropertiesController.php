@@ -3,15 +3,23 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 
 class PropertiesController extends Controller
 {
+    /**
+    * @return JsonResponse
+    *
+    * Exibindo número de propriedades que estão disponeis por ano
+    * para Locação/Venda e somando o total de propriedades do ano
+    */
     public function years()
     {
         $year = date('Y');
 
-        $totalProperties = DB::table('properties')->whereYear('created_at', '=', $year)->count();
+        $totalProperties = DB::table('properties')
+            ->whereYear('created_at', '=', $year)->count();
 
         $forRent = DB::table('properties')->whereYear('created_at', '=', $year)
             ->where('purpose', '=', 1)->count();

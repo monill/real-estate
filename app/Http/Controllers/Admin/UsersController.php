@@ -15,6 +15,11 @@ class UsersController extends Controller
     protected $log;
     protected $imageFile;
 
+    /**
+     * BlogCommentsController constructor.
+     * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
+     * Class LOG, salva em banco o que foi pelos corretores/admins
+     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -23,17 +28,26 @@ class UsersController extends Controller
         $this->imageFile = new ImageFile();
     }
 
+    /**
+     *
+     */
     public function index()
     {
         $users = User::all();
         return view('admin.users.index', compact('users'));
     }
 
+    /**
+     *
+     */
     public function create()
     {
         return view('admin.users.add');
     }
 
+    /**
+     *
+     */
     public function store(UsersRequest $request)
     {
         if ($request->has('image') && $request->file('image')->isValid()) {
@@ -62,12 +76,18 @@ class UsersController extends Controller
         }
     }
 
+    /**
+     *
+     */
     public function edit($id)
     {
         $user = User::findOrFail($id);
         return view('admin.users.edit', compact('user'));
     }
 
+    /**
+     *
+     */
     public function update(Request $request, $id)
     {
         $user = User::findOrFail($id);
@@ -103,6 +123,9 @@ class UsersController extends Controller
         return redirect()->to('users');
     }
 
+    /**
+     *
+     */
     public function destroy($id)
     {
         User::findOrFail($id)->delete();

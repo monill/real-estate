@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use App\Models\Visitor;
 use Closure;
+use Illuminate\Http\Request;
 use Jenssegers\Agent\Agent;
 
 class Visitors
@@ -11,8 +12,8 @@ class Visitors
     /**
      * Handle an incoming request.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param \Closure $next
+     * @param Request $request
+     * @param Closure $next
      * @return mixed
      */
     public function handle($request, Closure $next)

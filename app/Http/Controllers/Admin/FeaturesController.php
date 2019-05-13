@@ -13,18 +13,29 @@ class FeaturesController extends Controller
 {
     protected $log;
 
+    /**
+     * BlogCommentsController constructor.
+     * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
+     * Class LOG, salva em banco o que foi pelos corretores/admins
+     */
     public function __construct()
     {
         $this->middleware('auth');
         $this->log = new Log();
     }
 
+    /**
+     *
+     */
     public function index()
     {
         $features = Feature::orderBy('name', 'ASC')->get();
         return view('admin.features.index', compact('features'));
     }
 
+    /**
+     *
+     */
     public function store(FeaturesRequest $request)
     {
         $feature = new Feature($request->except('_token'));
@@ -33,6 +44,9 @@ class FeaturesController extends Controller
         return redirect()->to('features');
     }
 
+    /**
+     *
+     */
     public function update(Request $request, $id)
     {
         if ($request->ajax()) {
@@ -46,6 +60,9 @@ class FeaturesController extends Controller
         return response()->json(['error' => 400, 'message' => 'Parametros insuficientes.'], 400);
     }
 
+    /**
+     *
+     */
     public function destroy($id)
     {
         Feature::findOrFail($id)->delete();

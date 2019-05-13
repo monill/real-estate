@@ -21,12 +21,6 @@ class Tag extends Eloquent
 		'views'
 	];
 
-	public function blogs()
-	{
-		return $this->belongsToMany(\App\Models\Blog::class, 'blog_tags')
-					->withPivot('id');
-	}
-
     public function sluggable()
     {
         return [
@@ -35,4 +29,10 @@ class Tag extends Eloquent
             ]
         ];
     }
+
+	public function blogs()
+	{
+		return $this->belongsToMany(\App\Models\Blog::class, 'blog_tags')
+					->withPivot('id');
+	}
 }

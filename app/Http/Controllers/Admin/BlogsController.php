@@ -16,6 +16,11 @@ class BlogsController extends Controller
     protected $log;
     protected $imageFile;
 
+    /**
+     * BlogCommentsController constructor.
+     * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
+     * Class LOG, salva em banco o que foi pelos corretores/admins
+     */
     public function __construct()
     {
         $this->middleware('auth');
@@ -24,12 +29,18 @@ class BlogsController extends Controller
         $this->imageFile = new ImageFile();
     }
 
+    /**
+     *
+     */
     public function index()
     {
         $blogs = Blog::orderBy('id', 'DESC')->paginate(12);
         return view('admin.blogs.index', compact('blogs'));
     }
 
+    /**
+     *
+     */
     public function create()
     {
         if (Tag::count() <= 0) {
@@ -40,6 +51,9 @@ class BlogsController extends Controller
         return view('admin.blogs.add', compact('tags'));
     }
 
+    /**
+     *
+     */
     public function store(BlogsRequest $request)
     {
         if ($request->has('image') && $request->file('image')->isValid()) {
@@ -71,6 +85,9 @@ class BlogsController extends Controller
         }
     }
 
+    /**
+     *
+     */
     public function edit($id)
     {
         $blog = Blog::findOrFail($id);
@@ -78,6 +95,9 @@ class BlogsController extends Controller
         return view('admin.blogs.edit', compact('blog', 'tags'));
     }
 
+    /**
+     *
+     */
     public function update(Request $request, $id)
     {
         $blog = Blog::findOrFail($id);
@@ -113,6 +133,9 @@ class BlogsController extends Controller
         return redirect()->to('blogs');
     }
 
+    /**
+     *
+     */
     public function destroy($id)
     {
         Blog::findOrFail($id)->delete();
@@ -121,6 +144,9 @@ class BlogsController extends Controller
         return redirect()->to('blogs');
     }
 
+    /**
+     *
+     */
     public function publishOnOff($id)
     {
         $blog = Blog::findOrFail($id);

@@ -10,12 +10,20 @@ class QuestionsController extends Controller
 {
     protected $log;
 
+    /**
+     * BlogCommentsController constructor.
+     * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
+     * Class LOG, salva em banco o que foi pelos corretores/admins
+     */
     public function __construct()
     {
         $this->middleware('auth');
         $this->log = new Log();
     }
 
+    /**
+     *
+     */
     public function index()
     {
         $questions = Question::paginate(25);
@@ -23,6 +31,9 @@ class QuestionsController extends Controller
         return view('admin.questions.index', compact('questions', 'unread'));
     }
 
+    /**
+     *
+     */
     public function show($id)
     {
         $question = Question::findOrFail($id);
@@ -33,6 +44,9 @@ class QuestionsController extends Controller
         return view('admin.questions.question', compact('question', 'unread'));
     }
 
+    /**
+     *
+     */
     public function destroy($id)
     {
         Question::findOrFail($id)->delete();

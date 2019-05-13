@@ -11,18 +11,29 @@ class SettingsController extends Controller
 {
     protected $log;
 
+    /**
+     * BlogCommentsController constructor.
+     * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
+     * Class LOG, salva em banco o que foi pelos corretores/admins
+     */
     public function __construct()
     {
         $this->middleware('auth');
         $this->log = new Log();
     }
 
+    /**
+     *
+     */
     public function index()
     {
         $setting = Setting::findOrFail(1);
         return view('admin.settings.index', compact('setting'));
     }
 
+    /**
+     *
+     */
     public function update(SettingsRequest $request, $id)
     {
         $setting = Setting::findOrFail($id);

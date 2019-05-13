@@ -8,6 +8,9 @@ use App\Http\Controllers\Controller;
 
 class GalleriesController extends Controller
 {
+    /**
+     *
+     */
     public function index()
     {
         $images = PropertyImage::paginate(9);

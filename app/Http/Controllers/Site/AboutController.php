@@ -7,6 +7,9 @@ use App\Models\Service;
 
 class AboutController extends Controller
 {
+    /**
+     *
+     */
     public function index()
     {
         $services = Service::all();

@@ -12,18 +12,29 @@ class CategoriesController extends Controller
 {
     protected $log;
 
+    /**
+     * BlogCommentsController constructor.
+     * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
+     * Class LOG, salva em banco o que foi pelos corretores/admins
+     */
     public function __construct()
     {
         $this->middleware('auth');
         $this->log = new Log();
     }
 
+    /**
+     *
+     */
     public function index()
     {
         $categories = Category::orderBy('name', 'ASC')->get();
         return view('admin.categories.index', compact('categories'));
     }
 
+    /**
+     *
+     */
     public function store(CategoriesRequest $request)
     {
         $feature = new Category($request->except('_token'));
@@ -32,6 +43,9 @@ class CategoriesController extends Controller
         return redirect()->to('categories');
     }
 
+    /**
+     *
+     */
     public function update(Request $request, $id)
     {
         if ($request->ajax()) {
@@ -46,6 +60,9 @@ class CategoriesController extends Controller
         return response()->json(['error' => 400, 'message' => 'Parametros insuficientes.'], 400);
     }
 
+    /**
+     *
+     */
     public function destroy($id)
     {
         Category::findOrFail($id)->delete();

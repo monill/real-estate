@@ -9,12 +9,18 @@ use App\Http\Controllers\Controller;
 
 class BlogsController extends Controller
 {
+    /**
+     *
+     */
     public function index()
     {
         $blogs = Blog::orderBy('created_at', 'DESC')->paginate(4);
         return view('site.blogs.index', compact('blogs'));
     }
 
+    /**
+     *
+     */
     public function store(CommentsRequest $request)
     {
         $comment = new Comment();
@@ -29,6 +35,9 @@ class BlogsController extends Controller
         return back();
     }
 
+    /**
+     *
+     */
     public function show($id, $slug)
     {
         $blog = Blog::where('id', '=', $id)->whereSlug($slug)->firstOrFail();

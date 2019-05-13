@@ -30,6 +30,15 @@ class Blog extends Eloquent
         'published'
 	];
 
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
+
 	public function user()
 	{
 		return $this->belongsTo(\App\User::class);
@@ -46,15 +55,11 @@ class Blog extends Eloquent
 		return $this->hasMany(\App\Models\Comment::class);
 	}
 
-    public function sluggable()
-    {
-        return [
-            'slug' => [
-                'source' => 'title'
-            ]
-        ];
-    }
-
+    /**
+     * Retorna String
+     *
+     * Retorna imagem principal do blog
+     */
     public function getMainImage()
     {
         return asset('uploads/blogs/' . $this->id . '/' . $this->image);
