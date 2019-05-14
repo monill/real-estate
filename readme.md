@@ -84,3 +84,22 @@ Licença
 ----
 
 Desenvolvimento particular/proprietário, venda ou modificação não autorizado.
+
+### Home
+![Home](../master/telas/site/home.png)
+### Sobre
+![Home](../master/telas/site/sobre.png)
+### Propriedades
+![Home](../master/telas/site/propriedades.png)
+### Propriedade seleciona
+![Home](../master/telas/site/propriedade.png)
+### Corretores
+![Home](../master/telas/site/corretores.png)
+### Galeria
+![Home](../master/telas/site/galeria.png)
+### Blog
+![Home](../master/telas/site/blogs.png)
+### Blog seleciona
+![Home](../master/telas/site/blog.png)
+### Contato
+![Home](../master/telas/site/contato.png)

@@ -139,7 +139,7 @@ if (!function_exists('currentPage')) {
 }
 
 /**
- * Formata o valor da propriedade para o formatado Brasileiro
+ * Formata o valor da propriedade para o formato Brasileiro
  */
 if (!function_exists('priceFormat')) {
     function priceFormat(float $price)
@@ -165,8 +165,8 @@ if (!function_exists('proprtyMainImage')) {
 }
 
 /**
- * Formata o valor da propriedade passada em formulário = FLOAT
- * Removendo os pontos e virgulas salvando no banco como INTEIRO
+ * Formata o valor da propriedade passada em formulário
+ * Removendo os pontos e virgulas salvando no banco
  */
 if (!function_exists('formatPrice')) {
     function formatPrice($price)
