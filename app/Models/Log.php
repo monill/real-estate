@@ -41,9 +41,9 @@ class Log extends Eloquent
             'user_id' => auth()->user()->id,
             'content' => $content,
             'ip' => getIP(),
-            'browser' => $agent->browser(),
-            'system' => $agent->platform(),
-            'device' => $agent->device(),
+            'browser' => $agent->browser() ? $agent->browser() : NULL,
+            'system' => $agent->platform() ? $agent->platform() : NULL,
+            'device' => $agent->device() ? $agent->device() : NULL,
             'mobile' => $agent->isMobile(),
             'tablet' => $agent->isTablet(),
             'desktop' => $agent->isDesktop()

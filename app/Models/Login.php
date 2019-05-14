@@ -39,9 +39,9 @@ class Login extends Eloquent
         return Login::create([
             'user_id' => $user_id,
             'ip' => $ip,
-            'browser' => $agent->browser(),
-            'system' => $agent->platform(),
-            'device' => $agent->device(),
+            'browser' => $agent->browser() ? $agent->browser() : NULL,
+            'system' => $agent->platform() ? $agent->platform() : NULL,
+            'device' => $agent->device() ? $agent->device() : NULL,
             'mobile' => $agent->isMobile(),
             'tablet' => $agent->isTablet(),
             'desktop' => $agent->isDesktop()
