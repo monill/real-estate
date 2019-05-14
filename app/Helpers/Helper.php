@@ -103,7 +103,7 @@ if (!function_exists('md5Gen')) {
 
 /**
  * Função não utilizada
- * Futuramente checar o tamanho de capa pasta/arquivo individualmente/total
+ * Futuramente checar o tamanho de cada pasta/arquivo individualmente/total
  */
 if (!function_exists('makeSize')) {
     function makeSize(int $bytes, int $decimals = 2)
@@ -115,8 +115,7 @@ if (!function_exists('makeSize')) {
 }
 
 /**
- * Retorna no formato Brasil e traduzido a data
- * Dia do Mês do Ano
+ * Retorna no formato Brasil e traduzido a data: Dia de Mês de Ano
  */
 if (!function_exists('diaMesAno')) {
     function diaMesAno()

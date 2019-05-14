@@ -13,7 +13,7 @@ class CategoriesController extends Controller
     protected $log;
 
     /**
-     * BlogCommentsController constructor.
+     * CategoriesController constructor.
      * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
      * Class LOG, salva em banco o que foi pelos corretores/admins
      */
@@ -24,7 +24,7 @@ class CategoriesController extends Controller
     }
 
     /**
-     * Página das categorias
+     * Página inicial Categorias
      */
     public function index()
     {

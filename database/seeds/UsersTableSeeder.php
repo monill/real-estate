@@ -43,22 +43,6 @@ class UsersTableSeeder extends Seeder
                 'avatar' => '7aa99682f9d3a129f54e0eae9ccd3628.jpg',
                 'job' => 'Corretor',
                 'about' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus nisi a nisi venenatis, sed condimentum lectus luctus. Integer felis augue, dignissim eget rhoncus nec, elementum et lorem.'
-            ],
-            [
-                'name' => 'Joao Leocadio',
-                'email' => 'joao.leocadio@imob.com.br',
-                'password' => bcrypt('z1x5c9'),
-                'job' => 'Admin',
-                'about' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus nisi a nisi venenatis, sed condimentum lectus luctus. Integer felis augue, dignissim eget rhoncus nec, elementum et lorem.',
-                'admin' => true
-            ],
-            [
-                'name' => 'Vanderlei Ienne',
-                'email' => 'vanderlei.ienne@imob.com.br',
-                'password' => bcrypt('a7s5d3'),
-                'job' => 'Admin',
-                'about' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec maximus nisi a nisi venenatis, sed condimentum lectus luctus. Integer felis augue, dignissim eget rhoncus nec, elementum et lorem.',
-                'admin' => true
             ]
         ];
 

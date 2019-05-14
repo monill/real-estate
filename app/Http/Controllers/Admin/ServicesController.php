@@ -13,7 +13,7 @@ class ServicesController extends Controller
     protected $log;
 
     /**
-     * BlogCommentsController constructor.
+     * ServicesController constructor.
      * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
      * Class LOG, salva em banco o que foi pelos corretores/admins
      */

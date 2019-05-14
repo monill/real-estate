@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 class LogsController extends Controller
 {
     /**
-     * BlogCommentsController constructor.
+     * LogsController constructor.
      * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
      */
     public function __construct()
@@ -17,7 +17,7 @@ class LogsController extends Controller
     }
 
     /**
-     * Página dos Logs
+     * Página inicial Logs
      * Exibe em ordem decrescente
      */
     public function index()

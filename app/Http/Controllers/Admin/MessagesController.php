@@ -11,7 +11,7 @@ class MessagesController extends Controller
     protected $log;
 
     /**
-     * BlogCommentsController constructor.
+     * MessagesController constructor.
      * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
      * Class LOG, salva em banco o que foi pelos corretores/admins
      */
@@ -22,7 +22,7 @@ class MessagesController extends Controller
     }
 
     /**
-     * Página das mensagens
+     * Página inicial Mensagens
      * mensagens recebidas pelo formulário da página Contato
      */
     public function index()

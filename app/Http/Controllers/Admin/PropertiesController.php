@@ -22,7 +22,7 @@ class PropertiesController extends Controller
     protected $imageFile;
 
     /**
-     * BlogCommentsController constructor.
+     * PropertiesController constructor.
      * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
      * Class LOG, salva em banco o que foi pelos corretores/admins
      * photosPath define o diretório onde a imagem vai ser armazenada
@@ -37,7 +37,7 @@ class PropertiesController extends Controller
     }
 
     /**
-     * Página inicial das PROPRIEDADES
+     * Página inicial Propriedades
      * Ordena por ID em ordem decrescente, paginando 8 por página
      */
     public function index()

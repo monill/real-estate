@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 class IndexController extends Controller
 {
     /**
-     * BlogCommentsController constructor.
+     * IndexController constructor.
      * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
      */
     public function __construct()
@@ -21,7 +21,7 @@ class IndexController extends Controller
     }
 
     /**
-     * Página do Dashboard
+     * Página inicial Dashboard
      */
     public function index()
     {

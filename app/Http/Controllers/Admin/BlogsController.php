@@ -17,7 +17,7 @@ class BlogsController extends Controller
     protected $imageFile;
 
     /**
-     * BlogCommentsController constructor.
+     * BlogsController constructor.
      * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
      * Class LOG, salva em banco o que foi pelos corretores/admins
      * photosPath define o diretório onde a imagem vai ser armazenada
@@ -32,7 +32,7 @@ class BlogsController extends Controller
     }
 
     /**
-     * Página dos blogs
+     * Página inicial Blogs
      */
     public function index()
     {

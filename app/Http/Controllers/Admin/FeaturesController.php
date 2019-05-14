@@ -14,7 +14,7 @@ class FeaturesController extends Controller
     protected $log;
 
     /**
-     * BlogCommentsController constructor.
+     * FeaturesController constructor.
      * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
      * Class LOG, salva em banco o que foi pelos corretores/admins
      */
@@ -25,7 +25,7 @@ class FeaturesController extends Controller
     }
 
     /**
-     * Página dos Destaques
+     * Página inicial Destaques
      */
     public function index()
     {

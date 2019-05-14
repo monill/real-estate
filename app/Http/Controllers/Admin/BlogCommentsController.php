@@ -22,7 +22,7 @@ class BlogCommentsController extends Controller
     }
 
     /**
-     * Página dos comentários feitos nos blogs
+     * Página inicial Comentários
      */
     public function index()
     {

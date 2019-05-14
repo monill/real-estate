@@ -11,7 +11,7 @@ class QuestionsController extends Controller
     protected $log;
 
     /**
-     * BlogCommentsController constructor.
+     * QuestionsController constructor.
      * Middleware valida a sessão do usuario ok e ativa, caso contrario redireciona para o login
      * Class LOG, salva em banco o que foi pelos corretores/admins
      */
