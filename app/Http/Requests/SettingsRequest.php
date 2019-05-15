@@ -25,25 +25,25 @@ class SettingsRequest extends FormRequest
     {
         return [
             'site_title' => 'required|string|max:200',
-            'meta_keywords' => 'string|max:65530',
-            'meta_description' => 'string|max:65530',
+            'meta_keywords' => 'nullable|string|max:65530',
+            'meta_description' => 'nullable|string|max:65530',
             //Analytics
-            'analytics' => 'string|max:65530',
+            'analytics' => 'nullable|string|max:65530',
             //Empresa
-            'about' => 'string|max:65530',
-            'address' => 'string|max:250',
-            'email' => 'email|max:250',
-            'phone1' => 'string|max:250',
-            'phone2' => 'string|max:250',
+            'about' => 'nullable|string|max:65530',
+            'address' => 'nullable|string|max:250',
+            'email' => 'nullable|email|max:250',
+            'phone1' => 'nullable|string|max:250',
+            'phone2' => 'nullable|string|max:250',
             //Social
-            'facebook' => 'url|string|max:250',
-            'twitter' => 'url|string|max:250',
-            'googleplus' => 'url|string|max:250',
-            'linkedin' => 'url|string|max:250',
-            'link' => 'url|string|max:250',
+            'facebook' => 'nullable|string|max:250',
+            'twitter' => 'nullable|string|max:250',
+            'googleplus' => 'nullable|string|max:250',
+            'linkedin' => 'nullable|string|max:250',
+            'link' => 'nullable|string|max:250',
             //Termos e Privacidade
-            'terms' => 'string|max:65530',
-            'privacy' => 'string|max:65530'
+            'terms' => 'nullable|string|max:65530',
+            'privacy' => 'nullable|string|max:65530'
         ];
     }
 }
