@@ -16,7 +16,7 @@ class GalleriesController extends Controller
      */
     public function index()
     {
-        $images = PropertyImage::paginate(9);
+        $images = PropertyImage::paginate(12);
         return view('site.galleries.index', compact('images'));
     }
 }
