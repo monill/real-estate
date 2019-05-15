@@ -234,7 +234,7 @@
                     <div class="col-sm-6 footer-column onscroll-animate" data-delay="400">
                         <h4>Blog Recente</h4>
                         <ul class="list-links-simple">
-                            @forelse(\App\Models\Blog::where('published', '==', true)->orderBy('id', 'DESC')->take(5)->get() as $blog)
+                            @forelse(\App\Models\Blog::where('published', '=', true)->orderBy('id', 'DESC')->take(5)->get() as $blog)
                             <li><a href="{{ route('blog.view', [$blog->id, $blog->slug]) }}">{{ str_limit($blog->title, 40) }}</a></li>
                             @empty
                             <li><p>Nenhum conteúdo cadastrado no momento</p></li>
