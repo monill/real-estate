@@ -41,9 +41,9 @@
                     <h1>Galeria</h1>
                     <h4>Aqui você encontrará algumas de nossas melhores propriedades que vendemos.</h4>
                 </div>
+                @foreach($images->chunk(3) as $imagem)
                 <div class="row">
-
-                    @foreach($images as $image)
+                    @foreach($imagem as $image)
                     <div class="col-md-4 onscroll-animate" data-delay="200">
                         <div class="post-preview gallery-post">
                             <div class="post-preview-img">
@@ -65,8 +65,8 @@
                         </div>
                     </div><!-- .col-md-4 -->
                     @endforeach
-
                 </div><!-- .row -->
+                @endforeach
 
                 <div class="text-center onscroll-animate">
                     <div class="pagination">
