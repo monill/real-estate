@@ -28,8 +28,8 @@ class UsersRequest extends FormRequest
             'email' => 'required|string|email|max:70|unique:users',
             'password' => 'required|string|between:6,16',
             'avatar' => 'image|mimes:jpeg,png,jpg|max:3072',
-            'job' => 'string|max:200',
-            'about' => 'string|max:65530',
+            'job' => 'required|string|max:200',
+            'about' => 'required|string|max:65530',
             'admin' => 'boolean'
         ];
     }

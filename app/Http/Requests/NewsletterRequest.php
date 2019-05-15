@@ -24,8 +24,8 @@ class NewsletterRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
-            'email' => 'required|email|unique:newsletters,email'
+            'name' => 'required|string|max:100',
+            'email' => 'required|email|unique:newsletters,email|max:70'
         ];
     }
 }

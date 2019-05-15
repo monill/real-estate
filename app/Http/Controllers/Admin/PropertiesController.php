@@ -80,7 +80,7 @@ class PropertiesController extends Controller
         $property->type = $request->input('type');
         $property->address = $request->input('address');
         $property->description = $request->input('description');
-        $property->price = formatPrice($request->input('price')); //formata os preço recebido para Inteiro
+        $property->price = formatPrice($request->input('price')); //formata os preço recebido para Decimal
         $property->bathrooms = $request->input('bathrooms');
         $property->bedrooms = $request->input('bedrooms');
         $property->garage = $request->input('garage');
@@ -276,13 +276,13 @@ class PropertiesController extends Controller
 
         $images = PropertyImage::where('property_id', '=', $property_id)->get(); //seleciona todas as imagens da propriedade
 
-        //seta todas as imagens para destaque = falso;
+        //seta todas as imagens para destaque = falso
         foreach ($images as $image) {
             $image->feature = false;
             $image->update();
         }
 
-        //seta a imagem para destaque = true;
+        //seta a imagem para destaque = true
         DB::table('property_images')->where('id', '=', $photo_id)->update(['feature' => true]);
 
         $this->log->log('Usuario(a) definiu uma imagem principal');

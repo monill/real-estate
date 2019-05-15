@@ -26,9 +26,9 @@ class MessagesRequest extends FormRequest
         return [
             'name' => 'required|string|max:100',
             'email' => 'required|email|max:100',
-            'phone' => 'string|max:100',
+            'phone' => 'nullable|string|max:100',
             'subject' => 'required|string|max:100',
-            'message' => 'required|string|max:65530'
+            'message' => 'required|string|max:1000'
         ];
     }
 }
