@@ -26,7 +26,7 @@
                     </a>
                     <div class="post-preview-content">
                         <h2 class="post-preview-heading">{{ $property->name }}</h2>
-                        <p>{!! str_limit($property->description, 107, '...') !!}</p>
+                        {!! str_limit($property->description, 107, '...') !!}
                         <div class="post-preview-price-container">
                             <a href="{{ route('propriedade', [$property->id, $property->slug]) }}" class="read-more-link-alt">Leia mais</a>
                             <p class="listing-price">

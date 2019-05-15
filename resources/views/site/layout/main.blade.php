@@ -365,7 +365,7 @@
 <script src="{{ asset('site/js/jquery.inview.min.js') }}"></script>
 <script src="{{ asset('site/js/custom.js') }}"></script>
 
-<script type="text/javascript">
+<script>
     $(document).ready(function(e) {
         var main_stylesheet = $('#main-stylesheet');
         var theme_customizer = $('#theme-customizer');
