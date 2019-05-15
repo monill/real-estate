@@ -87,7 +87,7 @@
                     <div class="white-box m-b-15">
                         <h3 class="box-title">Valor total para venda</h3>
                         <div class="row">
-                            <div class="col-md-6 col-sm-6 col-xs-6  m-t-30">
+                            <div class="col-md-12 col-sm-12 col-xs-12 m-t-30">
                                 <h1 class="text-info">R&#36; {{ priceFormat($totalForSale) }}</h1>
                             </div>
                         </div>
@@ -97,7 +97,7 @@
                     <div class="white-box bg-purple m-b-15">
                         <h3 class="text-white box-title">Valor total para locação</h3>
                         <div class="row">
-                            <div class="col-md-6 col-sm-6 col-xs-6  m-t-30">
+                            <div class="col-md-12 col-sm-12 col-xs-12 m-t-30">
                                 <h1 class="text-white">R&#36; {{ priceFormat($totalForRent) }}</h1>
                             </div>
                         </div>
