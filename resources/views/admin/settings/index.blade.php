@@ -173,10 +173,18 @@
                             </section>
                             <section id="gmaps">
                                 <div class="form-group">
-                                    Latitude:
-                                    {!! Form::text('latitude', null, ['autocomplete' => 'off', 'id' => 'latitude']) !!}
-                                    Longitude:
-                                    {!! Form::text('longitude', null, ['autocomplete' => 'off', 'id' => 'longitude']) !!}
+                                    <div class="col-sm-9">
+                                        <div class="form-material">
+                                            {!! Form::label('latitude', 'Latitude:') !!}
+                                            {!! Form::text('latitude', $setting->latitude, ['class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <div class="form-material">
+                                            {!! Form::label('longitude', 'Longitude:') !!}
+                                            {!! Form::text('longitude', $setting->longitude, ['class' => 'form-control']) !!}
+                                        </div>
+                                    </div>
                                 </div>
                                 <br>
                                 <div class="form-group">
