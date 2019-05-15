@@ -34,8 +34,8 @@ class CreateSettingsTable extends Migration
             $table->string('linkedin')->nullable();
             $table->string('link')->nullable();
             //Google Maps
-            $table->float('latitude')->nullable();
-            $table->float('longitude')->nullable();
+            $table->decimal('latitude', 18,12)->nullable();
+            $table->decimal('longitude', 18,12)->nullable();
             //Termos e Privacidade
             $table->text('terms')->nullable();
             $table->text('privacy')->nullable();

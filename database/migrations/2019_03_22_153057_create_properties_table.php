@@ -36,8 +36,8 @@ class CreatePropertiesTable extends Migration
             $table->string('area', 50);
             $table->text('description');
 
-            $table->float('latitude')->nullable();
-            $table->float('longitude')->nullable();
+            $table->decimal('latitude', 18,12)->nullable();
+            $table->decimal('longitude', 18,12)->nullable();
 
             $table->string('video1')->nullable(); //youtube
             $table->string('video2')->nullable(); //youtube

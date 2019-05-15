@@ -37,7 +37,25 @@ class SettingsController extends Controller
     public function update(SettingsRequest $request, $id)
     {
         $setting = Setting::findOrFail($id);
-        $setting->update($request->except('_token'));
+        $setting->site_title = $request->input('site_title');
+        $setting->meta_keywords = $request->input('meta_keywords');
+        $setting->meta_description = $request->input('meta_description');
+        $setting->facebook = $request->input('facebook');
+        $setting->twitter = $request->input('twitter');
+        $setting->googleplus = $request->input('googleplus');
+        $setting->linkedin = $request->input('linkedin');
+        $setting->link = $request->input('link');
+        $setting->analytics = $request->input('analytics');
+        $setting->about = $request->input('about');
+        $setting->address = $request->input('address');
+        $setting->email = $request->input('email');
+        $setting->phone1 = $request->input('phone1');
+        $setting->phone2 = $request->input('phone2');
+        $setting->latitude = $request->input('latitude');
+        $setting->longitude = $request->input('longitude');
+        $setting->terms = $request->input('terms');
+        $setting->privacy = $request->input('privacy');
+        $setting->update();
 
         $this->log->log('Usuario(a) atualizou as configuracoes do site');
         return redirect()->to('settings');
