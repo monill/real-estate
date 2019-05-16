@@ -134,7 +134,7 @@
     <p class="customizer-heading">Personalização</p>
     <hr>
     <p>Trocar Cor</p>
-    <div class="theme-setting theme-stylesheet active" style="background-color:#51bbe5" data-stylesheet="{{ asset('site/css/styles/main.css') }}"></div>
+    <div class="theme-setting theme-stylesheet active" style="background-color:#51bbe5" data-stylesheet="{{ asset('site/css/main.css') }}"></div>
     <div class="theme-setting theme-stylesheet" style="background-color:#336699" data-stylesheet="{{ asset('site/css/skins/dark-blue.css') }}"></div>
     <div class="theme-setting theme-stylesheet" style="background-color:#8cc739" data-stylesheet="{{ asset('site/css/skins/light-green.css') }}"></div>
     <div class="theme-setting theme-stylesheet" style="background-color:#ba6222" data-stylesheet="{{ asset('site/css/skins/brown.css') }}"></div>
@@ -206,7 +206,7 @@
                 <ul>
                     <li {{ ativePage('/') }}><a href="{{ url('/') }}">Home</a></li>
                     <li {{ ativePage('sobre') }}><a href="{{ url('sobre') }}">Sobre</a></li>
-                    <li {{ ativePage('propriedades') }}><a href="{{ url('propriedades') }}">Propriedades</a></li>
+                    <li {{ ativePage('propriedades') || ativePage('propriedade/*') }}><a href="{{ url('propriedades') }}">Propriedades</a></li>
                     <li {{ ativePage('corretores') }}><a href="{{ url('corretores') }}">Corretores</a></li>
                     <li {{ ativePage('galeria') }}><a href="{{ url('galeria') }}">Galeria</a></li>
                     <li {{ ativePage('blog') }}><a href="{{ url('blog') }}">Blog</a></li>
@@ -304,7 +304,7 @@
                     <ul>
                         <li {{ ativePage('/') }}><a href="{{ url('/') }}">Home</a></li>
                         <li {{ ativePage('sobre') }}><a href="{{ url('sobre') }}">Sobre</a></li>
-                        <li {{ ativePage('propriedades') }}><a href="{{ url('propriedades') }}">Propriedades</a></li>
+                        <li {{ ativePage('propriedades') || ativePage('propriedade/*') }}><a href="{{ url('propriedades') }}">Propriedades</a></li>
                         <li {{ ativePage('corretores') }}><a href="{{ url('corretores') }}">Corretores</a></li>
                         <li {{ ativePage('galeria') }}><a href="{{ url('galeria') }}">Galeria</a></li>
                         <li {{ ativePage('blog') }}><a href="{{ url('blog') }}">Blog</a></li>
