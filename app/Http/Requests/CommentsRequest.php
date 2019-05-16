@@ -26,7 +26,7 @@ class CommentsRequest extends FormRequest
         return [
             'name' => 'required|string|max:90',
             'email' => 'required|email|max:90',
-            'message' => 'required|string|max:65530'
+            'message' => 'required|string|max:1000'
         ];
     }
 }
