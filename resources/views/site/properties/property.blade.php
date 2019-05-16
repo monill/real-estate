@@ -24,7 +24,7 @@
 @section('title', 'Propriedade')
 
 @section('content')
-        
+
     <section>
         <div class="page-title-container bg-image bg-cover bg-pattern">
             <div class="page-title">
@@ -34,16 +34,15 @@
             </div>
         </div>
     </section>
-    
+
     @include('site.includes.search')
-    
+
     <section>
         <div class="section-content">
             <div class="container">
                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
                     <h1>{{ $property->name }}</h1>
                     <h4>Veja nossas listas recentes aqui, você vai encontrar todos os tipos de casas.</h4>
-
                 </div>
                 <div class="row">
                     <div class="col-md-9">
@@ -54,7 +53,7 @@
                                     <li>
                                         <div class="preview-single">
                                             <a href="{{ $image->getImages() }}" data-lightbox="post1-img">
-                                                <img alt="slide-1" src="{{ $image->getImages() }}" style="width: 100%">
+                                                <img alt="slide-img" src="{{ $image->getImages() }}" style="width: 100%">
                                             </a>
                                             <div class="preview-single-labels">
                                                 <div class="clearfix">
@@ -87,7 +86,7 @@
                                 <div id="flex-carousel" class="preview-thumnails-slider">
                                     <ul class="slides">
                                         @foreach($images as $image)
-                                        <li><img alt="slide-1 thumbnail" src="{{ $image->getImages() }}" style="width: 70%"></li>
+                                        <li><img alt="slide-img thumbnail" src="{{ $image->getImages() }}" style="width: 70%"></li>
                                         @endforeach
                                     </ul>
                                 </div><!-- #carousel -->
@@ -96,7 +95,7 @@
                                 {!! $property->description !!}
                             </p>
                         </section>
-    
+
                         <section id="checkbox-list-section">
                             <div class="section-content">
                                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
@@ -154,7 +153,7 @@
                             </div>
                         </section>
                         @endif
-    
+
                         <section id="listings-section">
                             <div class="section-content">
                                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
@@ -219,7 +218,7 @@
                                 </div><!-- .row -->
                             </div><!-- .section-content -->
                         </section>
-    
+
                         <section id="recent-properties-section">
                             <div class="section-content">
                                 <div class="section-header onscroll-animate" data-animation="fadeInLeft">
@@ -273,7 +272,7 @@
                                 </div><!-- .onscroll-animate -->
                             </div><!-- .section-content -->
                         </section>
-    
+
                         <div class="margin-30 visible-sm-block visible-xs-block"></div>
                     </div><!-- .col-md-9 -->
                     @include('site.includes.property_sidebar')

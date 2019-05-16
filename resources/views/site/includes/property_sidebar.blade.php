@@ -61,7 +61,7 @@
                 <h1>Nossos Corretores</h1>
             </div>
 
-            @foreach(\App\User::where('admin', '==', false)->inRandomOrder()->take(3)->get() as $agent)
+            @foreach(\App\User::where('admin', '=', false)->inRandomOrder()->take(3)->get() as $agent)
             <article class="onscroll-animate" data-animation="fadeInRight" data-delay="400">
                 <div class="profile-small">
                     <div class="profile-small-photo">

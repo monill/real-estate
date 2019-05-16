@@ -19,7 +19,7 @@
             <div class="section-header onscroll-animate" data-animation="fadeInLeft">
                 <h1>Mais visualizados</h1>
             </div>
-            @foreach(\App\Models\Blog::orderBy('views', 'DESC')->take(3)->get() as $blog)
+            @foreach(\App\Models\Blog::where('published', '=', true)->inRandomOrder()->take(3)->get() as $blog)
             <article class="onscroll-animate" data-animation="fadeInRight" data-delay="400">
                 <div class="post-small">
                     <div class="post-small-img">
@@ -65,7 +65,7 @@
                 <h1>Propriedade em Destaque</h1>
             </div>
             <div class="post-preview">
-                @foreach(\App\Models\Property::orderBy('views', 'DESC')->take(1)->get() as $feature)
+                @foreach(\App\Models\Property::inRandomOrder()->take(1)->get() as $feature)
                 <a href="{{ route('propriedade', [$feature->id, $feature->slug]) }}">
                     <section>
                         <div class="post-preview-img">

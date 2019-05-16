@@ -49,7 +49,7 @@
                         </div>
                     </div>
                 </div><!-- .container -->
-            </div><!-- .slide-1 -->
+            </div><!-- .slider -->
             @endforeach
         </div><!-- .master-slider -->
     </section>
@@ -100,7 +100,7 @@
                                         <i class="fa fa-signal"></i>
                                     </div>
                                     <h3>serviço 1</h3>
-                                    <p>colocar um texto legal aqui.</p>
+                                    <p>Serviço.</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 onscroll-animate" data-delay="400" data-animation="fadeInUp">
@@ -109,7 +109,7 @@
                                         <i class="fa fa-home"></i>
                                     </div>
                                     <h3>serviço 2</h3>
-                                    <p>colocar um texto legal aqui.</p>
+                                    <p>Serviço.</p>
                                 </div>
                             </div>
                         </div><!-- .row -->
@@ -122,7 +122,7 @@
                                         <i class="fa fa-building"></i>
                                     </div>
                                     <h3>serviço 3</h3>
-                                    <p>texto legal aqui.</p>
+                                    <p>Serviço.</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 onscroll-animate" data-delay="800" data-animation="fadeInUp">
@@ -131,7 +131,7 @@
                                         <i class="fa fa-th"></i>
                                     </div>
                                     <h3>serviço 4</h3>
-                                    <p>colocar um texto legal aqui.</p>
+                                    <p>Serviço.</p>
                                 </div>
                             </div>
                         </div><!-- .row -->

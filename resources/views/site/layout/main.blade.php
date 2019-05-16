@@ -206,7 +206,7 @@
                 <ul>
                     <li {{ ativePage('/') }}><a href="{{ url('/') }}">Home</a></li>
                     <li {{ ativePage('sobre') }}><a href="{{ url('sobre') }}">Sobre</a></li>
-                    <li {{ ativePage('propriedades') || ativePage('propriedade/*') }}><a href="{{ url('propriedades') }}">Propriedades</a></li>
+                    <li {{ ativePage('propriedades') }}><a href="{{ url('propriedades') }}">Propriedades</a></li>
                     <li {{ ativePage('corretores') }}><a href="{{ url('corretores') }}">Corretores</a></li>
                     <li {{ ativePage('galeria') }}><a href="{{ url('galeria') }}">Galeria</a></li>
                     <li {{ ativePage('blog') }}><a href="{{ url('blog') }}">Blog</a></li>
@@ -304,7 +304,7 @@
                     <ul>
                         <li {{ ativePage('/') }}><a href="{{ url('/') }}">Home</a></li>
                         <li {{ ativePage('sobre') }}><a href="{{ url('sobre') }}">Sobre</a></li>
-                        <li {{ ativePage('propriedades') || ativePage('propriedade/*') }}><a href="{{ url('propriedades') }}">Propriedades</a></li>
+                        <li {{ ativePage('propriedades') }}><a href="{{ url('propriedades') }}">Propriedades</a></li>
                         <li {{ ativePage('corretores') }}><a href="{{ url('corretores') }}">Corretores</a></li>
                         <li {{ ativePage('galeria') }}><a href="{{ url('galeria') }}">Galeria</a></li>
                         <li {{ ativePage('blog') }}><a href="{{ url('blog') }}">Blog</a></li>
