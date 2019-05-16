@@ -60,10 +60,10 @@
                                                     <div class="label-black pull-left">
                                                         <h3>{{ $property->name }}</h3>
                                                         <p>
-                                                            <a href="#">Área: {{ $property->area }}</a> <span class="delimiter-inline-alt"></span>
-                                                            <a href="#">Quartos: {{ $property->bedrooms }}</a> <span class="delimiter-inline-alt"></span>
-                                                            <a href="#">Banheiros: {{ $property->bathrooms }}</a> <span class="delimiter-inline-alt"></span>
-                                                            <a href="#">Garagens: {{ $property->garage }}</a>
+                                                            Área: {{ $property->area }} <span class="delimiter-inline-alt"></span>
+                                                            Quartos: {{ $property->bedrooms }} <span class="delimiter-inline-alt"></span>
+                                                            Banheiros: {{ $property->bathrooms }} <span class="delimiter-inline-alt"></span>
+                                                            Garagens: {{ $property->garage }}
                                                         </p>
                                                     </div>
                                                     <div class="label-white pull-right">
