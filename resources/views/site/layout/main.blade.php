@@ -39,6 +39,8 @@
 
     <script src="{{ asset('site/js/modernizr.js') }}"></script>
 
+    {!! $settings->analytics !!}
+
     <style>
         #theme-customizer {
             font-size: 15px;
