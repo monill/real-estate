@@ -9,15 +9,15 @@ Anhanguera - 1º Semestre de 2019
 
 Trabalho solicitado pelo docente Vanderlei Ienne, da disciplina de Governança de Tecnologias da Informação, para fins de avaliação, do curso de Análise e Desenvolvimento de Sistemas.
 
-Usuários já cadastrado para teste e login:
+Usuários já cadastrado para testes e login:
  - eduardo.silva@imob.com.br : q1q2q3
  - guilherme.paula@imob.com.br : u1u2u3
  - pedro.almeida@imob.com.br : g1g2g3
  - roberto.santos@imob.com.br : m1m2m3
 
 ### Requisitos: *
-- Web server (Apache2 ou Nginx)
-- PHP >= 7.2
+- Web server: Apache2 ou Nginx
+- PHP: 7.2 ou superior
 - Dependências para PHP:
   - php-openssl
   - php-pdo
@@ -33,7 +33,6 @@ Usuários já cadastrado para teste e login:
 
 - MySQL >= 5.7 ou MariaDB >= 10.2
 - Um servidor dedicado decente. Não tente executar isso em algum servidor de baixa qualidade!
-
 
 ### Como instalar:
 
@@ -61,6 +60,7 @@ No Terminal novamente digite:
 $ php artisan migrate "para migrar as tabelas"
 $ php artisan db:seed "para inserir os primeiros dados nas tabelas"
 ```
+
 Para rodar em máquina local, no Terminal digite:
 ```sh
 $ php artisan serve "para rodar como localhost:8000"
