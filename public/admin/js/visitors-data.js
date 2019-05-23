@@ -34,6 +34,30 @@ $.getJSON('api/cities', function (cities) {
         }
     });
 });
+
+$.getJSON('api/countries', function (countries) {
+    Morris.Donut({
+        element: 'morris-countries',
+        data: countries,
+        resize: true,
+        colors: ['#CCFF00', '#FFCC00', '#FF6699', '#CC3300', '#6600FF', '#6600CC', '#66CCCC', '#66FF66', '#00CCFF', '#333333', '#993366', '#663300'],
+        formatter: function (countries, data) {
+            return countries + '%';
+        }
+    });
+});
+
+$.getJSON('api/estates', function (estates) {
+    Morris.Donut({
+        element: 'morris-estates',
+        data: estates,
+        resize: true,
+        colors: ['#CCFF00', '#FFCC00', '#FF6699', '#CC3300', '#6600FF', '#6600CC', '#66CCCC', '#66FF66', '#00CCFF', '#333333', '#993366', '#663300'],
+        formatter: function (estates, data) {
+            return estates + '%';
+        }
+    });
+});
 // End of morris dunuts
 
 // Morris bar chart

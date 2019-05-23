@@ -37,6 +37,23 @@
 
         <div class="col-md-5 col-lg-4 col-sm-12 col-xs-12">
             <div class="white-box">
+                <h3 class="box-title">Paises</h3>
+                <div id="morris-countries" class="ecomm-donute" style="height: 317px;"></div>
+            </div>
+        </div>
+
+    </div>
+    <!-- row -->
+    <div class="row">
+        <div class="col-md-5 col-lg-4 col-sm-12 col-xs-12">
+            <div class="white-box">
+                <h3 class="box-title">Estados</h3>
+                <div id="morris-estates" class="ecomm-donute" style="height: 317px;"></div>
+            </div>
+        </div>
+
+        <div class="col-md-5 col-lg-4 col-sm-12 col-xs-12">
+            <div class="white-box">
                 <h3 class="box-title">Cidades</h3>
                 <div id="morris-cities" class="ecomm-donute" style="height: 317px;"></div>
             </div>

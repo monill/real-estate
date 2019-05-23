@@ -21,6 +21,8 @@ Route::namespace('Api')->group(function () {
     Route::get('os_usage', 'VisitorsController@os');
     Route::get('browser', 'VisitorsController@browser');
     Route::get('cities', 'VisitorsController@cities');
+    Route::get('countries', 'VisitorsController@countries');
+    Route::get('estates', 'VisitorsController@estates');
     Route::get('months', 'VisitorsController@months');
     Route::get('years', 'PropertiesController@years');
 });

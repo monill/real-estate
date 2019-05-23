@@ -19,7 +19,7 @@ class VisitorsController extends Controller
     {
         $all = Visitor::count();
         if (!Cache::has('os_usage')) {
-            $os = DB::table('visitors')->select(DB::raw('count(*) as oss, system'))->groupBy('system')->get();
+            $os = DB::table('visitors')->select(DB::raw('count(*) as oss, system'))->whereNotNUll('system')->groupBy('system')->get();
             $data = [];
             foreach ($os as $key => $item) {
                 $percent = (Visitor::where('system', '=', $item->system)->count() / $all) * 100;
@@ -42,7 +42,7 @@ class VisitorsController extends Controller
     {
         $all = Visitor::count();
         if (!Cache::has('browsers')) {
-            $os = DB::table('visitors')->select(DB::raw('count(*) as browsers, browser'))->groupBy('browser')->get();
+            $os = DB::table('visitors')->select(DB::raw('count(*) as browsers, browser'))->whereNotNUll('browser')->groupBy('browser')->get();
             $data = [];
             foreach ($os as $key => $item) {
                 $percent = (Visitor::where('browser', '=', $item->browser)->count() / $all) * 100;
@@ -58,14 +58,14 @@ class VisitorsController extends Controller
     }
 
     /**
-     * Paises Que Mais Acessam Ao Site
+     * Cidades Que Mais Acessam Ao Site
      * @return JsonResponse
      */
     public function cities()
     {
         $all = Visitor::count();
         if (!Cache::has('cities')) {
-            $os = DB::table('visitors')->select(DB::raw('count(*) as cities, city'))->groupBy('city')->get();
+            $os = DB::table('visitors')->select(DB::raw('count(*) as cities, city'))->whereNotNUll('city')->groupBy('city')->get();
             $data = [];
             foreach ($os as $key => $item) {
                 $percent = (Visitor::where('city', '=', $item->city)->count() / $all) * 100;
@@ -76,6 +76,52 @@ class VisitorsController extends Controller
             Cache::put('cities', $data, 10);
         } else {
             $data = Cache::get('cities');
+        }
+        return response()->json($data, 200);
+    }
+
+    /**
+     * Paises Que Mais Acessam Ao Site
+     * @return JsonResponse
+     */
+    public function countries()
+    {
+        $all = Visitor::count();
+        if (!Cache::has('countries')) {
+            $os = DB::table('visitors')->select(DB::raw('count(*) as countries, country'))->whereNotNUll('country')->groupBy('country')->get();
+            $data = [];
+            foreach ($os as $key => $item) {
+                $percent = (Visitor::where('country', '=', $item->country)->count() / $all) * 100;
+                $data[$key] = new stdClass();
+                $data[$key]->label = $item->country;
+                $data[$key]->value = round($percent);
+            }
+            Cache::put('countries', $data, 10);
+        } else {
+            $data = Cache::get('countries');
+        }
+        return response()->json($data, 200);
+    }
+
+    /**
+     * Estados Que Mais Acessam Ao Site
+     * @return JsonResponse
+     */
+    public function estates()
+    {
+        $all = Visitor::count();
+        if (!Cache::has('estates')) {
+            $os = DB::table('visitors')->select(DB::raw('count(*) as estates, estate'))->whereNotNUll('estate')->groupBy('estate')->get();
+            $data = [];
+            foreach ($os as $key => $item) {
+                $percent = (Visitor::where('estate', '=', $item->estate)->count() / $all) * 100;
+                $data[$key] = new stdClass();
+                $data[$key]->label = $item->estate;
+                $data[$key]->value = round($percent);
+            }
+            Cache::put('estates', $data, 10);
+        } else {
+            $data = Cache::get('estates');
         }
         return response()->json($data, 200);
     }
