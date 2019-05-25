@@ -4,8 +4,10 @@
             <div class="container clearfix">
                 <div class="big-notice onscroll-animate">
                     <h3>
-                        <span class="text-uppercase"><strong>{{ $settings->site_title }}</strong></span>
-                        Trabalho solicitado pelo docente Vanderlei Ienne, da disciplina Governança de Tecnologias da Informação
+                        <span class="text-uppercase">
+                            <strong>{{ $settings->site_title }}</strong>
+                        </span>
+                        Trab. solicitado pelo docente Vanderlei Ienne, disciplina Governança de Tecnologias da Informação
                     </h3>
                     <div class="onscroll-animate pull-right" data-delay="700" data-animation="flipInY">
                         <div class="button-container">
