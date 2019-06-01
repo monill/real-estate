@@ -65,7 +65,7 @@ class VisitorsController extends Controller
     {
         $all = Visitor::count();
         if (!Cache::has('cities')) {
-            $os = DB::table('visitors')->select(DB::raw('count(*) as cities, city'))->whereNotNUll('city')->groupBy('city')->get();
+            $os = DB::table('visitors')->select(DB::raw('count(*) as cities, city'))->where('country', '=', 'Brazil')->whereNotNUll('city')->groupBy('city')->get();
             $data = [];
             foreach ($os as $key => $item) {
                 $percent = (Visitor::where('city', '=', $item->city)->count() / $all) * 100;
@@ -111,7 +111,7 @@ class VisitorsController extends Controller
     {
         $all = Visitor::count();
         if (!Cache::has('estates')) {
-            $os = DB::table('visitors')->select(DB::raw('count(*) as estates, estate'))->whereNotNUll('estate')->groupBy('estate')->get();
+            $os = DB::table('visitors')->select(DB::raw('count(*) as estates, estate'))->where('country', '=', 'Brazil')->whereNotNUll('estate')->groupBy('estate')->get();
             $data = [];
             foreach ($os as $key => $item) {
                 $percent = (Visitor::where('estate', '=', $item->estate)->count() / $all) * 100;
