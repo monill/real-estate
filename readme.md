@@ -55,7 +55,7 @@ Edite o arquivo .env
 - DB_USERNAME=`seu usuario`
 - DB_PASSWORD=`sua senha ou deixe em branco caso não use`
 
-No Terminal novamente digite:
+Novamente no Terminal, digite:
 ```sh
 $ php artisan migrate "para migrar as tabelas"
 $ php artisan db:seed "para inserir os primeiros dados nas tabelas"
