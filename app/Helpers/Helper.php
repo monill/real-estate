@@ -130,7 +130,7 @@ if (!function_exists('diaMesAno')) {
  * Checa o URL que o usuário está navegando
  * Seta classe como active para página atual
  */
-if (!function_exists('currentPage')) {
+if (!function_exists('ativePage')) {
     function ativePage(string $url)
     {
         return request()->is($url) ? 'class=active' : '';
