@@ -14,8 +14,8 @@
 3. [Instalação](#instalação)
 4. [Pacotes](#pacotes)
 6. [Licença](#licença)
-7. [Site telas](https://github.com/joaorik/imobiliaria/blob/master/telas/SITE.md)
-7. [Dashboard telas](https://github.com/joaorik/imobiliaria/blob/master/telas/DASHBOARD.md)
+7. [SITE: Telas](https://github.com/joaorik/imobiliaria/blob/master/telas/SITE.md)
+7. [DASHBOARD: Telas](https://github.com/joaorik/imobiliaria/blob/master/telas/DASHBOARD.md)
 
 ## Introdução
 
