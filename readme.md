@@ -86,12 +86,12 @@ Fórum está atualmente estendido com os seguintes pacotes. Instruções sobre c
 
 | Pacote | Link |
 | ------ | ------ |
-| Eloquent-Sluggable | [https://github.com/cviebrock/eloquent-sluggable] |
 | Agent | [https://github.com/jenssegers/agent] |
+| Eloquent-Sluggable | [https://github.com/cviebrock/eloquent-sluggable] |
+| Intervention Image | [https://github.com/Intervention/image] |
 | Laravel Collective | [https://laravelcollective.com/docs/master/html] |
 | Laravel Debugbar | [https://github.com/barryvdh/laravel-debugbar] |
 | Reliese Laravel | [https://github.com/reliese/laravel] |
-| Intervention Image | [https://github.com/Intervention/image] |
 
 ## Licença
 
