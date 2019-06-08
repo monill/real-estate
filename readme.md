@@ -50,7 +50,7 @@ Usuários já cadastrado para testes e login:
 
 ## Instalação
 
-Usando [Laragon](https://laragon.org/download/_"Laragon"), já possúi todos os pacotes necessários, com Composer, MySQL ou MariaDB, PHP 7.2, entre outros.
+Usando [Laragon](https://laragon.org/download/){:target="_blank"}, já possúi todos os pacotes necessários, com Composer, MySQL ou MariaDB, PHP 7.2, entre outros.
 
 Windows, MacOS ou Linux:
 
