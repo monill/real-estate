@@ -98,5 +98,5 @@ Fórum está atualmente estendido com os seguintes pacotes. Instruções sobre c
 
 TADS Imobiliária é um software de código aberto licenciado sob a [GNU General Public License v3.0](https://github.com/joaorik/tracker/blob/master/LICENSE).
 
-
+## Página inicial
 ![Home](../master/telas/site/home.png)
