@@ -14,8 +14,8 @@
 3. [Instalação](#instalação)
 4. [Pacotes](#pacotes)
 6. [Licença](#licença)
-7. [Site telas](https://github.com/joaorik/tracker/blob/master/telas/SITE.md)
-7. [Dashboard telas](https://github.com/joaorik/tracker/blob/master/telas/SITE.md)
+7. [Site telas](https://github.com/joaorik/imobiliaria/blob/master/telas/SITE.md)
+7. [Dashboard telas](https://github.com/joaorik/imobiliaria/blob/master/telas/DASHBOARD.md)
 
 ## Introdução
 
@@ -50,7 +50,7 @@ Usuários já cadastrado para testes e login:
 
 ## Instalação
 
-Usando [Laragon](https://laragon.org/download/), já possúi todos os pacotes necessários, com Composer, MySQL ou MariaDB, PHP 7.2, entre outros.
+Usando [Laragon](https://laragon.org/download/_"Laragon"), já possúi todos os pacotes necessários, com Composer, MySQL ou MariaDB, PHP 7.2, entre outros.
 
 Windows, MacOS ou Linux:
 
@@ -86,7 +86,6 @@ Fórum está atualmente estendido com os seguintes pacotes. Instruções sobre c
 
 | Pacote | Link |
 | ------ | ------ |
-| Laravel-Toastr | [https://github.com/brian2694/laravel-toastr] |
 | Eloquent-Sluggable | [https://github.com/cviebrock/eloquent-sluggable] |
 | Agent | [https://github.com/jenssegers/agent] |
 | Laravel Collective | [https://laravelcollective.com/docs/master/html] |

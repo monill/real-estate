@@ -1,22 +1,33 @@
 # Telas
-## ---- Site ----
-### Home
-![Home](../master/telas/site/home.png)
+
+## ------ Site ------
+
+### Index
+![Home](/master/telas/site/home.png)
+
 ### Sobre
-![Sobre](../master/telas/site/sobre.png)
+![Sobre](/master/telas/site/sobre.png)
+
 ### Propriedades
-![Propriedades](../master/telas/site/propriedades.png)
+![Propriedades](/master/telas/site/propriedades.png)
+
 ### Propriedade seleciona
-![Propriedade](../master/telas/site/propriedade.png)
+![Propriedade](/master/telas/site/propriedade.png)
+
 ### Corretores
-![Corretores](../master/telas/site/corretores.png)
+![Corretores](/master/telas/site/corretores.png)
+
 ### Galeria
-![Galeria](../master/telas/site/galeria.png)
+![Galeria](/master/telas/site/galeria.png)
+
 ### Blogs
-![Blogs](../master/telas/site/blogs.png)
+![Blogs](/master/telas/site/blogs.png)
+
 ### Blog seleciona
-![Blog](../master/telas/site/blog.png)
+![Blog](/master/telas/site/blog.png)
+
 ### Contato
-![Contato](../master/telas/site/contato.png)
+![Contato](/master/telas/site/contato.png)
+
 ### Login
-![Login](../master/telas/site/login.png)
+![Login](/master/telas/site/login.png)
