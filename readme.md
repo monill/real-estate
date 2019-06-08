@@ -11,7 +11,7 @@
 
 1. [Introdução](#introdução)
 2. [Requisitos](#requisitos)
-3. [Instatação](#instatação)
+3. [Instalação](#instalação)
 4. [Pacotes](#pacotes)
 6. [Licença](#licença)
 7. [Site telas](https://github.com/joaorik/tracker/blob/master/telas/SITE.md)
