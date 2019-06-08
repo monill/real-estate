@@ -3,79 +3,79 @@
 ## ------ Dashboard ------
 
 ### Dashboard
-![Dashboard](/admin/dashboard.png)
+![Dashboard](/telas/admin/dashboard.png)
 
 ### Mensagens
-![Mensagens](/admin/mensagens.png)
+![Mensagens](/telas/admin/mensagens.png)
 
 ### Blogs
-![Blogs](/admin/blogs.png)
+![Blogs](/telas/admin/blogs.png)
 
 ### Blog add/edit
-![Blog-Add-Edit](/admin/blog-add-edit.png)
+![Blog-Add-Edit](/telas/admin/blog-add-edit.png)
 
 ### Tags
-![Tags](/admin/tags.png)
+![Tags](/telas/admin/tags.png)
 
 ### Comentários
-![Comentarios](/admin/comentarios.png)
+![Comentarios](/telas/admin/comentarios.png)
 
 ### Propriedades
-![Propriedades](/admin/propriedades.png)
+![Propriedades](/telas/admin/propriedades.png)
 
 ### Propriedade-Add-Edit
-![Propriedade-Add-Edit](/admin/propriedade-add-edit.png)
+![Propriedade-Add-Edit](/telas/admin/propriedade-add-edit.png)
 
 ### Propriedade-Add-Remove-Images
-![Propriedade-Add-Remove-Images](/admin/propriedade-add-remove-images.png)
+![Propriedade-Add-Remove-Images](/telas/admin/propriedade-add-remove-images.png)
 
 ### Categorias
-![Categorias](/admin/categorias.png)
+![Categorias](/telas/admin/categorias.png)
 
 ### Características
-![Caracteristicas](/admin/caracteristicas.png)
+![Caracteristicas](/telas/admin/caracteristicas.png)
 
 ### Dúvidas
-![Duvidas](/admin/duvidas.png)
+![Duvidas](/telas/admin/duvidas.png)
 
 ### Dúvida
-![Duvida](/admin/duvida.png)
+![Duvida](/telas/admin/duvida.png)
 
 ### Corretores
-![Corretores](/admin/corretores.png)
+![Corretores](/telas/admin/corretores.png)
 
 ### Corretores-Add-Edit
-![Corretores-Add-Edit](/admin/corretores-add-edit.png)
+![Corretores-Add-Edit](/telas/admin/corretores-add-edit.png)
 
 ### Serviços
-![Servicos](/admin/servicos.png)
+![Servicos](/telas/admin/servicos.png)
 
 ### Serviço-Add-Edit
-![Servico-Add-Edit](/admin/servico-add-edit.png)
+![Servico-Add-Edit](/telas/admin/servico-add-edit.png)
 
 ### Newsletters
-![Newsletters](/admin/newsletters.png)
+![Newsletters](/telas/admin/newsletters.png)
 
 ### Config. Geral
-![Config. Geral](/admin/config-geral.png)
+![Config. Geral](/telas/admin/config-geral.png)
 
 ### Config. Social
-![Config. Social](/admin/config-social.png)
+![Config. Social](/telas/admin/config-social.png)
 
 ### Config. Analytics
-![Config. Analytics](/admin/config-analytics.png)
+![Config. Analytics](/telas/admin/config-analytics.png)
 
 ### Config. Empresa
-![Config. Empresa](/admin/config-empresa.png)
+![Config. Empresa](/telas/admin/config-empresa.png)
 
 ### Config. Maps
-![Config. Maps](/admin/config-maps.png)
+![Config. Maps](/telas/admin/config-maps.png)
 
 ### Config. Termos
-![Config. Termos](/admin/config-termos.png)
+![Config. Termos](/telas/admin/config-termos.png)
 
 ### Visitantes
-![Visitantes](/admin/visitantes.png)
+![Visitantes](/telas/admin/visitantes.png)
 
 ### Logs
-![Logs](/admin/logs.png)
+![Logs](/telas/admin/logs.png)

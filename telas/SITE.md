@@ -3,31 +3,31 @@
 ## ------ Site ------
 
 ### Index
-![Home](/site/home.png)
+![Home](/telas/site/home.png)
 
 ### Sobre
-![Sobre](/site/sobre.png)
+![Sobre](/telas/site/sobre.png)
 
 ### Propriedades
-![Propriedades](/site/propriedades.png)
+![Propriedades](/telas/site/propriedades.png)
 
 ### Propriedade seleciona
-![Propriedade](/site/propriedade.png)
+![Propriedade](/telas/site/propriedade.png)
 
 ### Corretores
-![Corretores](/site/corretores.png)
+![Corretores](/telas/site/corretores.png)
 
 ### Galeria
-![Galeria](/site/galeria.png)
+![Galeria](/telas/site/galeria.png)
 
 ### Blogs
-![Blogs](/site/blogs.png)
+![Blogs](/telas/site/blogs.png)
 
 ### Blog seleciona
-![Blog](/site/blog.png)
+![Blog](/telas/site/blog.png)
 
 ### Contato
-![Contato](/site/contato.png)
+![Contato](/telas/site/contato.png)
 
 ### Login
-![Login](/site/login.png)
+![Login](/telas/site/login.png)
