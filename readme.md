@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)]()
 [![Build Status](https://poser.pugx.org/laravel/framework/v/stable.svg)]()
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)]()
-[![Website](https://img.shields.io/website-up-down-green-red/http/myfakewebsitethatshouldnotexist.at.least.i.hope.svg)](http://tadsimobiliaria.tk/)
+[![Website tadsimobiliaria.tk](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)](http://tadsimobiliaria.tk/)
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/joaorik/imobiliaria/blob/master/LICENSE)
 [![GitHub version](https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg)]()
 
@@ -98,4 +98,4 @@ Fórum está atualmente estendido com os seguintes pacotes. Instruções sobre c
 TADS Imobiliária é um software de código aberto licenciado sob a [GNU General Public License v3.0](https://github.com/joaorik/tracker/blob/master/LICENSE).
 
 ## Página inicial
-![Home](../master/telas/site/home.png)
+![Index](../master/telas/site/home.png)

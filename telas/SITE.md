@@ -3,7 +3,7 @@
 ## ------ Site ------
 
 ### Index
-![Home](/telas/site/home.png)
+![Index](/telas/site/home.png)
 
 ### Sobre
 ![Sobre](/telas/site/sobre.png)
