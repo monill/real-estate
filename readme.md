@@ -1,14 +1,25 @@
 # TADS Imobiliária
 
-
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)]()
 [![Build Status](https://poser.pugx.org/laravel/framework/v/stable.svg)]()
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)]()
+[![Website](https://img.shields.io/website-up-down-green-red/http/myfakewebsitethatshouldnotexist.at.least.i.hope.svg)](http://tadsimobiliaria.tk/)
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/joaorik/imobiliaria/blob/master/LICENSE)
+[![GitHub version](https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg)]()
 
+## Resumo
+
+1. [Introdução](#introdução)
+2. [Requisitos](#requisitos)
+3. [Instatação](#instatação)
+4. [Pacotes](#pacotes)
+6. [Licença](#licença)
+7. [Site telas](https://github.com/joaorik/tracker/blob/master/telas/SITE.md)
+7. [Dashboard telas](https://github.com/joaorik/tracker/blob/master/telas/SITE.md)
+
+## Introdução
 
 Anhanguera - 1º Semestre de 2019
-
-Site Hospedado para melhor visualização e avaliação do que foi descrito em documentação.
-Hospedagem: http://tadsimobiliaria.tk/
 
 Trabalho solicitado pelo docente Vanderlei Ienne, da disciplina de Governança de Tecnologias da Informação, para fins de avaliação, do curso de Análise e Desenvolvimento de Sistemas.
 
@@ -18,7 +29,7 @@ Usuários já cadastrado para testes e login:
  - pedro.almeida@imob.com.br : g1g2g3
  - roberto.santos@imob.com.br : m1m2m3
 
-### Requisitos: *
+## Requisitos
 - Web server: Apache2 ou Nginx
 - PHP: 7.2 ou superior
 - Dependências para PHP:
@@ -37,9 +48,9 @@ Usuários já cadastrado para testes e login:
 - MySQL >= 5.7 ou MariaDB >= 10.2
 - Um servidor dedicado decente. Não tente executar isso em algum servidor de baixa qualidade!
 
-### Como instalar:
+## Instalação
 
-Usando [Laragon](https://laragon.org/download/ "Laragon"), já possúi todos os pacotes necessários, com Composer, MySQL ou MariaDB, PHP 7.2, entre outros.
+Usando [Laragon](https://laragon.org/download/), já possúi todos os pacotes necessários, com Composer, MySQL ou MariaDB, PHP 7.2, entre outros.
 
 Windows, MacOS ou Linux:
 
@@ -69,7 +80,7 @@ Para rodar em máquina local, no Terminal digite:
 $ php artisan serve "para rodar como localhost:8000"
 ```
 
-### Pacotes usados
+## Pacotes
 
 Fórum está atualmente estendido com os seguintes pacotes. Instruções sobre como usá-las em sua própria aplicação estão vinculadas abaixo.
 
@@ -83,84 +94,9 @@ Fórum está atualmente estendido com os seguintes pacotes. Instruções sobre c
 | Reliese Laravel | [https://github.com/reliese/laravel] |
 | Intervention Image | [https://github.com/Intervention/image] |
 
-Licença
-----
+## Licença
 
-Desenvolvimento particular/proprietário, venda ou modificação não autorizado.
+TADS Imobiliária é um software de código aberto licenciado sob a [GNU General Public License v3.0](https://github.com/joaorik/tracker/blob/master/LICENSE).
 
-# Telas
-## ---- Site ----
-### Home
+
 ![Home](../master/telas/site/home.png)
-### Sobre
-![Sobre](../master/telas/site/sobre.png)
-### Propriedades
-![Propriedades](../master/telas/site/propriedades.png)
-### Propriedade seleciona
-![Propriedade](../master/telas/site/propriedade.png)
-### Corretores
-![Corretores](../master/telas/site/corretores.png)
-### Galeria
-![Galeria](../master/telas/site/galeria.png)
-### Blogs
-![Blogs](../master/telas/site/blogs.png)
-### Blog seleciona
-![Blog](../master/telas/site/blog.png)
-### Contato
-![Contato](../master/telas/site/contato.png)
-### Login
-![Login](../master/telas/site/login.png)
-
-## ---- Dashboard ----
-### Dashboard
-![Dashboard](../master/telas/admin/dashboard.png)
-### Mensagens
-![Mensagens](../master/telas/admin/mensagens.png)
-### Blogs
-![Blogs](../master/telas/admin/blogs.png)
-### Blog add/edit
-![Blog-Add-Edit](../master/telas/admin/blog-add-edit.png)
-### Tags
-![Tags](../master/telas/admin/tags.png)
-### Comentários
-![Comentarios](../master/telas/admin/comentarios.png)
-### Propriedades
-![Propriedades](../master/telas/admin/propriedades.png)
-### Propriedade-Add-Edit
-![Propriedade-Add-Edit](../master/telas/admin/propriedade-add-edit.png)
-### Propriedade-Add-Remove-Images
-![Propriedade-Add-Remove-Images](../master/telas/admin/propriedade-add-remove-images.png)
-### Categorias
-![Categorias](../master/telas/admin/categorias.png)
-### Características
-![Caracteristicas](../master/telas/admin/caracteristicas.png)
-### Dúvidas
-![Duvidas](../master/telas/admin/duvidas.png)
-### Dúvida
-![Duvida](../master/telas/admin/duvida.png)
-### Corretores
-![Corretores](../master/telas/admin/corretores.png)
-### Corretores-Add-Edit
-![Corretores-Add-Edit](../master/telas/admin/corretores-add-edit.png)
-### Serviços
-![Servicos](../master/telas/admin/servicos.png)
-### Serviço-Add-Edit
-![Servico-Add-Edit](../master/telas/admin/servico-add-edit.png)
-### Newsletters
-![Newsletters](../master/telas/admin/newsletters.png)
-### Config. Geral
-![Config. Geral](../master/telas/admin/config-geral.png)
-### Config. Social
-![Config. Social](../master/telas/admin/config-social.png)
-### Config. Analytics
-![Config. Analytics](../master/telas/admin/config-analytics.png)
-### Config. Empresa
-![Config. Empresa](../master/telas/admin/config-empresa.png)
-### Config. Maps
-![Config. Maps](../master/telas/admin/config-maps.png)
-### Config. Termos
-![Config. Termos](../master/telas/admin/config-termos.png)
-### Visitantes
-![Visitantes](../master/telas/admin/visitantes.png)
-### Logs
-![Logs](../master/telas/admin/logs.png)
