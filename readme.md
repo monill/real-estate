@@ -1,6 +1,6 @@
 # TADS Imobiliária
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/176aebc348a2493791c56a8ec1c84146)](https://www.codacy.com/app/monil/imobiliaria?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=monill/imobiliaria&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d0326e1051a342739c13de788884e972)](https://www.codacy.com/app/monil/imobiliaria?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=monill/imobiliaria&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)]()
 [![Build Status](https://poser.pugx.org/laravel/framework/v/stable.svg)]()
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)]()
