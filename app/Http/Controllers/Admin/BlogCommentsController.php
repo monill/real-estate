@@ -33,9 +33,9 @@ class BlogCommentsController extends Controller
     /**
      * Aprova/Desaprova comentário feito sobre o blog postado
      */
-    public function update($id)
+    public function update($comment_id)
     {
-        $comment = Comment::findOrFail($id);
+        $comment = Comment::findOrFail($comment_id);
         $comment->allowed = !$comment->allowed;
         $comment->update();
 
@@ -46,9 +46,9 @@ class BlogCommentsController extends Controller
     /**
      * Deleta o comentário do banco
      */
-    public function destroy($id)
+    public function destroy($comment_id)
     {
-        Comment::findOrFail($id)->delete();
+        Comment::findOrFail($comment_id)->delete();
         $this->log->log('Usuario(a) deletou comentario');
         return redirect()->to('comments');
     }

@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\DB;
 class PropertiesController extends Controller
 {
     /**
-    * @return JsonResponse
-    *
-    * Exibindo número de propriedades que estão disponeis por ano
-    * para Locação/Venda e somando o total de propriedades do ano
-    */
+     * @return JsonResponse
+     *
+     * Exibindo número de propriedades que estão disponeis por ano
+     * para Locação/Venda e somando o total de propriedades do ano
+     */
     public function years()
     {
         $year = date('Y');

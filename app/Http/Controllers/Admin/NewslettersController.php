@@ -33,9 +33,9 @@ class NewslettersController extends Controller
     /**
      * Deleta newsletter do banco
      */
-    public function destroy($id)
+    public function destroy($news_id)
     {
-        Newsletter::findOrFail($id)->delete();
+        Newsletter::findOrFail($news_id)->delete();
         $this->log->log('Usuario(a) deletou um e-mail do newsletter');
         return redirect()->to('newsletters');
     }

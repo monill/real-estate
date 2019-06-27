@@ -104,21 +104,21 @@ class PropertiesController extends Controller
     /**
      * Edita a propriedade cadastrada
      */
-    public function edit($id)
+    public function edit($property_id)
     {
-        $property = Property::findOrFail($id);
+        $property = Property::findOrFail($property_id);
         $features = Feature::all();//->pluck('name', 'id');
         $categories = Category::all()->pluck('name', 'id');
-        $destaque = DB::table('property_features')->where('property_features.property_id', $id)->pluck('property_features.feature_id', 'property_features.feature_id')->all();
+        $destaque = DB::table('property_features')->where('property_features.property_id', $property_id)->pluck('property_features.feature_id', 'property_features.feature_id')->all();
         return view('admin.properties.edit', compact('property', 'features', 'categories', 'destaque'));
     }
 
     /**
      * Atualiza a propriedade cadastrada
      */
-    public function update(PropertiesRequest $request, $id)
+    public function update(PropertiesRequest $request, $property_id)
     {
-        $property = Property::findOrFail($id);
+        $property = Property::findOrFail($property_id);
         $property->user_id = auth()->user()->id;
         $property->category_id = $request->input('category_id');
         $property->name = $request->input('name');
@@ -150,10 +150,10 @@ class PropertiesController extends Controller
     /**
      * Deleta a propriedade cadastrada
      */
-    public function destroy($id)
+    public function destroy($property_id)
     {
-        Property::findOrFail($id)->delete();
-        $this->imageFile->removeDirectory($this->photosPath, $id);
+        Property::findOrFail($property_id)->delete();
+        $this->imageFile->removeDirectory($this->photosPath, $property_id);
         $this->log->log('Usuario(a) deletou uma propriedade.');
         return redirect()->to('properties');
     }
@@ -206,10 +206,10 @@ class PropertiesController extends Controller
     /**
      * Adiciona ou remove imagem da propriedade
      */
-    public function images($id)
+    public function images($property_id)
     {
-        $property = Property::findOrFail($id);
-        $images = PropertyImage::where('property_id', '=', $id)->get();
+        $property = Property::findOrFail($property_id);
+        $images = PropertyImage::where('property_id', '=', $property_id)->get();
         return view('admin.properties.images', compact('property', 'images'));
     }
 
@@ -246,9 +246,9 @@ class PropertiesController extends Controller
     /**
      * Deleta imagem selecionada
      */
-    public function deleteImage($id)
+    public function deleteImage($property_id)
     {
-        $uploaded_image = PropertyImage::where('id', '=', $id)->first();
+        $uploaded_image = PropertyImage::where('id', '=', $property_id)->first();
 
         //caso o ID recebido nao exista, retorna mensagem
         if (!$uploaded_image) {
@@ -292,9 +292,9 @@ class PropertiesController extends Controller
     /**
      * Alterar valor true ou false para o campo featured
      */
-    public function feature($id)
+    public function feature($property_id)
     {
-        $property = Property::findOrFail($id);
+        $property = Property::findOrFail($property_id);
         $property->featured = !$property->featured;
         $property->update();
 
@@ -305,9 +305,9 @@ class PropertiesController extends Controller
     /**
      * Adiciona ou remove como Slider na página Inicial
      */
-    public function slider($id)
+    public function slider($property_id)
     {
-        $property = Property::findOrFail($id);
+        $property = Property::findOrFail($property_id);
         $property->slider = !$property->slider;
         $property->update();
 

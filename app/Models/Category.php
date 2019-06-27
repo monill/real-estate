@@ -11,15 +11,15 @@ class Category extends Eloquent
 
     protected $table = 'categories';
 
-	protected $casts = [
-		'views' => 'int'
-	];
+    protected $casts = [
+        'views' => 'int'
+    ];
 
-	protected $fillable = [
-		'name',
-		'slug',
-		'views'
-	];
+    protected $fillable = [
+        'name',
+        'slug',
+        'views'
+    ];
 
     public function sluggable()
     {
@@ -30,8 +30,8 @@ class Category extends Eloquent
         ];
     }
 
-	public function properties()
-	{
-		return $this->hasMany(\App\Models\Property::class);
-	}
+    public function properties()
+    {
+        return $this->hasMany(\App\Models\Property::class);
+    }
 }

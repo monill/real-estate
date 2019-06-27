@@ -9,17 +9,17 @@ class Message extends Eloquent
 {
     protected $table = 'messages';
 
-	protected $casts = [
-		'unread' => 'bool'
-	];
+    protected $casts = [
+        'unread' => 'bool'
+    ];
 
-	protected $fillable = [
-		'name',
-		'email',
-		'phone',
-		'subject',
-		'message',
-		'ip',
-		'unread'
-	];
+    protected $fillable = [
+        'name',
+        'email',
+        'phone',
+        'subject',
+        'message',
+        'ip',
+        'unread'
+    ];
 }

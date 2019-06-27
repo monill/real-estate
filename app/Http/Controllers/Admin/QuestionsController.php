@@ -37,9 +37,9 @@ class QuestionsController extends Controller
      * Exibe dúvida seleciona
      * Marca dúvida como lida
      */
-    public function show($id)
+    public function show($question_id)
     {
-        $question = Question::findOrFail($id);
+        $question = Question::findOrFail($question_id);
         $question->unread = true;
         $question->update();
 
@@ -50,9 +50,9 @@ class QuestionsController extends Controller
     /**
      * Deleta Dúvida do banco
      */
-    public function destroy($id)
+    public function destroy($question_id)
     {
-        Question::findOrFail($id)->delete();
+        Question::findOrFail($question_id)->delete();
         $this->log->log('Usuario(a) deletou uma pergunta');
         return redirect()->to('questions');
     }

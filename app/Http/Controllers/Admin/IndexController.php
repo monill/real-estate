@@ -39,15 +39,15 @@ class IndexController extends Controller
         $totalForSale = DB::table('properties')->where('purpose', '=', 2)->sum('price'); //soma o preço de todas as propriedades para Venda
 
         $compact = [
-            'totalProperties',
-            'forRent',
-            'forSale',
-            'totalVisitors',
-            'topFiveProperties',
-            'topThreeBlogs',
-            'lastThreeBlogs',
-            'totalForRent',
-            'totalForSale'
+            'totalProperties' => $totalProperties,
+            'forRent' => $forRent,
+            'forSale' => $forSale,
+            'totalVisitors' => $totalVisitors,
+            'topFiveProperties' => $topFiveProperties,
+            'topThreeBlogs' => $topThreeBlogs,
+            'lastThreeBlogs' => $lastThreeBlogs,
+            'totalForRent' => $totalForRent,
+            'totalForSale' => $totalForSale
         ];
         return view('admin.dashboard.index', compact($compact));
     }

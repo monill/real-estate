@@ -36,9 +36,9 @@ class MessagesController extends Controller
      * Exibe a mensagem seleciona
      * Marca mensagem como lida
      */
-    public function show($id)
+    public function show($message_id)
     {
-        $message = Message::findOrFail($id);
+        $message = Message::findOrFail($message_id);
         $message->unread = true;
         $message->update();
 
@@ -49,9 +49,9 @@ class MessagesController extends Controller
     /**
      * Deleta mensagem do banco
      */
-    public function destroy($id)
+    public function destroy($message_id)
     {
-        Message::findOrFail($id)->delete();
+        Message::findOrFail($message_id)->delete();
         $this->log->log('Usuario(a) deletou uma mensagem');
         return redirect()->to('messages');
     }

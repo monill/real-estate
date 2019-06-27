@@ -8,13 +8,13 @@ class Feature extends Eloquent
 {
     protected $table = 'features';
 
-	protected $fillable = [
-		'name'
-	];
+    protected $fillable = [
+        'name'
+    ];
 
-	public function properties()
-	{
-		return $this->belongsToMany(\App\Models\Property::class, 'property_features')
-					->withPivot('id');
-	}
+    public function properties()
+    {
+        return $this->belongsToMany(\App\Models\Property::class, 'property_features')
+            ->withPivot('id');
+    }
 }

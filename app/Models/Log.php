@@ -40,7 +40,7 @@ class Log extends Eloquent
         return self::create([
             'user_id' => auth()->user()->id,
             'content' => $content,
-            'ip' => getIP(),
+            'ip' => request()->ip(),
             'browser' => $agent->browser() ? $agent->browser() : NULL,
             'system' => $agent->platform() ? $agent->platform() : NULL,
             'device' => $agent->device() ? $agent->device() : NULL,

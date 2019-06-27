@@ -6,9 +6,9 @@ use Illuminate\Support\Facades\File;
 use Intervention\Image\ImageManagerStatic as Image;
 
 /**
-* Upload da imagem
-* Criação/Exclusão de diretório
-**/
+ * Upload da imagem
+ * Criação/Exclusão de diretório
+ **/
 class ImageFile
 {
     /**
@@ -17,11 +17,11 @@ class ImageFile
      * Checa com a função pathExist
      * Salva a imagem no local passado por parametro
      */
-    public function uploadImage($path, $id, $filename, $image)
+    public function uploadImage($path, $folder_id, $filename, $image)
     {
-        $this->pathExist($path, $id);
+        $this->pathExist($path, $folder_id);
 
-        $local = $path . $id . '/';
+        $local = $path . $folder_id . '/';
 
         $imageMake = Image::make($image);
 
@@ -32,31 +32,31 @@ class ImageFile
      * Deleta somente uma imagem
      * Recebe o diretório e nome do arquivo como parametro
      */
-    public function removeImage($path, $id, $filename)
+    public function removeImage($path, $folder_id, $filename)
     {
-        if (File::exists($path . $id . '/' . $filename)) {
-            //File::deleteDirectory($path . $id . '/' . $filename);
-            unlink($path . $id . '/' . $filename);
+        if (File::exists($path . $folder_id . '/' . $filename)) {
+            //File::deleteDirectory($path . $folder_id . '/' . $filename);
+            unlink($path . $folder_id . '/' . $filename);
         }
     }
 
     /**
      * Delete o diretório e todo conteudo dentro
      */
-    public function removeDirectory($path, $id)
+    public function removeDirectory($path, $folder_id)
     {
-        if (File::exists($path . $id)) {
-            File::deleteDirectory($path . $id);
-            //unlink($path . $id);
+        if (File::exists($path . $folder_id)) {
+            File::deleteDirectory($path . $folder_id);
+            //unlink($path . $folder_id);
         }
     }
 
     /**
      * Checa se o diretório existe, caso contrário o cria com nome do ID
      */
-    public function pathExist($path, $id)
+    public function pathExist($path, $folder_id)
     {
-        $path = $path . $id . '/';
+        $path = $path . $folder_id . '/';
 
         if (!file_exists($path) && !is_dir($path)) {
             mkdir($path, 0777, true);

@@ -80,18 +80,18 @@ class UsersController extends Controller
     /**
      * Página para editar corretor(a)
      */
-    public function edit($id)
+    public function edit($user_id)
     {
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($user_id);
         return view('admin.users.edit', compact('user'));
     }
 
     /**
      * Atualiza os dados no banco
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $user_id)
     {
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($user_id);
         $user->name = $request->input('name');
 
         //somente quem for Admin ou mesmo usuário da conta pode alterar a senha
@@ -104,7 +104,7 @@ class UsersController extends Controller
         //Image
         $img = $request->file('avatar');
         if ($img != null) {
-            $this->imageFile->removeImage($this->photosPath, $id, $user->avatar); //remove a imagem antiga
+            $this->imageFile->removeImage($this->photosPath, $user_id, $user->avatar); //remove a imagem antiga
             $filename = md5Gen() . '.' . $img->getClientOriginalExtension(); //recebe nome aleatório e a extensão do arquivo
         } else {
             $filename = $user->avatar; //se o usuario nao atualizar a imagem o nome e extensão continua igual
@@ -118,7 +118,7 @@ class UsersController extends Controller
         $user->update();
 
         if ($img != null) {
-            $this->imageFile->uploadImage($this->photosPath, $id, $filename, $img); //upload da imagem
+            $this->imageFile->uploadImage($this->photosPath, $user_id, $filename, $img); //upload da imagem
         }
 
         $this->log->log('Usuario(a) atualizou sua conta ou de outro usuario');
@@ -129,10 +129,10 @@ class UsersController extends Controller
      * Delete a conta cadastrada
      * Remove o diretório junto com a imagem
      */
-    public function destroy($id)
+    public function destroy($user_id)
     {
-        User::findOrFail($id)->delete();
-        $this->imageFile->removeDirectory($this->photosPath, $id);
+        User::findOrFail($user_id)->delete();
+        $this->imageFile->removeDirectory($this->photosPath, $user_id);
         $this->log->log('Usuario(a) deletou uma conta');
         return redirect()->to('users');
     }

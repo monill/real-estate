@@ -46,7 +46,7 @@ class TagsController extends Controller
     /**
      * Atualiza no banco
      */
-    public function update(TagsRequest $request, $id)
+    public function update(TagsRequest $request)
     {
         if ($request->ajax()) {
             $pk = $request->get('pk');
@@ -64,9 +64,9 @@ class TagsController extends Controller
     /**
      * Delete no banco
      */
-    public function destroy($id)
+    public function destroy($tag_id)
     {
-        Tag::findOrFail($id)->delete();
+        Tag::findOrFail($tag_id)->delete();
         $this->log->log('Usuario(a) deletou Tag');
         return redirect()->to('tags');
     }

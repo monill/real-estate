@@ -55,18 +55,18 @@ class ServicesController extends Controller
     /**
      * Edita serviço
      */
-    public function edit($id)
+    public function edit($service_id)
     {
-        $service = Service::findOrFail($id);
+        $service = Service::findOrFail($service_id);
         return view('admin.services.edit', compact('service'));
     }
 
     /**
      * Atualiza serviço no banco
      */
-    public function update(ServicesRequest $request, $id)
+    public function update(ServicesRequest $request, $service_id)
     {
-        $service = Service::findOrFail($id);
+        $service = Service::findOrFail($service_id);
         $service->update($request->except('_token'));
         $this->log->log('Usuario(a) atualizou serviço');
         return redirect()->to('services');
@@ -75,9 +75,9 @@ class ServicesController extends Controller
     /**
      * Deleta serviço do banco
      */
-    public function destroy($id)
+    public function destroy($service_id)
     {
-        Service::findOrFail($id)->delete();
+        Service::findOrFail($service_id)->delete();
         $this->log->log('Usuario(a) deletou serviço');
         return redirect()->to('services');
     }

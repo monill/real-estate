@@ -8,13 +8,13 @@ class Newsletter extends Eloquent
 {
     protected $table = 'newsletters';
 
-	protected $casts = [
-		'accept' => 'bool'
-	];
+    protected $casts = [
+        'accept' => 'bool'
+    ];
 
-	protected $fillable = [
-		'name',
-		'email',
-		'accept'
-	];
+    protected $fillable = [
+        'name',
+        'email',
+        'accept'
+    ];
 }

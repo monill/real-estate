@@ -11,15 +11,15 @@ class Tag extends Eloquent
 
     protected $table = 'tags';
 
-	protected $casts = [
-		'views' => 'int'
-	];
+    protected $casts = [
+        'views' => 'int'
+    ];
 
-	protected $fillable = [
-		'name',
-		'slug',
-		'views'
-	];
+    protected $fillable = [
+        'name',
+        'slug',
+        'views'
+    ];
 
     public function sluggable()
     {
@@ -30,9 +30,9 @@ class Tag extends Eloquent
         ];
     }
 
-	public function blogs()
-	{
-		return $this->belongsToMany(\App\Models\Blog::class, 'blog_tags')
-					->withPivot('id');
-	}
+    public function blogs()
+    {
+        return $this->belongsToMany(\App\Models\Blog::class, 'blog_tags')
+            ->withPivot('id');
+    }
 }

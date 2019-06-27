@@ -35,7 +35,7 @@ class IndexController extends Controller
             Newsletter::create([
                 'name' => $request->input('name'),
                 'email' => $request->input('email'),
-                'ip' => getIP()
+                'ip' => $request->ip()
             ]);
 
             //flash('E-mail cadastrado com sucesso!')->success();

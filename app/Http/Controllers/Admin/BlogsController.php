@@ -96,9 +96,9 @@ class BlogsController extends Controller
     /**
      * Edita o Blog
      */
-    public function edit($id)
+    public function edit($blog_id)
     {
-        $blog = Blog::findOrFail($id);
+        $blog = Blog::findOrFail($blog_id);
         $tags = Tag::all()->pluck('name', 'id');
         return view('admin.blogs.edit', compact('blog', 'tags'));
     }
@@ -106,16 +106,16 @@ class BlogsController extends Controller
     /**
      * Atualiza no banco
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $blog_id)
     {
-        $blog = Blog::findOrFail($id);
+        $blog = Blog::findOrFail($blog_id);
         $blog->user_id = auth()->user()->id; //pega o ID do usuário logado
         $blog->title = $request->input('title');
 
         //Image
         $img = $request->file('image');
         if ($img != null) {
-            $this->imageFile->removeImage($this->photosPath, $id, $blog->image); //remove a imagem antiga
+            $this->imageFile->removeImage($this->photosPath, $blog_id, $blog->image); //remove a imagem antiga
             $filename = md5Gen() . '.' . $img->getClientOriginalExtension(); //recebe nome aleatório e a extensão do arquivo
         } else {
             $filename = $blog->image; //se o usuario nao atualizar a imagem o nome e extensão continua igual
@@ -133,7 +133,7 @@ class BlogsController extends Controller
         $blog->update();
 
         if ($img != null) {
-            $this->imageFile->uploadImage($this->photosPath, $id, $filename, $img); //upload da imagem
+            $this->imageFile->uploadImage($this->photosPath, $blog_id, $filename, $img); //upload da imagem
         }
 
         $this->log->log('Usuario(a) atualizou blog');
@@ -144,10 +144,10 @@ class BlogsController extends Controller
      * Deleta o Blog
      * Deleta o diretório da imagem do blog
      */
-    public function destroy($id)
+    public function destroy($blog_id)
     {
-        Blog::findOrFail($id)->delete();
-        $this->imageFile->removeDirectory($this->photosPath, $id);
+        Blog::findOrFail($blog_id)->delete();
+        $this->imageFile->removeDirectory($this->photosPath, $blog_id);
         $this->log->log('Usuario(a) deletou blog');
         return redirect()->to('blogs');
     }
@@ -155,9 +155,9 @@ class BlogsController extends Controller
     /**
      * Publica ou coloca blog em modo rascunho
      */
-    public function publishOnOff($id)
+    public function publishOnOff($blog_id)
     {
-        $blog = Blog::findOrFail($id);
+        $blog = Blog::findOrFail($blog_id);
         $blog->published = !$blog->published;
         $blog->update();
 

@@ -46,7 +46,7 @@ class CategoriesController extends Controller
     /**
      * Atualiza no banco
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         if ($request->ajax()) {
             $pk = $request->get('pk');
@@ -63,9 +63,9 @@ class CategoriesController extends Controller
     /**
      * Deleta do banco
      */
-    public function destroy($id)
+    public function destroy($category_id)
     {
-        Category::findOrFail($id)->delete();
+        Category::findOrFail($category_id)->delete();
         $this->log->log('Usuario(a) deletou categoria');
         return redirect()->to('categories');
     }

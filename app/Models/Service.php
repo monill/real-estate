@@ -8,8 +8,8 @@ class Service extends Eloquent
 {
     protected $table = 'services';
 
-	protected $fillable = [
-		'title',
-		'content'
-	];
+    protected $fillable = [
+        'title',
+        'content'
+    ];
 }

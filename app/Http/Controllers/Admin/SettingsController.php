@@ -34,9 +34,9 @@ class SettingsController extends Controller
     /**
      * Atualiza configurações no banco
      */
-    public function update(SettingsRequest $request, $id)
+    public function update(SettingsRequest $request, $setting_id)
     {
-        $setting = Setting::findOrFail($id);
+        $setting = Setting::findOrFail($setting_id);
         $setting->site_title = $request->input('site_title');
         $setting->meta_keywords = $request->input('meta_keywords');
         $setting->meta_description = $request->input('meta_description');

@@ -29,9 +29,9 @@ class LogsController extends Controller
     /**
      * Deleta o log do banco
      */
-    public function destroy($id)
+    public function destroy($log_id)
     {
-        Log::findOrFail($id)->delete();
+        Log::findOrFail($log_id)->delete();
         return redirect()->to('logs');
     }
 }

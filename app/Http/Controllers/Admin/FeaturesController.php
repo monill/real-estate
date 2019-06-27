@@ -47,7 +47,7 @@ class FeaturesController extends Controller
     /**
      * Atualiza no banco
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
         if ($request->ajax()) {
             DB::table('features')
@@ -63,9 +63,9 @@ class FeaturesController extends Controller
     /**
      * Deleta do banco
      */
-    public function destroy($id)
+    public function destroy($feature_id)
     {
-        Feature::findOrFail($id)->delete();
+        Feature::findOrFail($feature_id)->delete();
         $this->log->log('Usuario(a) deletou um caracteristica');
         return redirect()->to('features');
     }

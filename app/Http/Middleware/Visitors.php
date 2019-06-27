@@ -19,7 +19,7 @@ class Visitors
     public function handle($request, Closure $next)
     {
         $agent = new Agent();
-        $clientIP = getIP();
+        $clientIP = $request->ip();
         $client = json_decode(@file_get_contents('http://ip-api.com/json/' . $clientIP), true);
 
         if (!$request->session()->has('visitor.' . $clientIP)) {
