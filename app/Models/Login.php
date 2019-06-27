@@ -32,7 +32,7 @@ class Login extends Eloquent
         return $this->belongsTo(\App\User::class);
     }
 
-    public static function novo($user_id, $ip)
+    public static function novo($user_id)
     {
         $agent = new Agent();
 
