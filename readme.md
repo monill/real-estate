@@ -1,5 +1,13 @@
 # Tads Imobiliária
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/d0326e1051a342739c13de788884e972)](https://www.codacy.com/app/monil/imobiliaria?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=monill/imobiliaria&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)]()
+[![Build Status](https://poser.pugx.org/laravel/framework/v/stable.svg)]()
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)]()
+[![Website](https://img.shields.io/website-up-down-green-red/http/shields.io.svg)]()
+[![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](/LICENSE)
+[![GitHub version](https://badge.fury.io/gh/Naereen%2FStrapDown.js.svg)]()
+
 ## Resumo
 
  1. [Introducao](#introducao)
