@@ -78,4 +78,4 @@ TADS Imobiliária está atualmente estendido com os seguintes pacotes. Instruç�
 TADS Imobiliária é um software de código aberto licenciado sob a [GNU GPL v3.0](/master/LICENSE).
 
 ## Página Inicial
-![Index](/master/telas/site/home.png)
+![Index](/telas/site/home.png)
