@@ -7,8 +7,8 @@
  3. [Instalacao](#instalacao)
  4. [Pacotes](#pacotes)
  5. [Licenca](#licenca)
- 6. [Telas: Site](/master/telas/Site.md)
- 7. [Telas: Dashboard](/master/telas/Dashboard.md)
+ 6. [Telas: Site](/telas/Site.md)
+ 7. [Telas: Dashboard](/telas/Dashboard.md)
 
 ## Introducao
 
