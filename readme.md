@@ -33,7 +33,7 @@ Usuários já cadastrados para testes e login:
  - Um servidor dedicado decente. Não tente executar isso em algum servidor de baixa qualidade!
 
 ## Instalacao
-Usando [Laragon](https://laragon.org/download/):
+Recomendo [Laragon](https://laragon.org/download/).
 Já possúi todos os pacotes necessários, com Composer, MySQL ou MariaDB, PHP 7.2, entre outros. 
 
 Windows, MacOS ou Linux:
@@ -75,7 +75,7 @@ TADS Imobiliária está atualmente estendido com os seguintes pacotes. Instruç�
 
 ## Licenca
 
-TADS Imobiliária é um software de código aberto licenciado sob a [GNU GPL v3.0](/master/LICENSE).
+TADS Imobiliária é um software de código aberto licenciado sob a [GNU GPL-3.0](/LICENSE).
 
 ## Página Inicial
 ![Index](/telas/site/home.png)
