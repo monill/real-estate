@@ -2,7 +2,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/d0326e1051a342739c13de788884e972)](https://www.codacy.com/app/monil/imobiliaria?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=monill/imobiliaria&amp;utm_campaign=Badge_Grade)
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)]()
-[![Build Status](https://poser.pugx.org/laravel/framework/v/stable.svg)]()
+[![Build Status](https://img.shields.io/badge/Laravel-v5.8-blue)]()
 ![Maintenance](https://img.shields.io/maintenance/no/2019)
 [![Website](https://img.shields.io/website/http/tadsimobiliaria.tk?down_message=down&up_color=blue&up_message=online)]()
 [![GPLv3 license](https://img.shields.io/badge/License-GPLv3-blue.svg)](/LICENSE)
